@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        @@include('../source/templates/head.html', {
+            "prefix": "../dist"
+        })
+    </head>
+    <body id="Profile" class="g-4">
+        @@include('../source/templates/header.html', {
+            "prefix": ".."
+        })
+      @@include('../source/templates/nav.html', {
+            "prefix": ".."
+        })
+
+        <!--Main Body-->
+        <main>
+            <a name="top"></a>
+		
+
+            <!--Profile-->
+            <section class="profile g-13">
+                <div class="profile--main">
+                    <div class="profile--icon"></div>
+                    <div class="profile--overlay">
+                        <h1 class="profile--name"></h1>
+                        <div class="profile--links" data-type="flex">
+                            <a href="/">Directory</a>
+                            <a href="/">Development</a>
+                            <a href="/">Wanted</a>
+                            <a href="/">Custom</a>
+                            <a href="/">Topics</a>
+                            <a href="/">Posts</a>
+                            <a href="/">Message</a>
+                        </div>
+                        <div class="profile--warnings"></div>
+                    </div>
+                    <tag-labelset class="profile--menu">
+                        <a href="#intro" title="Introduction" class="is-active">1</a>
+                        <a href="#basics" title="Basics">2</a>
+                        <a href="#details" title="Details">3</a>
+                        <a href="#plotting" title="Plotting">4</a>
+                        <a href="#tracker" title="Tracker">5</a>
+                        <a href="#player" title="Player">6</a>
+                    </tag-labelset>
+                    <tag-tabset>
+                        <tag-tab data-key="#intro">
+                            <div class="profile--played-by">
+                                <strong>By Lux</strong>
+                                <span>June 30, 2023</span>
+                            </div>
+                        </tag-tab>
+                        <tag-tab data-key="#basics" class="has-columns">
+                            <div class="profile--main-scroll scroll"><div data-type="grid" data-columns="2" data-gap="md">
+                                <div class="profile--item">
+                                    <strong>Full Name</strong>
+                                    <span>Nikolas Kovac</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Nickname(s)</strong>
+                                    <span>Nik, Niko</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Age</strong>
+                                    <span>116 years old</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Birthday</strong>
+                                    <span>July 10, 1907</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Species</strong>
+                                    <span>Phoenix</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Gender & Pronouns</strong>
+                                    <span>Male, He/Him</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Orientation</strong>
+                                    <span>Demisexual Demiromantic</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Relationship</strong>
+                                    <span>Dating</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Partner(s)</strong>
+                                    <span><a href="./profile.html">Emily Lawry</a></span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Occupation</strong>
+                                    <span>Emergency Room Doctor</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Group</strong>
+                                    <span>Hemlock</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Face</strong>
+                                    <span>Jack Savoretti</span>
+                                </div>
+                            </div></div>
+                            <div class="profile--item profile--side-scroll">
+                                <strong>Relationships</strong>
+                                <span class="scroll"><h5>Family</h5><br>
+                                    <h7>Luka Kovac</h7><ul><br>
+                                    <li>Adoptive father; deceased</li><br>
+                                    <li>Serbian Orthodox priest</li><br>
+                                    <li>Grief turned him to drinking, which in turn made him mean and vindictive</li><br>
+                                    <li>Frankly, the reason why Nik is the way he is</li></ul><br>
+                                    <h7>Anica Kovac</h7><ul><br>
+                                    <li>Adoptive mother; deceased</li><br>
+                                    <li>Was very kind, but did not take the death of her son well</li><br>
+                                    <li>Turned in on herself and was largely so deep in denial and depression that she did not usually recognize Nik for who he was</li><br>
+                                    <li>Was in absolutely no position to stop Luka from harming Nik, but Nik still believes she would have if she'd been with it enough to realize</li></ul><br>
+                                    <h7>Danilo Kovac</h7><ul><br>
+                                    <li>Adoptive older brother; deceased at 10 years old</li><br>
+                                    <li>Nik's role model</li><br>
+                                    <li>His death signalled the change in the family dynamic</li><br>
+                                    <li>Nik still blames himself, though how much is being told so many times it was his fault and how much is the guilt he felt in the immediate aftermath stil lingering is hard to say</li>/ul&gt;<br>
+                                    <h7>Marica Kovac</h7><ul><br>
+                                    <li>Adoptive younger sister; deceased</li><br>
+                                    <li>After Dani's death, Nik basically raised her</li><br>
+                                    <li>They were very close, but it was his contact with her that led Luka to the Griffins' doorstep in London so after he got away the second time, he cut contact</li><br>
+                                    <li>Still regrets not saying goodbye and never getting the chance to</li></ul><br>
+                                    <h7>Biological Family</h7><ul><br>
+                                    <li>Doesn't know them, isn't sure if he wants to</li><br>
+                                    <li>(But I definitely want him to)</li></ul><br>
+                                    <h5>Friends</h5><br>
+                                    <h7>Nigel Griffin</h7><ul><br>
+                                    <li>Best friend, practically his brother; deceased (old age)</li><br>
+                                    <li>Very British, very loud, very much the opposite of Nik</li><br>
+                                    <li>Nik is even remotely okay because Nigel existed, honestly, and he was never sure how to thank him properly; he still feels he never did</li></ul><br>
+                                    <h7>The Kelpies</h7><ul><br>
+                                    <li>40+ year old twins, affectionately referred to as Thing One and Thing Two</li><br>
+                                    <li>Found Nik in Paris and dragged him kicking and screaming back into society</li><br>
+                                    <li>Remind him a little of Nigel, if he's honest</li><br>
+                                    <li>He's very, very fond of them</li></ul></ul>
+                                </span>
+                            </div>
+                        </tag-tab>
+                        <tag-tab data-key="#details" class="has-columns">
+                            <div class="profile--item profile--main-scroll">
+                                <strong>Freeform</strong>
+                                <span class="scroll" data-text-align="justify">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </span>
+                            </div>
+                            <div class="profile--item profile--side-scroll">
+                                <strong>Cheatsheet</strong>
+                                <span class="scroll">
+                                    <ul><br>
+                                        <li>Various scars, including: cigarette burns along his forearms, scattered slices across his back, a gash along his lower left abdomen (side of ribcage to belly button), a large lichtenberg figure radiating from right collarbone, a smaller matching starburst on his left ankle, and a bullet wound centered directly over his heart. He still gets stiff and sore in his shoulder and ankle to this day.</li><br>
+                                        <li>No matter the weather, he will be wearing long-sleeved shirts to cover the scars. He remains ashamed of them and uncomfortable discussing his history, especially in regards to them.</li><br>
+                                        <li>Started with a degree in electrical engineering in his youth, leading to code-breaking assistance during the Second World War. However, after this, he floundered a little and found little joy in his original field of study, so he has gone on to get a couple different undergraduate degrees, including computer sciences, music, psychology, and literature.</li><br>
+                                        <li>More recently, he attended medical school and completed his residency as a trauma surgeon out of a desire to be prepared; he's seen war and he wants to be ready this time.</li><br>
+                                        <li>Much like his studies, he's also been picking up a variety of languages over the years. His mother tongue is Serbian, but he is fluent in Croatian, English, French, and Italian; conversational in Russian, German, and Spanish; and he is contemplating picking up something else now. He also has some classical Latin training, though he wouldn't dare proclaim himself an expert.</li><br>
+                                        <li>After the storm when he was younger, he's been wary of thunder and lightning since. He has his coping mechanisms, but you're never going to find him outside in a storm unless he absolutely has to be - and the more he can drown out the sound and sight of it, the better.</li><br>
+                                        <li>He never quite gained proper control of all of his abilities and he has been known to accidentally light small fires in times of high emotion - of any kind, even positive, though it is far more likely to happen when he is anxious or stressed.</li><br>
+                                        <li>He's picked up a fair few self-soothing hobbies over the years, but the most obvious are the piano and the fact he stress-bakes.... a lot. The hospital staff have all put on an extra couple pounds since he returned.</li><br>
+                                        <li>He has a deep affinity for high places and feeling the wind in his face. The fact he can fly and cannot die both help encourage him taking stupid risks to chase down this high, and it isn't uncommon to see him at the very edge of a cliff or atop some of the taller buildings in town.</li><br>
+                                        <li>He's a hell of an insomniac and a workaholic - given his job, that's. a damn-near deadly combination. He has gone days without sleeping in more than fifteen minute naps, and he's done it frequently. If he could die, it might well have killed him by now.</li><br>
+                                        <li>He also has an eidetic memory which, while it has helped with all of the above academic endeavours... it also makes it extremely difficult to forget what he's been through and what he's done. Parts of his life have been haunting enough as it is; he doesn't need the reminders.</li><br>
+                                    </ul>
+                                </span>
+                            </div>
+                        </tag-tab>
+                        <tag-tab data-key="#plotting" class="has-columns">
+                            <div class="profile--plotting profile--main-scroll">
+                                <div class="profile--item">
+                                    <strong>Interested</strong>
+                                    <span class="scroll">
+                                        <ul><br>
+                                            <li>Found family plots (the kelpies who found him coming back to town or otherwise)</li><br>
+                                            <li>Biological family, because he has no idea who they are and that would be fun to explore</li><br>
+                                            <li>Helping get him out of his shell and more comfortable in his skin, because he still isn't that</li><br>
+                                            <li>Fellow medical staff to hang out with, especially any who are longer-lived as he's a little gun-shy about getting too attached to humans and those with human lifespans</li><br>
+                                        </ul>
+                                    </span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Not Interested</strong>
+                                    <span class="scroll">
+                                        <ul><br>
+                                            <li>Romance is already sorted and he isn't the sort to have prior flings</li><br>
+                                            <li>Enemies of any kind- he's had enough heartache and he'd just bend over backwards for them anyway so it'd be a little dry</li><br>
+                                            <li>You're not super likely to find him embroiled in any sort of nightlife or large celebrations that draw crowds, either - try a library or hiking trail instead</li><br>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="profile--item profile--side-scroll">
+                                <strong>Overview</strong>
+                                <span class="scroll">
+                                    Nik is kind of a walking tragedy, to be quite honest. He's had a really hard life, and being semi-immortal hasn't really helped much, because it's given him even more time to experience these hardships. He's a sensitive soul, feeling each of these things very deeply and to extremes, despite his attempts to shove all those feelings down. He is kind, though, and unerringly so. He will attempt to aide just about anyone who needs it, even at great personal risk or cost to his own well-being. You'll find he can be quite distant at first if he doesn't know you. He is quite cautious, despite his desire to help and heal, and so will take a while to warm up, but he's trying to work on it.<br>
+                                    <br>
+                                    When it comes to interacting with people, he's particularly soft-spoken, but an otherwise excellent conversationalist (assuming you can get him to speak). He's easily distractable, often getting caught up in a flurry of his own thoughts and ideas, but trust that he hasn't missed a word you're saying either (at least, usually). He just might take a second or two to catch up and backtrack to what you were talking about first. Most of the people he knows, he knows through his work as a doctor in the emergency room, where he's been practising for just over ten years now.</span>
+                            </div>
+                        </tag-tab>
+                        <tag-tab data-key="#tracker" class="has-columns">
+                            <div class="profile--tracker profile--main-scroll">
+                                <tag-tabset data-category="tracker">
+                                    <tag-tab data-key="#active" data-type="grid" data-columns="2" class="scroll">
+                                        <div class="profile--tracker-item" data-owing="owing">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#archived" data-type="grid" data-columns="2" class="scroll">
+                                        <div class="profile--tracker-item" data-owing="archived">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#comms" data-type="grid" data-columns="2" class="scroll">
+                                        <div class="profile--tracker-item" data-owing="owing">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="archived">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#socials" data-type="grid" data-columns="2" class="scroll">
+                                        <div class="profile--tracker-item" data-owing="caughtup">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                        <div class="profile--tracker-item" data-owing="archived">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#requests" data-type="grid" data-columns="2" class="scroll">
+                                        <div class="profile--tracker-item" data-owing="req">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#dev" data-type="grid" data-columns="2" class="scroll">
+                                        <div class="profile--tracker-item" data-owing="dev">
+                                            <a href="https://godlybehaviour.jcink.net/index.php?showtopic=191&amp;view=getlastpost">The Status Quo: Sign Ups</a>
+                                            <span><tag-highlight>close august 2 / 2023</tag-highlight></span>
+                                            <span>Posted in <a href="?showforum=67">The Status Quo</a></span>
+                                            <span>Last post by <a href="https://godlybehaviour.jcink.net/index.php?showuser=87">KIT ODAIR</a></span>
+                                            <span>August 2 2023, 6:34 PM</span>
+                                        </div>
+                                    </tag-tab>
+                                </tag-tabset>
+                            </div>
+                            <tag-labelset class="profile--tracker-menu profile--side-scroll">
+                                <a href="#active" data-category="tracker" class="is-active">active</a>
+                                <a href="#archived" data-category="tracker">archived</a>
+                                <a href="#comms" data-category="tracker">texts &amp; calls</a>
+                                <a href="#socials" data-category="tracker">social media</a>
+                                <a href="#requests" data-category="tracker">requests</a>
+                                <a href="#dev" data-category="tracker">development</a>
+                            </tag-labelset>
+                        </tag-tab>
+                        <tag-tab data-key="#player" class="has-columns">
+                            <div class="profile--main-scroll scroll"><div data-type="grid" data-columns="2" data-gap="md">
+                                <div class="profile--item">
+                                    <strong>Player</strong>
+                                    <span>Lux (She/Her)</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Age</strong>
+                                    <span>31 years old</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Timezone</strong>
+                                    <span>GMT-4:00</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Rating</strong>
+                                    <span><u>L</u>&nbsp;&nbsp;&nbsp;<lang-clip></lang-clip>&nbsp;&nbsp;&nbsp;<u>S</u>&nbsp;&nbsp;&nbsp;<sex-clip></sex-clip>&nbsp;&nbsp;&nbsp;<u>V</u>&nbsp;&nbsp;&nbsp;<vio-clip></vio-clip></span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Style</strong>
+                                    <span>Third Person, Past Tense</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Preferred Frequency</strong>
+                                    <span>Weekly</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Last Seen</strong>
+                                    <span>August 29 2023, 11:16 PM</span>
+                                </div>
+                                <div class="profile--item">
+                                    <strong>Bank Account</strong>
+                                    <span>$255</span>
+                                </div>
+                                <div class="profile--item profile--avoid fullWidth">
+                                    <strong>Please Avoid</strong>
+                                    <span>Will not write mature sexual content; otherwise, open to anything! Will not write mature sexual content; otherwise, open to anything! Will not write mature sexual content; otherwise, open to anything! Will not write mature sexual content; otherwise, open to anything!</span>
+                                </div>
+                            </div></div>
+                            <div class="profile--item profile--side-scroll profile--awards">
+                                <strong>Badges</strong>
+                                <span class="scroll"><img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/hopelessromantic.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/earlybird.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/phoenix.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/lgbtq.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/notlooking.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/wellread.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/travelled.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/musical.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/languages.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/nightowl.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/tidy.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/straightedge.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/smartthinker.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/pessimist.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/cancer.svg"> <img src="https://files.jcink.net/uploads2/godlybehaviour/GB23/Badge_Images/thestatusquo.svg"></span>
+                            </div>
+                        </tag-tab>
+                    </tag-tabset>
+                </div>
+                <div class="profile--aesthetic Single"></div>
+            </section>
+            <script>
+                document.querySelector('.profile--name').innerHTML = formatName(`Nikolas Kovac`);
+
+                document.querySelector('.profile--icon').innerHTML = `<span>${'Hemlock'[0]}</span>`;
+
+                let ratings = [
+                    {'type': 'lang', 'value': 'All'},
+                    {'type': 'sex', 'value': 'Mild'},
+                    {'type': 'vio', 'value': 'With Limits'}
+                ];
+                ratings.forEach(rating => formatRating(rating));
+
+                //characters only
+                document.querySelectorAll('.memAccOnly').forEach(item => item.remove());
+
+                let warnings = `This app contains depictions of a life-ending head injury (brother) and other severe injuries, due to accidents, physical abuse, and apparent divine intervention (burns, open wounds, broken bones, lightning strike). There are mentions of a suicide attempt/suicidal ideation and behaviour akin to a depressive episode. Additionally, there are mentions of wars and massacres in some detail.`;
+                if(warnings !== `` && warnings !== `<i>No Information</i>`) {
+                    document.querySelector('.profile--warnings').innerHTML = `<div class="profile--warning-icon"><i class="fa-regular fa-triangle-exclamation"></i></div>
+                    <span class="scroll">${warnings}</span>`;
+                }
+
+                let aestheticLayout = `Single`;
+                let images;
+                switch (aestheticLayout) {
+                    case 'Mosaic':
+                        images = `<span class="twoWide"><img src="https://picsum.photos/1000" /></span>
+                        <span class="twoWide"><img src="https://picsum.photos/1000" /></span>
+                        <span><img src="https://picsum.photos/1000" /></span>
+                        <span class="twoWide"><img src="https://picsum.photos/1000" /></span>
+                        <span class="twoHigh"><img src="https://picsum.photos/1000" /></span>
+                        <span class="threeWide"><img src="https://picsum.photos/1000" /></span>`;
+                        break;
+                    case 'Grid':
+                        images = `<span class="twoWide"><img src="https://picsum.photos/1000" /></span>
+                        <span class="twoHigh"><img src="https://picsum.photos/1000" /></span>
+                        <span><img src="https://picsum.photos/1000" /></span>
+                        <span><img src="https://picsum.photos/1000" /></span>`;
+                        break;
+                    case 'Single':
+                    default: 
+                        images = `<span><img src="https://64.media.tumblr.com/bdf44fbac68a03966e87193181bb8755/b54f37b3591867f2-d7/s1280x1920/63e0f589911b515142a6ebb6799613b7c7a4330a.jpg" /></span>`;
+                        break;
+                }
+                document.querySelector('.profile--aesthetic').innerHTML = images;
+
+                /*
+                let current = new Date();
+                let year = current.getFullYear();
+                let month = current.getMonth() + 1;
+                let day = current.getDate();
+                let bYear = `1907`;
+                let bMonth = setMonth(`July`);;
+                let bDay = `10`;
+                let age = ``;
+                if(bMonth < month || (bMonth === month && bDay <= day)) {
+                    age = year - bYear;
+                } else {
+                    age = year - bYear - 1;
+                }
+                document.querySelector('age-clip').innerText = age;
+
+                let species = `Phoenix`;
+                if(species === `Hybrid`) {
+                    species = `Hybrid Text`;
+                }
+                document.querySelector('#species-clip').innerHTML = species;
+
+                let overflow = ``;
+                if(overflow !== `` && overflow !== `<i>No Information</i>`) {
+                    document.querySelector('.profile--freeform').insertAdjacentHTML('beforeend', overflow);
+                }
+                */
+                
+                initProfile();
+            </script>
+<!-- Copyright Information -->
+        <div class="tableborder" align="center">
+            <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+                <div class="copyright" align="center">
+                    Powered by 
+                    <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a>
+                    (<a href="http://jcink.com" target="_blank">Jcink.com </a>
+                    <a href="https://jcink.com" target="_blank">Forum Hosting</a>
+                    ) © 2020 &nbsp;
+                    <a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a>
+                    <br>
+                    Page creation time: 0.0054 <!-- http://luxtradition.b1.jcink.com -->  · 
+                    <a href="index.php?act=Mobile">Mobile Version</a> · 
+                    <a href="index.php?act=privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div> 
+        </main>
+
+        </div>
+
+        
+        @@include('../source/templates/scripts.html', {
+            "prefix": "../dist"
+        })   
+    </body>
+</html>

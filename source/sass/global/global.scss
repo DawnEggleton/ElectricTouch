@@ -3,3 +3,34 @@
 /*******************************
     Global
 ********************************/
+body {
+    font-family: var(--font-body);
+    font-size: var(--size-md);
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0 0 0 12px;
+    line-height: 200%;
+
+    br {
+        display: none;
+    }
+
+    li {
+        padding-left: 10px;
+        
+        &::marker {
+            font-family: 'Font Awesome 6 Pro';
+            font-weight: 300;
+            font-style: normal;
+            font-size: 0.7em;
+            color: var(--accent);
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}

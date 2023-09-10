@@ -2,7 +2,6 @@
     Variables
 ********************************/
 :root {
-    --font-accent: 'Kristi', script;
     --font-body: 'Inter', sans-serif;
     
     --size-xs: 8px;
@@ -10,17 +9,180 @@
     --size-md: 12px;
     --size-lg: 14px;
     --size-xl: 16px;
+    
+    --accent: rgb(176, 123, 107);
+    --black: rgb(20, 20, 20);
+    --grey-medium: rgb(176, 176, 176);
 
-    --light: rgb(244, 241, 238);
-    --dark: rgb(115, 111, 107);
-    --darker: rgb(60, 58, 56);
+    --bg-accent: var(--accent);
+    --bg-primary: var(--black);
 
-    --accent-dark: rgb(117, 19, 0);
-    --accent-bright: rgb(236, 112, 11);
+    --text-on-accent: var(--black);
+    --text-accent: var(--accent);
+    --text-primary: var(--grey-medium);
+}
 
-    --bg-primary: var(--light);
-    --bg-accent-gradient: linear-gradient(40deg, var(--accent-dark) 15%, var(--accent-bright) 85%);
-    --bg-neutral-gradient: linear-gradient(40deg, var(--text-primary) 15%, var(--bg-primary) 85%);
+body {
+    //Set up
+    &[class*="g-"],
+    [class*="g-"] {
+        --bg-accent: var(--accent);
+        --text-accent: var(--accent);
+    }
 
-    --text-primary: var(--dark);
+    //Other
+    &.g-1,
+    .g-1,
+    &.g-2,
+    .g-2,
+    &.g-3,
+    .g-3,
+    &.g-5,
+    .g-5 {
+        --accent: rgb(178, 220, 223);
+    }
+
+    //Staff
+    &.g-4,
+    .g-4,
+    [data-group="staff"],
+    [data-group="Staff"],
+    [data-group="STAFF"] {
+        --accent: rgb(140, 168, 161);
+    }
+
+    //Sorted
+    &.g-6,
+    .g-6,
+    [data-group="writer"],
+    [data-group="Writer"],
+    [data-group="WRITER"] {
+        --accent: rgb(130, 147, 109);
+    }
+    
+    //Birch
+    &.g-7,
+    .g-7,
+    [data-group="birch"],
+    [data-group="Birch"],
+    [data-group="BIRCH"] {
+        --accent: rgb(205, 177, 156);
+    }
+    
+    //Lupin
+    &.g-8,
+    .g-8,
+    [data-group="lupin"],
+    [data-group="Lupin"],
+    [data-group="LUPIN"] {
+        --accent: rgb(172, 143, 176);
+    }
+    
+    //Spruce
+    &.g-9,
+    .g-9,
+    [data-group="spruce"],
+    [data-group="Spruce"],
+    [data-group="SPRUCE"] {
+        --accent: rgb(119, 153, 141);
+    }
+    
+    //Dandelion
+    &.g-10,
+    .g-10,
+    [data-group="dandelion"],
+    [data-group="Dandelion"],
+    [data-group="DANDELION"] {
+        --accent: rgb(174, 148, 99);
+    }
+    
+    //Blueberry
+    &.g-11,
+    .g-11,
+    [data-group="blueberry"],
+    [data-group="Blueberry"],
+    [data-group="BLUEBERRY"] {
+        --accent: rgb(70, 120, 142);
+    }
+    
+    //Juniper
+    &.g-12,
+    .g-12,
+    [data-group="juniper"],
+    [data-group="Juniper"],
+    [data-group="JUNIPER"] {
+        --accent: rgb(112, 118, 159);
+    }
+    
+    //Hemlock
+    &.g-13,
+    .g-13,
+    [data-group="hemlock"],
+    [data-group="Hemlock"],
+    [data-group="HEMLOCK"] {
+        --accent: rgb(91, 121, 118);
+    }
+    
+    //Nettle
+    &.g-14,
+    .g-14,
+    [data-group="nettle"],
+    [data-group="Nettle"],
+    [data-group="NETTLE"] {
+        --accent: rgb(145, 179, 139);
+    }
+
+    //Amaranth
+    &.g-15,
+    .g-15,
+    [data-group="amaranth"],
+    [data-group="Amaranth"],
+    [data-group="AMARANTH"] {
+        --accent: rgb(181, 111, 111);
+    }
+
+    //Sundew
+    &.g-16,
+    .g-16,
+    [data-group="sundew"],
+    [data-group="Sundew"],
+    [data-group="SUNDEW"] {
+        --accent: rgb(189, 134, 101);
+    }
+
+    //Tobacco
+    &.g-17,
+    .g-17,
+    [data-group="tobacco"],
+    [data-group="Tobacco"],
+    [data-group="TOBACCO"] {
+        --accent: rgb(132, 97, 69);
+    }
+
+    //Thistle
+    &.g-18,
+    .g-18,
+    [data-group="thistle"],
+    [data-group="Thistle"],
+    [data-group="THISTLE"] {
+        --accent: rgb(138, 102, 149);
+    }
+
+    //Balsam
+    &.g-19,
+    .g-19,
+    [data-group="balsam"],
+    [data-group="Balsam"],
+    [data-group="BALSAM"] {
+        --accent: rgb(134, 124, 116);
+    }
+
+    //Clover
+    &.g-20,
+    .g-20,
+    [data-group="clover"],
+    [data-group="Clover"],
+    [data-group="CLOVER"] {
+        --accent: rgb(85, 111, 74);
+    }
 }

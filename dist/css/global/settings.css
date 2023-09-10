@@ -1,0 +1,8 @@
+/*******************************
+    Settings
+********************************/
+li::marker {
+  content: '\f178'; }
+
+a[target="_blank"]:not(.staffOnly)::after {
+  content: '\f08e'; }

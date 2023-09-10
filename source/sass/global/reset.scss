@@ -4,12 +4,12 @@
 * {
     position: relative;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body {
     line-height: 200%;
     -webkit-font-smoothing: antialiased;
-    margin: 0;
-    padding: 0;
 }
 img {
     max-width: 100%;

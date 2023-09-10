@@ -1,0 +1,28 @@
+/*******************************
+    Global
+********************************/
+body {
+  font-family: var(--font-body);
+  font-size: var(--size-md); }
+
+ul,
+ol {
+  margin: 0;
+  padding: 0 0 0 12px;
+  line-height: 200%; }
+  ul br,
+  ol br {
+    display: none; }
+  ul li,
+  ol li {
+    padding-left: 10px; }
+    ul li::marker,
+    ol li::marker {
+      font-family: 'Font Awesome 6 Pro';
+      font-weight: 300;
+      font-style: normal;
+      font-size: 0.7em;
+      color: var(--accent); }
+    ul li:not(:last-child),
+    ol li:not(:last-child) {
+      margin-bottom: 10px; }
