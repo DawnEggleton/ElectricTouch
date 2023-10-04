@@ -22,6 +22,78 @@ function capitalizeMultiple(selector) {
     });
 }
 
+/****** Settings ******/
+function setTheme() {
+    if(localStorage.getItem('theme') !== null) {
+        switch(localStorage.getItem('theme')) {
+            case 'light':
+                document.querySelector('body').classList.remove('dark');
+                document.querySelector('body').classList.add('light');
+                break;
+            case 'dark':
+            default:
+                document.querySelector('body').classList.add('dark');
+                document.querySelector('body').classList.remove('light');
+                break;
+        }
+    } else {
+        document.querySelector('body').classList.add('dark');
+        document.querySelector('body').classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+    }
+}
+function setSize() {
+    if(localStorage.getItem('size') !== null) {
+        switch(localStorage.getItem('size')) {
+            case 'large':
+                document.querySelector('body').classList.remove('smFont');
+                document.querySelector('body').classList.add('lgFont');
+                break;
+            case 'small':
+            default:
+                document.querySelector('body').classList.remove('lgFont');
+                document.querySelector('body').classList.add('smFont');
+                break;
+        }
+    } else {
+        document.querySelector('body').classList.remove('lgFont');
+        document.querySelector('body').classList.add('smFont');
+        localStorage.setItem('size', 'small');
+    }
+}
+
+/****** Toggles ******/
+function toggleTheme() {
+    if(localStorage.getItem('theme') === 'dark') {
+        localStorage.setItem('theme', 'light');
+        setTheme();
+    } else {
+        localStorage.setItem('theme', 'dark');
+        setTheme();
+    }
+}
+function toggleSize() {
+    if(localStorage.getItem('size') === 'small') {
+        localStorage.setItem('size', 'large');
+        setSize();
+    } else {
+        localStorage.setItem('size', 'small');
+        setSize();
+    }
+}
+function toggleSideMenu(e) {
+    let menu = document.querySelector('.nav--popout');
+    if (e.classList.contains('is-open')) {
+        menu.classList.remove('is-open');
+        e.classList.remove('is-open');
+	    document.querySelector('.invisibleEl').classList.remove('menu-open');
+    } else {
+        menu.classList.add('is-open');
+        e.classList.add('is-open');
+	    document.querySelector('.invisibleEl').classList.add('menu-open');
+    }
+}
+
 /****** Profile Initialization ******/
 function formatName(name) {
     let nameArray = capitalize(name).split(' ');

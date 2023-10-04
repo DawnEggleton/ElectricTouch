@@ -1,6 +1,127 @@
 /*******************************
     Navigation
 ********************************/
-nav,
-#navstrip {
-  display: none; }
+.nav--main {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--size--main-menu-height);
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 5px 15px;
+  font-size: var(--size-sm);
+  color: var(--text-primary);
+  z-index: 10; }
+  .nav--main .button--menu .fa-xmark {
+    display: none; }
+  .nav--main .button--menu.is-open .fa-xmark {
+    display: initial; }
+  .nav--main .button--menu.is-open .fa-bars {
+    display: none; }
+  .nav--main button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--text-primary); }
+  .nav--main a {
+    color: var(--text-primary); }
+
+.nav--left {
+  display: flex;
+  gap: 15px; }
+
+.nav--right {
+  display: flex;
+  gap: 15px; }
+  .nav--right button {
+    display: flex;
+    align-items: center;
+    gap: 5px; }
+    .nav--right button div {
+      width: 25px;
+      height: 5px;
+      border-radius: 2.5px;
+      background: var(--bg-quaternary); }
+      .nav--right button div span {
+        display: block;
+        width: 9px;
+        height: 9px;
+        margin: -2px auto -2px 0;
+        border-radius: 50%;
+        background: var(--bg-accent); }
+    .light .nav--right button.toggle--theme div,
+    .lgFont .nav--right button.toggle--size div {
+      background: var(--bg-accent-transparent); }
+      .light .nav--right button.toggle--theme div span,
+      .lgFont .nav--right button.toggle--size div span {
+        margin: -2px 0 -2px auto; }
+
+.nav--breadcrumb {
+  position: sticky;
+  top: var(--size--main-menu-height);
+  width: 100%;
+  height: var(--size--sub-menu-height);
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  font-size: var(--size-xs);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 10; }
+  .nav--breadcrumb a {
+    color: var(--text-primary); }
+
+.nav--popout {
+  position: fixed;
+  top: calc(var(--size--main-menu-height) + var(--size--sub-menu-height));
+  left: calc(-1 * var(--size--side-menu-width));
+  z-index: 10;
+  background: var(--bg-tertiary);
+  width: var(--size--side-menu-width);
+  height: calc(100vh - (var(--size--main-menu-height) + var(--size--sub-menu-height)));
+  transition-duration: 0.3s; }
+  .nav--popout.is-open {
+    left: 0; }
+  .nav--popout > .scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: calc(100vh - (var(--size--main-menu-height) + var(--size--sub-menu-height)) - 20px);
+    width: calc(100% - 20px);
+    padding-right: 10px;
+    margin: 10px; }
+    .nav--popout > .scroll a {
+      border: 1px solid var(--bg-accent);
+      color: var(--text-accent);
+      text-transform: uppercase;
+      font-weight: 900;
+      text-align: center;
+      padding: 5px 10px;
+      font-size: var(--size-md);
+      letter-spacing: 0.1em;
+      transition-duration: 0.3s; }
+      .nav--popout > .scroll a:hover {
+        background: var(--bg-accent);
+        color: var(--text-on-accent); }
+      .light .nav--popout > .scroll a {
+        background: var(--bg-accent);
+        color: var(--text-on-accent); }
+        .light .nav--popout > .scroll a:hover {
+          color: var(--text-accent);
+          background: none; }
+
+.invisibleEl {
+  position: fixed;
+  z-index: -999999999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; }
+
+.invisibleEl.menu-open {
+  z-index: 9; }

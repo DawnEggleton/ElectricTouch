@@ -9,24 +9,239 @@
     --size-md: 12px;
     --size-lg: 14px;
     --size-xl: 16px;
+
+    --size--main-menu-height: 40px;
+    --size--sub-menu-height: 30px;
+    --size--side-menu-width: 300px;
     
     --accent: rgb(176, 123, 107);
+    --accent-50: rgb(176, 123, 107, 0.5);
+
     --black: rgb(20, 20, 20);
+    --offblack: rgb(35, 35, 35);
+    --grey-xdark: rgb(45, 45, 45);
+    --grey-dark: rgb(65, 65, 65);
+    --grey-mdark: rgb(85, 85, 85);
     --grey-medium: rgb(176, 176, 176);
+    --grey-xlight: rgb(200, 200, 200);
+    --offwhite: rgb(220, 220, 220);
+    --white: rgb(235, 235, 235);
 
     --bg-accent: var(--accent);
+    --bg-accent-transparent: var(--accent-50);
     --bg-primary: var(--black);
+    --bg-secondary: var(--offblack);
+    --bg-tertiary: var(--grey-xdark);
+    --bg-quaternary: var(--grey-dark);
 
     --text-on-accent: var(--black);
     --text-accent: var(--accent);
     --text-primary: var(--grey-medium);
+
+    --border-main: var(--grey-mdark);
 }
 
 body {
+    &.lgFont {
+        --size-xs: 10px;
+        --size-sm: 12px;
+        --size-md: 14px;
+        --size-lg: 16px;
+        --size-xl: 18px;
+    }
+    &.light {
+        --bg-accent: var(--accent);
+        --bg-accent-transparent: var(--accent-50);
+        --bg-primary: var(--offwhite);
+        --bg-secondary: var(--white);
+        --bg-tertiary: var(--offwhite);
+        --bg-quaternary: var(--grey-medium);
+    
+        --text-on-accent: var(--black);
+        --text-accent: var(--accent);
+        --text-primary: var(--grey-dark);
+
+        --border-main: var(--grey-medium);
+
+        //Other
+        &.g-1,
+        .g-1,
+        &.g-2,
+        .g-2,
+        &.g-3,
+        .g-3,
+        &.g-5,
+        .g-5 {
+            --accent: rgb(178, 220, 223);
+            --accent-50: rgb(178, 220, 223, 50);
+        }
+    
+        //Staff
+        &.g-4,
+        .g-4,
+        [data-group="staff"],
+        [data-group="Staff"],
+        [data-group="STAFF"] {
+            --accent: rgb(140, 168, 161);
+            --accent-50: rgb(140, 168, 161, 0.5);
+        }
+    
+        //Sorted
+        &.g-6,
+        .g-6,
+        [data-group="writer"],
+        [data-group="Writer"],
+        [data-group="WRITER"] {
+            --accent: rgb(130, 147, 109);
+            --accent-50: rgb(130, 147, 109, 0.5);
+        }
+        
+        //Birch
+        &.g-7,
+        .g-7,
+        [data-group="birch"],
+        [data-group="Birch"],
+        [data-group="BIRCH"] {
+            --accent: rgb(205, 177, 156);
+            --accent-50: rgb(205, 177, 156, 0.5);
+        }
+        
+        //Lupin
+        &.g-8,
+        .g-8,
+        [data-group="lupin"],
+        [data-group="Lupin"],
+        [data-group="LUPIN"] {
+            --accent: rgb(172, 143, 176);
+            --accent-50: rgb(172, 143, 176, 0.5);
+        }
+        
+        //Spruce
+        &.g-9,
+        .g-9,
+        [data-group="spruce"],
+        [data-group="Spruce"],
+        [data-group="SPRUCE"] {
+            --accent: rgb(119, 153, 141);
+            --accent-50: rgb(119, 153, 141, 0.5);
+        }
+        
+        //Dandelion
+        &.g-10,
+        .g-10,
+        [data-group="dandelion"],
+        [data-group="Dandelion"],
+        [data-group="DANDELION"] {
+            --accent: rgb(174, 148, 99);
+            --accent-50: rgb(174, 148, 99, 0.5);
+        }
+        
+        //Blueberry
+        &.g-11,
+        .g-11,
+        [data-group="blueberry"],
+        [data-group="Blueberry"],
+        [data-group="BLUEBERRY"] {
+            --accent: rgb(70, 120, 142);
+            --accent-50: rgb(70, 120, 14, 0.5);
+        }
+        
+        //Juniper
+        &.g-12,
+        .g-12,
+        [data-group="juniper"],
+        [data-group="Juniper"],
+        [data-group="JUNIPER"] {
+            --accent: rgb(112, 118, 159);
+            --accent-50: rgb(112, 118, 159, 0.5);
+        }
+        
+        //Hemlock
+        &.g-13,
+        .g-13,
+        [data-group="hemlock"],
+        [data-group="Hemlock"],
+        [data-group="HEMLOCK"] {
+            --accent: rgb(151, 176, 174);
+            --accent-50: rgb(151, 176, 174, 0.5);
+        }
+        
+        //Nettle
+        &.g-14,
+        .g-14,
+        [data-group="nettle"],
+        [data-group="Nettle"],
+        [data-group="NETTLE"] {
+            --accent: rgb(145, 179, 139);
+            --accent-50: rgb(145, 179, 13, 0.5);
+        }
+    
+        //Amaranth
+        &.g-15,
+        .g-15,
+        [data-group="amaranth"],
+        [data-group="Amaranth"],
+        [data-group="AMARANTH"] {
+            --accent: rgb(181, 111, 111);
+            --accent-50: rgb(181, 111, 111, 0.5);
+        }
+    
+        //Sundew
+        &.g-16,
+        .g-16,
+        [data-group="sundew"],
+        [data-group="Sundew"],
+        [data-group="SUNDEW"] {
+            --accent: rgb(189, 134, 101);
+            --accent-50: rgb(189, 134, 101, 0.5);
+        }
+    
+        //Tobacco
+        &.g-17,
+        .g-17,
+        [data-group="tobacco"],
+        [data-group="Tobacco"],
+        [data-group="TOBACCO"] {
+            --accent: rgb(132, 97, 69);
+            --accent-50: rgb(132, 97, 69, 0.5);
+        }
+    
+        //Thistle
+        &.g-18,
+        .g-18,
+        [data-group="thistle"],
+        [data-group="Thistle"],
+        [data-group="THISTLE"] {
+            --accent: rgb(138, 102, 149);
+            --accent-50: rgb(138, 102, 149, 0.5);
+        }
+    
+        //Balsam
+        &.g-19,
+        .g-19,
+        [data-group="balsam"],
+        [data-group="Balsam"],
+        [data-group="BALSAM"] {
+            --accent: rgb(134, 124, 116);
+            --accent-50: rgb(134, 124, 116, 0.5);
+        }
+    
+        //Clover
+        &.g-20,
+        .g-20,
+        [data-group="clover"],
+        [data-group="Clover"],
+        [data-group="CLOVER"] {
+            --accent: rgb(85, 111, 74);
+            --accent-50: rgb(85, 111, 74, 0.5);
+        }
+    }
+
     //Set up
     &[class*="g-"],
     [class*="g-"] {
         --bg-accent: var(--accent);
+        --bg-accent-transparent: var(--accent-50);
         --text-accent: var(--accent);
     }
 
@@ -40,6 +255,7 @@ body {
     &.g-5,
     .g-5 {
         --accent: rgb(178, 220, 223);
+        --accent-50: rgb(178, 220, 223, 50);
     }
 
     //Staff
@@ -49,6 +265,7 @@ body {
     [data-group="Staff"],
     [data-group="STAFF"] {
         --accent: rgb(140, 168, 161);
+        --accent-50: rgb(140, 168, 161, 0.5);
     }
 
     //Sorted
@@ -58,6 +275,7 @@ body {
     [data-group="Writer"],
     [data-group="WRITER"] {
         --accent: rgb(130, 147, 109);
+        --accent-50: rgb(130, 147, 109, 0.5);
     }
     
     //Birch
@@ -67,6 +285,7 @@ body {
     [data-group="Birch"],
     [data-group="BIRCH"] {
         --accent: rgb(205, 177, 156);
+        --accent-50: rgb(205, 177, 156, 0.5);
     }
     
     //Lupin
@@ -76,6 +295,7 @@ body {
     [data-group="Lupin"],
     [data-group="LUPIN"] {
         --accent: rgb(172, 143, 176);
+        --accent-50: rgb(172, 143, 176, 0.5);
     }
     
     //Spruce
@@ -85,6 +305,7 @@ body {
     [data-group="Spruce"],
     [data-group="SPRUCE"] {
         --accent: rgb(119, 153, 141);
+        --accent-50: rgb(119, 153, 141, 0.5);
     }
     
     //Dandelion
@@ -94,6 +315,7 @@ body {
     [data-group="Dandelion"],
     [data-group="DANDELION"] {
         --accent: rgb(174, 148, 99);
+        --accent-50: rgb(174, 148, 99, 0.5);
     }
     
     //Blueberry
@@ -103,6 +325,7 @@ body {
     [data-group="Blueberry"],
     [data-group="BLUEBERRY"] {
         --accent: rgb(70, 120, 142);
+        --accent-50: rgb(70, 120, 14, 0.5);
     }
     
     //Juniper
@@ -112,6 +335,7 @@ body {
     [data-group="Juniper"],
     [data-group="JUNIPER"] {
         --accent: rgb(112, 118, 159);
+        --accent-50: rgb(112, 118, 159, 0.5);
     }
     
     //Hemlock
@@ -121,6 +345,7 @@ body {
     [data-group="Hemlock"],
     [data-group="HEMLOCK"] {
         --accent: rgb(91, 121, 118);
+        --accent-50: rgb(91, 121, 118, 0.5);
     }
     
     //Nettle
@@ -130,6 +355,7 @@ body {
     [data-group="Nettle"],
     [data-group="NETTLE"] {
         --accent: rgb(145, 179, 139);
+        --accent-50: rgb(145, 179, 13, 0.5);
     }
 
     //Amaranth
@@ -139,6 +365,7 @@ body {
     [data-group="Amaranth"],
     [data-group="AMARANTH"] {
         --accent: rgb(181, 111, 111);
+        --accent-50: rgb(181, 111, 111, 0.5);
     }
 
     //Sundew
@@ -148,6 +375,7 @@ body {
     [data-group="Sundew"],
     [data-group="SUNDEW"] {
         --accent: rgb(189, 134, 101);
+        --accent-50: rgb(189, 134, 101, 0.5);
     }
 
     //Tobacco
@@ -157,6 +385,7 @@ body {
     [data-group="Tobacco"],
     [data-group="TOBACCO"] {
         --accent: rgb(132, 97, 69);
+        --accent-50: rgb(132, 97, 69, 0.5);
     }
 
     //Thistle
@@ -166,6 +395,7 @@ body {
     [data-group="Thistle"],
     [data-group="THISTLE"] {
         --accent: rgb(138, 102, 149);
+        --accent-50: rgb(138, 102, 149, 0.5);
     }
 
     //Balsam
@@ -175,6 +405,7 @@ body {
     [data-group="Balsam"],
     [data-group="BALSAM"] {
         --accent: rgb(134, 124, 116);
+        --accent-50: rgb(134, 124, 116, 0.5);
     }
 
     //Clover
@@ -184,5 +415,6 @@ body {
     [data-group="Clover"],
     [data-group="CLOVER"] {
         --accent: rgb(85, 111, 74);
+        --accent-50: rgb(85, 111, 74, 0.5);
     }
 }

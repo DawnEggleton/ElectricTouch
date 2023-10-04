@@ -36,18 +36,173 @@ a {
   --size-md: 12px;
   --size-lg: 14px;
   --size-xl: 16px;
+  --size--main-menu-height: 40px;
+  --size--sub-menu-height: 30px;
+  --size--side-menu-width: 300px;
   --accent: rgb(176, 123, 107);
+  --accent-50: rgb(176, 123, 107, 0.5);
   --black: rgb(20, 20, 20);
+  --offblack: rgb(35, 35, 35);
+  --grey-xdark: rgb(45, 45, 45);
+  --grey-dark: rgb(65, 65, 65);
+  --grey-mdark: rgb(85, 85, 85);
   --grey-medium: rgb(176, 176, 176);
+  --grey-xlight: rgb(200, 200, 200);
+  --offwhite: rgb(220, 220, 220);
+  --white: rgb(235, 235, 235);
   --bg-accent: var(--accent);
+  --bg-accent-transparent: var(--accent-50);
   --bg-primary: var(--black);
+  --bg-secondary: var(--offblack);
+  --bg-tertiary: var(--grey-xdark);
+  --bg-quaternary: var(--grey-dark);
   --text-on-accent: var(--black);
   --text-accent: var(--accent);
-  --text-primary: var(--grey-medium); }
+  --text-primary: var(--grey-medium);
+  --border-main: var(--grey-mdark); }
+
+body.lgFont {
+  --size-xs: 10px;
+  --size-sm: 12px;
+  --size-md: 14px;
+  --size-lg: 16px;
+  --size-xl: 18px; }
+
+body.light {
+  --bg-accent: var(--accent);
+  --bg-accent-transparent: var(--accent-50);
+  --bg-primary: var(--offwhite);
+  --bg-secondary: var(--white);
+  --bg-tertiary: var(--offwhite);
+  --bg-quaternary: var(--grey-medium);
+  --text-on-accent: var(--black);
+  --text-accent: var(--accent);
+  --text-primary: var(--grey-dark);
+  --border-main: var(--grey-medium); }
+  body.light.g-1,
+  body.light .g-1, body.light.g-2,
+  body.light .g-2, body.light.g-3,
+  body.light .g-3, body.light.g-5,
+  body.light .g-5 {
+    --accent: rgb(178, 220, 223);
+    --accent-50: rgb(178, 220, 223, 50); }
+  body.light.g-4,
+  body.light .g-4,
+  body.light [data-group="staff"],
+  body.light [data-group="Staff"],
+  body.light [data-group="STAFF"] {
+    --accent: rgb(140, 168, 161);
+    --accent-50: rgb(140, 168, 161, 0.5); }
+  body.light.g-6,
+  body.light .g-6,
+  body.light [data-group="writer"],
+  body.light [data-group="Writer"],
+  body.light [data-group="WRITER"] {
+    --accent: rgb(130, 147, 109);
+    --accent-50: rgb(130, 147, 109, 0.5); }
+  body.light.g-7,
+  body.light .g-7,
+  body.light [data-group="birch"],
+  body.light [data-group="Birch"],
+  body.light [data-group="BIRCH"] {
+    --accent: rgb(205, 177, 156);
+    --accent-50: rgb(205, 177, 156, 0.5); }
+  body.light.g-8,
+  body.light .g-8,
+  body.light [data-group="lupin"],
+  body.light [data-group="Lupin"],
+  body.light [data-group="LUPIN"] {
+    --accent: rgb(172, 143, 176);
+    --accent-50: rgb(172, 143, 176, 0.5); }
+  body.light.g-9,
+  body.light .g-9,
+  body.light [data-group="spruce"],
+  body.light [data-group="Spruce"],
+  body.light [data-group="SPRUCE"] {
+    --accent: rgb(119, 153, 141);
+    --accent-50: rgb(119, 153, 141, 0.5); }
+  body.light.g-10,
+  body.light .g-10,
+  body.light [data-group="dandelion"],
+  body.light [data-group="Dandelion"],
+  body.light [data-group="DANDELION"] {
+    --accent: rgb(174, 148, 99);
+    --accent-50: rgb(174, 148, 99, 0.5); }
+  body.light.g-11,
+  body.light .g-11,
+  body.light [data-group="blueberry"],
+  body.light [data-group="Blueberry"],
+  body.light [data-group="BLUEBERRY"] {
+    --accent: rgb(70, 120, 142);
+    --accent-50: rgb(70, 120, 14, 0.5); }
+  body.light.g-12,
+  body.light .g-12,
+  body.light [data-group="juniper"],
+  body.light [data-group="Juniper"],
+  body.light [data-group="JUNIPER"] {
+    --accent: rgb(112, 118, 159);
+    --accent-50: rgb(112, 118, 159, 0.5); }
+  body.light.g-13,
+  body.light .g-13,
+  body.light [data-group="hemlock"],
+  body.light [data-group="Hemlock"],
+  body.light [data-group="HEMLOCK"] {
+    --accent: rgb(151, 176, 174);
+    --accent-50: rgb(151, 176, 174, 0.5); }
+  body.light.g-14,
+  body.light .g-14,
+  body.light [data-group="nettle"],
+  body.light [data-group="Nettle"],
+  body.light [data-group="NETTLE"] {
+    --accent: rgb(145, 179, 139);
+    --accent-50: rgb(145, 179, 13, 0.5); }
+  body.light.g-15,
+  body.light .g-15,
+  body.light [data-group="amaranth"],
+  body.light [data-group="Amaranth"],
+  body.light [data-group="AMARANTH"] {
+    --accent: rgb(181, 111, 111);
+    --accent-50: rgb(181, 111, 111, 0.5); }
+  body.light.g-16,
+  body.light .g-16,
+  body.light [data-group="sundew"],
+  body.light [data-group="Sundew"],
+  body.light [data-group="SUNDEW"] {
+    --accent: rgb(189, 134, 101);
+    --accent-50: rgb(189, 134, 101, 0.5); }
+  body.light.g-17,
+  body.light .g-17,
+  body.light [data-group="tobacco"],
+  body.light [data-group="Tobacco"],
+  body.light [data-group="TOBACCO"] {
+    --accent: rgb(132, 97, 69);
+    --accent-50: rgb(132, 97, 69, 0.5); }
+  body.light.g-18,
+  body.light .g-18,
+  body.light [data-group="thistle"],
+  body.light [data-group="Thistle"],
+  body.light [data-group="THISTLE"] {
+    --accent: rgb(138, 102, 149);
+    --accent-50: rgb(138, 102, 149, 0.5); }
+  body.light.g-19,
+  body.light .g-19,
+  body.light [data-group="balsam"],
+  body.light [data-group="Balsam"],
+  body.light [data-group="BALSAM"] {
+    --accent: rgb(134, 124, 116);
+    --accent-50: rgb(134, 124, 116, 0.5); }
+  body.light.g-20,
+  body.light .g-20,
+  body.light [data-group="clover"],
+  body.light [data-group="Clover"],
+  body.light [data-group="CLOVER"] {
+    --accent: rgb(85, 111, 74);
+    --accent-50: rgb(85, 111, 74, 0.5); }
 
 body[class*="g-"],
 body [class*="g-"] {
   --bg-accent: var(--accent);
+  --bg-accent-transparent: var(--accent-50);
   --text-accent: var(--accent); }
 
 body.g-1,
@@ -55,119 +210,136 @@ body .g-1, body.g-2,
 body .g-2, body.g-3,
 body .g-3, body.g-5,
 body .g-5 {
-  --accent: rgb(178, 220, 223); }
+  --accent: rgb(178, 220, 223);
+  --accent-50: rgb(178, 220, 223, 50); }
 
 body.g-4,
 body .g-4,
 body [data-group="staff"],
 body [data-group="Staff"],
 body [data-group="STAFF"] {
-  --accent: rgb(140, 168, 161); }
+  --accent: rgb(140, 168, 161);
+  --accent-50: rgb(140, 168, 161, 0.5); }
 
 body.g-6,
 body .g-6,
 body [data-group="writer"],
 body [data-group="Writer"],
 body [data-group="WRITER"] {
-  --accent: rgb(130, 147, 109); }
+  --accent: rgb(130, 147, 109);
+  --accent-50: rgb(130, 147, 109, 0.5); }
 
 body.g-7,
 body .g-7,
 body [data-group="birch"],
 body [data-group="Birch"],
 body [data-group="BIRCH"] {
-  --accent: rgb(205, 177, 156); }
+  --accent: rgb(205, 177, 156);
+  --accent-50: rgb(205, 177, 156, 0.5); }
 
 body.g-8,
 body .g-8,
 body [data-group="lupin"],
 body [data-group="Lupin"],
 body [data-group="LUPIN"] {
-  --accent: rgb(172, 143, 176); }
+  --accent: rgb(172, 143, 176);
+  --accent-50: rgb(172, 143, 176, 0.5); }
 
 body.g-9,
 body .g-9,
 body [data-group="spruce"],
 body [data-group="Spruce"],
 body [data-group="SPRUCE"] {
-  --accent: rgb(119, 153, 141); }
+  --accent: rgb(119, 153, 141);
+  --accent-50: rgb(119, 153, 141, 0.5); }
 
 body.g-10,
 body .g-10,
 body [data-group="dandelion"],
 body [data-group="Dandelion"],
 body [data-group="DANDELION"] {
-  --accent: rgb(174, 148, 99); }
+  --accent: rgb(174, 148, 99);
+  --accent-50: rgb(174, 148, 99, 0.5); }
 
 body.g-11,
 body .g-11,
 body [data-group="blueberry"],
 body [data-group="Blueberry"],
 body [data-group="BLUEBERRY"] {
-  --accent: rgb(70, 120, 142); }
+  --accent: rgb(70, 120, 142);
+  --accent-50: rgb(70, 120, 14, 0.5); }
 
 body.g-12,
 body .g-12,
 body [data-group="juniper"],
 body [data-group="Juniper"],
 body [data-group="JUNIPER"] {
-  --accent: rgb(112, 118, 159); }
+  --accent: rgb(112, 118, 159);
+  --accent-50: rgb(112, 118, 159, 0.5); }
 
 body.g-13,
 body .g-13,
 body [data-group="hemlock"],
 body [data-group="Hemlock"],
 body [data-group="HEMLOCK"] {
-  --accent: rgb(91, 121, 118); }
+  --accent: rgb(91, 121, 118);
+  --accent-50: rgb(91, 121, 118, 0.5); }
 
 body.g-14,
 body .g-14,
 body [data-group="nettle"],
 body [data-group="Nettle"],
 body [data-group="NETTLE"] {
-  --accent: rgb(145, 179, 139); }
+  --accent: rgb(145, 179, 139);
+  --accent-50: rgb(145, 179, 13, 0.5); }
 
 body.g-15,
 body .g-15,
 body [data-group="amaranth"],
 body [data-group="Amaranth"],
 body [data-group="AMARANTH"] {
-  --accent: rgb(181, 111, 111); }
+  --accent: rgb(181, 111, 111);
+  --accent-50: rgb(181, 111, 111, 0.5); }
 
 body.g-16,
 body .g-16,
 body [data-group="sundew"],
 body [data-group="Sundew"],
 body [data-group="SUNDEW"] {
-  --accent: rgb(189, 134, 101); }
+  --accent: rgb(189, 134, 101);
+  --accent-50: rgb(189, 134, 101, 0.5); }
 
 body.g-17,
 body .g-17,
 body [data-group="tobacco"],
 body [data-group="Tobacco"],
 body [data-group="TOBACCO"] {
-  --accent: rgb(132, 97, 69); }
+  --accent: rgb(132, 97, 69);
+  --accent-50: rgb(132, 97, 69, 0.5); }
 
 body.g-18,
 body .g-18,
 body [data-group="thistle"],
 body [data-group="Thistle"],
 body [data-group="THISTLE"] {
-  --accent: rgb(138, 102, 149); }
+  --accent: rgb(138, 102, 149);
+  --accent-50: rgb(138, 102, 149, 0.5); }
 
 body.g-19,
 body .g-19,
 body [data-group="balsam"],
 body [data-group="Balsam"],
 body [data-group="BALSAM"] {
-  --accent: rgb(134, 124, 116); }
+  --accent: rgb(134, 124, 116);
+  --accent-50: rgb(134, 124, 116, 0.5); }
 
 body.g-20,
 body .g-20,
 body [data-group="clover"],
 body [data-group="Clover"],
 body [data-group="CLOVER"] {
-  --accent: rgb(85, 111, 74); }
+  --accent: rgb(85, 111, 74);
+  --accent-50: rgb(85, 111, 74, 0.5); }
 
 /*******************************
     Global
@@ -197,6 +369,65 @@ ol {
     ul li:not(:last-child),
     ol li:not(:last-child) {
       margin-bottom: 10px; }
+
+button {
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer; }
+
+tag-code {
+  display: -ms-grid;
+  display: grid;
+  gap: 10px; }
+  tag-code button {
+    border: 1px solid var(--bg-accent);
+    background: var(--bg-accent);
+    color: var(--text-on-accent);
+    font-weight: 700;
+    font-size: var(--size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s; }
+    tag-code button:hover {
+      background: none;
+      color: var(--text-primary); }
+  tag-code pre textarea {
+    width: 100%;
+    height: 100px;
+    background: var(--bg-quaternary);
+    border: 1px solid var(--border-main);
+    color: var(--text-primary);
+    padding: 5px 10px;
+    font-family: var(--font-body); }
+    .light tag-code pre textarea {
+      background: var(--bg-secondary); }
+
+.fa-brand {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 700; }
+
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-thin {
+  font-family: 'Font Awesome 6 Pro';
+  font-style: normal; }
+
+.fa-solid {
+  font-weight: 700; }
+
+.fa-regular {
+  font-weight: 500; }
+
+.fa-light {
+  font-weight: 300; }
+
+.fa-thin {
+  font-weight: 100; }
 
 /*******************************
     Utilities
@@ -684,9 +915,170 @@ tag-wrap[data-ratio="1:3"] tag-image {
 /*******************************
     Navigation
 ********************************/
-nav,
-#navstrip {
-  display: none; }
+.nav--main {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--size--main-menu-height);
+  background: var(--bg-primary);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+  padding: 5px 15px;
+  font-size: var(--size-sm);
+  color: var(--text-primary);
+  z-index: 10; }
+  .nav--main .button--menu .fa-xmark {
+    display: none; }
+  .nav--main .button--menu.is-open .fa-xmark {
+    display: initial; }
+  .nav--main .button--menu.is-open .fa-bars {
+    display: none; }
+  .nav--main button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--text-primary); }
+  .nav--main a {
+    color: var(--text-primary); }
+
+.nav--left {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px; }
+
+.nav--right {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px; }
+  .nav--right button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 5px; }
+    .nav--right button div {
+      width: 25px;
+      height: 5px;
+      border-radius: 2.5px;
+      background: var(--bg-quaternary); }
+      .nav--right button div span {
+        display: block;
+        width: 9px;
+        height: 9px;
+        margin: -2px auto -2px 0;
+        border-radius: 50%;
+        background: var(--bg-accent); }
+    .light .nav--right button.toggle--theme div,
+    .lgFont .nav--right button.toggle--size div {
+      background: var(--bg-accent-transparent); }
+      .light .nav--right button.toggle--theme div span,
+      .lgFont .nav--right button.toggle--size div span {
+        margin: -2px 0 -2px auto; }
+
+.nav--breadcrumb {
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--size--main-menu-height);
+  width: 100%;
+  height: var(--size--sub-menu-height);
+  background: var(--bg-secondary);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 15px;
+  font-size: var(--size-xs);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 10; }
+  .nav--breadcrumb a {
+    color: var(--text-primary); }
+
+.nav--popout {
+  position: fixed;
+  top: calc(var(--size--main-menu-height) + var(--size--sub-menu-height));
+  left: calc(-1 * var(--size--side-menu-width));
+  z-index: 10;
+  background: var(--bg-tertiary);
+  width: var(--size--side-menu-width);
+  height: calc(100vh - (var(--size--main-menu-height) + var(--size--sub-menu-height)));
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s; }
+  .nav--popout.is-open {
+    left: 0; }
+  .nav--popout > .scroll {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+    height: calc(100vh - (var(--size--main-menu-height) + var(--size--sub-menu-height)) - 20px);
+    width: calc(100% - 20px);
+    padding-right: 10px;
+    margin: 10px; }
+    .nav--popout > .scroll a {
+      border: 1px solid var(--bg-accent);
+      color: var(--text-accent);
+      text-transform: uppercase;
+      font-weight: 900;
+      text-align: center;
+      padding: 5px 10px;
+      font-size: var(--size-md);
+      letter-spacing: 0.1em;
+      -webkit-transition-duration: 0.3s;
+           -o-transition-duration: 0.3s;
+              transition-duration: 0.3s; }
+      .nav--popout > .scroll a:hover {
+        background: var(--bg-accent);
+        color: var(--text-on-accent); }
+      .light .nav--popout > .scroll a {
+        background: var(--bg-accent);
+        color: var(--text-on-accent); }
+        .light .nav--popout > .scroll a:hover {
+          color: var(--text-accent);
+          background: none; }
+
+.invisibleEl {
+  position: fixed;
+  z-index: -999999999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; }
+
+.invisibleEl.menu-open {
+  z-index: 9; }
 
 /*******************************
     Header
@@ -738,6 +1130,10 @@ body:not(#idx) header {
     color: var(--text-on-accent);
     -ms-grid-columns: auto clamp(400px, 40vw, 600px);
     grid-template-columns: auto clamp(400px, 40vw, 600px); }
+    @media (max-width: 1024px) {
+      .profile.is-first {
+        -ms-grid-columns: 100%;
+        grid-template-columns: 100%; } }
     .profile.is-first .profile--main tag-labelset.profile--menu {
       padding: 20px 0 20px 20px; }
     @media (max-width: 1024px) {
@@ -812,6 +1208,9 @@ body:not(#idx) header {
     padding: 60px 20px 20px 80px;
     top: 0;
     left: 0; }
+    @media (max-width: 1024px) {
+      .profile--overlay {
+        top: calc(var(--size--main-menu-height) + var(--size--sub-menu-height)); } }
     .profile--overlay h1 {
       display: -ms-grid;
       display: grid;
@@ -854,7 +1253,7 @@ body:not(#idx) header {
       @media (max-width: 1024px) {
         .is-first .profile--overlay {
           top: calc(100vh / 2);
-          width: calc(100vw - 320px); } }
+          width: calc(100vw - 340px); } }
       @media (max-width: 600px) {
         .is-first .profile--overlay {
           width: calc(100% - 40px); } }
@@ -896,7 +1295,7 @@ body:not(#idx) header {
           -ms-flex: 0 0 100%;
               flex: 0 0 100%; }
   .profile--main {
-    max-width: 100vw; }
+    max-width: 100%; }
     .profile--main tag-labelset.profile--menu {
       position: absolute;
       top: 433px;
@@ -920,7 +1319,7 @@ body:not(#idx) header {
       @media (max-width: 600px) {
         .profile--main tag-labelset.profile--menu {
           padding: 0 !important;
-          top: 27px;
+          top: calc(27px + var(--size--main-menu-height) + var(--size--sub-menu-height));
           background: none; } }
       @media (min-width: 1025px) {
         .profile--main tag-labelset.profile--menu {
@@ -1020,7 +1419,7 @@ body:not(#idx) header {
       font-style: normal; }
   .profile--icon {
     position: absolute;
-    top: 20px;
+    top: calc(20px + var(--size--main-menu-height) + var(--size--sub-menu-height));
     left: 20px;
     display: -ms-grid;
     display: grid;
@@ -1034,7 +1433,8 @@ body:not(#idx) header {
     z-index: 2; }
     @media (min-width: 1025px) {
       .profile--icon {
-        width: 100%; } }
+        width: 100%;
+        top: 20px; } }
     .profile--icon span {
       display: -webkit-box;
       display: -webkit-flex;
@@ -1371,7 +1771,10 @@ body:not(#idx) header {
       -ms-grid-columns: 1fr !important;
       grid-template-columns: 1fr !important; } }
   @media (max-width: 1024px) {
-    .profile--overlay, .profile--menu, .profile--icon {
+    .profile--overlay, .profile--icon {
+      position: fixed !important; } }
+  @media (max-width: 600px) {
+    .profile--menu {
       position: fixed !important; } }
 
 /*******************************

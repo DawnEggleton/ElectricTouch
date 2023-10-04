@@ -26,3 +26,59 @@ ol {
     ul li:not(:last-child),
     ol li:not(:last-child) {
       margin-bottom: 10px; }
+
+button {
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer; }
+
+tag-code {
+  display: grid;
+  gap: 10px; }
+  tag-code button {
+    border: 1px solid var(--bg-accent);
+    background: var(--bg-accent);
+    color: var(--text-on-accent);
+    font-weight: 700;
+    font-size: var(--size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition-duration: 0.3s; }
+    tag-code button:hover {
+      background: none;
+      color: var(--text-primary); }
+  tag-code pre textarea {
+    width: 100%;
+    height: 100px;
+    background: var(--bg-quaternary);
+    border: 1px solid var(--border-main);
+    color: var(--text-primary);
+    padding: 5px 10px;
+    font-family: var(--font-body); }
+    .light tag-code pre textarea {
+      background: var(--bg-secondary); }
+
+.fa-brand {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 700; }
+
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-thin {
+  font-family: 'Font Awesome 6 Pro';
+  font-style: normal; }
+
+.fa-solid {
+  font-weight: 700; }
+
+.fa-regular {
+  font-weight: 500; }
+
+.fa-light {
+  font-weight: 300; }
+
+.fa-thin {
+  font-weight: 100; }
