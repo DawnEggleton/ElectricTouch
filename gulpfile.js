@@ -82,6 +82,7 @@
         function watch(done) {
             gulp.watch(srcPath + '/**/*.js', gulp.series(scripts));
             gulp.watch(srcPath + '/**/*.scss', gulp.series(sass, css));
+            gulp.watch('./private/**/*.html', gulp.series(files));
             gulp.watch('./source/**/*.html', gulp.series(files));
             done();
         }
