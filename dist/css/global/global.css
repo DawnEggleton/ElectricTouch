@@ -3,7 +3,9 @@
 ********************************/
 body {
   font-family: var(--font-body);
-  font-size: var(--size-md); }
+  font-size: var(--size-md);
+  letter-spacing: 0.05em;
+  font-weight: 300; }
 
 ul,
 ol {

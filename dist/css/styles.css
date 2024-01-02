@@ -30,7 +30,8 @@ a {
     Variables
 ********************************/
 :root {
-  --font-body: 'Inter', sans-serif;
+  --font-header: 'Inter', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
   --size-xs: 8px;
   --size-sm: 10px;
   --size-md: 12px;
@@ -39,14 +40,14 @@ a {
   --size--main-menu-height: 40px;
   --size--sub-menu-height: 30px;
   --size--side-menu-width: 300px;
-  --accent: rgb(176, 123, 107);
-  --accent-50: rgb(176, 123, 107, 0.5);
+  --rgb: 176, 123, 107;
   --black: rgb(20, 20, 20);
   --offblack: rgb(35, 35, 35);
   --grey-xdark: rgb(45, 45, 45);
   --grey-dark: rgb(65, 65, 65);
   --grey-mdark: rgb(85, 85, 85);
   --grey-medium: rgb(176, 176, 176);
+  --grey-mlight: rgb(147, 147, 147);
   --grey-xlight: rgb(200, 200, 200);
   --offwhite: rgb(220, 220, 220);
   --white: rgb(235, 235, 235);
@@ -58,7 +59,8 @@ a {
   --bg-quaternary: var(--grey-dark);
   --text-on-accent: var(--black);
   --text-accent: var(--accent);
-  --text-primary: var(--grey-medium);
+  --text-primary: var(--grey-mlight);
+  --text-secondary: var(--grey-xlight);
   --border-main: var(--grey-mdark); }
 
 body.lgFont {
@@ -84,123 +86,109 @@ body.light {
   body.light .g-2, body.light.g-3,
   body.light .g-3, body.light.g-5,
   body.light .g-5 {
-    --accent: rgb(178, 220, 223);
-    --accent-50: rgb(178, 220, 223, 50); }
+    --rgb: 178, 220, 223; }
   body.light.g-4,
   body.light .g-4,
   body.light [data-group="staff"],
   body.light [data-group="Staff"],
   body.light [data-group="STAFF"] {
-    --accent: rgb(140, 168, 161);
-    --accent-50: rgb(140, 168, 161, 0.5); }
+    --rgb: 140, 168, 161; }
   body.light.g-6,
   body.light .g-6,
   body.light [data-group="writer"],
   body.light [data-group="Writer"],
   body.light [data-group="WRITER"] {
-    --accent: rgb(130, 147, 109);
-    --accent-50: rgb(130, 147, 109, 0.5); }
+    --rgb: 130, 147, 109; }
   body.light.g-7,
   body.light .g-7,
   body.light [data-group="birch"],
   body.light [data-group="Birch"],
   body.light [data-group="BIRCH"] {
-    --accent: rgb(205, 177, 156);
-    --accent-50: rgb(205, 177, 156, 0.5); }
+    --rgb: 205, 177, 156; }
   body.light.g-8,
   body.light .g-8,
   body.light [data-group="lupin"],
   body.light [data-group="Lupin"],
   body.light [data-group="LUPIN"] {
-    --accent: rgb(172, 143, 176);
-    --accent-50: rgb(172, 143, 176, 0.5); }
+    --rgb: 172, 143, 176; }
   body.light.g-9,
   body.light .g-9,
   body.light [data-group="spruce"],
   body.light [data-group="Spruce"],
   body.light [data-group="SPRUCE"] {
-    --accent: rgb(119, 153, 141);
-    --accent-50: rgb(119, 153, 141, 0.5); }
+    --rgb: 119, 153, 141; }
   body.light.g-10,
   body.light .g-10,
   body.light [data-group="dandelion"],
   body.light [data-group="Dandelion"],
   body.light [data-group="DANDELION"] {
-    --accent: rgb(174, 148, 99);
-    --accent-50: rgb(174, 148, 99, 0.5); }
+    --rgb: 174, 148, 99; }
   body.light.g-11,
   body.light .g-11,
   body.light [data-group="blueberry"],
   body.light [data-group="Blueberry"],
   body.light [data-group="BLUEBERRY"] {
-    --accent: rgb(70, 120, 142);
-    --accent-50: rgb(70, 120, 14, 0.5); }
+    --rgb: 70, 120, 142; }
   body.light.g-12,
   body.light .g-12,
   body.light [data-group="juniper"],
   body.light [data-group="Juniper"],
   body.light [data-group="JUNIPER"] {
-    --accent: rgb(112, 118, 159);
-    --accent-50: rgb(112, 118, 159, 0.5); }
+    --rgb: 112, 118, 159; }
   body.light.g-13,
   body.light .g-13,
   body.light [data-group="hemlock"],
   body.light [data-group="Hemlock"],
   body.light [data-group="HEMLOCK"] {
-    --accent: rgb(151, 176, 174);
-    --accent-50: rgb(151, 176, 174, 0.5); }
+    --rgb: 151, 176, 174; }
   body.light.g-14,
   body.light .g-14,
   body.light [data-group="nettle"],
   body.light [data-group="Nettle"],
   body.light [data-group="NETTLE"] {
-    --accent: rgb(145, 179, 139);
-    --accent-50: rgb(145, 179, 13, 0.5); }
+    --rgb: 145, 179, 139; }
   body.light.g-15,
   body.light .g-15,
   body.light [data-group="amaranth"],
   body.light [data-group="Amaranth"],
   body.light [data-group="AMARANTH"] {
-    --accent: rgb(181, 111, 111);
-    --accent-50: rgb(181, 111, 111, 0.5); }
+    --rgb: 181, 111, 111; }
   body.light.g-16,
   body.light .g-16,
   body.light [data-group="sundew"],
   body.light [data-group="Sundew"],
   body.light [data-group="SUNDEW"] {
-    --accent: rgb(189, 134, 101);
-    --accent-50: rgb(189, 134, 101, 0.5); }
+    --rgb: 189, 134, 101; }
   body.light.g-17,
   body.light .g-17,
   body.light [data-group="tobacco"],
   body.light [data-group="Tobacco"],
   body.light [data-group="TOBACCO"] {
-    --accent: rgb(132, 97, 69);
-    --accent-50: rgb(132, 97, 69, 0.5); }
+    --rgb: 132, 97, 69; }
   body.light.g-18,
   body.light .g-18,
   body.light [data-group="thistle"],
   body.light [data-group="Thistle"],
   body.light [data-group="THISTLE"] {
-    --accent: rgb(138, 102, 149);
-    --accent-50: rgb(138, 102, 149, 0.5); }
+    --rgb: 138, 102, 149; }
   body.light.g-19,
   body.light .g-19,
   body.light [data-group="balsam"],
   body.light [data-group="Balsam"],
   body.light [data-group="BALSAM"] {
-    --accent: rgb(134, 124, 116);
-    --accent-50: rgb(134, 124, 116, 0.5); }
+    --rgb: 134, 124, 116; }
   body.light.g-20,
   body.light .g-20,
   body.light [data-group="clover"],
   body.light [data-group="Clover"],
   body.light [data-group="CLOVER"] {
-    --accent: rgb(85, 111, 74);
-    --accent-50: rgb(85, 111, 74, 0.5); }
+    --rgb: 85, 111, 74; }
 
 body[class*="g-"],
 body [class*="g-"] {
+  --accent: rgb(var(--rgb));
+  --accent-50: rgba(var(--rgb), 0.5);
+  --border-accent: var(--accent);
   --bg-accent: var(--accent);
   --bg-accent-transparent: var(--accent-50);
   --text-accent: var(--accent); }
@@ -210,143 +198,128 @@ body .g-1, body.g-2,
 body .g-2, body.g-3,
 body .g-3, body.g-5,
 body .g-5 {
-  --accent: rgb(178, 220, 223);
-  --accent-50: rgb(178, 220, 223, 50); }
+  --rgb: 178, 220, 223; }
 
 body.g-4,
 body .g-4,
 body [data-group="staff"],
 body [data-group="Staff"],
 body [data-group="STAFF"] {
-  --accent: rgb(140, 168, 161);
-  --accent-50: rgb(140, 168, 161, 0.5); }
+  --rgb: 140, 168, 161; }
 
 body.g-6,
 body .g-6,
 body [data-group="writer"],
 body [data-group="Writer"],
 body [data-group="WRITER"] {
-  --accent: rgb(130, 147, 109);
-  --accent-50: rgb(130, 147, 109, 0.5); }
+  --rgb: 130, 147, 109; }
 
 body.g-7,
 body .g-7,
 body [data-group="birch"],
 body [data-group="Birch"],
 body [data-group="BIRCH"] {
-  --accent: rgb(205, 177, 156);
-  --accent-50: rgb(205, 177, 156, 0.5); }
+  --rgb: 205, 177, 156; }
 
 body.g-8,
 body .g-8,
 body [data-group="lupin"],
 body [data-group="Lupin"],
 body [data-group="LUPIN"] {
-  --accent: rgb(172, 143, 176);
-  --accent-50: rgb(172, 143, 176, 0.5); }
+  --rgb: 172, 143, 176; }
 
 body.g-9,
 body .g-9,
 body [data-group="spruce"],
 body [data-group="Spruce"],
 body [data-group="SPRUCE"] {
-  --accent: rgb(119, 153, 141);
-  --accent-50: rgb(119, 153, 141, 0.5); }
+  --rgb: 119, 153, 141; }
 
 body.g-10,
 body .g-10,
 body [data-group="dandelion"],
 body [data-group="Dandelion"],
 body [data-group="DANDELION"] {
-  --accent: rgb(174, 148, 99);
-  --accent-50: rgb(174, 148, 99, 0.5); }
+  --rgb: 174, 148, 99; }
 
 body.g-11,
 body .g-11,
 body [data-group="blueberry"],
 body [data-group="Blueberry"],
 body [data-group="BLUEBERRY"] {
-  --accent: rgb(70, 120, 142);
-  --accent-50: rgb(70, 120, 14, 0.5); }
+  --rgb: 70, 120, 142; }
 
 body.g-12,
 body .g-12,
 body [data-group="juniper"],
 body [data-group="Juniper"],
 body [data-group="JUNIPER"] {
-  --accent: rgb(112, 118, 159);
-  --accent-50: rgb(112, 118, 159, 0.5); }
+  --rgb: 112, 118, 159; }
 
 body.g-13,
 body .g-13,
 body [data-group="hemlock"],
 body [data-group="Hemlock"],
 body [data-group="HEMLOCK"] {
-  --accent: rgb(91, 121, 118);
-  --accent-50: rgb(91, 121, 118, 0.5); }
+  --rgb: 91, 121, 118; }
 
 body.g-14,
 body .g-14,
 body [data-group="nettle"],
 body [data-group="Nettle"],
 body [data-group="NETTLE"] {
-  --accent: rgb(145, 179, 139);
-  --accent-50: rgb(145, 179, 13, 0.5); }
+  --rgb: 145, 179, 139; }
 
 body.g-15,
 body .g-15,
 body [data-group="amaranth"],
 body [data-group="Amaranth"],
 body [data-group="AMARANTH"] {
-  --accent: rgb(181, 111, 111);
-  --accent-50: rgb(181, 111, 111, 0.5); }
+  --rgb: 181, 111, 111; }
 
 body.g-16,
 body .g-16,
 body [data-group="sundew"],
 body [data-group="Sundew"],
 body [data-group="SUNDEW"] {
-  --accent: rgb(189, 134, 101);
-  --accent-50: rgb(189, 134, 101, 0.5); }
+  --rgb: 189, 134, 101; }
 
 body.g-17,
 body .g-17,
 body [data-group="tobacco"],
 body [data-group="Tobacco"],
 body [data-group="TOBACCO"] {
-  --accent: rgb(132, 97, 69);
-  --accent-50: rgb(132, 97, 69, 0.5); }
+  --rgb: 132, 97, 69; }
 
 body.g-18,
 body .g-18,
 body [data-group="thistle"],
 body [data-group="Thistle"],
 body [data-group="THISTLE"] {
-  --accent: rgb(138, 102, 149);
-  --accent-50: rgb(138, 102, 149, 0.5); }
+  --rgb: 138, 102, 149; }
 
 body.g-19,
 body .g-19,
 body [data-group="balsam"],
 body [data-group="Balsam"],
 body [data-group="BALSAM"] {
-  --accent: rgb(134, 124, 116);
-  --accent-50: rgb(134, 124, 116, 0.5); }
+  --rgb: 134, 124, 116; }
 
 body.g-20,
 body .g-20,
 body [data-group="clover"],
 body [data-group="Clover"],
 body [data-group="CLOVER"] {
-  --accent: rgb(85, 111, 74);
-  --accent-50: rgb(85, 111, 74, 0.5); }
+  --rgb: 85, 111, 74; }
 
 /*******************************
     Global
 ********************************/
 body {
   font-family: var(--font-body);
-  font-size: var(--size-md); }
+  font-size: var(--size-md);
+  letter-spacing: 0.05em;
+  font-weight: 300; }
 
 ul,
 ol {
@@ -1215,6 +1188,7 @@ body:not(#idx) header {
       display: -ms-grid;
       display: grid;
       font-size: 16px;
+      font-family: var(--font-header);
       line-height: 100%;
       font-weight: 800; }
       @media only screen and (min-width: 480px) {
@@ -1235,7 +1209,8 @@ body:not(#idx) header {
             font-size: 48px; } }
     .profile--overlay .profile--links {
       display: none;
-      line-height: 120%; }
+      line-height: 120%;
+      font-family: var(--font-header); }
     .profile--overlay a {
       text-transform: uppercase;
       font-weight: 900;
@@ -1315,7 +1290,8 @@ body:not(#idx) header {
       z-index: 2;
       background: var(--bg-accent);
       padding: 0 20px 20px;
-      width: 300px; }
+      width: 300px;
+      font-family: var(--font-header); }
       @media (max-width: 600px) {
         .profile--main tag-labelset.profile--menu {
           padding: 0 !important;
@@ -1410,7 +1386,8 @@ body:not(#idx) header {
     gap: 8px;
     font-weight: 400;
     font-style: italic;
-    line-height: 100%; }
+    line-height: 100%;
+    font-family: var(--font-header); }
     .profile--played-by strong {
       display: block;
       font-weight: 900;
@@ -1430,7 +1407,8 @@ body:not(#idx) header {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
-    z-index: 2; }
+    z-index: 2;
+    font-family: var(--font-header); }
     @media (min-width: 1025px) {
       .profile--icon {
         width: 100%;
@@ -1471,28 +1449,26 @@ body:not(#idx) header {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    font-size: var(--size-md);
-    font-weight: 200;
-    letter-spacing: 0.1em; }
-    @media (min-width: 1281px) {
-      .profile--item {
-        font-size: var(--size-lg); } }
+    font-size: var(--size-md); }
     .profile--item strong {
-      background: var(--bg-accent);
       max-width: -webkit-max-content;
       max-width: -moz-max-content;
       max-width: max-content;
-      padding: 10px 15px;
       text-transform: uppercase;
-      font-size: var(--size-sm);
-      letter-spacing: 0.2em;
-      font-weight: 900;
-      color: var(--text-on-accent);
-      line-height: 100%; }
+      line-height: 100%;
+      border-radius: 15px;
+      background: var(--accent-50);
+      color: var(--text-secondary);
+      font-weight: 400;
+      font-size: var(--size-xs);
+      letter-spacing: 0.15em;
+      padding: 8px 15px;
+      margin-top: 5px;
+      border: 1px solid var(--border-accent); }
     .profile--item span {
-      border-left: 1px solid var(--bg-accent);
+      border-left: 1px dotted var(--bg-accent);
       padding: 10px 0 10px 12px;
-      margin-left: 10px; }
+      margin: -1px 0 0 10px; }
       .profile--item span a {
         color: var(--text-accent);
         font-weight: 600; }
@@ -1581,7 +1557,8 @@ body:not(#idx) header {
     gap: 10px;
     border-left: 1px solid var(--text-accent);
     margin: -20px 0 0 10px;
-    padding: 20px !important; }
+    padding: 20px !important;
+    font-family: var(--font-header); }
     @media (min-width: 1025px) {
       .profile--tracker-menu {
         display: -webkit-box;
@@ -1631,13 +1608,15 @@ body:not(#idx) header {
     height: max-content; }
     .profile--tracker-item a {
       color: var(--text-accent);
-      font-weight: 900; }
+      font-weight: 800; }
     .profile--tracker-item > a {
       font-size: var(--size-lg);
       text-transform: capitalize;
       line-height: 200%;
       display: block;
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      font-family: var(--font-header);
+      font-weight: 900; }
     .profile--tracker-item span:first-of-type {
       background: var(--bg-accent);
       color: var(--text-on-accent);
