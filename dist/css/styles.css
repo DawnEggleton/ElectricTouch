@@ -70,8 +70,7 @@ body.lgFont {
   --size-lg: 16px;
   --size-xl: 18px; }
 
-body.light,
-body .light {
+body.light {
   --bg-accent: var(--accent);
   --bg-accent-50: var(--accent-50);
   --bg-primary: var(--offwhite);
@@ -87,28 +86,13 @@ body .light {
   body.light .g-2, body.light.g-3,
   body.light .g-3, body.light.g-5,
   body.light .g-5, body.light.g-27,
-  body.light .g-27,
-  body .light.g-1,
-  body .light .g-1,
-  body .light.g-2,
-  body .light .g-2,
-  body .light.g-3,
-  body .light .g-3,
-  body .light.g-5,
-  body .light .g-5,
-  body .light.g-27,
-  body .light .g-27 {
+  body.light .g-27 {
     --rgb: 140, 158, 159; }
   body.light.g-7,
   body.light .g-7,
   body.light [data-group="birch"],
   body.light [data-group="Birch"],
-  body.light [data-group="BIRCH"],
-  body .light.g-7,
-  body .light .g-7,
-  body .light [data-group="birch"],
-  body .light [data-group="Birch"],
-  body .light [data-group="BIRCH"] {
+  body.light [data-group="BIRCH"] {
     --rgb: 179, 157, 142; }
 
 body[class*="g-"],

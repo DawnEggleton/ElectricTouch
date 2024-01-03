@@ -51,8 +51,7 @@ body {
         --size-lg: 16px;
         --size-xl: 18px;
     }
-    &.light,
-    .light {
+    &.light {
         --bg-accent: var(--accent);
         --bg-accent-50: var(--accent-50);
         --bg-primary: var(--offwhite);
