@@ -16,6 +16,34 @@
         <!--Main Body-->
         <main>
             <a name="top"></a>
+
+            <!--Temp-->
+            <div class="group-switcher">
+                <select>
+                    <option value="4">Admin</option>
+                    <option value="26">Ambassador</option>
+                    <option value="6">Writer</option>
+                    <option value="3">Misc Unsorted</option>
+                    <option value="15">Amaranth</option>
+                    <option value="19">Balsam</option>
+                    <option value="7">Birch</option>
+                    <option value="11">Blueberry</option>
+                    <option value="22">Cedar</option>
+                    <option value="20">Clover</option>
+                    <option value="10">Dandelion</option>
+                    <option value="25">Goldenrod</option>
+                    <option value="13">Hemlock</option>
+                    <option value="12">Juniper</option>
+                    <option value="23">Laurel</option>
+                    <option value="8">Lupin</option>
+                    <option value="14">Nettle</option>
+                    <option value="24">Sage</option>
+                    <option value="9">Spruce</option>
+                    <option value="16">Sundew</option>
+                    <option value="18">Thistle</option>
+                    <option value="17">Tobacco</option>
+                </select>
+            </div>
 		
 
             <!--Profile-->
@@ -418,9 +446,9 @@
                 document.querySelector('.profile--icon').innerHTML = `<span>${'Hemlock'[0]}</span>`;
 
                 let ratings = [
-                    {'type': 'lang', 'value': 'All'},
-                    {'type': 'sex', 'value': 'Mild'},
-                    {'type': 'vio', 'value': 'With Limits'}
+                    {'type': 'lang','value': 'All'},
+                    {'type': 'sex','value': 'Mild'},
+                    {'type': 'vio','value': 'With Limits'}
                 ];
                 ratings.forEach(rating => formatRating(rating));
 
@@ -508,6 +536,21 @@
 
         </div>
 
+        <style>
+            .group-switcher {
+                width: 100%;
+                background: var(--bg-primary);
+                padding: 5px;
+                z-index: 10;
+            }
+        </style>
+        <script>
+            document.querySelector('.group-switcher select').addEventListener('change', e => {
+                let groupID = e.currentTarget.options[e.currentTarget.selectedIndex].value;
+                document.querySelector('.profile').classList.remove('g-1','g-2','g-3','g-4','g-5','g-6','g-7','g-8','g-9','g-10','g-11','g-12','g-13','g-14','g-15','g-16','g-17','g-18','g-19','g-20','g-21','g-22','g-23','g-24','g-25','g-26','g-27');
+                document.querySelector('.profile').classList.add(`g-${groupID}`);
+            });
+        </script>
         
         @@include('../source/templates/scripts.html', {
             "prefix": "../dist"

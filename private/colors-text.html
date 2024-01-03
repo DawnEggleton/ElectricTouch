@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        @@include('../source/templates/head.html', {
+            "prefix": "../dist"
+        })  
+        <style>
+            .color-test {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                width: 100%;
+            }
+            .scheme {
+                padding: 20px 0;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                background: var(--bg-primary);
+            }
+            .scheme > div {
+                margin: 10px auto;
+                width: 200px;
+                text-align: center;
+                background: var(--bg-accent);
+                color: var(--text-on-accent);
+                color: var(--text-accent);
+                background: transparent;
+                padding: 15px;
+                font-size: var(--size-xs);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+            }
+        </style>
+    </head>
+    <body id="Pages" class="g-4">
+        @@include('../source/templates/header.html', {
+            "prefix": ".."
+        })
+      @@include('../source/templates/nav.html', {
+            "prefix": ".."
+        })
+
+        <!--Main Body-->
+        <main>
+            <a name="top"></a>
+		
+            
+            <!--Webpage-->
+            <section class="color-test">
+                <div class="scheme dark">
+                    <div class="g-1">Misc Groups</div>
+                    <div class="g-15">Amaranth</div>
+                    <div class="g-26">Ambassador</div>
+                    <div class="g-16">Sundew</div>
+                    <div class="g-7">Birch</div>
+                    <div class="g-22">Cedar</div>
+                    <div class="g-17">Tobacco</div>
+                    <div class="g-25">Goldenrod</div>
+                    <div class="g-10">Dandelion</div>
+                    <div class="g-24">Sage</div>
+                    <div class="g-6">Writer</div>
+                    <div class="g-20">Clover</div>
+                    <div class="g-14">Nettle</div>
+                    <div class="g-9">Spruce</div>
+                    <div class="g-4">Admin</div>
+                    <div class="g-13">Hemlock</div>
+                    <div class="g-11">Blueberry</div>
+                    <div class="g-12">Juniper</div>
+                    <div class="g-8">Lupin</div>
+                    <div class="g-18">Thistle</div>
+                    <div class="g-23">Laurel</div>
+                    <div class="g-19">Balsam</div>
+                </div>
+                <div class="scheme light">
+                    <div class="g-1">Misc Groups</div>
+                    <div class="g-15">Amaranth</div>
+                    <div class="g-26">Ambassador</div>
+                    <div class="g-16">Sundew</div>
+                    <div class="g-7">Birch</div>
+                    <div class="g-22">Cedar</div>
+                    <div class="g-17">Tobacco</div>
+                    <div class="g-25">Goldenrod</div>
+                    <div class="g-10">Dandelion</div>
+                    <div class="g-24">Sage</div>
+                    <div class="g-6">Writer</div>
+                    <div class="g-20">Clover</div>
+                    <div class="g-14">Nettle</div>
+                    <div class="g-9">Spruce</div>
+                    <div class="g-4">Admin</div>
+                    <div class="g-13">Hemlock</div>
+                    <div class="g-11">Blueberry</div>
+                    <div class="g-12">Juniper</div>
+                    <div class="g-8">Lupin</div>
+                    <div class="g-18">Thistle</div>
+                    <div class="g-23">Laurel</div>
+                    <div class="g-19">Balsam</div>
+                </div>
+            </section>
+        </main>
+
+        </div>
+<!-- Copyright Information -->
+        <div class="tableborder" align="center">
+            <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+                <div class="copyright" align="center">
+                    Powered by 
+                    <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a>
+                    (<a href="http://jcink.com" target="_blank">Jcink.com </a>
+                    <a href="https://jcink.com" target="_blank">Forum Hosting</a>
+                    ) © 2020 &nbsp;
+                    <a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a>
+                    <br>
+                    Page creation time: 0.0054 <!-- http://luxtradition.b1.jcink.com -->  · 
+                    <a href="index.php?act=Mobile">Mobile Version</a> · 
+                    <a href="index.php?act=privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div> 
+
+        
+        @@include('../source/templates/scripts.html', {
+            "prefix": "../dist"
+        })   
+    </body>
+</html>

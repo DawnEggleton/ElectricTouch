@@ -29,16 +29,16 @@
     --white: rgb(235, 235, 235);
 
     --bg-accent: var(--accent);
-    --bg-accent-transparent: var(--accent-50);
+    --bg-accent-50: var(--accent-50);
     --bg-primary: var(--black);
     --bg-secondary: var(--offblack);
     --bg-tertiary: var(--grey-xdark);
     --bg-quaternary: var(--grey-dark);
 
-    --text-on-accent: var(--black);
     --text-accent: var(--accent);
     --text-primary: var(--grey-mlight);
     --text-secondary: var(--grey-xlight);
+    --text-on-accent: var(--black);
 
     --border-main: var(--grey-mdark);
 }
@@ -51,17 +51,18 @@ body {
         --size-lg: 16px;
         --size-xl: 18px;
     }
-    &.light {
+    &.light,
+    .light {
         --bg-accent: var(--accent);
-        --bg-accent-transparent: var(--accent-50);
+        --bg-accent-50: var(--accent-50);
         --bg-primary: var(--offwhite);
         --bg-secondary: var(--white);
         --bg-tertiary: var(--offwhite);
         --bg-quaternary: var(--grey-medium);
     
-        --text-on-accent: var(--black);
         --text-accent: var(--accent);
         --text-primary: var(--grey-dark);
+        --text-secondary: var(--grey-xdark);
 
         --border-main: var(--grey-medium);
 
@@ -73,152 +74,19 @@ body {
         &.g-3,
         .g-3,
         &.g-5,
-        .g-5 {
-            --rgb: 178, 220, 223;
+        .g-5,
+        &.g-27,
+        .g-27 {
+            --rgb: 140, 158, 159;
         }
     
-        //Staff
-        &.g-4,
-        .g-4,
-        [data-group="staff"],
-        [data-group="Staff"],
-        [data-group="STAFF"] {
-            --rgb: 140, 168, 161;
-        }
-    
-        //Sorted
-        &.g-6,
-        .g-6,
-        [data-group="writer"],
-        [data-group="Writer"],
-        [data-group="WRITER"] {
-            --rgb: 130, 147, 109;
-        }
-        
         //Birch
         &.g-7,
         .g-7,
         [data-group="birch"],
         [data-group="Birch"],
         [data-group="BIRCH"] {
-            --rgb: 205, 177, 156;
-        }
-        
-        //Lupin
-        &.g-8,
-        .g-8,
-        [data-group="lupin"],
-        [data-group="Lupin"],
-        [data-group="LUPIN"] {
-            --rgb: 172, 143, 176;
-        }
-        
-        //Spruce
-        &.g-9,
-        .g-9,
-        [data-group="spruce"],
-        [data-group="Spruce"],
-        [data-group="SPRUCE"] {
-            --rgb: 119, 153, 141;
-        }
-        
-        //Dandelion
-        &.g-10,
-        .g-10,
-        [data-group="dandelion"],
-        [data-group="Dandelion"],
-        [data-group="DANDELION"] {
-            --rgb: 174, 148, 99;
-        }
-        
-        //Blueberry
-        &.g-11,
-        .g-11,
-        [data-group="blueberry"],
-        [data-group="Blueberry"],
-        [data-group="BLUEBERRY"] {
-            --rgb: 70, 120, 142;
-        }
-        
-        //Juniper
-        &.g-12,
-        .g-12,
-        [data-group="juniper"],
-        [data-group="Juniper"],
-        [data-group="JUNIPER"] {
-            --rgb: 112, 118, 159;
-        }
-        
-        //Hemlock
-        &.g-13,
-        .g-13,
-        [data-group="hemlock"],
-        [data-group="Hemlock"],
-        [data-group="HEMLOCK"] {
-            --rgb: 151, 176, 174;
-        }
-        
-        //Nettle
-        &.g-14,
-        .g-14,
-        [data-group="nettle"],
-        [data-group="Nettle"],
-        [data-group="NETTLE"] {
-            --rgb: 145, 179, 139;
-        }
-    
-        //Amaranth
-        &.g-15,
-        .g-15,
-        [data-group="amaranth"],
-        [data-group="Amaranth"],
-        [data-group="AMARANTH"] {
-            --rgb: 181, 111, 111;
-        }
-    
-        //Sundew
-        &.g-16,
-        .g-16,
-        [data-group="sundew"],
-        [data-group="Sundew"],
-        [data-group="SUNDEW"] {
-            --rgb: 189, 134, 101;
-        }
-    
-        //Tobacco
-        &.g-17,
-        .g-17,
-        [data-group="tobacco"],
-        [data-group="Tobacco"],
-        [data-group="TOBACCO"] {
-            --rgb: 132, 97, 69;
-        }
-    
-        //Thistle
-        &.g-18,
-        .g-18,
-        [data-group="thistle"],
-        [data-group="Thistle"],
-        [data-group="THISTLE"] {
-            --rgb: 138, 102, 149;
-        }
-    
-        //Balsam
-        &.g-19,
-        .g-19,
-        [data-group="balsam"],
-        [data-group="Balsam"],
-        [data-group="BALSAM"] {
-            --rgb: 134, 124, 116;
-        }
-    
-        //Clover
-        &.g-20,
-        .g-20,
-        [data-group="clover"],
-        [data-group="Clover"],
-        [data-group="CLOVER"] {
-            --rgb: 85, 111, 74;
+            --rgb: 179, 157, 142;
         }
     }
 
@@ -226,11 +94,13 @@ body {
     &[class*="g-"],
     [class*="g-"] {
         --accent: rgb(var(--rgb));
+        --accent-30: rgba(var(--rgb), 0.3);
         --accent-50: rgba(var(--rgb), 0.5);
 
         --border-accent: var(--accent);
         --bg-accent: var(--accent);
-        --bg-accent-transparent: var(--accent-50);
+        --bg-accent-30: var(--accent-30);
+        --bg-accent-50: var(--accent-50);
         --text-accent: var(--accent);
     }
 
@@ -242,8 +112,10 @@ body {
     &.g-3,
     .g-3,
     &.g-5,
-    .g-5 {
-        --rgb: 178, 220, 223;
+    .g-5,
+    &.g-27,
+    .g-27 {
+        --rgb: 177, 202, 204;
     }
 
     //Staff
@@ -252,7 +124,16 @@ body {
     [data-group="staff"],
     [data-group="Staff"],
     [data-group="STAFF"] {
-        --rgb: 140, 168, 161;
+        --rgb: 39, 113, 113;
+    }
+
+    //Ambassador
+    &.g-26,
+    .g-26,
+    [data-group="ambassador"],
+    [data-group="Ambassador"],
+    [data-group="AMBASSADOR"] {
+        --rgb: 151, 97, 71;
     }
 
     //Sorted
@@ -270,7 +151,7 @@ body {
     [data-group="birch"],
     [data-group="Birch"],
     [data-group="BIRCH"] {
-        --rgb: 205, 177, 156;
+        --rgb: 187, 166, 151;
     }
     
     //Lupin
@@ -279,7 +160,7 @@ body {
     [data-group="lupin"],
     [data-group="Lupin"],
     [data-group="LUPIN"] {
-        --rgb: 172, 143, 176;
+        --rgb: 159, 142, 162;
     }
     
     //Spruce
@@ -288,7 +169,7 @@ body {
     [data-group="spruce"],
     [data-group="Spruce"],
     [data-group="SPRUCE"] {
-        --rgb: 119, 153, 141;
+        --rgb: 106, 136, 119;
     }
     
     //Dandelion
@@ -297,7 +178,7 @@ body {
     [data-group="dandelion"],
     [data-group="Dandelion"],
     [data-group="DANDELION"] {
-        --rgb: 174, 148, 99;
+        --rgb: 189, 166, 96;
     }
     
     //Blueberry
@@ -315,7 +196,7 @@ body {
     [data-group="juniper"],
     [data-group="Juniper"],
     [data-group="JUNIPER"] {
-        --rgb: 112, 118, 159;
+        --rgb: 110, 115, 145;
     }
     
     //Hemlock
@@ -324,7 +205,7 @@ body {
     [data-group="hemlock"],
     [data-group="Hemlock"],
     [data-group="HEMLOCK"] {
-        --rgb: 91, 121, 118;
+        --rgb: 72, 104, 98;
     }
     
     //Nettle
@@ -333,7 +214,7 @@ body {
     [data-group="nettle"],
     [data-group="Nettle"],
     [data-group="NETTLE"] {
-        --rgb: 145, 179, 139;
+        --rgb: 119, 155, 113;
     }
 
     //Amaranth
@@ -342,7 +223,7 @@ body {
     [data-group="amaranth"],
     [data-group="Amaranth"],
     [data-group="AMARANTH"] {
-        --rgb: 181, 111, 111;
+        --rgb: 157, 99, 99;
     }
 
     //Sundew
@@ -369,7 +250,7 @@ body {
     [data-group="thistle"],
     [data-group="Thistle"],
     [data-group="THISTLE"] {
-        --rgb: 138, 102, 149;
+        --rgb: 119, 99, 125;
     }
 
     //Balsam
@@ -388,5 +269,41 @@ body {
     [data-group="Clover"],
     [data-group="CLOVER"] {
         --rgb: 85, 111, 74;
+    }
+
+    //Cedar
+    &.g-22,
+    .g-22,
+    [data-group="cedar"],
+    [data-group="Cedar"],
+    [data-group="CEDAR"] {
+        --rgb: 168, 127, 84;
+    }
+
+    //Laurel
+    &.g-23,
+    .g-23,
+    [data-group="laurel"],
+    [data-group="Laurel"],
+    [data-group="LAUREL"] {
+        --rgb: 115, 99, 108;
+    }
+
+    //Sage
+    &.g-24,
+    .g-24,
+    [data-group="sage"],
+    [data-group="Sage"],
+    [data-group="SAGE"] {
+        --rgb: 149, 155, 127;
+    }
+
+    //Goldenrod
+    &.g-25,
+    .g-25,
+    [data-group="goldenrod"],
+    [data-group="Goldenrod"],
+    [data-group="GOLDENROD"] {
+        --rgb: 168, 124, 38;
     }
 }

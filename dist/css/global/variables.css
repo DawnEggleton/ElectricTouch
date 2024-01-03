@@ -24,15 +24,15 @@
   --offwhite: rgb(220, 220, 220);
   --white: rgb(235, 235, 235);
   --bg-accent: var(--accent);
-  --bg-accent-transparent: var(--accent-50);
+  --bg-accent-50: var(--accent-50);
   --bg-primary: var(--black);
   --bg-secondary: var(--offblack);
   --bg-tertiary: var(--grey-xdark);
   --bg-quaternary: var(--grey-dark);
-  --text-on-accent: var(--black);
   --text-accent: var(--accent);
   --text-primary: var(--grey-mlight);
   --text-secondary: var(--grey-xlight);
+  --text-on-accent: var(--black);
   --border-main: var(--grey-mdark); }
 
 body.lgFont {
@@ -42,142 +42,79 @@ body.lgFont {
   --size-lg: 16px;
   --size-xl: 18px; }
 
-body.light {
+body.light,
+body .light {
   --bg-accent: var(--accent);
-  --bg-accent-transparent: var(--accent-50);
+  --bg-accent-50: var(--accent-50);
   --bg-primary: var(--offwhite);
   --bg-secondary: var(--white);
   --bg-tertiary: var(--offwhite);
   --bg-quaternary: var(--grey-medium);
-  --text-on-accent: var(--black);
   --text-accent: var(--accent);
   --text-primary: var(--grey-dark);
+  --text-secondary: var(--grey-xdark);
   --border-main: var(--grey-medium); }
   body.light.g-1,
   body.light .g-1, body.light.g-2,
   body.light .g-2, body.light.g-3,
   body.light .g-3, body.light.g-5,
-  body.light .g-5 {
-    --rgb: 178, 220, 223; }
-  body.light.g-4,
-  body.light .g-4,
-  body.light [data-group="staff"],
-  body.light [data-group="Staff"],
-  body.light [data-group="STAFF"] {
-    --rgb: 140, 168, 161; }
-  body.light.g-6,
-  body.light .g-6,
-  body.light [data-group="writer"],
-  body.light [data-group="Writer"],
-  body.light [data-group="WRITER"] {
-    --rgb: 130, 147, 109; }
+  body.light .g-5, body.light.g-27,
+  body.light .g-27,
+  body .light.g-1,
+  body .light .g-1,
+  body .light.g-2,
+  body .light .g-2,
+  body .light.g-3,
+  body .light .g-3,
+  body .light.g-5,
+  body .light .g-5,
+  body .light.g-27,
+  body .light .g-27 {
+    --rgb: 140, 158, 159; }
   body.light.g-7,
   body.light .g-7,
   body.light [data-group="birch"],
   body.light [data-group="Birch"],
-  body.light [data-group="BIRCH"] {
-    --rgb: 205, 177, 156; }
-  body.light.g-8,
-  body.light .g-8,
-  body.light [data-group="lupin"],
-  body.light [data-group="Lupin"],
-  body.light [data-group="LUPIN"] {
-    --rgb: 172, 143, 176; }
-  body.light.g-9,
-  body.light .g-9,
-  body.light [data-group="spruce"],
-  body.light [data-group="Spruce"],
-  body.light [data-group="SPRUCE"] {
-    --rgb: 119, 153, 141; }
-  body.light.g-10,
-  body.light .g-10,
-  body.light [data-group="dandelion"],
-  body.light [data-group="Dandelion"],
-  body.light [data-group="DANDELION"] {
-    --rgb: 174, 148, 99; }
-  body.light.g-11,
-  body.light .g-11,
-  body.light [data-group="blueberry"],
-  body.light [data-group="Blueberry"],
-  body.light [data-group="BLUEBERRY"] {
-    --rgb: 70, 120, 142; }
-  body.light.g-12,
-  body.light .g-12,
-  body.light [data-group="juniper"],
-  body.light [data-group="Juniper"],
-  body.light [data-group="JUNIPER"] {
-    --rgb: 112, 118, 159; }
-  body.light.g-13,
-  body.light .g-13,
-  body.light [data-group="hemlock"],
-  body.light [data-group="Hemlock"],
-  body.light [data-group="HEMLOCK"] {
-    --rgb: 151, 176, 174; }
-  body.light.g-14,
-  body.light .g-14,
-  body.light [data-group="nettle"],
-  body.light [data-group="Nettle"],
-  body.light [data-group="NETTLE"] {
-    --rgb: 145, 179, 139; }
-  body.light.g-15,
-  body.light .g-15,
-  body.light [data-group="amaranth"],
-  body.light [data-group="Amaranth"],
-  body.light [data-group="AMARANTH"] {
-    --rgb: 181, 111, 111; }
-  body.light.g-16,
-  body.light .g-16,
-  body.light [data-group="sundew"],
-  body.light [data-group="Sundew"],
-  body.light [data-group="SUNDEW"] {
-    --rgb: 189, 134, 101; }
-  body.light.g-17,
-  body.light .g-17,
-  body.light [data-group="tobacco"],
-  body.light [data-group="Tobacco"],
-  body.light [data-group="TOBACCO"] {
-    --rgb: 132, 97, 69; }
-  body.light.g-18,
-  body.light .g-18,
-  body.light [data-group="thistle"],
-  body.light [data-group="Thistle"],
-  body.light [data-group="THISTLE"] {
-    --rgb: 138, 102, 149; }
-  body.light.g-19,
-  body.light .g-19,
-  body.light [data-group="balsam"],
-  body.light [data-group="Balsam"],
-  body.light [data-group="BALSAM"] {
-    --rgb: 134, 124, 116; }
-  body.light.g-20,
-  body.light .g-20,
-  body.light [data-group="clover"],
-  body.light [data-group="Clover"],
-  body.light [data-group="CLOVER"] {
-    --rgb: 85, 111, 74; }
+  body.light [data-group="BIRCH"],
+  body .light.g-7,
+  body .light .g-7,
+  body .light [data-group="birch"],
+  body .light [data-group="Birch"],
+  body .light [data-group="BIRCH"] {
+    --rgb: 179, 157, 142; }
 
 body[class*="g-"],
 body [class*="g-"] {
   --accent: rgb(var(--rgb));
+  --accent-30: rgba(var(--rgb), 0.3);
   --accent-50: rgba(var(--rgb), 0.5);
   --border-accent: var(--accent);
   --bg-accent: var(--accent);
-  --bg-accent-transparent: var(--accent-50);
+  --bg-accent-30: var(--accent-30);
+  --bg-accent-50: var(--accent-50);
   --text-accent: var(--accent); }
 
 body.g-1,
 body .g-1, body.g-2,
 body .g-2, body.g-3,
 body .g-3, body.g-5,
-body .g-5 {
-  --rgb: 178, 220, 223; }
+body .g-5, body.g-27,
+body .g-27 {
+  --rgb: 177, 202, 204; }
 
 body.g-4,
 body .g-4,
 body [data-group="staff"],
 body [data-group="Staff"],
 body [data-group="STAFF"] {
-  --rgb: 140, 168, 161; }
+  --rgb: 39, 113, 113; }
+
+body.g-26,
+body .g-26,
+body [data-group="ambassador"],
+body [data-group="Ambassador"],
+body [data-group="AMBASSADOR"] {
+  --rgb: 151, 97, 71; }
 
 body.g-6,
 body .g-6,
@@ -191,28 +128,28 @@ body .g-7,
 body [data-group="birch"],
 body [data-group="Birch"],
 body [data-group="BIRCH"] {
-  --rgb: 205, 177, 156; }
+  --rgb: 187, 166, 151; }
 
 body.g-8,
 body .g-8,
 body [data-group="lupin"],
 body [data-group="Lupin"],
 body [data-group="LUPIN"] {
-  --rgb: 172, 143, 176; }
+  --rgb: 159, 142, 162; }
 
 body.g-9,
 body .g-9,
 body [data-group="spruce"],
 body [data-group="Spruce"],
 body [data-group="SPRUCE"] {
-  --rgb: 119, 153, 141; }
+  --rgb: 106, 136, 119; }
 
 body.g-10,
 body .g-10,
 body [data-group="dandelion"],
 body [data-group="Dandelion"],
 body [data-group="DANDELION"] {
-  --rgb: 174, 148, 99; }
+  --rgb: 189, 166, 96; }
 
 body.g-11,
 body .g-11,
@@ -226,28 +163,28 @@ body .g-12,
 body [data-group="juniper"],
 body [data-group="Juniper"],
 body [data-group="JUNIPER"] {
-  --rgb: 112, 118, 159; }
+  --rgb: 110, 115, 145; }
 
 body.g-13,
 body .g-13,
 body [data-group="hemlock"],
 body [data-group="Hemlock"],
 body [data-group="HEMLOCK"] {
-  --rgb: 91, 121, 118; }
+  --rgb: 72, 104, 98; }
 
 body.g-14,
 body .g-14,
 body [data-group="nettle"],
 body [data-group="Nettle"],
 body [data-group="NETTLE"] {
-  --rgb: 145, 179, 139; }
+  --rgb: 119, 155, 113; }
 
 body.g-15,
 body .g-15,
 body [data-group="amaranth"],
 body [data-group="Amaranth"],
 body [data-group="AMARANTH"] {
-  --rgb: 181, 111, 111; }
+  --rgb: 157, 99, 99; }
 
 body.g-16,
 body .g-16,
@@ -268,7 +205,7 @@ body .g-18,
 body [data-group="thistle"],
 body [data-group="Thistle"],
 body [data-group="THISTLE"] {
-  --rgb: 138, 102, 149; }
+  --rgb: 119, 99, 125; }
 
 body.g-19,
 body .g-19,
@@ -283,3 +220,31 @@ body [data-group="clover"],
 body [data-group="Clover"],
 body [data-group="CLOVER"] {
   --rgb: 85, 111, 74; }
+
+body.g-22,
+body .g-22,
+body [data-group="cedar"],
+body [data-group="Cedar"],
+body [data-group="CEDAR"] {
+  --rgb: 168, 127, 84; }
+
+body.g-23,
+body .g-23,
+body [data-group="laurel"],
+body [data-group="Laurel"],
+body [data-group="LAUREL"] {
+  --rgb: 115, 99, 108; }
+
+body.g-24,
+body .g-24,
+body [data-group="sage"],
+body [data-group="Sage"],
+body [data-group="SAGE"] {
+  --rgb: 149, 155, 127; }
+
+body.g-25,
+body .g-25,
+body [data-group="goldenrod"],
+body [data-group="Goldenrod"],
+body [data-group="GOLDENROD"] {
+  --rgb: 168, 124, 38; }

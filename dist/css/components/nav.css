@@ -54,7 +54,7 @@
         background: var(--bg-accent); }
     .light .nav--right button.toggle--theme div,
     .lgFont .nav--right button.toggle--size div {
-      background: var(--bg-accent-transparent); }
+      background: var(--bg-accent-50); }
       .light .nav--right button.toggle--theme div span,
       .lgFont .nav--right button.toggle--size div span {
         margin: -2px 0 -2px auto; }
