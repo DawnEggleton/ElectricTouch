@@ -91,6 +91,7 @@
             <!--Temp-->
             <div class="group-switcher">
                 <select>
+                    <option value="3">Misc Unsorted</option>
                     <option value="15">Amaranth</option>
                     <option value="19">Balsam</option>
                     <option value="7">Birch</option>
@@ -109,13 +110,12 @@
                     <option value="16">Sundew</option>
                     <option value="18">Thistle</option>
                     <option value="17">Tobacco</option>
-                    <option value="3">Unsorted</option>
                 </select>
             </div>
 		
 
             <!--Profile-->
-            <section class="profile g-13 account-type--character">
+            <section class="profile g-13">
                 <div class="profile--main">
                     <div class="profile--icon"></div>
                     <div class="profile--overlay">
@@ -137,7 +137,7 @@
                         <a href="#details" title="Details">3</a>
                         <a href="#plotting" title="Plotting">4</a>
                         <a href="#tracker" title="Tracker">5</a>
-                        <a href="#player" title="Player"><span class="charOnly">6</span><span class="memAccOnly">2</span></a>
+                        <a href="#player" title="Player">6</a>
                     </tag-labelset>
                     <tag-tabset>
                         <tag-tab data-key="#intro">
@@ -507,7 +507,6 @@
                     </tag-tabset>
                 </div>
                 <div class="profile--aesthetic Single"></div>
-                <div class="profile--roster memAccOnly"><div class="profile--roster-inner"><div class="scroll"></div></div></div>
             </section>
             <script>
                 document.querySelector('.profile--name').innerHTML = formatName(`Nikolas Kovac`);
@@ -522,112 +521,65 @@
                 ratings.forEach(rating => formatRating(rating));
 
                 //characters only
-                function charactersOnly() {
-                    document.querySelectorAll('.memAccOnly').forEach(item => item.remove());
+                document.querySelectorAll('.memAccOnly').forEach(item => item.remove());
 
-                    let warnings = `This app contains depictions of a life-ending head injury (brother) and other severe injuries, due to accidents, physical abuse, and apparent divine intervention (burns, open wounds, broken bones, lightning strike). There are mentions of a suicide attempt/suicidal ideation and behaviour akin to a depressive episode. Additionally, there are mentions of wars and massacres in some detail.`;
-                    if(warnings !== `` && warnings !== `<i>No Information</i>`) {
-                        document.querySelector('.profile--warnings').innerHTML = `<div class="profile--warning-icon"><i class="fa-regular fa-triangle-exclamation"></i></div>
-                        <span class="scroll">${warnings}</span>`;
-                    }
-
-                    let aestheticLayout = `Single`;
-                    let images;
-                    switch (aestheticLayout) {
-                        case 'Mosaic':
-                            images = `<span class="twoWide"><img src="https://picsum.photos/1000" /></span>
-                            <span class="twoWide"><img src="https://picsum.photos/1000" /></span>
-                            <span><img src="https://picsum.photos/1000" /></span>
-                            <span class="twoWide"><img src="https://picsum.photos/1000" /></span>
-                            <span class="twoHigh"><img src="https://picsum.photos/1000" /></span>
-                            <span class="threeWide"><img src="https://picsum.photos/1000" /></span>`;
-                            break;
-                        case 'Grid':
-                            images = `<span class="twoWide"><img src="https://picsum.photos/1000" /></span>
-                            <span class="twoHigh"><img src="https://picsum.photos/1000" /></span>
-                            <span><img src="https://picsum.photos/1000" /></span>
-                            <span><img src="https://picsum.photos/1000" /></span>`;
-                            break;
-                        case 'Single':
-                        default: 
-                            images = `<span><img src="https://64.media.tumblr.com/bdf44fbac68a03966e87193181bb8755/b54f37b3591867f2-d7/s1280x1920/63e0f589911b515142a6ebb6799613b7c7a4330a.jpg" /></span>`;
-                            break;
-                    }
-                    document.querySelector('.profile--aesthetic').innerHTML = images;
-
-                    /*
-                    let current = new Date();
-                    let year = current.getFullYear();
-                    let month = current.getMonth() + 1;
-                    let day = current.getDate();
-                    let bYear = `1907`;
-                    let bMonth = setMonth(`July`);;
-                    let bDay = `10`;
-                    let age = ``;
-                    if(bMonth < month || (bMonth === month && bDay <= day)) {
-                        age = year - bYear;
-                    } else {
-                        age = year - bYear - 1;
-                    }
-                    document.querySelector('age-clip').innerText = age;
-
-                    let species = `Phoenix`;
-                    if(species === `Hybrid`) {
-                        species = `Hybrid Text`;
-                    }
-                    document.querySelector('#species-clip').innerHTML = species;
-
-                    let overflow = ``;
-                    if(overflow !== `` && overflow !== `<i>No Information</i>`) {
-                        document.querySelector('.profile--freeform').insertAdjacentHTML('beforeend', overflow);
-                    }
-                    */
+                let warnings = `This app contains depictions of a life-ending head injury (brother) and other severe injuries, due to accidents, physical abuse, and apparent divine intervention (burns, open wounds, broken bones, lightning strike). There are mentions of a suicide attempt/suicidal ideation and behaviour akin to a depressive episode. Additionally, there are mentions of wars and massacres in some detail.`;
+                if(warnings !== `` && warnings !== `<i>No Information</i>`) {
+                    document.querySelector('.profile--warnings').innerHTML = `<div class="profile--warning-icon"><i class="fa-regular fa-triangle-exclamation"></i></div>
+                    <span class="scroll">${warnings}</span>`;
                 }
 
-                //members only
-                function membersOnly() {
-                    document.querySelectorAll('.charOnly').forEach(item => item.remove());
-                    // SUBACCOUNTS PROFILE DISPLAY SCRIPT (ABC ORDER) by tonya aka wildflower
-                    function Alpha(arr) {
-                        let newArr = Array.prototype.slice.call(arr).map(item => {
-                            if (item.value === '-------------------') {
-                                return null
-                            }
-                            return {
-                                character: item.innerText.trim().toLowerCase().replace(`» `, ``),
-                                account: item.value
-                            }
-                        }).filter(item => item !== null)
-                        .sort((a, b) => {
-                            if(a.character > b.character) {
-                                return 1;
-                            } else if (a.character < b.character) {
-                                return -1;
-                            } else {
-                                return 0;
-                            }
-                        });
-                        return newArr;
-                    }
-
-                    let alphaChars = Alpha(document.querySelectorAll('select[name=showuser] option'));
-                    let siteString = `uploads2/godlybehaviour`;
-                    alphaChars.forEach(character => {
-                            let imageDiv = `<div class="profile--account-image" style="background-image:url(https://files.jcink.net/${siteString}/av-${character.account}.png), url(https://files.jcink.net/${siteString}/av-${character.account}.gif), url(https://files.jcink.net/${siteString}/av-${character.account}.jpg), url(https://files.jcink.net/${siteString}/av-${character.account}.jpeg);"></div>`;
-
-                            let html = `<a class="profile--account" href="?showuser=${character.account}">
-                                ${imageDiv}
-                                <div class="profile--account-info">
-                                    <b>${character.character}</b>
-                                    <span>view profile</span>
-                                </div>
-                            </a>`;
-
-                            document.querySelector('.profile--roster-inner .scroll').insertAdjacentHTML('beforeend', html);
-                    });
+                let aestheticLayout = `Single`;
+                let images;
+                switch (aestheticLayout) {
+                    case 'Mosaic':
+                        images = `<span class="twoWide"><img src="https://picsum.photos/1000" /></span>
+                        <span class="twoWide"><img src="https://picsum.photos/1000" /></span>
+                        <span><img src="https://picsum.photos/1000" /></span>
+                        <span class="twoWide"><img src="https://picsum.photos/1000" /></span>
+                        <span class="twoHigh"><img src="https://picsum.photos/1000" /></span>
+                        <span class="threeWide"><img src="https://picsum.photos/1000" /></span>`;
+                        break;
+                    case 'Grid':
+                        images = `<span class="twoWide"><img src="https://picsum.photos/1000" /></span>
+                        <span class="twoHigh"><img src="https://picsum.photos/1000" /></span>
+                        <span><img src="https://picsum.photos/1000" /></span>
+                        <span><img src="https://picsum.photos/1000" /></span>`;
+                        break;
+                    case 'Single':
+                    default: 
+                        images = `<span><img src="https://64.media.tumblr.com/bdf44fbac68a03966e87193181bb8755/b54f37b3591867f2-d7/s1280x1920/63e0f589911b515142a6ebb6799613b7c7a4330a.jpg" /></span>`;
+                        break;
                 }
+                document.querySelector('.profile--aesthetic').innerHTML = images;
 
-                charactersOnly();
+                /*
+                let current = new Date();
+                let year = current.getFullYear();
+                let month = current.getMonth() + 1;
+                let day = current.getDate();
+                let bYear = `1907`;
+                let bMonth = setMonth(`July`);;
+                let bDay = `10`;
+                let age = ``;
+                if(bMonth < month || (bMonth === month && bDay <= day)) {
+                    age = year - bYear;
+                } else {
+                    age = year - bYear - 1;
+                }
+                document.querySelector('age-clip').innerText = age;
+
+                let species = `Phoenix`;
+                if(species === `Hybrid`) {
+                    species = `Hybrid Text`;
+                }
+                document.querySelector('#species-clip').innerHTML = species;
+
+                let overflow = ``;
+                if(overflow !== `` && overflow !== `<i>No Information</i>`) {
+                    document.querySelector('.profile--freeform').insertAdjacentHTML('beforeend', overflow);
+                }
+                */
                 
                 initProfile();
             </script>
@@ -663,10 +615,8 @@
         <script>
             document.querySelector('.group-switcher select').addEventListener('change', e => {
                 let groupID = e.currentTarget.options[e.currentTarget.selectedIndex].value;
-                let groupName = e.currentTarget.options[e.currentTarget.selectedIndex].innerText;
                 document.querySelector('.profile').classList.remove('g-1','g-2','g-3','g-4','g-5','g-6','g-7','g-8','g-9','g-10','g-11','g-12','g-13','g-14','g-15','g-16','g-17','g-18','g-19','g-20','g-21','g-22','g-23','g-24','g-25','g-26','g-27');
                 document.querySelector('.profile').classList.add(`g-${groupID}`);
-                document.querySelector('.profile--icon').innerHTML = `<span>${groupName[0]}</span>`;
             });
         </script>
         

@@ -96,7 +96,7 @@ function toggleSideMenu(e) {
 
 /****** Profile Initialization ******/
 function formatName(name) {
-    let nameArray = capitalize(name).split(' ');
+    let nameArray = capitalize(name).split(' ').filter(item => item !== '');
     let formattedName = ``;
     if(nameArray.length > 1) {
         let surnames = [...nameArray];

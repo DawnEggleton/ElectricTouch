@@ -91,7 +91,7 @@ body .g-4,
 body [data-group="staff"],
 body [data-group="Staff"],
 body [data-group="STAFF"] {
-  --rgb: 39, 113, 113; }
+  --rgb: 130, 147, 109; }
 
 body.g-26,
 body .g-26,
@@ -105,7 +105,7 @@ body .g-6,
 body [data-group="writer"],
 body [data-group="Writer"],
 body [data-group="WRITER"] {
-  --rgb: 130, 147, 109; }
+  --rgb: 39, 113, 113; }
 
 body.g-7,
 body .g-7,

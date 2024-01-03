@@ -119,7 +119,7 @@ body .g-4,
 body [data-group="staff"],
 body [data-group="Staff"],
 body [data-group="STAFF"] {
-  --rgb: 39, 113, 113; }
+  --rgb: 130, 147, 109; }
 
 body.g-26,
 body .g-26,
@@ -133,7 +133,7 @@ body .g-6,
 body [data-group="writer"],
 body [data-group="Writer"],
 body [data-group="WRITER"] {
-  --rgb: 130, 147, 109; }
+  --rgb: 39, 113, 113; }
 
 body.g-7,
 body .g-7,
@@ -1118,6 +1118,77 @@ body:not(#idx) header {
     .profile--aesthetic .twoHigh {
       -ms-grid-row-span: 2;
       grid-row: span 2; }
+  .profile--roster {
+    background: var(--bg-accent);
+    padding: 20px; }
+    @media (max-width: 1024px) {
+      .profile--roster {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 433px;
+        width: 300px;
+        z-index: 2; } }
+    @media (max-width: 600px) {
+      .profile.is-first .profile--roster {
+        top: auto;
+        bottom: 0;
+        height: 250px;
+        width: 100%;
+        right: 0; }
+      .profile:not(.is-first) .profile--roster {
+        right: -100%; } }
+    .profile--roster-inner {
+      height: 100%;
+      border: 1px solid var(--text-on-accent); }
+      .profile--roster-inner .scroll {
+        height: calc(100% - 30px);
+        scrollbar-color: var(--text-on-accent) transparent;
+        margin: 15px 7.5px 15px 15px;
+        padding-right: 7.5px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        gap: 5px; }
+  .profile--account {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 35px auto;
+    grid-template-columns: 35px auto;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .profile--account-image {
+      width: 35px;
+      height: 35px;
+      border: 1px solid var(--text-on-accent);
+      background-size: cover; }
+    .profile--account-info {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+      line-height: 25px; }
+      .profile--account-info b {
+        font-family: var(--font-header);
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: var(--size-md);
+        padding-left: 10px;
+        border-bottom: 1px solid var(--text-on-accent); }
+      .profile--account-info span {
+        text-transform: uppercase;
+        font-size: var(--size-xs);
+        letter-spacing: 0.15em;
+        font-weight: 500;
+        padding-left: 10px; }
   .profile--overlay {
     position: absolute;
     background: var(--bg-accent);
@@ -1703,6 +1774,12 @@ body:not(#idx) header {
   @media (max-width: 600px) {
     .profile--menu {
       position: fixed !important; } }
+  .profile .memAccOnly {
+    display: none; }
+  .profile.g-4 .charOnly, .profile.g-26 .charOnly, .profile.g-6 .charOnly, .profile.g-3.account-type--member .charOnly {
+    display: none !important; }
+  .profile.g-4 .memAccOnly, .profile.g-26 .memAccOnly, .profile.g-6 .memAccOnly, .profile.g-3.account-type--member .memAccOnly {
+    display: initial !important; }
 
 /*******************************
     Member List
