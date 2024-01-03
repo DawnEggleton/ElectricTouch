@@ -1389,11 +1389,11 @@ body:not(#idx) header {
         -webkit-flex: 0 0 100%;
             -ms-flex: 0 0 100%;
                 flex: 0 0 100%;
-        margin-top: 90px;
+        margin-top: 118px;
         padding: 20px; }
         @media (min-width: 601px) {
           .profile--main > tag-tabset > tag-tab {
-            margin-top: 100px; } }
+            margin-top: 128px; } }
         @media (min-width: 1025px) {
           .profile--main > tag-tabset > tag-tab {
             margin-top: 158px; } }

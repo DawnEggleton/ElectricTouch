@@ -362,11 +362,11 @@
             & > tag-tab {
                 width: 100%;
                 flex: 0 0 100%;
-                margin-top: 90px;
+                margin-top: 118px;
                 padding: 20px;
 
                 @include mq-up(xs) {
-                    margin-top: 100px;
+                    margin-top: 128px;
                 }
 
                 @include mq-up(md) {
