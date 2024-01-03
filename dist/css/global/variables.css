@@ -14,6 +14,7 @@
   --size--side-menu-width: 300px;
   --rgb: 176, 123, 107;
   --black: rgb(20, 20, 20);
+  --black-75: rgba(20, 20, 20, 0.75);
   --offblack: rgb(35, 35, 35);
   --grey-xdark: rgb(45, 45, 45);
   --grey-dark: rgb(65, 65, 65);
@@ -23,12 +24,14 @@
   --grey-xlight: rgb(200, 200, 200);
   --offwhite: rgb(220, 220, 220);
   --white: rgb(235, 235, 235);
+  --white-75: rgba(235, 235, 235, 0.75);
   --bg-accent: var(--accent);
   --bg-accent-50: var(--accent-50);
   --bg-primary: var(--black);
   --bg-secondary: var(--offblack);
   --bg-tertiary: var(--grey-xdark);
   --bg-quaternary: var(--grey-dark);
+  --bg-transparent: var(--black-75);
   --text-accent: var(--accent);
   --text-primary: var(--grey-mlight);
   --text-secondary: var(--grey-xlight);
@@ -49,6 +52,7 @@ body.light {
   --bg-secondary: var(--white);
   --bg-tertiary: var(--offwhite);
   --bg-quaternary: var(--grey-medium);
+  --bg-transparent: var(--white-75);
   --text-accent: var(--accent);
   --text-primary: var(--grey-dark);
   --text-secondary: var(--grey-xdark);

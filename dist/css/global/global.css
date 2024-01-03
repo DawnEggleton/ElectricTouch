@@ -5,7 +5,12 @@ body {
   font-family: var(--font-body);
   font-size: var(--size-md);
   letter-spacing: 0.05em;
-  font-weight: 300; }
+  font-weight: 300;
+  background: var(--bg-primary);
+  color: var(--text-primary); }
+
+a {
+  color: var(--text-accent); }
 
 ul,
 ol {
