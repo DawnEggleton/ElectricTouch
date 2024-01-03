@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="profile--item">
                                     <strong>Age</strong>
-                                    <span>116 years old</span>
+                                    <span><age-clip></age-clip> years old</span>
                                 </div>
                                 <div class="profile--item">
                                     <strong>Birthday</strong>
@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="profile--item">
                                     <strong>Species</strong>
-                                    <span>Phoenix</span>
+                                    <span><species-clip></species-clip></span>
                                 </div>
                                 <div class="profile--item">
                                     <strong>Gender & Pronouns</strong>
@@ -484,7 +484,6 @@
                     }
                     document.querySelector('.profile--aesthetic').innerHTML = images;
 
-                    /*
                     let current = new Date();
                     let year = current.getFullYear();
                     let month = current.getMonth() + 1;
@@ -504,13 +503,12 @@
                     if(species === `Hybrid`) {
                         species = `Hybrid Text`;
                     }
-                    document.querySelector('#species-clip').innerHTML = species;
+                    document.querySelector('species-clip').innerHTML = species;
 
                     let overflow = ``;
                     if(overflow !== `` && overflow !== `<i>No Information</i>`) {
-                        document.querySelector('.profile--freeform').insertAdjacentHTML('beforeend', overflow);
+                        document.querySelector('tag-tab[data-key="#details"] .profile--main-scroll .scroll').insertAdjacentHTML('beforeend', overflow);
                     }
-                    */
                 }
 
                 //members only

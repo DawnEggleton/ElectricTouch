@@ -162,6 +162,7 @@
             height: 35px;
             border: 1px solid var(--text-on-accent);
             background-size: cover;
+            background-position: center;
         }
         &-info {
             display: grid;
@@ -361,8 +362,12 @@
             & > tag-tab {
                 width: 100%;
                 flex: 0 0 100%;
-                margin-top: 135px;
+                margin-top: 90px;
                 padding: 20px;
+
+                @include mq-up(xs) {
+                    margin-top: 100px;
+                }
 
                 @include mq-up(md) {
                     margin-top: 158px;

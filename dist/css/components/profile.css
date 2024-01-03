@@ -113,7 +113,8 @@
       width: 35px;
       height: 35px;
       border: 1px solid var(--text-on-accent);
-      background-size: cover; }
+      background-size: cover;
+      background-position: center; }
     .profile--account-info {
       display: grid;
       grid-template-rows: repeat(2, 1fr);
@@ -286,8 +287,11 @@
       .profile--main > tag-tabset > tag-tab {
         width: 100%;
         flex: 0 0 100%;
-        margin-top: 135px;
+        margin-top: 90px;
         padding: 20px; }
+        @media (min-width: 601px) {
+          .profile--main > tag-tabset > tag-tab {
+            margin-top: 100px; } }
         @media (min-width: 1025px) {
           .profile--main > tag-tabset > tag-tab {
             margin-top: 158px; } }
