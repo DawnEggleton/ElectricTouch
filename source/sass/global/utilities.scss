@@ -3,6 +3,25 @@
 /*******************************
     Utilities
 ********************************/
+.onlyMobile {
+    @include mq-up(sm) {
+        display: none;
+    }
+}
+.notMobile {
+    @include mq-down(sm) {
+        display: none;
+    }
+}
+.guestOnly,
+.staffOnly {
+    display: none;
+}
+body.g-2 .guestOnly,
+body.g-4 .staffOnly,
+body.g-26 .staffOnly {
+    display: initial;
+}
 .scroll {
     overflow: auto;
     scrollbar-color: var(--bg-accent) transparent;

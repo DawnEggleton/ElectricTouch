@@ -58,10 +58,14 @@
             gap: 5px;
 
             div {
-                width: 25px;
+                width: 15px;
                 height: 5px;
                 border-radius: 2.5px;
                 background: var(--bg-quaternary);
+
+                @include mq-up(sm) {
+                    width: 25px;
+                }
 
                 span {
                     display: block;

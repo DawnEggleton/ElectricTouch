@@ -41,10 +41,13 @@
     align-items: center;
     gap: 5px; }
     .nav--right button div {
-      width: 25px;
+      width: 15px;
       height: 5px;
       border-radius: 2.5px;
       background: var(--bg-quaternary); }
+      @media (min-width: 769px) {
+        .nav--right button div {
+          width: 25px; } }
       .nav--right button div span {
         display: block;
         width: 9px;

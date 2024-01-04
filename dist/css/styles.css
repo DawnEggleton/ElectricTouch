@@ -137,7 +137,7 @@ body .g-6,
 body [data-group="writer"],
 body [data-group="Writer"],
 body [data-group="WRITER"] {
-  --rgb: 39, 113, 113; }
+  --rgb: 95, 138, 138; }
 
 body.g-7,
 body .g-7,
@@ -363,6 +363,23 @@ tag-code {
 /*******************************
     Utilities
 ********************************/
+@media (min-width: 769px) {
+  .onlyMobile {
+    display: none; } }
+
+@media (max-width: 768px) {
+  .notMobile {
+    display: none; } }
+
+.guestOnly,
+.staffOnly {
+  display: none; }
+
+body.g-2 .guestOnly,
+body.g-4 .staffOnly,
+body.g-26 .staffOnly {
+  display: initial; }
+
 .scroll {
   overflow: auto;
   scrollbar-color: var(--bg-accent) transparent;
@@ -908,10 +925,13 @@ tag-wrap[data-ratio="1:3"] tag-image {
             align-items: center;
     gap: 5px; }
     .nav--right button div {
-      width: 25px;
+      width: 15px;
       height: 5px;
       border-radius: 2.5px;
       background: var(--bg-quaternary); }
+      @media (min-width: 769px) {
+        .nav--right button div {
+          width: 25px; } }
       .nav--right button div span {
         display: block;
         width: 9px;

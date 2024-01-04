@@ -1,6 +1,23 @@
 /*******************************
     Utilities
 ********************************/
+@media (min-width: 769px) {
+  .onlyMobile {
+    display: none; } }
+
+@media (max-width: 768px) {
+  .notMobile {
+    display: none; } }
+
+.guestOnly,
+.staffOnly {
+  display: none; }
+
+body.g-2 .guestOnly,
+body.g-4 .staffOnly,
+body.g-26 .staffOnly {
+  display: initial; }
+
 .scroll {
   overflow: auto;
   scrollbar-color: var(--bg-accent) transparent;
