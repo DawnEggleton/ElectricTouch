@@ -22,27 +22,39 @@
    }
 
    &--main {
-      border-left: 1px dotted var(--border-accent);
-      margin-left: 30px;
-      padding: 30px;
       display: flex;
       flex-direction: column;
       gap: 20px;
+      padding: 20px 0;
+
+      @include mq-up(xxs) {
+         border-left: 1px dotted var(--border-accent);
+         margin-left: 30px;
+         padding: 30px;
+      }
    }
 }
 .forum {
    display: grid;
-   grid-template-columns: 60px 2fr 1fr;
    background: var(--bg-secondary);
+
+   @include mq-up(md) {
+      grid-template-columns: 60px 1fr 325px;
+   }
 
    &--marker {
       background: var(--bg-accent);
       width: 100%;
       height: 100%;
       color: var(--text-on-accent);
-      font-size: 26px;
-      padding: 20px 10px;
-      text-align: center;
+      font-size: 18px;
+      padding: 10px 15px;
+
+      @include mq-up(md) {
+         text-align: center;
+         padding: 20px 10px;
+         font-size: 26px;
+      }
 
       .fa-solid,
       &.forum-new-post .fa-thin {
@@ -56,9 +68,13 @@
    &--main {
       display: grid;
       align-items: center;
-      grid-template-rows: 1fr 1fr;
-      padding: 20px 0;
-      min-height: 150px;
+      padding: 30px 30px 30px 0;
+
+      @include mq-up(md) {
+         min-height: 150px;
+         padding: 20px 0;
+         grid-template-rows: 1fr 1fr;
+      }
 
       & > a {
          @include fluid-type(18, 30, 480, 1920);
@@ -74,24 +90,32 @@
    &--avatar {
       position: absolute;
       top: calc(50% - 25px);
-      right: -25px;
+      right: 20px;
       padding: 5px;
       border: 1px solid var(--border-accent);
       width: 50px;
       height: 50px;
       background: var(--bg-secondary);
       z-index: 1;
+
+      @include mq-up(md) {
+         right: -25px;
+      }
    }
 
    &--latest {
       background: var(--bg-accent);
-      padding: 20px 20px 20px 45px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       color: var(--text-on-accent);
       font-size: var(--size-md);
       line-height: 160%;
       justify-content: center;
+
+      @include mq-up(md) {
+         padding: 20px 20px 20px 45px;
+      }
 
       & > a {
          color: var(--text-on-accent);
