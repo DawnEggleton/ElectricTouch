@@ -63,6 +63,10 @@ header {
         grid-template-rows: 150px 71px 117px;
         gap: 10px;
 
+        body.lgFont & {
+            grid-template-rows: 150px 81px 107px;
+        }
+
         @include mq-up(sm) {
             display: grid;
         }

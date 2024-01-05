@@ -61,6 +61,8 @@ header {
     padding: 20px;
     grid-template-rows: 150px 71px 117px;
     gap: 10px; }
+    body.lgFont .header--info {
+      grid-template-rows: 150px 81px 107px; }
     @media (min-width: 769px) {
       .header--info {
         display: grid; } }
