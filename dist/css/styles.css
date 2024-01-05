@@ -47,9 +47,10 @@ a {
   --grey-xdark: rgb(45, 45, 45);
   --grey-dark: rgb(65, 65, 65);
   --grey-mdark: rgb(85, 85, 85);
-  --grey-medium: rgb(176, 176, 176);
-  --grey-mlight: rgb(147, 147, 147);
-  --grey-xlight: rgb(200, 200, 200);
+  --grey-medium: rgb(147, 147, 147);
+  --grey-mlight: rgb(176, 176, 176);
+  --grey-light: rgb(200, 200, 200);
+  --grey-xlight: rgb(210, 210, 210);
   --offwhite: rgb(220, 220, 220);
   --white: rgb(235, 235, 235);
   --white-75: rgba(235, 235, 235, 0.75);
@@ -61,8 +62,8 @@ a {
   --bg-quaternary: var(--grey-dark);
   --bg-transparent: var(--black-75);
   --text-accent: var(--accent);
-  --text-primary: var(--grey-mlight);
-  --text-secondary: var(--grey-xlight);
+  --text-primary: var(--grey-medium);
+  --text-secondary: var(--grey-light);
   --text-on-accent: var(--black);
   --border-primary: var(--grey-dark); }
 
@@ -78,13 +79,13 @@ body.light {
   --bg-accent-50: var(--accent-50);
   --bg-primary: var(--offwhite);
   --bg-secondary: var(--white);
-  --bg-tertiary: var(--offwhite);
-  --bg-quaternary: var(--grey-medium);
+  --bg-tertiary: var(--grey-xlight);
+  --bg-quaternary: var(--grey-light);
   --bg-transparent: var(--white-75);
   --text-accent: var(--accent);
   --text-primary: var(--grey-dark);
   --text-secondary: var(--grey-xdark);
-  --border-primary: var(--grey-medium); }
+  --border-primary: var(--grey-mlight); }
   body.light.g-1,
   body.light .g-1, body.light.g-2,
   body.light .g-2, body.light.g-3,
