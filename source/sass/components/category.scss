@@ -4,7 +4,7 @@
    Categories and Forums
 ********************************/
 .category {
-   margin: 50px auto;
+   margin: 60px auto;
    max-width: 1240px;
    padding: 0 20px;
 
@@ -31,6 +31,7 @@
          border-left: 1px dotted var(--border-accent);
          margin-left: 30px;
          padding: 30px;
+         gap: 30px;
       }
    }
 }
@@ -223,7 +224,8 @@
    }
 
    //Highlighted Forums
-   &.f-3 {
+   &.f-3,
+   &.f-35 {
       grid-template-columns: 1fr;
       background: var(--bg-accent);
       color: var(--text-on-accent);
@@ -233,11 +235,20 @@
          display: none;
       }
       .forum--main {
-         padding: 90px 50px 20px 0;
+         padding: 50px 30px 20px 0;
+
+         @include mq-up(sm) {
+            padding: 90px 70px 20px 0;
+         }
 
          & > a {
             color: var(--text-on-accent);
-            @include fluid-type(30, 72, 480, 1920);
+            @include fluid-type(24, 72, 480, 1920);
+            padding-left: 30px;
+
+            @include mq-up(sm) {
+               padding-left: 70px;
+            }
          }
       }
       .forum--stats {
@@ -247,6 +258,11 @@
          font-weight: 400;
          letter-spacing: 0.05em;
          padding-top: 10px;
+         padding-left: 30px;
+
+         @include mq-up(sm) {
+            padding-left: 70px;
+         }
       }
       .forum--stat {
          b {
@@ -257,10 +273,15 @@
       .forum--avatar {
          border-color: var(--text-on-accent);
          background: var(--bg-accent);
-         right: 40px;
-         width: 100px;
-         height: 150px;
-         top: calc(50% - 75px);
+         right: 30px;
+         top: calc(50% - 10px);
+
+         @include mq-up(sm) {
+            right: 70px;
+            width: 100px;
+            height: 150px;
+            top: calc(50% - 75px);
+         }
       }
    }
 }
