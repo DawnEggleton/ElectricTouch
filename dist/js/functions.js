@@ -275,3 +275,29 @@ function initProfile() {
         //document.querySelector(`.profile--tracker-content tag-tabset tag-tab:first-child`).classList.add('is-active');
     }
 }
+
+/****** Index Initialization ******/
+function initForums() {
+    //manual links
+    document.querySelectorAll('.forum--manual-links').forEach(linkSet => {
+        //subforums exist
+        if(linkSet.nextElementSibling) {
+            if(linkSet.dataset.position === 'start') {
+                linkSet.nextElementSibling.insertAdjacentHTML('afterbegin', linkSet.innerHTML);
+            } else {
+                linkSet.nextElementSibling.insertAdjacentHTML('beforeend', linkSet.innerHTML);
+            }
+        }
+        //subforums don't exist
+        else {
+            linkSet.classList.remove('forum--manual-links');
+            linkSet.classList.add('subforums');
+        }
+    });
+    document.querySelectorAll('.redirect .forum--message').forEach(message => {
+        message.closest('.redirect').querySelector('.forum--latest .scroll').innerHTML = message.innerHTML;
+    });
+    document.querySelectorAll('.forum--image-replace').forEach(image => {
+        image.closest('.forum').querySelector('.forum--avatar').innerHTML = image.innerHTML;
+    });
+}

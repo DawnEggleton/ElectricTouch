@@ -43,7 +43,7 @@
     --text-secondary: var(--grey-xlight);
     --text-on-accent: var(--black);
 
-    --border-main: var(--grey-mdark);
+    --border-primary: var(--grey-dark);
 }
 
 body {
@@ -67,7 +67,7 @@ body {
         --text-primary: var(--grey-dark);
         --text-secondary: var(--grey-xdark);
 
-        --border-main: var(--grey-medium);
+        --border-primary: var(--grey-medium);
 
         //Other
         &.g-1,

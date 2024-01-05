@@ -36,7 +36,7 @@
   --text-primary: var(--grey-mlight);
   --text-secondary: var(--grey-xlight);
   --text-on-accent: var(--black);
-  --border-main: var(--grey-mdark); }
+  --border-primary: var(--grey-dark); }
 
 body.lgFont {
   --size-xs: 10px;
@@ -56,7 +56,7 @@ body.light {
   --text-accent: var(--accent);
   --text-primary: var(--grey-dark);
   --text-secondary: var(--grey-xdark);
-  --border-main: var(--grey-medium); }
+  --border-primary: var(--grey-medium); }
   body.light.g-1,
   body.light .g-1, body.light.g-2,
   body.light .g-2, body.light.g-3,
