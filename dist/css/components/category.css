@@ -217,12 +217,12 @@
       font-size: 1em; }
     .forum.f-3 .forum--avatar, .forum.f-35 .forum--avatar {
       border-color: var(--text-on-accent);
-      background: var(--bg-accent);
+      background: var(--bg-accent-solid);
       right: 30px;
       top: calc(50% - 10px); }
       @media (min-width: 769px) {
         .forum.f-3 .forum--avatar, .forum.f-35 .forum--avatar {
           right: 70px;
-          width: 100px;
+          width: 225px;
           height: 150px;
           top: calc(50% - 75px); } }

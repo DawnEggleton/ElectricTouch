@@ -54,6 +54,7 @@ a {
   --offwhite: rgb(220, 220, 220);
   --white: rgb(235, 235, 235);
   --white-75: rgba(235, 235, 235, 0.75);
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/waves4.jpg);
   --bg-accent: var(--accent);
   --bg-accent-50: var(--accent-50);
   --bg-primary: var(--black);
@@ -75,7 +76,7 @@ body.lgFont {
   --size-xl: 18px; }
 
 body.light {
-  --bg-accent: var(--accent);
+  --bg-accent: var(--accent-90);
   --bg-accent-50: var(--accent-50);
   --bg-primary: var(--offwhite);
   --bg-secondary: var(--white);
@@ -86,6 +87,9 @@ body.light {
   --text-primary: var(--grey-dark);
   --text-secondary: var(--grey-xdark);
   --border-primary: var(--grey-mlight); }
+  body.light[class*="g-"],
+  body.light [class*="g-"] {
+    --bg-accent: var(--accent-90); }
   body.light.g-1,
   body.light .g-1, body.light.g-2,
   body.light .g-2, body.light.g-3,
@@ -99,14 +103,30 @@ body.light {
   body.light [data-group="Birch"],
   body.light [data-group="BIRCH"] {
     --rgb: 179, 157, 142; }
+  body.light.g-33,
+  body.light .g-33,
+  body.light [data-group="starflower"],
+  body.light [data-group="Starflower"],
+  body.light [data-group="STARFLOWER"] {
+    --rgb: 185, 158, 173;
+    --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/starflower1.jpg); }
+  body.light.g-35,
+  body.light .g-35,
+  body.light [data-group="buttercup"],
+  body.light [data-group="Buttercup"],
+  body.light [data-group="BUTTERCUP"] {
+    --rgb: 187, 173, 132;
+    --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/buttercup1.jpg); }
 
 body[class*="g-"],
 body [class*="g-"] {
   --accent: rgb(var(--rgb));
   --accent-30: rgba(var(--rgb), 0.3);
   --accent-50: rgba(var(--rgb), 0.5);
+  --accent-90: rgba(var(--rgb), 0.8);
   --border-accent: var(--accent);
   --bg-accent: var(--accent);
+  --bg-accent-solid: var(--accent);
   --bg-accent-30: var(--accent-30);
   --bg-accent-50: var(--accent-50);
   --text-accent: var(--accent); }
@@ -117,154 +137,241 @@ body .g-2, body.g-3,
 body .g-3, body.g-5,
 body .g-5, body.g-27,
 body .g-27 {
-  --rgb: 177, 202, 204; }
+  --rgb: 177, 202, 204;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/waves4.jpg); }
 
 body.g-4,
-body .g-4,
+body .g-4, body.g-28,
+body .g-28,
 body [data-group="staff"],
 body [data-group="Staff"],
 body [data-group="STAFF"] {
-  --rgb: 130, 147, 109; }
+  --rgb: 130, 147, 109;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/waves6.jpg); }
 
 body.g-26,
 body .g-26,
 body [data-group="ambassador"],
 body [data-group="Ambassador"],
 body [data-group="AMBASSADOR"] {
-  --rgb: 151, 97, 71; }
+  --rgb: 151, 97, 71;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/waves3.jpg); }
 
 body.g-6,
 body .g-6,
 body [data-group="writer"],
 body [data-group="Writer"],
 body [data-group="WRITER"] {
-  --rgb: 95, 138, 138; }
+  --rgb: 95, 138, 138;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/waves5.jpg); }
 
 body.g-7,
 body .g-7,
 body [data-group="birch"],
 body [data-group="Birch"],
 body [data-group="BIRCH"] {
-  --rgb: 187, 166, 151; }
+  --rgb: 187, 166, 151;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/birch1.jpg); }
 
 body.g-8,
 body .g-8,
 body [data-group="lupin"],
 body [data-group="Lupin"],
 body [data-group="LUPIN"] {
-  --rgb: 159, 142, 162; }
+  --rgb: 159, 142, 162;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/lupin2.jpg); }
 
 body.g-9,
 body .g-9,
 body [data-group="spruce"],
 body [data-group="Spruce"],
 body [data-group="SPRUCE"] {
-  --rgb: 106, 136, 119; }
+  --rgb: 106, 136, 119;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/spruce1.jpg); }
 
 body.g-10,
 body .g-10,
 body [data-group="dandelion"],
 body [data-group="Dandelion"],
 body [data-group="DANDELION"] {
-  --rgb: 189, 166, 96; }
+  --rgb: 189, 166, 96;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/dandelion1.jpg); }
 
 body.g-11,
 body .g-11,
 body [data-group="blueberry"],
 body [data-group="Blueberry"],
 body [data-group="BLUEBERRY"] {
-  --rgb: 70, 120, 142; }
+  --rgb: 70, 120, 142;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/blueberry1.jpg); }
 
 body.g-12,
 body .g-12,
 body [data-group="juniper"],
 body [data-group="Juniper"],
 body [data-group="JUNIPER"] {
-  --rgb: 110, 115, 145; }
+  --rgb: 110, 115, 145;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/juniper1.jpg); }
 
 body.g-13,
 body .g-13,
 body [data-group="hemlock"],
 body [data-group="Hemlock"],
 body [data-group="HEMLOCK"] {
-  --rgb: 72, 104, 98; }
+  --rgb: 72, 104, 98;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/hemlock1.jpg); }
 
 body.g-14,
 body .g-14,
 body [data-group="nettle"],
 body [data-group="Nettle"],
 body [data-group="NETTLE"] {
-  --rgb: 119, 155, 113; }
+  --rgb: 119, 155, 113;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/nettle1.jpg); }
 
 body.g-15,
 body .g-15,
 body [data-group="amaranth"],
 body [data-group="Amaranth"],
 body [data-group="AMARANTH"] {
-  --rgb: 157, 99, 99; }
+  --rgb: 157, 99, 99;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/amaranth1.jpg); }
 
 body.g-16,
 body .g-16,
 body [data-group="sundew"],
 body [data-group="Sundew"],
 body [data-group="SUNDEW"] {
-  --rgb: 189, 134, 101; }
+  --rgb: 189, 134, 101;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/sundew1.jpg); }
 
 body.g-17,
 body .g-17,
 body [data-group="tobacco"],
 body [data-group="Tobacco"],
 body [data-group="TOBACCO"] {
-  --rgb: 132, 97, 69; }
+  --rgb: 132, 97, 69;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/tobacco1.jpg); }
 
 body.g-18,
 body .g-18,
 body [data-group="thistle"],
 body [data-group="Thistle"],
 body [data-group="THISTLE"] {
-  --rgb: 119, 99, 125; }
+  --rgb: 119, 99, 125;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/thistle2.jpg); }
 
 body.g-19,
 body .g-19,
 body [data-group="balsam"],
 body [data-group="Balsam"],
 body [data-group="BALSAM"] {
-  --rgb: 134, 124, 116; }
+  --rgb: 134, 124, 116;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/balsam1.jpg); }
 
 body.g-20,
 body .g-20,
 body [data-group="clover"],
 body [data-group="Clover"],
 body [data-group="CLOVER"] {
-  --rgb: 85, 111, 74; }
+  --rgb: 85, 111, 74;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/clover2.jpg); }
 
 body.g-22,
 body .g-22,
 body [data-group="cedar"],
 body [data-group="Cedar"],
 body [data-group="CEDAR"] {
-  --rgb: 168, 127, 84; }
+  --rgb: 168, 127, 84;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/cedar1.jpg); }
 
 body.g-23,
 body .g-23,
 body [data-group="laurel"],
 body [data-group="Laurel"],
 body [data-group="LAUREL"] {
-  --rgb: 115, 99, 108; }
+  --rgb: 115, 99, 108;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/laurel1.jpg); }
 
 body.g-24,
 body .g-24,
 body [data-group="sage"],
 body [data-group="Sage"],
 body [data-group="SAGE"] {
-  --rgb: 149, 155, 127; }
+  --rgb: 149, 155, 127;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/sage1.jpg); }
 
 body.g-25,
 body .g-25,
 body [data-group="goldenrod"],
 body [data-group="Goldenrod"],
 body [data-group="GOLDENROD"] {
-  --rgb: 168, 124, 38; }
+  --rgb: 168, 124, 38;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/goldenrod2.jpg); }
+
+body.g-29,
+body .g-29,
+body [data-group="hawthorn"],
+body [data-group="Hawthorn"],
+body [data-group="HAWTHORN"] {
+  --rgb: 104, 54, 54;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/hawthorn1.jpg); }
+
+body.g-30,
+body .g-30,
+body [data-group="periwinkle"],
+body [data-group="Periwinkle"],
+body [data-group="PERIWINKLE"] {
+  --rgb: 143, 153, 176;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/periwinkle1.jpg); }
+
+body.g-31,
+body .g-31,
+body [data-group="primrose"],
+body [data-group="Primrose"],
+body [data-group="PRIMROSE"] {
+  --rgb: 149, 106, 130;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/primrose1.jpg); }
+
+body.g-32,
+body .g-32,
+body [data-group="sweetgrass"],
+body [data-group="Sweetgrass"],
+body [data-group="SWEETGRASS"] {
+  --rgb: 160, 168, 156;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/sweetgrass1.jpg); }
+
+body.g-33,
+body .g-33,
+body [data-group="starflower"],
+body [data-group="Starflower"],
+body [data-group="STARFLOWER"] {
+  --rgb: 202, 175, 190;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/starflower1.jpg); }
+
+body.g-34,
+body .g-34,
+body [data-group="seaweed"],
+body [data-group="Seaweed"],
+body [data-group="SEAWEED"] {
+  --rgb: 54, 87, 53;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/seaweed2.jpg); }
+
+body.g-35,
+body .g-35,
+body [data-group="buttercup"],
+body [data-group="Buttercup"],
+body [data-group="BUTTERCUP"] {
+  --rgb: 204, 190, 148;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/buttercup1.jpg); }
+
+body.g-36,
+body .g-36,
+body [data-group="yarrow"],
+body [data-group="Yarrow"],
+body [data-group="YARROW"] {
+  --rgb: 113, 75, 64;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/yarrow1.jpg); }
 
 /*******************************
     Global
@@ -276,6 +383,19 @@ body {
   font-weight: 300;
   background: var(--bg-primary);
   color: var(--text-primary); }
+  body:not(#Profile)::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: 50% 50%;
+    -webkit-filter: grayscale(1) contrast(120%) brightness(70%);
+    filter: grayscale(1) contrast(120%) brightness(70%);
+    opacity: 0.1; }
 
 a {
   color: var(--text-accent); }
@@ -1486,13 +1606,13 @@ header {
       font-size: 1em; }
     .forum.f-3 .forum--avatar, .forum.f-35 .forum--avatar {
       border-color: var(--text-on-accent);
-      background: var(--bg-accent);
+      background: var(--bg-accent-solid);
       right: 30px;
       top: calc(50% - 10px); }
       @media (min-width: 769px) {
         .forum.f-3 .forum--avatar, .forum.f-35 .forum--avatar {
           right: 70px;
-          width: 100px;
+          width: 225px;
           height: 150px;
           top: calc(50% - 75px); } }
 
@@ -1509,7 +1629,6 @@ header {
     Profile
 ********************************/
 .profile {
-  background: var(--bg-primary);
   color: var(--text-primary);
   display: -ms-grid;
   display: grid;
@@ -1518,6 +1637,19 @@ header {
   -webkit-transition-duration: 0.5s;
        -o-transition-duration: 0.5s;
           transition-duration: 0.5s; }
+  .profile:not(.is-first)::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: 50% 50%;
+    -webkit-filter: grayscale(1) contrast(120%) brightness(70%);
+    filter: grayscale(1) contrast(120%) brightness(70%);
+    opacity: 0.1; }
   @media (min-width: 1025px) {
     .profile {
       -ms-grid-columns: calc(100% - 400px) 400px;
@@ -1533,10 +1665,12 @@ header {
          -o-transition-duration: 0.5s;
             transition-duration: 0.5s; }
   .profile.is-first {
-    background: var(--bg-accent);
+    background: var(--bg-accent-solid);
     color: var(--text-on-accent);
     -ms-grid-columns: auto clamp(400px, 40vw, 600px);
     grid-template-columns: auto clamp(400px, 40vw, 600px); }
+    body.light .profile.is-first {
+      background: var(--bg-accent-50); }
     @media (max-width: 1024px) {
       .profile.is-first {
         -ms-grid-columns: 100%;
@@ -1827,7 +1961,7 @@ header {
       .profile--main tag-labelset.profile--menu a {
         width: 30px;
         height: 30px;
-        background: var(--text-on-accent);
+        background: var(--bg-primary);
         color: var(--text-accent);
         display: -webkit-box;
         display: -webkit-flex;
@@ -1842,16 +1976,16 @@ header {
             -ms-flex-align: center;
                 align-items: center;
         font-weight: 900;
-        border: 1px solid var(--text-on-accent); }
+        border: 1px solid var(--bg-primary); }
         @media (max-width: 1024px) {
           .profile--main tag-labelset.profile--menu a {
             width: 25px;
             height: 25px; } }
         .profile--main tag-labelset.profile--menu a.is-active, .profile--main tag-labelset.profile--menu a:hover {
           background: var(--bg-accent);
-          color: var(--text-on-accent); }
+          color: var(--bg-primary); }
         .profile--main tag-labelset.profile--menu a.is-active:hover {
-          background: var(--text-on-accent);
+          background: var(--bg-primary);
           color: var(--text-accent); }
     .profile--main > tag-tabset {
       width: 100%;

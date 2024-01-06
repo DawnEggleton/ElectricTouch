@@ -31,6 +31,7 @@
     --white: rgb(235, 235, 235);
     --white-75: rgba(235, 235, 235, 0.75);
 
+    --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/waves4.jpg);
     --bg-accent: var(--accent);
     --bg-accent-50: var(--accent-50);
     --bg-primary: var(--black);
@@ -56,7 +57,7 @@ body {
         --size-xl: 18px;
     }
     &.light {
-        --bg-accent: var(--accent);
+        --bg-accent: var(--accent-90);
         --bg-accent-50: var(--accent-50);
         --bg-primary: var(--offwhite);
         --bg-secondary: var(--white);
@@ -69,6 +70,11 @@ body {
         --text-secondary: var(--grey-xdark);
 
         --border-primary: var(--grey-mlight);
+
+        &[class*="g-"],
+        [class*="g-"] {
+            --bg-accent: var(--accent-90);
+        }
 
         //Other
         &.g-1,
@@ -92,6 +98,26 @@ body {
         [data-group="BIRCH"] {
             --rgb: 179, 157, 142;
         }
+
+        //Starflower
+        &.g-33,
+        .g-33,
+        [data-group="starflower"],
+        [data-group="Starflower"],
+        [data-group="STARFLOWER"] {
+            --rgb: 185, 158, 173;
+            --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/starflower1.jpg);
+        }
+
+        //Buttercup
+        &.g-35,
+        .g-35,
+        [data-group="buttercup"],
+        [data-group="Buttercup"],
+        [data-group="BUTTERCUP"] {
+            --rgb: 187, 173, 132;
+            --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/buttercup1.jpg);
+        }
     }
 
     //Set up
@@ -100,9 +126,11 @@ body {
         --accent: rgb(var(--rgb));
         --accent-30: rgba(var(--rgb), 0.3);
         --accent-50: rgba(var(--rgb), 0.5);
+        --accent-90: rgba(var(--rgb), 0.8);
 
         --border-accent: var(--accent);
         --bg-accent: var(--accent);
+        --bg-accent-solid: var(--accent);
         --bg-accent-30: var(--accent-30);
         --bg-accent-50: var(--accent-50);
         --text-accent: var(--accent);
@@ -120,15 +148,19 @@ body {
     &.g-27,
     .g-27 {
         --rgb: 177, 202, 204;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/waves4.jpg);
     }
 
     //Staff
     &.g-4,
     .g-4,
+    &.g-28,
+    .g-28,
     [data-group="staff"],
     [data-group="Staff"],
     [data-group="STAFF"] {
         --rgb: 130, 147, 109;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/waves6.jpg);
     }
 
     //Ambassador
@@ -138,6 +170,7 @@ body {
     [data-group="Ambassador"],
     [data-group="AMBASSADOR"] {
         --rgb: 151, 97, 71;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/waves3.jpg);
     }
 
     //Sorted
@@ -147,6 +180,7 @@ body {
     [data-group="Writer"],
     [data-group="WRITER"] {
         --rgb: 95, 138, 138;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/waves5.jpg);
     }
     
     //Birch
@@ -156,6 +190,7 @@ body {
     [data-group="Birch"],
     [data-group="BIRCH"] {
         --rgb: 187, 166, 151;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/birch1.jpg);
     }
     
     //Lupin
@@ -165,6 +200,7 @@ body {
     [data-group="Lupin"],
     [data-group="LUPIN"] {
         --rgb: 159, 142, 162;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/lupin2.jpg);
     }
     
     //Spruce
@@ -174,6 +210,7 @@ body {
     [data-group="Spruce"],
     [data-group="SPRUCE"] {
         --rgb: 106, 136, 119;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/spruce1.jpg);
     }
     
     //Dandelion
@@ -183,6 +220,7 @@ body {
     [data-group="Dandelion"],
     [data-group="DANDELION"] {
         --rgb: 189, 166, 96;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/dandelion1.jpg);
     }
     
     //Blueberry
@@ -192,6 +230,7 @@ body {
     [data-group="Blueberry"],
     [data-group="BLUEBERRY"] {
         --rgb: 70, 120, 142;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/blueberry1.jpg);
     }
     
     //Juniper
@@ -201,6 +240,7 @@ body {
     [data-group="Juniper"],
     [data-group="JUNIPER"] {
         --rgb: 110, 115, 145;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/juniper1.jpg);
     }
     
     //Hemlock
@@ -210,6 +250,7 @@ body {
     [data-group="Hemlock"],
     [data-group="HEMLOCK"] {
         --rgb: 72, 104, 98;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/hemlock1.jpg);
     }
     
     //Nettle
@@ -219,6 +260,7 @@ body {
     [data-group="Nettle"],
     [data-group="NETTLE"] {
         --rgb: 119, 155, 113;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/nettle1.jpg);
     }
 
     //Amaranth
@@ -228,6 +270,7 @@ body {
     [data-group="Amaranth"],
     [data-group="AMARANTH"] {
         --rgb: 157, 99, 99;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/amaranth1.jpg);
     }
 
     //Sundew
@@ -237,6 +280,7 @@ body {
     [data-group="Sundew"],
     [data-group="SUNDEW"] {
         --rgb: 189, 134, 101;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/sundew1.jpg);
     }
 
     //Tobacco
@@ -246,6 +290,7 @@ body {
     [data-group="Tobacco"],
     [data-group="TOBACCO"] {
         --rgb: 132, 97, 69;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/tobacco1.jpg);
     }
 
     //Thistle
@@ -255,6 +300,7 @@ body {
     [data-group="Thistle"],
     [data-group="THISTLE"] {
         --rgb: 119, 99, 125;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/thistle2.jpg);
     }
 
     //Balsam
@@ -264,6 +310,7 @@ body {
     [data-group="Balsam"],
     [data-group="BALSAM"] {
         --rgb: 134, 124, 116;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/balsam1.jpg);
     }
 
     //Clover
@@ -273,6 +320,7 @@ body {
     [data-group="Clover"],
     [data-group="CLOVER"] {
         --rgb: 85, 111, 74;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/clover2.jpg);
     }
 
     //Cedar
@@ -282,6 +330,7 @@ body {
     [data-group="Cedar"],
     [data-group="CEDAR"] {
         --rgb: 168, 127, 84;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/cedar1.jpg);
     }
 
     //Laurel
@@ -291,6 +340,7 @@ body {
     [data-group="Laurel"],
     [data-group="LAUREL"] {
         --rgb: 115, 99, 108;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/laurel1.jpg);
     }
 
     //Sage
@@ -300,6 +350,7 @@ body {
     [data-group="Sage"],
     [data-group="SAGE"] {
         --rgb: 149, 155, 127;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/sage1.jpg);
     }
 
     //Goldenrod
@@ -309,5 +360,86 @@ body {
     [data-group="Goldenrod"],
     [data-group="GOLDENROD"] {
         --rgb: 168, 124, 38;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/goldenrod2.jpg);
+    }
+
+    //Hawthorn
+    &.g-29,
+    .g-29,
+    [data-group="hawthorn"],
+    [data-group="Hawthorn"],
+    [data-group="HAWTHORN"] {
+        --rgb: 104, 54, 54;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/hawthorn1.jpg);
+    }
+
+    //Periwinkle
+    &.g-30,
+    .g-30,
+    [data-group="periwinkle"],
+    [data-group="Periwinkle"],
+    [data-group="PERIWINKLE"] {
+        --rgb: 143, 153, 176;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/periwinkle1.jpg);
+    }
+
+    //Primrose
+    &.g-31,
+    .g-31,
+    [data-group="primrose"],
+    [data-group="Primrose"],
+    [data-group="PRIMROSE"] {
+        --rgb: 149, 106, 130;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/primrose1.jpg);
+    }
+
+    //Sweetgrass
+    &.g-32,
+    .g-32,
+    [data-group="sweetgrass"],
+    [data-group="Sweetgrass"],
+    [data-group="SWEETGRASS"] {
+        --rgb: 160, 168, 156;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/sweetgrass1.jpg);
+    }
+
+    //Starflower
+    &.g-33,
+    .g-33,
+    [data-group="starflower"],
+    [data-group="Starflower"],
+    [data-group="STARFLOWER"] {
+        --rgb: 202, 175, 190;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/starflower1.jpg);
+    }
+
+    //Seaweed
+    &.g-34,
+    .g-34,
+    [data-group="seaweed"],
+    [data-group="Seaweed"],
+    [data-group="SEAWEED"] {
+        --rgb: 54, 87, 53;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/seaweed2.jpg);
+    }
+
+    //Buttercup
+    &.g-35,
+    .g-35,
+    [data-group="buttercup"],
+    [data-group="Buttercup"],
+    [data-group="BUTTERCUP"] {
+        --rgb: 204, 190, 148;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/buttercup1.jpg);
+    }
+
+    //Yarrow
+    &.g-36,
+    .g-36,
+    [data-group="yarrow"],
+    [data-group="Yarrow"],
+    [data-group="YARROW"] {
+        --rgb: 113, 75, 64;
+        --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/yarrow1.jpg);
     }
 }
