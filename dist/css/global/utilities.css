@@ -3,11 +3,11 @@
 ********************************/
 @media (min-width: 769px) {
   .onlyMobile {
-    display: none; } }
+    display: none !important; } }
 
 @media (max-width: 768px) {
   .notMobile {
-    display: none; } }
+    display: none !important; } }
 
 .guestOnly,
 .staffOnly,

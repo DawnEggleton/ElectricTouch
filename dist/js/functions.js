@@ -144,6 +144,9 @@ function toggleSideMenu(e) {
 	    document.querySelector('.invisibleEl').classList.add('menu-open');
     }
 }
+function toggleWebpageMenu(e) {
+    e.closest('.webpage--menu').classList.toggle('is-open');
+}
 
 /****** Global Initialization ******/
 function initModals() {

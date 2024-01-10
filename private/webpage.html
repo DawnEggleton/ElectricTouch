@@ -25,7 +25,12 @@
             <!--Webpage-->
             <section class="webpage">
                 <div class="webpage--menu">
-                    <tag-labels class="accordion">
+                    <button class="onlyMobile" onClick="toggleWebpageMenu(this)">
+                        <div class="menu-bar menu-top"></div>
+                        <div class="menu-bar menu-middle"></div>
+                        <div class="menu-bar menu-bottom"></div>
+                    </button>
+                    <tag-labels class="accordion scroll">
                         <tag-label data-category="info" class="tab-category accordion--trigger">
                             <span>Required Reading</span>
                         </tag-label>

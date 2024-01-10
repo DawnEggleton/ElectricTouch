@@ -5,12 +5,12 @@
 ********************************/
 .onlyMobile {
     @include mq-up(sm) {
-        display: none;
+        display: none !important;
     }
 }
 .notMobile {
     @include mq-down(sm) {
-        display: none;
+        display: none !important;
     }
 }
 .guestOnly,

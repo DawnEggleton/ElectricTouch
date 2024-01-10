@@ -7,6 +7,9 @@
   display: grid;
   grid-template-columns: 300px auto;
   grid-template-rows: minmax(600px, calc(100vh - 70px)); }
+  @media (max-width: 768px) {
+    .webpage {
+      grid-template-columns: 100%; } }
   .webpage ~ div {
     display: none; }
   .webpage--menu {
@@ -15,10 +18,61 @@
     padding: 20px; }
     .webpage--menu a {
       color: var(--text-on-accent); }
+    @media (max-width: 768px) {
+      .webpage--menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        z-index: 1;
+        overflow: hidden;
+        padding-top: 0; }
+        .webpage--menu.is-open {
+          height: calc(100vh - 70px); } }
+    .webpage--menu button {
+      width: 20px;
+      height: 20px;
+      margin: 10px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px; }
+      .webpage--menu button:hover .menu-middle,
+      .webpage--menu button:hover .menu-bottom {
+        width: 100%; }
+    .webpage--menu .menu-bar {
+      position: absolute;
+      left: 0;
+      background: var(--text-on-accent);
+      height: 1px;
+      transition-duration: 0.3s; }
+      .webpage--menu .menu-bar.menu-top {
+        top: calc(50% - 5px);
+        width: 100%; }
+      .webpage--menu .menu-bar.menu-middle {
+        top: 50%;
+        width: 60%; }
+      .webpage--menu .menu-bar.menu-bottom {
+        top: calc(50% + 5px);
+        width: 30%; }
+    .webpage--menu.is-open .menu-top {
+      opacity: 0; }
+    .webpage--menu.is-open .menu-middle {
+      transform: rotate(45deg);
+      top: 10px;
+      width: 100%; }
+    .webpage--menu.is-open .menu-bottom {
+      transform: rotate(-45deg);
+      top: 10px;
+      width: 100%; }
   .webpage--content {
     text-align: justify;
     font-size: calc(var(--size-md) + 1px);
     line-height: 200%; }
+    @media (max-width: 768px) {
+      .webpage--content {
+        margin-top: 40px; } }
     .webpage--content-inner {
       background: var(--bg-transparent-low);
       border: 1px solid var(--bg-accent-50);
@@ -78,6 +132,9 @@
     height: 100%;
     display: block;
     scrollbar-color: var(--text-on-accent) transparent; }
+    @media (max-width: 768px) {
+      .webpage .accordion {
+        height: calc(100% - 40px); } }
     .webpage .accordion--trigger {
       font-family: var(--font-header);
       font-weight: 900;
