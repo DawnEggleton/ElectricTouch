@@ -21,6 +21,7 @@
     --black-75: rgba(20, 20, 20, 0.75);
     --offblack: rgb(35, 35, 35);
     --grey-xdark: rgb(45, 45, 45);
+    --grey-xdark-50: rgba(45, 45, 45, 0.5);
     --grey-dark: rgb(65, 65, 65);
     --grey-mdark: rgb(85, 85, 85);
     --grey-medium: rgb(147, 147, 147);
@@ -29,6 +30,7 @@
     --grey-xlight: rgb(210, 210, 210);
     --offwhite: rgb(220, 220, 220);
     --white: rgb(235, 235, 235);
+    --white-50: rgba(235, 235, 235, 0.5);
     --white-75: rgba(235, 235, 235, 0.75);
 
     --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/waves4.jpg);
@@ -39,6 +41,7 @@
     --bg-tertiary: var(--grey-xdark);
     --bg-quaternary: var(--grey-dark);
     --bg-transparent: var(--black-75);
+    --bg-transparent-low: var(--grey-xdark-50);
 
     --text-accent: var(--accent);
     --text-primary: var(--grey-medium);
@@ -64,6 +67,7 @@ body {
         --bg-tertiary: var(--grey-xlight);
         --bg-quaternary: var(--grey-light);
         --bg-transparent: var(--white-75);
+        --bg-transparent-low: var(--white-50);
     
         --text-accent: var(--accent);
         --text-primary: var(--grey-dark);

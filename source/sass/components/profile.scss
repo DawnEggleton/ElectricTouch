@@ -473,7 +473,7 @@
             border: 1px solid var(--border-accent);
         }
 
-        span {
+        & > span {
             border-left: 1px dotted var(--bg-accent);
             padding: 10px 0 10px 12px;
             margin: -1px 0 0 10px;
@@ -503,6 +503,22 @@
             &::-webkit-scrollbar-thumb {
                 background: var(--text-on-accent);
             }
+        }
+    }
+
+    &--tracker-section {
+        span {
+            padding: 10px 2px;
+            display: block;
+        }
+
+        &:first-child {
+            margin-top: 5px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+            border-bottom: 1px dotted var(--border-accent);
         }
     }
 
@@ -803,7 +819,7 @@
     &.g-4,
     &.g-26,
     &.g-6,
-    &.g-3.account-type--member {
+    &.g-3.account-type--Member {
         .charOnly {
             display: none !important;
         }

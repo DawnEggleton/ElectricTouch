@@ -14,7 +14,8 @@
     }
 }
 .guestOnly,
-.staffOnly {
+.staffOnly,
+.hidden {
     display: none;
 }
 body.g-2 .guestOnly,

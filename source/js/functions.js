@@ -65,6 +65,13 @@ function capitalizeMultiple(selector) {
 
     return month;
 }
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+function rgbToHex(r, g, b) {
+    return componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
 
 /****** Settings ******/
 function setTheme() {
@@ -136,6 +143,49 @@ function toggleSideMenu(e) {
         e.classList.add('is-open');
 	    document.querySelector('.invisibleEl').classList.add('menu-open');
     }
+}
+
+/****** Global Initialization ******/
+function initModals() {
+    document.querySelectorAll('.popup').forEach(popup => {
+        popup.addEventListener('click', () => {
+            let modalTag = popup.dataset.modal,
+                modals = document.querySelectorAll('.modal'),
+                modal;
+            for(let i = 0; i < modals.length; i++) {
+                if(modals[i].dataset.modalBox === modalTag) {
+                    modal = modals[i];
+                    modal.classList.add('is-open');
+                }
+            }
+        });
+    });
+    document.querySelectorAll('.modal').forEach(modal => {
+        window.addEventListener('click', e => {
+            if(e.target.classList.contains('modal') || e.target.classList.contains('modal--close') || (e.target.parentNode && e.target.parentNode.classList.contains('modal--close')) || (e.target.parentNode && e.target.parentNode.parentNode && e.target.parentNode.parentNode.classList.contains('modal--close'))) {
+                modal.classList.remove('is-open');
+            }
+        });
+    });
+}
+function initSwitcher() {
+	let characters = switcher.querySelectorAll('option');
+	let newSwitch = `<div class="switch">`;
+	characters.forEach((character, i) => {
+		if(i !== 0) {
+			let characterName = character.innerText.trim();
+			let characterId = character.value;
+            let siteString = `uploads2/godlybehaviour`;
+			newSwitch += `<label class="switch-block">
+				<input type="checkbox" value="${characterId}" onchange="this.form.submit()" name="sub_id" />
+				<div style="background-image: url(https://files.jcink.net/${siteString}/av-${characterId}.png), url(https://files.jcink.net/${siteString}/av-${characterId}.gif), url(https://files.jcink.net/${siteString}/av-${characterId}.jpg), url(https://files.jcink.net/${siteString}/av-${characterId}.jpeg), url(https://picsum.photos/250);"></div>
+				<b>${capitalize(characterName)}</b>
+			</label>`;
+		}
+	});
+	newSwitch += `</div>`;
+	switcher.insertAdjacentHTML('afterend', newSwitch);
+	switcher.remove();
 }
 
 /****** Profile Initialization ******/
@@ -300,4 +350,141 @@ function initForums() {
     document.querySelectorAll('.forum--image-replace').forEach(image => {
         image.closest('.forum').querySelector('.forum--avatar').innerHTML = image.innerHTML;
     });
+}
+
+/****** Webpage Initialization ******/
+function initWebpages() {
+    //remove loading screen
+    document.querySelector('body').classList.remove('loading');
+    document.querySelector('#loading').remove();
+    initTabs(true, '.webpage', '.webpage--menu', '.webpage--content', 'is-active', '.tab-category', ['.webpage--menu .accordion--trigger', '.webpage--menu .accordion--content', '.webpage--menu .accordion--content a', '.webpage--content .tab-category', '.webpage--content .tab-category tag-tab']);
+
+    //accordions
+    initAccordion();
+}
+function initTabs(isHash = false, wrapClass, menuClass, tabWrapClass, activeClass = 'is-active', categoryClass = null, firstClasses = []) {
+    if(isHash) {
+        window.addEventListener('hashchange', function(e){
+            initHashTabs(wrapClass, menuClass, tabWrapClass, activeClass, categoryClass);
+        });
+
+        //hash linking
+        if (window.location.hash){
+            initHashTabs(wrapClass, menuClass, tabWrapClass, activeClass, categoryClass);
+        } else {
+            initFirstHashTab(firstClasses, activeClass);
+        }
+    } else {
+        initRegularTabs(menuClass);
+    }
+}
+function initRegularTabs(menuClass) {
+    let labels = document.querySelectorAll(`${menuClass} > tag-label`);
+    labels.forEach(label => {
+        label.addEventListener('click', e => {
+            let selected = e.currentTarget;
+            let tab = document.querySelector(`tag-tab[data-key="${selected.dataset.key}"]`);
+            let tabSiblings = Array.from(tab.parentNode.children);
+            let tabIndex = tabSiblings.indexOf.call(tabSiblings, tab);
+            
+            labels.forEach(label => label.classList.remove('is-active'));
+            tabSiblings.forEach(tab => tab.classList.remove('is-active'));
+            
+            selected.classList.add('is-active');
+            tab.classList.add('is-active');
+            tabSiblings.forEach(sibling => sibling.style.left = `${-100 * tabIndex}%`);
+        });
+    });
+}
+function initHashTabs(wrapClass, menuClass, tabWrapClass, activeClass, categoryClass = null) {
+    //set variables for categories
+    let selectedCategory, hashMain, hashCategory, hashCategoryArray, categorySiblings, categoryIndex, hashTab, submenuSiblings, submenuIndex;
+
+    //get hash and set basic variables
+    let hash = $.trim( window.location.hash );
+    let selected = document.querySelector(`${menuClass} a[href="${hash}"]`);
+    let hashContent = document.querySelector(`tag-tab[data-key="${hash}"]`);
+    let unsetDefault = Array.from(selected.parentNode.children);
+    let tabSiblings = Array.from(hashContent.parentNode.children);
+    let tabIndex = tabSiblings.indexOf.call(tabSiblings, hashContent);
+
+    //set category variables document.querySelector(`.webpage--menu a[href="#tab2-2"]`).closest('.tab-category').getAttribute('data-category')
+    if(categoryClass) {
+        selectedCategory = selected.closest(categoryClass).getAttribute('data-category');
+
+        hashMain = document.querySelector(`${menuClass} tag-label[data-category="${selectedCategory}"]`);
+
+        hashCategory = document.querySelector(`${menuClass} tag-tab[data-category="${selectedCategory}"]`);
+        if(!hashCategory) {
+            hashCategoryArray = document.querySelectorAll(`${menuClass} [data-category="${selectedCategory}"]`);
+        }
+
+        hashTab = document.querySelector(`${tabWrapClass} tag-tab[data-category="${selectedCategory}"]`);
+
+        if(hashCategory) {
+            categorySiblings = Array.from(hashCategory.parentNode.children);
+            categoryIndex = categorySiblings.indexOf.call(categorySiblings, hashCategory);
+        }
+        submenuSiblings = Array.from(hashTab.parentNode.children);
+        submenuIndex = submenuSiblings.indexOf.call(submenuSiblings, hashTab);
+    }
+
+    //find the sub menu/inner menu link with the matching hash
+    if (hash) {
+        $(selected).trigger('click');
+    }
+
+    //Tabs
+    //Remove active from everything
+    document.querySelectorAll(`${menuClass} tag-label`).forEach(label => label.classList.remove(activeClass));
+    document.querySelectorAll(`${menuClass} a`).forEach(label => label.classList.remove(activeClass));
+    unsetDefault.forEach(label => label.classList.remove(activeClass));
+    document.querySelectorAll(`${wrapClass} tag-tab`).forEach(label => label.classList.remove(activeClass));
+    document.querySelectorAll(categoryClass).forEach(item => item.classList.remove(activeClass));
+
+    //Add active
+    selected.classList.add(activeClass);
+    hashContent.classList.add(activeClass);
+    hashCategoryArray.forEach(item => item.classList.add(activeClass));
+
+    //add active for category
+    if(categoryClass) {
+        hashMain.classList.add(activeClass);
+        hashTab.classList.add(activeClass);
+    }
+    window.scrollTo(0, 0);
+}
+function initFirstHashTab(firstClasses, activeClass) {
+    //Auto-select tab without hashtag present
+    firstClasses.forEach(firstClass => {
+        document.querySelector(firstClass).classList.add(activeClass);
+    });
+}
+function initAccordion(target = '.accordion') {
+    document.querySelectorAll(target).forEach(accordion => {
+        let triggers = accordion.querySelectorAll('.accordion--trigger');
+        let contents = accordion.querySelectorAll('.accordion--content');
+        if(window.innerWidth <= 480) {
+            triggers.forEach(trigger => trigger.classList.remove('is-active'));
+            contents.forEach(trigger => trigger.classList.remove('is-active'));
+        }
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', e => {
+                let alreadyOpen = false;
+                if(e.currentTarget.classList.contains('is-active')) {
+                    alreadyOpen = true;
+                }
+                triggers.forEach(trigger => trigger.classList.remove('is-active'));
+                contents.forEach(trigger => trigger.classList.remove('is-active'));
+                if(alreadyOpen) {
+                    e.currentTarget.classList.remove('is-active');
+                    e.currentTarget.nextElementSibling.classList.remove('is-active');
+                    alreadyOpen = false;
+                } else {
+                    e.currentTarget.classList.add('is-active');
+                    e.currentTarget.nextElementSibling.classList.add('is-active');
+                }
+            });
+        })
+    })
 }

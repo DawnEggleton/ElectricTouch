@@ -133,6 +133,7 @@
          letter-spacing: 0;
          font-family: var(--font-header);
          font-weight: 800;
+         text-transform: lowercase;
       }
 
       span {
@@ -193,6 +194,10 @@
       line-height: 160%;
       padding: 10px;
 
+      br {
+         display: none;
+      }
+
       .subforums {
          display: flex;
          flex-wrap: wrap;
@@ -219,7 +224,8 @@
 
    &--image-replace,
    &--message,
-   &--manual-links {
+   &--manual-links,
+   &--links:empty {
       display: none;
    }
 

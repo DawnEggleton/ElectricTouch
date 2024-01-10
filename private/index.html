@@ -478,6 +478,13 @@
                 </div>
             </div> 
         </main>
+        <div data-modal-box="switch" class="modal">
+        <div class="modal--close"><span>close</span></div>
+        <div id="account-switch"><% SUBACCOUNTS %></div>
+        </div>
+        <div id="quick-login-clip" data-modal-box="login" class="modal">
+        <div class="modal--close"><span>close</span></div>
+        </div>
 
         @@include('../source/templates/scripts.html', {
             "prefix": "../dist"

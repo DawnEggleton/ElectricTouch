@@ -117,7 +117,8 @@
       font-size: var(--size-xl);
       letter-spacing: 0;
       font-family: var(--font-header);
-      font-weight: 800; }
+      font-weight: 800;
+      text-transform: lowercase; }
     .forum--latest span:last-child {
       font-style: italic;
       font-size: var(--size-sm); }
@@ -158,6 +159,8 @@
     font-weight: 400;
     line-height: 160%;
     padding: 10px; }
+    .forum--links br {
+      display: none; }
     .forum--links .subforums {
       display: flex;
       flex-wrap: wrap;
@@ -173,7 +176,7 @@
         color: var(--text-on-accent); }
     .forum--links .subforums-macro {
       display: none; }
-  .forum--image-replace, .forum--message, .forum--manual-links {
+  .forum--image-replace, .forum--message, .forum--manual-links, .forum--links:empty {
     display: none; }
   .forum.f-3, .forum.f-35 {
     grid-template-columns: 1fr;
