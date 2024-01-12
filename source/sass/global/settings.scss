@@ -5,6 +5,7 @@
 li::marker {
     content: '\f178';
 }
+.webpage .claim-member > span a::after,
 a[target="_blank"]:not(.staffOnly)::after {
     content: '\f08e';
 }

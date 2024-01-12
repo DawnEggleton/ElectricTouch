@@ -198,15 +198,21 @@
             margin-bottom: 10px;
             cursor: pointer;
 
-            &.is-active {
+            &::after {
+                content: '';
+                height: 1px;
+                width: 0;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: var(--text-on-accent);
+                transition-duration: 0.3s;
+            }
+
+            &.is-active,
+            &:hover {
                 &::after {
-                    content: '';
-                    height: 1px;
                     width: 100%;
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    background: var(--text-on-accent);
                 }
             }
         }
@@ -288,5 +294,123 @@
     }
     .section-role-group {
         gap: 0 15px;
+    }
+
+    .claim-wrap {
+        background: var(--bg-transparent-low);
+        border: 1px solid var(--border-primary);
+        padding: 20px;
+    }
+
+    .claim {
+        display: flex;
+        flex-direction: column;
+
+        strong {
+            max-width: max-content;
+            text-transform: uppercase;
+            line-height: 100%;
+            background: var(--bg-accent-30);
+            color: var(--text-secondary);
+            font-weight: 700;
+            font-size: var(--size-md);
+            padding: 8px 15px;
+            margin-top: 5px;
+            border: 1px solid var(--border-accent);
+            font-family: var(--font-header);
+
+            a {
+                color: var(--text-secondary);
+            }
+        }
+
+        & > span {
+            border-left: 1px dotted var(--bg-accent);
+            padding: 5px 0 5px 12px;
+            margin: -1px 0 0 10px;
+            line-height: 100%;
+            font-size: var(--size-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+
+            &:first-of-type {
+                padding-top: 10px;
+            }
+
+            &:last-of-type {
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    .claim-member {
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-size: var(--size-sm);
+        color: var(--text-secondary);
+        line-height: 160%;
+        gap: 15px;
+
+        & > span {
+            padding-right: 40px;
+
+            &:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                top: calc(50% - 0.5px);
+                right: 0;
+                height: 1px;
+                background: var(--border-accent);
+                width: 25px;
+            }
+
+            a {
+                color: var(--text-secondary);
+
+                &:after {
+                    font-family: 'Font Awesome 6 Pro';
+                    margin-left: 5px;
+                    color: var(--text-accent);
+                    font-size: 1.2em;
+                }
+            }
+
+            button {
+                color: var(--text-secondary);
+                text-transform: uppercase;
+                font-size: var(--size-sm);
+                color: var(--text-secondary);
+                line-height: 160%;
+
+                i {
+                    margin-left: 5px;
+                    color: var(--text-accent);
+                    font-size: 1.2em;
+                }
+            }
+        }
+
+        &:not(.is-open) .hide-characters,
+        &.is-open .view-characters,
+        &:not(.is-open) + .claim-wrap {
+            display: none;
+        }
+    }
+    .claim-sorts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: -15px;
+
+        button {
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-size: var(--size-xs);
+            letter-spacing: 0.15em;
+            border: 1px solid var(--border-accent);
+            background: var(--bg-accent-30);
+            padding: 5px 10px;
+            line-height: 200%;
+        }
     }
 }

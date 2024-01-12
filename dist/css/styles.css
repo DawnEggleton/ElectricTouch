@@ -401,6 +401,9 @@ body {
     filter: grayscale(1) contrast(120%) brightness(70%);
     opacity: 0.1; }
 
+main > br {
+  display: none; }
+
 #loading {
   position: fixed;
   top: 0;
@@ -942,10 +945,10 @@ tag-code {
   .notMobile {
     display: none !important; } }
 
-.guestOnly,
-.staffOnly,
+body:not(.g-2) .guestOnly,
+body:not(.g-4):not(.g-26):not(.g-28):not(.account-3):not(.account-4):not(.account-9) .staffOnly,
 .hidden {
-  display: none; }
+  display: none !important; }
 
 body.g-2 .guestOnly,
 body.g-4 .staffOnly,
@@ -2865,9 +2868,9 @@ header {
       position: fixed !important; } }
   .profile .memAccOnly {
     display: none; }
-  .profile.g-4 .charOnly, .profile.g-26 .charOnly, .profile.g-6 .charOnly, .profile.g-3.account-type--Member .charOnly {
+  .profile.g-4 .charOnly, .profile.g-26 .charOnly, .profile.g-28 .charOnly, .profile.g-6 .charOnly, .profile.g-3.account-type--Member .charOnly {
     display: none !important; }
-  .profile.g-4 .memAccOnly, .profile.g-26 .memAccOnly, .profile.g-6 .memAccOnly, .profile.g-3.account-type--Member .memAccOnly {
+  .profile.g-4 .memAccOnly, .profile.g-26 .memAccOnly, .profile.g-28 .memAccOnly, .profile.g-6 .memAccOnly, .profile.g-3.account-type--Member .memAccOnly {
     display: initial !important; }
 
 /*******************************
@@ -3045,14 +3048,19 @@ header {
       padding-bottom: 10px;
       margin-bottom: 10px;
       cursor: pointer; }
-      .webpage .accordion--trigger.is-active::after {
+      .webpage .accordion--trigger::after {
         content: '';
         height: 1px;
-        width: 100%;
+        width: 0;
         position: absolute;
         bottom: 0;
         left: 0;
-        background: var(--text-on-accent); }
+        background: var(--text-on-accent);
+        -webkit-transition-duration: 0.3s;
+             -o-transition-duration: 0.3s;
+                transition-duration: 0.3s; }
+      .webpage .accordion--trigger.is-active::after, .webpage .accordion--trigger:hover::after {
+        width: 100%; }
     .webpage .accordion--content {
       display: none;
       -webkit-box-orient: vertical;
@@ -3124,6 +3132,105 @@ header {
     font-style: italic; }
   .webpage .section-role-group {
     gap: 0 15px; }
+  .webpage .claim-wrap {
+    background: var(--bg-transparent-low);
+    border: 1px solid var(--border-primary);
+    padding: 20px; }
+  .webpage .claim {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .webpage .claim strong {
+      max-width: -webkit-max-content;
+      max-width: -moz-max-content;
+      max-width: max-content;
+      text-transform: uppercase;
+      line-height: 100%;
+      background: var(--bg-accent-30);
+      color: var(--text-secondary);
+      font-weight: 700;
+      font-size: var(--size-md);
+      padding: 8px 15px;
+      margin-top: 5px;
+      border: 1px solid var(--border-accent);
+      font-family: var(--font-header); }
+      .webpage .claim strong a {
+        color: var(--text-secondary); }
+    .webpage .claim > span {
+      border-left: 1px dotted var(--bg-accent);
+      padding: 5px 0 5px 12px;
+      margin: -1px 0 0 10px;
+      line-height: 100%;
+      font-size: var(--size-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.15em; }
+      .webpage .claim > span:first-of-type {
+        padding-top: 10px; }
+      .webpage .claim > span:last-of-type {
+        padding-bottom: 10px; }
+  .webpage .claim-member {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: var(--size-sm);
+    color: var(--text-secondary);
+    line-height: 160%;
+    gap: 15px; }
+    .webpage .claim-member > span {
+      padding-right: 40px; }
+      .webpage .claim-member > span:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 0.5px);
+        right: 0;
+        height: 1px;
+        background: var(--border-accent);
+        width: 25px; }
+      .webpage .claim-member > span a {
+        color: var(--text-secondary); }
+        .webpage .claim-member > span a:after {
+          font-family: 'Font Awesome 6 Pro';
+          margin-left: 5px;
+          color: var(--text-accent);
+          font-size: 1.2em; }
+      .webpage .claim-member > span button {
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        font-size: var(--size-sm);
+        color: var(--text-secondary);
+        line-height: 160%; }
+        .webpage .claim-member > span button i {
+          margin-left: 5px;
+          color: var(--text-accent);
+          font-size: 1.2em; }
+    .webpage .claim-member:not(.is-open) .hide-characters,
+    .webpage .claim-member.is-open .view-characters,
+    .webpage .claim-member:not(.is-open) + .claim-wrap {
+      display: none; }
+  .webpage .claim-sorts {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: -15px; }
+    .webpage .claim-sorts button {
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      font-size: var(--size-xs);
+      letter-spacing: 0.15em;
+      border: 1px solid var(--border-accent);
+      background: var(--bg-accent-30);
+      padding: 5px 10px;
+      line-height: 200%; }
 
 /*******************************
     Jcink Defaults

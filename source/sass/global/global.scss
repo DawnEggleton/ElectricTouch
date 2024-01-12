@@ -27,6 +27,12 @@ body {
     }
 }
 
+main {
+    & > br {
+        display: none;
+    }
+}
+
 #loading {
     position: fixed;
     top: 0;

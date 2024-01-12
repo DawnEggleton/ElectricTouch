@@ -61,6 +61,7 @@ document.querySelector('#form-join-plot').addEventListener('submit', e => {
     let claim = {
         plot: plotSelected.innerText,
         plotId: plotSelected.value,
+        plotPriority: `${form.querySelector('#plot').selectedIndex - 1}`,
         section: sectionSelected.innerText,
         sectionPriority: sectionSelected.value,
         role: roleSelected.innerText,
@@ -83,13 +84,121 @@ document.querySelector('#form-join-plot').addEventListener('submit', e => {
                 updatedRoles += `@${character.SubplotRoles}`;
             }
 
+            let discord = {
+                staffTitle: `${capitalize(character.Member)} has added ${capitalize(character.Character)} to ${capitalize(claim.plot)}`,
+                staffMessage: `**Section:** ${capitalize(claim.section)}
+                **Role:** ${capitalize(claim.role)}`,
+            }
+
             let data = {
                 "SubmissionType": "plot-role-submit",
                 SubplotRoles: updatedRoles,
                 AccountID: id,
             }
         
-            sendAjax(form, data, null, successMessage);
+            sendAjax(form, data, discord, successMessage);
         }
     });
+});
+
+//Reserve Face
+document.querySelector('#form-reserve').addEventListener('submit', e => {
+    e.preventDefault();
+
+    let form = e.currentTarget;
+    let member = form.querySelector('#member').value.toLowerCase().trim();
+    let face = form.querySelector('#face').value.toLowerCase().trim();
+
+    let embedTitle = `New Face Reservation`;
+    let message = `${capitalize(member)} has reserved ${capitalize(face)}`;
+
+    let data = {
+        SubmissionType: `reserve-submit`,
+        Member: member,
+        Face: face,
+    }
+    let discord = {
+        staffTitle: embedTitle,
+        staffMessage: message,
+    }
+
+    let successMessage = `<blockquote class="fullWidth">Submission successful!</blockquote>
+    <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
+
+    submitReserves(form, data, discord, successMessage);
+});
+
+//Reserve Face
+document.querySelector('#form-reserve-plot').addEventListener('submit', e => {
+    e.preventDefault();
+
+    let form = e.currentTarget;
+    let member = form.querySelector('#member').value.toLowerCase().trim();
+    let plot = form.querySelector('#plot').options[form.querySelector('#plot').selectedIndex].innerText.toLowerCase().trim();
+    let plotPriority = form.querySelector('#plot').selectedIndex;
+    let section = form.querySelector('#section').options[form.querySelector('#section').selectedIndex].innerText.toLowerCase().trim();
+    let sectionPriority = form.querySelector('#section').selectedIndex;
+    let role = form.querySelector('#role').options[form.querySelector('#role').selectedIndex].innerText.toLowerCase().trim().split(' (')[0];
+    let rolePriority = form.querySelector('#role').selectedIndex;
+
+    let embedTitle = `New Subplot Reservation`;
+    let message = `${capitalize(member)} has reserved ${capitalize(role)} from ${capitalize(plot)} (${capitalize(section)})`;
+
+    let data = {
+        SubmissionType: `subplot-submit`,
+        Member: member,
+        Subplot: plot,
+        Section: section,
+        RoleTitle: role,
+        PlotPriority: plotPriority,
+        SectionPriority: sectionPriority,
+        RolePriority: rolePriority,
+    }
+    let discord = {
+        staffTitle: embedTitle,
+        staffMessage: message,
+    }
+
+    let successMessage = `<blockquote class="fullWidth">Submission successful!</blockquote>
+    <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
+
+    sendAjax(form, data, discord, successMessage);
+});
+
+//Request Species
+document.querySelector('#form-species').addEventListener('submit', e => {
+    e.preventDefault();
+    let form = e.currentTarget;
+    let member = form.querySelector('#member').value.toLowerCase().trim();
+    let species = form.querySelector('#species').value.toLowerCase().trim();
+    let physiology = form.querySelector('#physiology').value.trim();
+    let abilities = form.querySelector('#abilities').value.trim();
+    let weaknesses = form.querySelector('#weaknesses').value.trim();
+    let ideas = form.querySelector('#ideas').value.trim();
+    let resources = form.querySelector('#resources').value.trim();
+
+    let publicMessage = `Someone has suggested **${capitalize(species)}** as a new species! If you would like to see this species added, please react to this message! If you would like to discuss your own ideas for this species, please #create-a-ticket with staff!`;
+    let privateMessage = `**Species:** ${species}
+    \n\n**Physiology:**\n${physiology}
+    \n\n**Abilities:**\n${abilities}
+    \n\n**Weaknesses:**\n${weaknesses}
+    \n\n**Ideas:**\n${ideas}
+    \n\n**Resources:**\n${resources}
+    \n\nReview collectively as staff and then, when ready, start a ticket in the public server with all staff and the member in order to discuss approval / edits / refusal. All staff should react to this request when it has been seen and read.`;
+
+    //Send Public
+    sendDiscordMessage(`https://discord.com/api/webhooks/${publicSpeciesBot}`, `New Species Suggested!`, publicMessage);
+
+	if(privateMessage.length >= 2000) {
+		let count = privateMessage.length / 2000;
+		for (let i = 0; i < count; i++) {
+			setTimeout(function() {
+				let start = i * 2000;
+				let end = start + 1999;
+                    sendDiscordMessage(`https://discord.com/api/webhooks/${speciesBot}`, `New Species Request by ${capitalize(member)}, Part ${i + 1} of ${Math.ceil(count)}`, privateMessage);
+			}, 500);
+		}
+	} else {
+        sendDiscordMessage(`https://discord.com/api/webhooks/${speciesBot}`, `New Species Request by ${capitalize(member)}`, privateMessage);
+	}
 });

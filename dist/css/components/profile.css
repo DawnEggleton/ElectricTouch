@@ -602,7 +602,7 @@
       position: fixed !important; } }
   .profile .memAccOnly {
     display: none; }
-  .profile.g-4 .charOnly, .profile.g-26 .charOnly, .profile.g-6 .charOnly, .profile.g-3.account-type--Member .charOnly {
+  .profile.g-4 .charOnly, .profile.g-26 .charOnly, .profile.g-28 .charOnly, .profile.g-6 .charOnly, .profile.g-3.account-type--Member .charOnly {
     display: none !important; }
-  .profile.g-4 .memAccOnly, .profile.g-26 .memAccOnly, .profile.g-6 .memAccOnly, .profile.g-3.account-type--Member .memAccOnly {
+  .profile.g-4 .memAccOnly, .profile.g-26 .memAccOnly, .profile.g-28 .memAccOnly, .profile.g-6 .memAccOnly, .profile.g-3.account-type--Member .memAccOnly {
     display: initial !important; }
