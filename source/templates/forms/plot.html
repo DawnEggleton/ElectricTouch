@@ -1,0 +1,26 @@
+<form id="form-plot-add" data-type="grid" data-columns="2">
+    <div class="fullWidth h4">Basic Info</div>
+    <label>
+        <b>Plot Name</b>
+        <span><input type="text" id="title" placeholder="Plot Name" required=""></span>
+    </label>
+    <label>
+        <b>Plot Hashtag</b>
+        <span><input type="text" id="id" placeholder="Plot ID" required=""></span>
+    </label>
+    <label class="fullWidth">
+        <b>Tagline</b>
+        <span><input type="text" id="tagline" placeholder="Tagline" required=""></span>
+    </label>
+    <label class="fullWidth">
+        <b>Overview</b>
+        <span><textarea id="overview" placeholder="Overview"></textarea></span>
+    </label>
+    <div class="fullWidth h4">Role Sections</div>
+    <label class="fullWidth">
+        <b>Number of Sections</b>
+        <span><input type="number" id="section-count" value="1" min="1" required=""></span>
+    </label>
+    <div id="roles-clip" class="fullWidth" data-type="grid" data-columns="2"></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>

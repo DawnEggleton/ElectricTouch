@@ -357,6 +357,16 @@ function initForums() {
 
 /****** Webpage Initialization ******/
 function initWebpages() {
+    //remove staff for non-staff
+    if(!document.querySelector('body').classList.contains('g-4')
+        && !document.querySelector('body').classList.contains('g-26')
+        && !document.querySelector('body').classList.contains('g-28')
+        && !document.querySelector('body').classList.contains('account-3')
+        && !document.querySelector('body').classList.contains('account-4')
+        && !document.querySelector('body').classList.contains('account-10')) {
+            document.querySelectorAll('.staffOnly').forEach(item => item.remove());
+        }
+
     //remove loading screen
     document.querySelector('body').classList.remove('loading');
     document.querySelector('#loading').remove();

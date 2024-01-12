@@ -232,13 +232,6 @@
                     font-weight: 100;
                 }
 
-                &.is-active,
-                &:hover {
-                    &::before {
-                        content: '\f178';
-                    }
-                }
-
                 &.is-active {
                     font-weight: 700;
 
@@ -248,5 +241,52 @@
                 }
             }
         }
+    }
+
+    form {
+        label {
+            display: flex;
+            flex-direction: column;
+
+            b {
+                max-width: max-content;
+                text-transform: uppercase;
+                line-height: 100%;
+                background: var(--bg-accent-30);
+                color: var(--text-secondary);
+                font-weight: 400;
+                font-size: var(--size-xs);
+                letter-spacing: 0.15em;
+                padding: 8px 15px;
+                border: 1px solid var(--border-accent);
+            }
+            span {
+                border-left: 1px dotted var(--bg-accent);
+                padding: 11px 0 10px 12px;
+                margin: -1px 0 0 10px;
+
+                input,
+                select,
+                textarea {
+                    width: 100%;
+                }
+            }
+        }
+        .section-wrap {
+            border: 1px solid var(--border-accent);
+            padding: 20px;
+            background: var(--bg-tertiary);
+        }
+    }
+
+    .subplot-role span {
+        display: block;
+        text-transform: uppercase;
+        font-size: var(--size-xs);
+        letter-spacing: 0.15em;
+        font-style: italic;
+    }
+    .section-role-group {
+        gap: 0 15px;
     }
 }

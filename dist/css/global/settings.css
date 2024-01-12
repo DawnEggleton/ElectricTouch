@@ -6,3 +6,6 @@ li::marker {
 
 a[target="_blank"]:not(.staffOnly)::after {
   content: '\f08e'; }
+
+.webpage .accordion--content a.is-active::before, .webpage .accordion--content a:hover::before {
+  content: '\f178'; }

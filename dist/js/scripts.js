@@ -14,6 +14,21 @@ if(switcher !== null) {
     initSwitcher();
 }
 
+//remove empty tooltips
+$('*[title=""]').removeAttr('title');
+$('*[tooltip=""]').removeAttr('tooltip');
+if (typeof tippy === 'function') {
+    tippy(document.querySelectorAll('[title]'), {
+    content: (reference) => {
+        const title = reference.getAttribute('title');
+        reference.removeAttribute('title');
+        return title;
+    },
+    theme: 'godlybehaviour',
+    arrow: false
+    });
+}
+
 /********** Initializations **********/
 setTheme();
 setSize();
@@ -29,8 +44,4 @@ document.querySelector('.invisibleEl').addEventListener('click', e => {
 /********** Index & Category View Only **********/
 if(pageType === 'idx' || pageType === 'SC') {
 	initForums();
-}
-
-/********** Webpages Only **********/
-if(pageType === 'Pages') {
 }

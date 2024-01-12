@@ -27,19 +27,75 @@ body {
     }
 }
 
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000000;
+    background: var(--bg-transparent);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: var(--font-header);
+    font-weight: 900;
+    @include fluid-type(30, 40, 480, 1920);
+
+    .loading-bubble {
+        background: var(--bg-accent);
+        color: var(--text-on-accent);
+        padding: 40px 50px 50px;
+        border-radius: 2px;
+        display: grid;
+        gap: 10px;
+
+        i {
+            font-size: 0.75em;
+        }
+    }
+}
+
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6,
+h7,
+h8,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.h7,
+.h8 {
+    margin-bottom: 15px;
+
+    &:not(:first-child) {
+        margin-top: 30px;
+    }
+}
+
+h2,
+h3,
+h4,
+h5,
+.h2,
+.h3,
+.h4,
+.h5 {
     font-weight: 900;
     font-family: var(--font-header);
-    margin-bottom: 15px;
     line-height: 160%;
     width: max-content;
 }
 
 h2,
-h3 {
+h3,
+.h2,
+.h3 {
     border: 1px solid var(--border-accent);
     background: var(--bg-accent-30);
     color: var(--text-secondary);
@@ -55,7 +111,8 @@ h3 {
     }
 }
 
-h2 {
+h2,
+.h2 {
     padding: 15px 30px;
     @include fluid-type(16, 24, 480, 1920);
     max-width: calc(100% - 50px);
@@ -65,7 +122,8 @@ h2 {
     }
 }
 
-h3 {
+h3,
+.h3 {
     padding: 10px 20px;
     @include fluid-type(14, 18, 480, 1920);
     max-width: calc(100% - 30px);
@@ -76,29 +134,33 @@ h3 {
 }
 
 h4,
-h5 {
+h5,
+.h4,
+.h5 {
     border-bottom: 1px solid var(--border-accent);
     color: var(--text-secondary);
 }
 
-h4 {
+h4,
+.h4 {
     @include fluid-type(16, 24, 480, 1920);
     padding: 0 40px 5px 0;
 }
 
-h5 {
+h5,
+.h5 {
     @include fluid-type(14, 18, 480, 1920);
     padding: 0 25px 5px 0;
 }
 
-h6 {
+h6,
+.h6 {
     text-transform: uppercase;
     font-size: var(--size-sm);
     color: var(--text-secondary);
     max-width: calc(100% - 40px);
     width: max-content;
     line-height: 160%;
-    margin-bottom: 15px;
 
     &::after {
         content: '';
@@ -112,7 +174,9 @@ h6 {
 }
 
 h7,
-h8 {
+h8,
+.h7,
+.h8 {
     display: block;
     text-transform: uppercase;
     text-align: justify;
@@ -123,16 +187,17 @@ h8 {
     max-width: 250px;
     width: 100%;
     line-height: 200%;
-    margin-bottom: 15px;
 }
 
-h8 {
+h8,
+.h8 {
     background: var(--bg-accent);
     color: var(--text-on-accent);
     padding: 10px 15px;
 }
 
-p {
+p,
+ul {
     margin: 20px 0;
 
     &:first-child {
@@ -143,6 +208,12 @@ p {
         margin-bottom: 0;
     }
 }
+hr {
+  border: 1px solid var(--bg-accent);
+  height: 10px;
+  background: var(--bg-accent-30);
+  margin: 20px auto;
+}
 
 a {
     color: var(--text-accent);
@@ -150,6 +221,42 @@ a {
     &[href=""],
     &[href="<i>No Information</i>"] {
         display: none;
+    }
+}
+
+input,
+select,
+textarea {
+    border: 1px dotted var(--border-accent);
+    background: var(--bg-secondary);
+    padding: 3px 8px;
+    color: var(--text-secondary);
+
+    &:focus {
+        outline: none;
+        border: 1px solid var(--border-accent);
+    }
+}
+select {
+    padding: 8px;
+}
+#submit,
+.submit {
+    background: var(--bg-accent-30);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-accent);
+    max-width: max-content;
+    margin: 0 auto;
+    font-size: var(--size-xl);
+    padding: 5px 20px;
+    font-weight: 900;
+    font-family: var(--font-header);
+    line-height: 200%;
+    transition-duration: 0.3s;
+
+    &:hover {
+        background: var(--bg-accent);
+        color: var(--text-on-accent);
     }
 }
 
@@ -361,6 +468,18 @@ tag-code {
         display: grid;
         grid-template-columns: 35px auto;
         align-items: end;
+        cursor: pointer;
+        border: 1px solid var(--border-accent);
+
+        &:hover {
+            background: var(--bg-accent-50);
+            color: var(--text-secondary);
+
+            & > div,
+            & > b {
+                border-color: var(--text-primary);
+            }
+        }
 
         input {
             display: none;

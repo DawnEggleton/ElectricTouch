@@ -1,0 +1,60 @@
+<label>
+    <b class="h7" data-align="left">Subplot</b>
+    <select id="plot">
+        <option value="">(select)</option>
+        <option value="hunter">The Most Dangerous Game</option>
+        <option value="conspiracy">Tin Foil Hats, Man!</option>
+        <option value="cult">The Order of the White Wolf</option>
+        <option value="freedom">All Aboard the Freedom Train</option>
+        <option value="blackops">The Blackest Night</option>
+    </select>
+</label>
+
+<script>
+//Plot change
+document.querySelectorAll('#plot').forEach(dropdown => {
+	dropdown.addEventListener('change', e => {
+	    let selected = e.currentTarget.options[e.currentTarget.selectedIndex].value;
+	    let form = e.currentTarget.closest('form');
+	    if(selected === 'hunter') {
+	        form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+	        form.querySelectorAll('.ifHunter').forEach(item => item.classList.remove('hide'));
+	    } else if (selected === 'conspiracy') {
+	        form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+	        form.querySelectorAll('.ifConspiracy').forEach(item => item.classList.remove('hide'));
+	    } else if (selected === 'cult') {
+	        form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+	        form.querySelectorAll('.ifCult').forEach(item => item.classList.remove('hide'));
+	    } else if (selected === 'freedom') {
+	        form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+	        form.querySelectorAll('.ifFreedom').forEach(item => item.classList.remove('hide'));
+	    } else if (selected === 'blackops') {
+	        form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+	        form.querySelectorAll('.ifBlackops').forEach(item => item.classList.remove('hide'));
+	    } else {
+	        form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+	    }
+	});
+});
+
+    //Pre-load on page refresh
+    document.querySelectorAll('#plot').forEach(plotStatus => {
+    	let selected = plotStatus.options[plotStatus.selectedIndex].value;
+	let form = plotStatus.closest('form');
+	    if(selected === 'hunter') {
+		form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+		form.querySelectorAll('.ifHunter').forEach(item => item.classList.remove('hide'));
+	    } else if (selected === 'conspiracy') {
+		form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+		form.querySelectorAll('.ifConspiracy').forEach(item => item.classList.remove('hide'));
+	    } else if (selected === 'cult') {
+		form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+		form.querySelectorAll('.ifCult').forEach(item => item.classList.remove('hide'));
+	    } else if (selected === 'blackops') {
+		form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+		form.querySelectorAll('.ifBlackops').forEach(item => item.classList.remove('hide'));
+	    } else {
+		form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+	    }
+    });
+</script>

@@ -8,3 +8,17 @@ li::marker {
 a[target="_blank"]:not(.staffOnly)::after {
     content: '\f08e';
 }
+.webpage {
+    .accordion {
+        &--content {
+            a {
+                &.is-active,
+                &:hover {
+                    &::before {
+                        content: '\f178';
+                    }
+                }
+            }
+        }
+    }
+}

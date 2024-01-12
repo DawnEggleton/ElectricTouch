@@ -19,9 +19,12 @@
 		
 		
             <div id="loading">
-                <p>Loading</p>
+                <div class="loading-bubble">
+                    <i class="fa-regular fa-spinner fa-spin"></i>
+                    <p>Loading</p>
+                </div>
             </div>
-            
+
             <!--Webpage-->
             <section class="webpage">
                 <div class="webpage--menu">
@@ -44,13 +47,7 @@
                         <tag-label data-category="subplots" class="tab-category accordion--trigger">
                             <span>Subplots</span>
                         </tag-label>
-                        <div data-category="subplots" class="tab-category accordion--content">
-                            <a href="#hunters">The Most Dangerous Game</a>
-                            <a href="#conspiracy">Tin Foil Hats, Man!</a>
-                            <a href="#cult">The Order of the White Wolf</a>
-                            <a href="#freedom">All Aboard the Freedom Train</a>
-                            <a href="#blackops">The Blackest Night</a>
-                        </div>
+                        <div data-category="subplots" class="tab-category accordion--content"></div>
                         <tag-label data-category="guides" class="tab-category accordion--trigger">
                             <span>Guides</span>
                         </tag-label>
@@ -86,10 +83,10 @@
                             <a href="#edit-business">Edit a Business</a>
                             <a href="#staff-help">Request Staff Help</a>
                         </div>
-                        <tag-label data-category="moderation" class="tab-category accordion--trigger">
+                        <tag-label data-category="staff" class="tab-category accordion--trigger">
                             <span>Staff Tools</span>
                         </tag-label>
-                        <div data-category="moderation" class="tab-category accordion--content">
+                        <div data-category="staff" class="tab-category accordion--content">
                             <a href="#announce">Send Announcement</a>
                             <a href="#add-species">Add Species</a>
                             <a href="#add-subplot">Add Subplot</a>
@@ -142,33 +139,7 @@
                         </tag-tabset>
                     </tag-tab>
                     <tag-tab class="tab-category" data-category="subplots">
-                        <tag-tabset>
-                            <tag-tab data-key="#hunters">
-                                <div class="webpage--content-inner"><div class="scroll">
-                                    Hunters
-                                </div></div>
-                            </tag-tab>
-                            <tag-tab data-key="#conspiracy">
-                                <div class="webpage--content-inner"><div class="scroll">
-                                    Conspiracy
-                                </div></div>
-                            </tag-tab>
-                            <tag-tab data-key="#cult">
-                                <div class="webpage--content-inner"><div class="scroll">
-                                    Cult
-                                </div></div>
-                            </tag-tab>
-                            <tag-tab data-key="#freedom">
-                                <div class="webpage--content-inner"><div class="scroll">
-                                    Freedom
-                                </div></div>
-                            </tag-tab>
-                            <tag-tab data-key="#blackops">
-                                <div class="webpage--content-inner"><div class="scroll">
-                                    Black Ops
-                                </div></div>
-                            </tag-tab>
-                        </tag-tabset>
+                        <tag-tabset></tag-tabset>
                     </tag-tab>
                     <tag-tab class="tab-category" data-category="guides">
                         <tag-tabset>
@@ -203,7 +174,7 @@
                             </tag-tab>
                             <tag-tab data-key="#join-subplot">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Join subplot form
+                                    @@include('../source/templates/forms/join-subplot.html')
                                 </div></div>
                             </tag-tab>
                         </tag-tabset>
@@ -260,7 +231,7 @@
                             </tag-tab>
                             <tag-tab data-key="#add-subplot">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Subplot form
+                                    @@include('../source/templates/forms/plot.html')
                                 </div></div>
                             </tag-tab>
                         </tag-tabset>
@@ -269,34 +240,57 @@
             </section>
 
             <script src="../dist/js/webpageFunctions.js"></script>
+            <script src="../dist/js/formatFunctions.js"></script>
             <script src="../dist/js/webpageScripts.js"></script>
             <script>
-                        initWebpages();
-                /*const sheetID = '1qlk4ezdI7bFbfLEIdO5eHjalb680NT6z5rYvtvW72A4';
-                const deployID = 'AKfycbxLOKasMjFiKqpCtT4PaAjKIaNPXI0naKalkCKuOnPgtv5ozGtqaJCzrmuQVmGaI4flPg';
-
-                const discordServer = '1172357121472466994';
-                const reservesHook = 'h4gBFvuwmWrNWkA_FizzToQHNea1SvAFIhQFY4RedNk8a0PHowva3S-Pldg7ER6ymmnA';
-                const submitHook = 'h4gBFvuwmWrNWkA_FizzToQHNea1SvAFIhQFY4RedNk8a0PHowva3S-Pldg7ER6ymmnA';
-                const staffSubmitHook = 'h4gBFvuwmWrNWkA_FizzToQHNea1SvAFIhQFY4RedNk8a0PHowva3S-Pldg7ER6ymmnA';
+                const sheetID = '1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU';
+                const deployID = 'AKfycbx-PjF_7gGgm9QOilpWR6x_QGuKRys5Cjd3wbexK-P2hyxquvLreQW7meY567tPomB2';
+                
+                const businessBot = `https://discord.com/api/webhooks/1177012692863688714/hnbLmkEeWwLvy2Mogz0EEXtFZdMLk4Pc4_LXUqgYfCwKtzNhNbNMaNeqjv9Rr6MU7FUr`;
+                const editBot = `https://discord.com/api/webhooks/1124141336120000562/FhVK1QATZQU4JiVE-jFde6dqv2cqY2VnlZZtQfzcyyvjk75YcLXJMWNeSYfP0cB-MAiY`;
+                const modBot = `https://discord.com/api/webhooks/1124053071866122300/gtx0lNZjQ3N-SZPuTUmTKhT_1m1NubxE4SsZchoeS-m5fAFo04m3Cdfd4GXVVed9Eop4`;
+                const reserveBot = `https://discord.com/api/webhooks/1124335641191260251/x_KFeOHJ32QKIcmCuVa4qwzEJLrlc0BP61kTaT3YANJSnhZ77GqiDt0d17M7TinPT1h2`;
+                const sortBot = `https://discord.com/api/webhooks/1124104686857883748/Dh42I7Eh6Gbe22wSEnQ21nQJxkr9v1TNPr7tVRrqkcKXc_Gw4Axt7XCBuOHAdocl40RA`;
+                const speciesBot = `https://discord.com/api/webhooks/1124303973248151572/7CTHEhHhMwossK1bf8J7JDu3XW0gdPOp6gI5zM0s16FmahlM3sUJytNXE4rMksHbCr6h`;
+                const announceBot = `https://discord.com/api/webhooks/1124162110750994474/YF0rNXP5bc3GvYUjn-0_Hn0yHBU5YgUF6vFfi1qLZM7xmOm95y0Zg0UtMY8KNBVRs50N`;
+                const publicSortBot = `https://discord.com/api/webhooks/1124161944119685150/oH3fHzZWdI4Yzt7Td8AnvP0XcHLgXm_RJTq0pVI19s1lpCfiI2WkTqK7Y_BmpTLuFe1A`;
+                const publicSpeciesBot = `https://discord.com/api/webhooks/1124303807858344007/AW_ejzMEqfK0BbjLvNcA6n2RfCz8JLHo-f4sgeI0DayK4YYi_u1NLFXwCSIr8ETzryR_`;
 
                 const claims = `https://opensheet.elk.sh/${sheetID}/Claims`;
                 const reserves = `https://opensheet.elk.sh/${sheetID}/Reserves`;
+                const subplotReserves = `https://opensheet.elk.sh/${sheetID}/SubplotReserves`;
+                const subplots = `https://opensheet.elk.sh/${sheetID}/Subplots`;
+
                 fetch(claims)
                 .then((response) => response.json())
                 .then((claimsData) => {
-                    formatMembers(claimsData);
-                    formatCharacters(claimsData);
+                    //console.log(claimsData);
                     
                     fetch(reserves)
                     .then((response) => response.json())
                     .then((reservesData) => {
-                        formatReserves(reservesData);
-                        
-                    }).then(() => {
-                        initWebpages();
+                        //console.log(reservesData);
+
+                        fetch(subplotReserves)
+                        .then((response) => response.json())
+                        .then((subplotReservesData) => {
+                            //console.log(subplotReservesData);
+
+                            fetch(subplots)
+                            .then((response) => response.json())
+                            .then((subplotData) => {
+                                formatSubplot(subplotData);
+                                initJoinSelect(subplotData);
+                                
+                            }).then(() => {
+                                initWebpages();
+                            });
+                            
+                        });
+
                     });
-                });*/
+
+                });
             </script>
 
             <!-- Copyright Information -->
