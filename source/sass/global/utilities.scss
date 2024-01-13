@@ -15,7 +15,8 @@
 }
 body:not(.g-2) .guestOnly,
 body:not(.g-4):not(.g-26):not(.g-28):not(.account-3):not(.account-4):not(.account-9) .staffOnly,
-.hidden {
+.hidden,
+.onlySolo:not(:only-child) {
     display: none !important;
 }
 body.g-2 .guestOnly,

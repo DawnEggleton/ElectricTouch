@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        @@include('../source/templates/head.html', {
+            "prefix": "../dist"
+        })  
+    </head>
+    <body id="Pages" class="g-4">
+        @@include('../source/templates/header.html', {
+            "prefix": ".."
+        })
+      @@include('../source/templates/nav.html', {
+            "prefix": ".."
+        })
+
+        <!--Main Body-->
+        <main>
+            <a name="top"></a>
+		
+		
+            <div id="loading">
+                <div class="loading-bubble">
+                    <i class="fa-regular fa-spinner fa-spin"></i>
+                    <p>Loading</p>
+                </div>
+            </div>
+            
+            <!--Webpage-->
+            <section class="webpage">
+                <div class="webpage--menu">
+                Filters
+                </div>
+                <div class="webpage--species">
+                <div class="webpage--content-inner">
+                    <div class="scroll">Species</div>
+                </div>
+                </div>
+            </section>
+            
+            <script>
+                const sheetID = '1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU';
+            
+                const species = `https://opensheet.elk.sh/${sheetID}/Species`;
+            
+                fetch(species)
+                .then((response) => response.json())
+                .then((data) => {
+                console.log(data);
+            
+                }).then(() => {
+                    initWebpages();
+                });
+            </script>
+
+            <!-- Copyright Information -->
+                <div class="tableborder" align="center">
+                    <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+                        <div class="copyright" align="center">
+                            Powered by 
+                            <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a>
+                            (<a href="http://jcink.com" target="_blank">Jcink.com </a>
+                            <a href="https://jcink.com" target="_blank">Forum Hosting</a>
+                            ) © 2020 &nbsp;
+                            <a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a>
+                            <br>
+                            Page creation time: 0.0054 <!-- http://luxtradition.b1.jcink.com -->  · 
+                            <a href="index.php?act=Mobile">Mobile Version</a> · 
+                            <a href="index.php?act=privacy">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div> 
+        </main>
+
+        
+        @@include('../source/templates/scripts.html', {
+            "prefix": "../dist"
+        })   
+    </body>
+</html>

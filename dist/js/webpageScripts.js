@@ -201,6 +201,9 @@ document.querySelector('#form-species').addEventListener('submit', e => {
 	} else {
         sendDiscordMessage(`https://discord.com/api/webhooks/${speciesBot}`, `New Species Request by ${capitalize(member)}`, privateMessage);
 	}
+
+    form.innerHTML = `<blockquote class="fullWidth">Submission successful!</blockquote>
+    <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
 });
 
 //Announcement
@@ -217,6 +220,9 @@ document.querySelector('#form-announce').addEventListener('submit', e => {
 	let message = `Played by ${capitalize(member)}\n\n**About:**\n${hooks}\n\n**Read more:**\n<https://godlybehaviour.jcink.net/?showuser=${account}>`;
 
     sendDiscordMessage(`https://discord.com/api/webhooks/${announceBot}`, embedTitle, message, null, groupColor);
+
+    form.innerHTML = `<blockquote class="fullWidth">Submission successful!</blockquote>
+    <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
 });
 
 //Species Add
@@ -545,4 +551,103 @@ idField.addEventListener('change', () => {
     editJobs(editBox.closest('form'), editBox);
     removeJobs(removeBox.closest('form'), removeBox);
     removePlots(plotBox.closest('form'), plotBox);
+});
+
+//Mod Form Toggles
+let modForm = document.querySelector('#form-mod');
+let toggleField = modForm.querySelector('#type');
+let modValue = toggleField.options[toggleField.selectedIndex].value.toLowerCase().trim();
+modForm.querySelectorAll('.ifBoard').forEach(item => item.classList.add('hidden'));
+modForm.querySelectorAll('.ifThread').forEach(item => item.classList.add('hidden'));
+modForm.querySelectorAll('.ifAccount').forEach(item => item.classList.add('hidden'));
+modForm.querySelectorAll('.ifOther').forEach(item => item.classList.add('hidden'));
+switch(modValue) {
+    case `board`:
+        modForm.querySelectorAll('.ifBoard').forEach(item => item.classList.remove('hidden'));
+        break;
+    case `thread`:
+        modForm.querySelectorAll('.ifThread').forEach(item => item.classList.remove('hidden'));
+        break;
+    case `account`:
+        modForm.querySelectorAll('.ifAccount').forEach(item => item.classList.remove('hidden'));
+        break;
+    case `other`:
+        modForm.querySelectorAll('.ifOther').forEach(item => item.classList.remove('hidden'));
+        break;
+    default:
+        break;
+}
+toggleField.addEventListener('change', () => {
+    let value = toggleField.options[toggleField.selectedIndex].value.toLowerCase().trim();
+    modForm.querySelectorAll('.ifBoard').forEach(item => item.classList.add('hidden'));
+    modForm.querySelectorAll('.ifThread').forEach(item => item.classList.add('hidden'));
+    modForm.querySelectorAll('.ifAccount').forEach(item => item.classList.add('hidden'));
+    modForm.querySelectorAll('.ifOther').forEach(item => item.classList.add('hidden'));
+    switch(value) {
+        case `board`:
+            modForm.querySelectorAll('.ifBoard').forEach(item => item.classList.remove('hidden'));
+            break;
+        case `thread`:
+            modForm.querySelectorAll('.ifThread').forEach(item => item.classList.remove('hidden'));
+            break;
+        case `account`:
+            modForm.querySelectorAll('.ifAccount').forEach(item => item.classList.remove('hidden'));
+            break;
+        case `other`:
+            modForm.querySelectorAll('.ifOther').forEach(item => item.classList.remove('hidden'));
+            break;
+        default:
+            break;
+    }
+});
+
+//Mod Form
+document.querySelector('#form-mod').addEventListener('submit', e => {
+    e.preventDefault();
+
+    let form = e.currentTarget;
+    let type = toggleField.options[toggleField.selectedIndex].value.toLowerCase().trim();
+    let requester = form.querySelector('#requester').value.toLowerCase().trim();
+    let staffTitle = `${capitalize(requester)} has requested ${type} moderation.`;
+    let board, parent, threads, moveTo, account, request, staffMessage;
+    switch(type) {
+        case `board`:
+            board = form.querySelector('#board').value.toLowerCase().trim();
+            parent = form.querySelector('#parent').value.toLowerCase().trim();
+            request = form.querySelector('#request').value.trim();
+            staffMessage = `**Board Title:** ${capitalize(board)}
+                **Place Within:** ${capitalize(parent)}
+
+                **Request:**
+                ${request}`;
+            break;
+        case `thread`:
+            threads = form.querySelector('#threads').value.trim();
+            moveTo = form.querySelector('#thread-location').options[form.querySelector('#thread-location').selectedIndex].innerText.trim();;
+            staffMessage = `**Move To:** ${moveTo}
+
+                **Thread(s) to Move:**
+                ${threads}`;
+            break;
+        case `account`:
+            account = form.querySelector('#account').value.toLowerCase().trim();
+            request = form.querySelector('#request').value.trim();
+            staffMessage = `**Account:** ${account}
+
+                **Request:**
+                ${request}`;
+            break;
+        case `other`:
+            request = form.querySelector('#request').value.trim();
+            staffMessage = `**Request:**
+                ${request}`;
+            break;
+        default:
+            break;
+    }
+
+    sendDiscordMessage(`https://discord.com/api/webhooks/${modBot}`, staffTitle, staffMessage);
+
+    form.innerHTML = `<blockquote class="fullWidth">Submission successful!</blockquote>
+    <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
 });

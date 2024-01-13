@@ -72,6 +72,39 @@ function componentToHex(c) {
 function rgbToHex(r, g, b) {
     return componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
+function cleanText(text) {
+	return text.replaceAll(' ', '').replaceAll('&amp;', '').replaceAll('&', '').replaceAll(`'`, '').replaceAll(`"`, '').replaceAll(`.`, '').replaceAll(`(`, '').replaceAll(`)`, '');
+}
+function filterValue(e) {
+    let searchValue = e.value.toLowerCase().trim();
+    let names = document.querySelectorAll(`[data-key="${e.dataset.filter}"] .claim ${e.dataset.objects}`);
+    let headers = document.querySelectorAll(`[data-key="${e.dataset.filter}"] ${e.dataset.headers}`);
+    let wraps = document.querySelectorAll(`[data-key="${e.dataset.filter}"] .claim-wrap`);
+    if(searchValue !== '') {
+        e.parentNode.classList.add('pb');
+        names.forEach(name => {
+            let nameValue = name.innerText.toLowerCase().trim();
+            if (nameValue.indexOf(searchValue) > -1) {
+                name.closest('.claim').classList.remove('hidden');
+            } else {
+                name.closest('.claim').classList.add('hidden');
+            }
+            let childrenArray = Array.from(name.closest('.claim-wrap').querySelectorAll('.claim')).filter(item => !item.classList.contains('hidden'));
+            if(childrenArray.length === 0) {
+                name.closest('.claim-wrap').classList.add('hidden');
+                name.closest('.claim-wrap').previousElementSibling.classList.add('hidden');
+            } else {
+                name.closest('.claim-wrap').classList.remove('hidden');
+                name.closest('.claim-wrap').previousElementSibling.classList.remove('hidden');
+            }
+        });
+    } else {
+        e.parentNode.classList.remove('pb');
+        headers.forEach(header => header.classList.remove('hidden'));
+        names.forEach(name => name.closest('.claim').classList.remove('hidden'));
+        wraps.forEach(wrap => wrap.classList.remove('hidden'));
+    }
+}
 
 /****** Settings ******/
 function setTheme() {
@@ -431,7 +464,7 @@ function initHashTabs(wrapClass, menuClass, tabWrapClass, activeClass, categoryC
         if(!hashCategory) {
             hashCategoryArray = document.querySelectorAll(`${menuClass} [data-category="${selectedCategory}"]`);
         }
-
+        
         hashTab = document.querySelector(`${tabWrapClass} tag-tab[data-category="${selectedCategory}"]`);
 
         if(hashCategory) {

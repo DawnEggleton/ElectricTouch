@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        @@include('../source/templates/head.html', {
+            "prefix": "../dist"
+        })  
+    </head>
+    <body id="Pages" class="g-4">
+        @@include('../source/templates/header.html', {
+            "prefix": ".."
+        })
+      @@include('../source/templates/nav.html', {
+            "prefix": ".."
+        })
+
+        <!--Main Body-->
+        <main>
+            <a name="top"></a>
+		
+		
+            <div id="loading">
+                <div class="loading-bubble">
+                    <i class="fa-regular fa-spinner fa-spin"></i>
+                    <p>Loading</p>
+                </div>
+            </div>
+
+            <!--Webpage-->
+            <section class="webpage">
+                <div class="webpage--menu">
+                    <button class="onlyMobile" onClick="toggleWebpageMenu(this)">
+                        <div class="menu-bar menu-top"></div>
+                        <div class="menu-bar menu-middle"></div>
+                        <div class="menu-bar menu-bottom"></div>
+                    </button>
+                    <tag-labels class="accordion scroll">
+                        <div class="menu-static">
+                            <a href="./webpage.html#add-business">
+                                <span>Submit a Business</span>
+                            </a>
+                            <div>
+                                <strong class="h7">Filter by Business Name</strong>
+                                <input type="text" onkeyup="filterBusinesses(this)" placeholder="Business Name" style="width: 100%;">
+                            </div>
+                        </div>
+                    </tag-labels>
+                </div>
+                <tag-tabset class="webpage--content"></tag-tabset>
+            </section>
+
+            <script>
+                const sheetID = '1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU';
+
+                const claims = `https://opensheet.elk.sh/${sheetID}/Claims`;
+                const businesses = `https://opensheet.elk.sh/${sheetID}/Businesses`;
+            </script>
+            <script src="../dist/js/businessFunctions.js"></script>
+            <script src="../dist/js/formatFunctions.js"></script>
+            <script>
+                fetch(businesses)
+                .then((response) => response.json())
+                .then((businessData) => {
+                    initBusinessListing(businessData);
+
+                    fetch(claims)
+                    .then((response) => response.json())
+                    .then((claimsData) => {
+                        formatJobClaims(claimsData);
+                        
+                    }).then(() => {
+                        initWebpages();
+                    });
+
+                });
+            </script>
+
+            <!-- Copyright Information -->
+                <div class="tableborder" align="center">
+                    <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+                        <div class="copyright" align="center">
+                            Powered by 
+                            <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a>
+                            (<a href="http://jcink.com" target="_blank">Jcink.com </a>
+                            <a href="https://jcink.com" target="_blank">Forum Hosting</a>
+                            ) © 2020 &nbsp;
+                            <a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a>
+                            <br>
+                            Page creation time: 0.0054 <!-- http://luxtradition.b1.jcink.com -->  · 
+                            <a href="index.php?act=Mobile">Mobile Version</a> · 
+                            <a href="index.php?act=privacy">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div> 
+        </main>
+
+        
+        @@include('../source/templates/scripts.html', {
+            "prefix": "../dist"
+        })   
+    </body>
+</html>
