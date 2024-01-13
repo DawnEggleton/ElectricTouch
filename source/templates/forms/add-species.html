@@ -1,0 +1,276 @@
+<form id="form-species-add" data-type="grid" data-columns="2">
+    <blockquote class="fullWidth">Abilities and Weaknesses should be separated by an @ sign for correct parsing from the sheet. E.g., "strength one is this@strength two is this@strength three is this".</blockquote>
+    <label>
+        <b>Species</b>
+        <span><input type="text" id="species" placeholder="Species Name" required /></span>
+    </label>
+    <label>
+        <b>Aging</b>
+        <span><input type="text" id="aging" placeholder="Aging" required /></span>
+    </label>
+    <label>
+        <b>Lifespan</b>
+        <span><input type="text" id="lifespan" placeholder="Lifespan" required /></span>
+    </label>
+    <label>
+        <b>Custom Trait - Title</b>
+        <span><input type="text" id="custom-trait" placeholder="Custom Trait" required /></span>
+    </label>
+    <label>
+        <b>Physical Strength</b>
+        <span><input type="range" id="strength" value="0" min="0" max="100" required /></span>
+    </label>
+    <label>
+        <b>Longevity</b>
+        <span><input type="range" id="longevity" value="0" min="0" max="100" required /></span>
+    </label>
+    <label>
+        <b>Vulnerability</b>
+        <span><input type="range" id="vulnerability" value="0" min="0" max="100" required /></span>
+    </label>
+    <label>
+        <b>Custom Trait</b>
+        <span><input type="range" id="custom-percent" value="0" min="0" max="100" required /></span>
+    </label>
+    <label class="fullWidth">
+        <b>Physiology</b>
+        <span><textarea id="physiology" placeholder="Physiology - full sentences" required></textarea></span>
+    </label>
+    <label class="fullWidth">
+        <b>Community Structure</b>
+        <span><textarea id="community" placeholder="Community - full sentences" required></textarea></span>
+    </label>
+    <label>
+        <b>Abilities</b>
+        <span><textarea id="abilities" placeholder="Abilities - @ sign separated list" required></textarea></span>
+    </label>
+    <label>
+        <b>Weaknesses</b>
+        <span><textarea id="weaknesses" placeholder="Weaknesses - @ sign separated list" required></textarea></span>
+    </label>
+    <div class="h4 fullWidth">Filter Tags</div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Species Category</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="speciescat" id="speciescat" value="cat-premium" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Premium</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="speciescat" id="speciescat" value="cat-reg" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Regular</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="speciescat" id="speciescat" value="staffOnly" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Hide for future release</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Species Type</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-aquatic" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Aquatic</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-equine" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Equine</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-tele" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Empathic</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-faerie" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Faerie</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-spirit" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Spirit</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-misc" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Other</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Public Awareness</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="awareness" id="awareness" value="none">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="awareness" id="awareness" value="government">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Government</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="awareness" id="awareness" value="public">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Public</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Knowledge Level</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="none">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="low">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Low</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="medium">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Medium</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="high">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>High</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Lifespan</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-immortal" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Immortal</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-long" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Longer than a human</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-short" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Shorter than a human</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-average" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Same as a human</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Shifting</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-animal" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Animal</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-hybrid" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Human/Animal Hybrid</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-human" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Human Appearance</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-plant" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Plant</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-glamour" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Glamour Only</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-none" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Healing</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-fast" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Heals faster</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-lives" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Difficult to kill</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-both" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Heals faster and difficult to kill</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-specific" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Heals under specific circumstances</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-none" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Community</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-communal" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Community-oriented</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-species" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Species-oriented</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-solitary" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Solitary</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-varied" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Depends on the individual</strong>
+        </label>
+    </div></div>
+    <div class="fullWidth" data-type="grid"><div class="h6">Miscellaneous</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="misc" id="misc" value="misc-turning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Can turn others</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="misc" id="misc" value="misc-partshift" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Can partial shift</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="misc" id="misc" value="misc-healothers" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Can heal others</strong>
+        </label>
+    </div></div>
+    <div class="h4 fullWidth">Credit</div>
+    <label class="fullWidth">
+        <b>Number of Users</b>
+        <span><input type="number" id="credit-count" value="1" min="1" required /></span>
+    </label>
+    <div id="credit-clip" class="fullWidth" data-type="grid" data-columns="2"></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>

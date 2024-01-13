@@ -18,6 +18,15 @@ function sendAjax(form, data, discord, successMessage) {
                 case `subplot-submit`:
                     sendDiscordMessage(`https://discord.com/api/webhooks/${reserveBot}`, discord.staffTitle, discord.staffMessage);
                     break;
+                case `species-submit`:
+                    sendDiscordMessage(`https://discord.com/api/webhooks/${speciesBot}`, discord.staffTitle, discord.staffMessage);
+                    break;
+                case `business-submit`:
+                    sendDiscordMessage(`https://discord.com/api/webhooks/${businessBot}`, discord.staffTitle, discord.staffMessage);
+                    break;
+                case `claims-submit`:
+                    sendDiscordMessage(`https://discord.com/api/webhooks/${sortBot}`, discord.staffTitle, discord.staffMessage, null, discord.groupColor);
+                    break;
                 default:
                     console.log('Success');
                     break;
@@ -34,6 +43,9 @@ function sendAjax(form, data, discord, successMessage) {
 
             window.scrollTo(0, 0);
             switch(data.SubmissionType) {
+                case `claims-submit`:
+                    sendDiscordMessage(`https://discord.com/api/webhooks/${publicSortBot}`, discord.publicTitle, discord.publicMessage, null, discord.groupColor);
+                    break;
                 default:
                     console.log('Complete');
                     break;
@@ -273,6 +285,24 @@ function sortButton(button) {
     switching = true;
     switchCount = 0;
 }
+function addCreditFields(i) {
+    let html = `<label class="user-name">
+        <b>Member</b>
+        <span><input type="text" id="user-${i}" placeholder="Member" required /></span>
+    </label>
+    <label class="user-id">
+        <b>Member ID</b>
+        <span><input type="text" id="id-${i}" placeholder="Member ID" required /></span>
+    </label>`;
+    return html;
+}
+function loadCredits() {
+    let active = document.querySelector(`#form-species-add #credit-clip`);
+    let count = document.querySelector(`#form-species-add #credit-count`) ? document.querySelector(`#form-species-add #credit-count`).value : 0;
+    for(let i = 0; i < count; i++) {
+        active.insertAdjacentHTML('beforeend', addCreditFields(i));
+    }
+}
 
 function submitReserves(form, data, discord, successMessage) {
     fetch(`https://opensheet.elk.sh/${sheetID}/Claims`)
@@ -336,4 +366,38 @@ function submitReserves(form, data, discord, successMessage) {
     });
     
     return false;
+}
+function handleJobFields(form, field) {
+    let active = form.querySelector('#jobs-clip');
+    let currentCount = active.querySelectorAll('.job').length;
+    let newCount = parseInt(field.value);
+    if (newCount > currentCount) {
+        for(let i = currentCount; i < newCount; i++) {
+            active.insertAdjacentHTML('beforeend', addJobFields(i));
+        }
+    } else if (currentCount > newCount) {
+        let difference = currentCount - newCount;
+        for(let i = 0; i < difference; i++) {
+            active.querySelectorAll('.employer')[currentCount - i - 1].remove();
+            active.querySelectorAll('.job')[currentCount - i - 1].remove();
+        }
+    }
+}
+function addJobFields(i) {
+	let html = `<label class="employer">
+			<b>Employer</b>
+			<span><select id="employer-${i}"><option value="">(select)</option><optgroup label="Self-employed"><option value="self-employed">Self-employed</option></optgroup>${businessList}</select></span>
+		</label>
+		<label class="job">
+			<b>Job Title</b>
+			<span><input type="text" id="job-${i}" placeholder="Job Title" /></span>
+		</label>`;
+	return html;
+}
+function simpleFieldToggle(field, ifclass) {
+    if(field.options[field.selectedIndex].value === 'y') {
+        document.querySelectorAll(ifclass).forEach(item => item.classList.remove('hidden'));
+    } else {
+        document.querySelectorAll(ifclass).forEach(item => item.classList.add('hidden'));
+    }
 }

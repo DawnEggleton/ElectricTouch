@@ -202,3 +202,262 @@ document.querySelector('#form-species').addEventListener('submit', e => {
         sendDiscordMessage(`https://discord.com/api/webhooks/${speciesBot}`, `New Species Request by ${capitalize(member)}`, privateMessage);
 	}
 });
+
+//Announcement
+document.querySelector('#form-announce').addEventListener('submit', e => {
+    e.preventDefault();
+    let form = e.currentTarget;
+	let member = form.querySelector('#member').value.toLowerCase().trim();
+	let character = form.querySelector('#character').value.toLowerCase().trim();
+	let account = form.querySelector('#account').value.trim();
+	let group = form.querySelector('#group').options[form.querySelector('#group').selectedIndex].innerText.toLowerCase().trim();
+	let groupColor = rgbToHex(colors[group][0], colors[group][1], colors[group][2]);
+	let hooks = form.querySelector('#about').value.trim();
+    let embedTitle = `Welcome to ${capitalize(character)}!`;
+	let message = `Played by ${capitalize(member)}\n\n**About:**\n${hooks}\n\n**Read more:**\n<https://godlybehaviour.jcink.net/?showuser=${account}>`;
+
+    sendDiscordMessage(`https://discord.com/api/webhooks/${announceBot}`, embedTitle, message, null, groupColor);
+});
+
+//Species Add
+loadCredits();
+document.querySelector('#form-species-add').addEventListener('submit', e => {
+    e.preventDefault();
+
+    let form = e.currentTarget;
+    let species = form.querySelector('#species').value.toLowerCase().trim();
+    let aging = form.querySelector('#aging').value.toLowerCase().trim();
+    let lifespan = form.querySelector('#lifespan').value.toLowerCase().trim();
+    let physiology = form.querySelector('#physiology').value.trim();
+    let community = form.querySelector('#community').value.trim();
+    let abilities = form.querySelector('#abilities').value.trim();
+    let weaknesses = form.querySelector('#weaknesses').value.trim();
+    let strength = form.querySelector('#strength').value;
+    let longevity = form.querySelector('#longevity').value;
+    let vulnerability = form.querySelector('#vulnerability').value;
+    let customPercent = form.querySelector('#custom-percent').value;
+    let customTrait = form.querySelector('#custom-trait').value.toLowerCase().trim();
+    let traits = `{"trait": "physical strength", "percent": "${strength}"}+{"trait": "longevity", "percent": "${longevity}"}+{"trait": "vulnerability", "percent": "${vulnerability}"}+{"trait": "${customTrait}", "percent": "${customPercent}"}`;
+    let credits = ``;
+    let users = form.querySelectorAll('.user-name input');
+    let ids = form.querySelectorAll('.user-id input');
+    for(let i = 0; i < users.length; i++) {
+        credits += `{"username": "${users[i].value.toLowerCase().trim()}", "userid": "${ids[i].value.toLowerCase().trim()}"}`;
+        if(i !== users.length - 1) {
+            credits += `+`;
+        }
+    }
+    let premium = form.querySelector('#speciescat[value="cat-premium"]').checked;
+    let hide = form.querySelector('#speciescat[value="staffOnly"]').checked;
+    let tagObjects = document.querySelectorAll('#form-species-add .form-tag');
+    let tagArray = Array.prototype.slice.call(tagObjects).filter(tag => tag.checked);
+    let tags = tagArray.map(tag => tag.value).join(' ');
+    let awarenessObjects = document.querySelectorAll('#form-species-add [name="awareness"]');
+    let awarenessArray = Array.prototype.slice.call(awarenessObjects).filter(tag => tag.checked);
+    let awareness = awarenessArray[0].value;
+    let knowledgeObjects = document.querySelectorAll('#form-species-add [name="knowledge"]');
+    let knowledgeArray = Array.prototype.slice.call(knowledgeObjects).filter(tag => tag.checked);
+    let knowledge = knowledgeArray[0].value;
+
+    let data = {
+        SubmissionType: `species-submit`,
+        Species: species,
+        Aging: aging,
+        Lifespan: lifespan,
+        Physiology: physiology,
+        CommunityStructure: community,
+        Strengths: abilities,
+        Weaknesses: weaknesses,
+        Traits: traits,
+        Credit: credits,
+        Premium: premium,
+        Tags: tags,
+        Awareness: awareness,
+        Knowledge: knowledge,
+    }
+
+    let discord = {
+        staffTitle: `New Species Addition!`,
+        staffMessage: `**${capitalize(species)}** has been added to the sheet${hide && ` for future release`}. Review them here: <https://godlybehaviour.jcink.net/?act=Pages&kid=species&typesearch=${species.replace(' ', '').toLowerCase().trim()}>`,
+        publicTitle: `New Species Addition!`,
+        publicMessage: `**${capitalize(species)}** has been added as a ${premium ? `premium species` : `playable species`}! Read more about them here: <https://godlybehaviour.jcink.net/?act=Pages&kid=species&typesearch=${species.replace(' ', '').toLowerCase().trim()}>`,
+    }
+
+    let successMessage = `<blockquote class="fullWidth">Submission successful!</blockquote>
+    <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
+
+    if(!hide) {
+        sendDiscordMessage(`https://discord.com/api/webhooks/${speciesAnnouncement}`, discord.publicTitle, discord.publicMessage);
+    }
+
+    sendAjax(form, data, discord, successMessage);
+});
+
+//Add a Business
+document.querySelector('#form-job-add').addEventListener('submit', e => {
+    e.preventDefault();
+
+    let form = e.currentTarget;
+    let employer = form.querySelector('#employer').value.toLowerCase().trim();
+    let category = form.querySelector('#category').options[form.querySelector('#category').selectedIndex].innerHTML;
+    let location = form.querySelector('#location').options[form.querySelector('#location').selectedIndex].innerHTML;
+    let locationId = form.querySelector('#location').options[form.querySelector('#location').selectedIndex].value;
+    let hiring = form.querySelector('#hiring').options[form.querySelector('#hiring').selectedIndex].innerHTML;
+    let summary = form.querySelector('#summary').value.trim();
+
+    let weekdayHourOptions = form.querySelectorAll('[name="weekday"]');
+    let weekdayArray = Array.prototype.slice.call(weekdayHourOptions).filter(item => item.checked);
+    let weekdayHours = weekdayArray.map(item => item.parentNode.querySelector('strong').innerHTML).join(', ');
+
+    let weekendHourOptions = form.querySelectorAll('[name="weekend"]');
+    let weekendArray = Array.prototype.slice.call(weekendHourOptions).filter(item => item.checked);
+    let weekendHours = weekendArray.map(item => item.parentNode.querySelector('strong').innerHTML).join(', ');
+
+    let member = form.querySelector('#name').value.toLowerCase().trim();
+    let memberId = form.querySelector('#id').value.trim();
+
+    let data = {
+        SubmissionType: `business-submit`,
+        Employer: employer,
+        Category: category,
+        Location: location,
+        LocationID: locationId,
+        Hiring: hiring,
+        Summary: summary,
+        WeekendHours: weekendHours,
+        WeekdayHours: weekdayHours,
+    }
+
+	let staffTitle = `${capitalize(member)} (#${memberId}) has added a business to the directory!`;
+	let staffMessage = `**View here:** <https://godlybehaviour.jcink.net/?act=Pages&kid=businesses#${employer.replaceAll(' ', '').replaceAll('&amp;', '').replaceAll('&', '').replaceAll(`'`, '').replaceAll(`"`, '')}>`;
+
+    let discord = {
+        staffTitle: staffTitle,
+        staffMessage: staffMessage
+    }
+
+    let successMessage = `<blockquote class="fullWidth">Submission successful!</blockquote>
+    <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
+
+    sendAjax(form, data, discord, successMessage);
+});
+
+//Get Sorted Form Toggles
+let requestField = document.querySelector('#form-sort #request');
+simpleFieldToggle(requestField, '.ifRequest');
+requestField.addEventListener('change', () => {
+    simpleFieldToggle(requestField, '.ifRequest');
+});
+let employedField = document.querySelector('#form-sort #employed');
+simpleFieldToggle(employedField, '.ifEmployed');
+employedField.addEventListener('change', () => {
+    simpleFieldToggle(employedField, '.ifEmployed');
+});
+let firstField = document.querySelector('#form-sort #first');
+simpleFieldToggle(firstField, '.ifFirst');
+firstField.addEventListener('change', () => {
+    simpleFieldToggle(firstField, '.ifFirst');
+});
+
+//Job Count Change
+document.querySelectorAll('#job-count').forEach(jobCount => {
+    jobCount.addEventListener('change', e => {
+        handleJobFields(e.currentTarget.closest('form'), e.currentTarget);
+    });
+});
+
+//Get Sorted Form
+document.querySelector('#form-sort').addEventListener('submit', e => {
+    e.preventDefault();
+
+    let form = e.currentTarget;
+    let member = form.querySelector('#member').value.toLowerCase().trim();
+    let memberID = form.querySelector('#memberid').value.trim();
+    let character = form.querySelector('#character').value.toLowerCase().trim();
+    let characterID = form.querySelector('#characterid').value.trim();
+    let groupField = form.querySelector('#group');
+    let group = groupField.options[groupField.selectedIndex].innerText.toLowerCase().trim();
+    let groupID = groupField.options[groupField.selectedIndex].value;
+    let face = form.querySelector('#face').value.toLowerCase().trim();
+    let jobs = ``;
+    if(memberID.includes(`showuser`)) {
+	memberID = memberID.split('showuser=')[1];
+    }
+    if(characterID.includes(`showuser`)) {
+	characterID = characterID.split('showuser=')[1];
+    }
+    if(form.querySelector('#employed').options[form.querySelector('#employed').selectedIndex].value === 'y') {
+        let employers = form.querySelectorAll('.employer select');
+        let positions = form.querySelectorAll('.job input');
+        for(let i = 0; i < employers.length; i++) {
+	    let employer = employers[i];
+            jobs += `{"employer": "${employer.options[employer.selectedIndex].innerText.toLowerCase().trim()}", "position": "${positions[i].value.toLowerCase().trim()}"}`;
+            if(i !== employers.length - 1) {
+                jobs += `+`;
+            }
+        }
+    }
+    let firstCharacter = form.querySelector('#first').options[form.querySelector('#first').selectedIndex].innerText;
+    let wanted = form.querySelector('#request').options[form.querySelector('#request').selectedIndex].value === 'y' ? 'Yes' : 'No';
+    let wantedURLs = form.querySelector('#request-data').value;
+
+    let embedTitle = `${capitalize(member)} has requested sorting for ${capitalize(character)}`;
+    let message = `${capitalize(character)} should be placed in the ${capitalize(group)} group.\n\n**Profile:** https://godlybehaviour.jcink.net/?showuser=${characterID}\n**Parent Account:** https://godlybehaviour.jcink.net/?showuser=${memberID}\n**First Character?** ${firstCharacter}\n**Requested?** ${wanted}`;
+    if (wanted === 'Yes') {
+        message += `\n${wantedURLs}`;
+    }
+    message += `\n\nPlease follow the sorting procedure, available in Processes > #sorting of this Discord server. React to this notification when you begin reviewing the application.`;
+
+    let publicTitle = `${capitalize(member)} has finished ${capitalize(character)}!`;
+    let publicMessage = `**Learn More:** <https://godlybehaviour.jcink.net/?showuser=${characterID}>`;
+    if (wanted === 'Yes') {
+        publicMessage += `\n\n*This character fills one or more requests. Members managing those requests will be contacted prior to character approval and sorting.*`;
+    }
+
+    let groupColor = rgbToHex(colors[group][0], colors[group][1], colors[group][2]);
+
+    //get member data
+    fetch(claims)
+    .then((response) => response.json())
+    .then((claimsData) => {
+        let data = {
+            SubmissionType: `claims-submit`,
+            Member: member,
+            ParentID: memberID,
+            Character: character,
+            AccountID: characterID,
+            Group: group,
+            GroupID: groupID,
+            Face: face,
+            Jobs: jobs
+        }
+
+        let prevCharacter = claimsData.filter(item => item.ParentID === memberID);
+        if(prevCharacter.length > 0) {
+            data.MemberPronouns = prevCharacter[0].MemberPronouns;
+            data.MemberGroup = prevCharacter[0].MemberGroup;
+            data.MemberGroupID = prevCharacter[0].MemberGroupID;
+        } else {
+            let memberPronouns = form.querySelector('#memberpronouns').value.toLowerCase().trim();
+            let memberGroupField = form.querySelector('#membergroup');
+            let memberGroup = memberGroupField.options[memberGroupField.selectedIndex].innerText.toLowerCase().trim();
+            let memberGroupID = memberGroupField.options[memberGroupField.selectedIndex].value;
+            data.MemberPronouns = memberPronouns;
+            data.MemberGroup = memberGroup;
+            data.MemberGroupID = memberGroupID;
+        }
+        
+        let discord = {
+            staffTitle: embedTitle,
+            staffMessage: message,
+            publicTitle: publicTitle,
+            publicMessage: publicMessage,
+            groupColor: groupColor
+        }
+
+        let successMessage = `<blockquote class="fullWidth">Submission successful!</blockquote>
+        <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
+    
+        sendAjax(form, data, discord, successMessage);
+    });
+});

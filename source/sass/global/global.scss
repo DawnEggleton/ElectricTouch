@@ -266,6 +266,71 @@ select {
     }
 }
 
+.input-wrap {
+    display: flex;
+    gap: 5px;
+    flex-direction: row !important;
+    font-size: var(--size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    align-items: center;
+    cursor: pointer;
+  
+    input {
+        display: none;
+    }
+  
+    &:hover {
+        i {
+            color: var(--text-secondary);
+        }
+        strong {
+            color: var(--text-secondary);
+        }
+    }
+  
+    input:checked + .fancy-input {
+        background: var(--bg-accent);
+        
+        i {
+            color: var(--text-on-accent);
+        }
+        & + strong {
+            color: var(--text-secondary);
+        }
+    }
+}
+.fancy-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    background: var(--bg-accent-30);
+    border: 1px solid var(--border-accent);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  
+    i {
+        color: transparent;
+    }
+  
+    &.radio {
+        border-radius: 50%;
+        padding-left: 1px;
+    }
+}
+#form-job-add,
+#form-species-add {
+    .h4,
+    .h6 {
+    margin-bottom: 0;
+}
+}
+.multiSelect {
+    height: max-content;
+}
+
 blockquote {
     max-width: 500px;
     margin: 20px auto;

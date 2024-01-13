@@ -677,6 +677,77 @@ select {
     background: var(--bg-accent);
     color: var(--text-on-accent); }
 
+.input-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: row !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+  font-size: var(--size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer; }
+  .input-wrap input {
+    display: none; }
+  .input-wrap:hover i {
+    color: var(--text-secondary); }
+  .input-wrap:hover strong {
+    color: var(--text-secondary); }
+  .input-wrap input:checked + .fancy-input {
+    background: var(--bg-accent); }
+    .input-wrap input:checked + .fancy-input i {
+      color: var(--text-on-accent); }
+    .input-wrap input:checked + .fancy-input + strong {
+      color: var(--text-secondary); }
+
+.fancy-input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
+  background: var(--bg-accent-30);
+  border: 1px solid var(--border-accent);
+  width: 16px;
+  height: 16px;
+  cursor: pointer; }
+  .fancy-input i {
+    color: transparent; }
+  .fancy-input.radio {
+    border-radius: 50%;
+    padding-left: 1px; }
+
+#form-job-add .h4,
+#form-job-add .h6,
+#form-species-add .h4,
+#form-species-add .h6 {
+  margin-bottom: 0; }
+
+.multiSelect {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content; }
+
 blockquote {
   max-width: 500px;
   margin: 20px auto;

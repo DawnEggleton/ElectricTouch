@@ -142,7 +142,7 @@ function formatSubplotClaims(data) {
             html += formatHeader(role.section, 3);
             html += openGrid();
             html += formatClaim(capitalize(role.character), [
-                role.role,
+                role.role.split(' (')[0],
                 `Played by <a href="?showuser=${role.memberId}">${role.member}</a>`
             ],
             role.groupId,
@@ -155,19 +155,19 @@ function formatSubplotClaims(data) {
             html += formatHeader(role.section, 3);
             html += openGrid();
             html += formatClaim(capitalize(role.character), [
-                role.role,
+                role.role.split(' (')[0],
                 `Played by <a href="?showuser=${role.memberId}">${role.member}</a>`
             ],
             role.groupId,
             `?showuser=${role.id}`);
         }
         //If different section
-        else if(roles[i - 1].section !== role.section) {
+        else if(roles[i - 1].sectionPriority !== role.sectionPriority) {
             html += closeGrid();
             html += formatHeader(role.section, 3);
             html += openGrid();
             html += formatClaim(capitalize(role.character), [
-                role.role,
+                role.role.split(' (')[0],
                 `Played by <a href="?showuser=${role.memberId}">${role.member}</a>`
             ],
             role.groupId,
@@ -176,7 +176,7 @@ function formatSubplotClaims(data) {
         //If same
         else {
             html += formatClaim(capitalize(role.character), [
-                role.role,
+                role.role.split(' (')[0],
                 `Played by <a href="?showuser=${role.memberId}">${role.member}</a>`
             ],
             role.groupId,

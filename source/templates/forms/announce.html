@@ -1,0 +1,23 @@
+<form id="form-announce" data-type="grid" data-columns="2">
+    <label>
+        <b>Member</b>
+        <span><input type="text" id="member" placeholder="Member" /></span>
+    </label>
+    <label>
+        <b>Character</b>
+        <span><input type="text" id="character" placeholder="Character" /></span>
+    </label>
+    <label>
+        <b>Account ID</b>
+        <span><input type="text" id="account" placeholder="Account ID" /></span>
+    </label>
+    <label>
+        <b>Group</b>
+        <span>@@include('../group-select.html')</span>
+    </label>
+    <label class="fullWidth">
+        <b>About</b>
+        <span><textarea id="about" placeholder="Short, sweet, and to-the-point" required></textarea></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>

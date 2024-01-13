@@ -355,12 +355,311 @@
                             </tag-tab>
                             <tag-tab data-key="#add-business">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Add Business Form
+                                    <blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+    <ul><li>Privacy Badger</li>
+    <li>UBlock</li>
+    <li>Potentially AdBlock (Plus Only)</li></ul>
+</blockquote>
+<form id="form-job-add" data-type="grid" data-columns="2">
+    <input type="hidden" id="name" value="<!-- |name| -->" />
+    <input type="hidden" id="id" value="<!-- |id| -->" />
+    <label>
+        <b>Employer</b>
+        <span><input type="text" id="employer" placeholder="Employer Name" required /></span>
+    </label>
+    <label>
+        <b>Category</b>
+        <span><select id="category">
+            <option value="">(select)</option>
+            <option value="edu">Education</option>
+            <option value="entertain">Entertainment</option>
+            <option value="food">Food & Drink</option>
+            <option value="gov">Governmental</option>
+            <option value="shop">Retail</option>
+            <option value="serve">Services</option>
+            <option value="misc">Miscellaneous</option>
+        </select></span>
+    </label>
+    <label>
+        <b>Location</b>
+        <span><select id="location">
+            <option value="">(select)</option>
+            <option value="20">Temperance (Businesses)</option>
+            <option value="21">Temperance (Residential)</option>
+            <option value="22">Temperance (Waterfront)</option>
+            <option value="19">Temperance (Other)</option>
+            <option value="46">Sydney (Emergency Services)</option>
+            <option value="43">Sydney (Businesses)</option>
+            <option value="44">Sydney (Residential)</option>
+            <option value="42">Sydney (Other)</option>
+            <option value="23">Cape Breton Island</option>
+            <option value="149">Mainland Nova Scotia</option>
+            <option value="150">National</option>
+            <option value="151">International</option>
+        </select></span>
+    </label>
+    <label>
+        <b>Hiring?</b>
+        <span><select id="hiring">
+            <option value="">(select)</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="ask">Ask First</option>
+        </select></span>
+    </label>
+    <label class="fullWidth">
+        <b>Summary</b>
+        <span><textarea id="summary" placeholder="Overview of the business; maximum 350 characters" maxlength="350" required></textarea></span>
+    </label>
+    <div class="fullWidth" data-type="grid"><div class="h6">Weekday Hours</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="empty" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>No set hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="none" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Not Open</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="appointment" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>By Appointment</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="all" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>24 Hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="day" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Day (09:00 - 17:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="night" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Night (17:00 - 01:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="overnight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Overnight (01:00 - 09:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="witching" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Witching Hour (00:00 - 04:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="earlymorning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Early Morning (04:00 - 08:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="morning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Morning (08:00 - 12:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="afternoon" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Afternoon (12:00 - 16:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="evening" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Evening (16:00 - 20:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="latenight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Late Night (20:00 - 00:00)</strong>
+        </label>
+    </div></div>
+    <div class="fullWidth" data-type="grid"><div class="h6">Weekend Hours</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="empty" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>No set hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="none" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Not Open</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="appointment" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>By Appointment</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="all" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>24 Hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="day" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Day (09:00 - 17:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="night" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Night (17:00 - 01:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="overnight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Overnight (01:00 - 09:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="witching" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Witching Hour (00:00 - 04:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="earlymorning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Early Morning (04:00 - 08:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="morning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Morning (08:00 - 12:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="afternoon" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Afternoon (12:00 - 16:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="evening" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Evening (16:00 - 20:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="latenight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Late Night (20:00 - 00:00)</strong>
+        </label>
+    </div></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#sort">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Get Sorted Form
+                                    <blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+<ul><li>Privacy Badger</li>
+<li>UBlock</li>
+<li>Potentially AdBlock (Plus Only)</li></ul></blockquote><br>
+<form id="form-sort" data-type="grid" data-columns="2">
+    <div class="fullWidth h4">Basic Info</div>
+    <label>
+        <b>Member</b>
+        <span><input type="text" id="member" placeholder="Member" required /></span></span>
+    </label>
+    <label>
+        <b>Member Account ID</b>
+        <span><input type="text" id="memberid" placeholder="Member Account ID" required /></span>
+    </label>
+    <label>
+        <b>Character</b>
+        <span><input type="text" id="character" placeholder="Character" required /></span>
+    </label>
+    <label>
+        <b>Character Account ID</b>
+        <span><input type="text" id="characterid" placeholder="Character Account ID" required /></span>
+    </label>
+    <label>
+        <b>Group</b>
+        <span><select id="group">
+	<option value="">(select)</option>
+	<optgroup label="Standard">
+		<option value="15">Amaranth</option>
+		<option value="7">Birch</option>
+		<option value="11">Blueberry</option>
+		<option value="22">Cedar</option>
+		<option value="10">Dandelion</option>
+		<option value="25">Goldenrod</option>
+		<option value="13">Hemlock</option>
+		<option value="12">Juniper</option>
+		<option value="8">Lupin</option>
+		<option value="14">Nettle</option>
+		<option value="30">Periwinkle</option>
+		<option value="31">Primrose</option>
+		<option value="9">Spruce</option>
+		<option value="16">Sundew</option>
+	</optgroup>
+	<optgroup label="Premium">
+		<option value="19">Balsam</option>
+		<option value="20">Clover</option>
+		<option value="29">Hawthorn</option>
+		<option value="23">Laurel</option>
+		<option value="24">Sage</option>
+		<option value="33">Starflower</option>
+		<option value="18">Thistle</option>
+		<option value="17">Tobacco</option>
+	</optgroup>
+</select></span>
+    </label>
+    <label>
+        <b>Face Claim</b>
+        <span><input type="text" id="face" placeholder="Face Claim" required /></span>
+    </label>
+    <label>
+        <b>First Character?</b>
+        <span><select id="first" required>
+            <option value="">(select)</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select></span>
+    </label>
+    <label>
+        <b>For a Request?</b>
+        <span><select id="request" required>
+            <option value="">(select)</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select></span>
+    </label>
+    <label class="hidden ifFirst">
+        <b>Member Pronouns</b>
+        <span><input type="text" id="memberpronouns" placeholder="Member Pronouns" /></span>
+    </label>
+    <label class="hidden ifFirst">
+        <b>Member Type</b>
+        <span><select id="membergroup">
+            <option value="6" selected>Writer</option>
+            <option value="4">Admin</option>
+            <option value="28">Mod</option>
+            <option value="26">Ambassador</option>
+        </select></span>
+    </label>
+    <label class="hidden ifRequest fullWidth">
+        <b>Request URL / Creator</b>
+        <span><input type="text" id="request-data" placeholder="Request URL / Creator" /></span>
+    </label>
+    <div class="h4 fullWidth">Employment</div>
+    <label>
+        <b>Employed?</b>
+        <span><select id="employed" required>
+            <option value="">(select)</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select></span>
+    </label>
+    <label class="hidden ifEmployed">
+        <b>Number of Jobs</b>
+        <span><input type="number" id="job-count" value="1" min="1" /></span>
+    </label>
+    <div id="jobs-clip" class="hide ifEmployed fullWidth" data-type="grid" data-columns="2"></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#join-subplot">
@@ -459,12 +758,337 @@
                         <tag-tabset>
                             <tag-tab data-key="#announce">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Announce Form
+                                    <form id="form-announce" data-type="grid" data-columns="2">
+    <label>
+        <b>Member</b>
+        <span><input type="text" id="member" placeholder="Member" /></span>
+    </label>
+    <label>
+        <b>Character</b>
+        <span><input type="text" id="character" placeholder="Character" /></span>
+    </label>
+    <label>
+        <b>Account ID</b>
+        <span><input type="text" id="account" placeholder="Account ID" /></span>
+    </label>
+    <label>
+        <b>Group</b>
+        <span><select id="group">
+	<option value="">(select)</option>
+	<optgroup label="Standard">
+		<option value="15">Amaranth</option>
+		<option value="7">Birch</option>
+		<option value="11">Blueberry</option>
+		<option value="22">Cedar</option>
+		<option value="10">Dandelion</option>
+		<option value="25">Goldenrod</option>
+		<option value="13">Hemlock</option>
+		<option value="12">Juniper</option>
+		<option value="8">Lupin</option>
+		<option value="14">Nettle</option>
+		<option value="30">Periwinkle</option>
+		<option value="31">Primrose</option>
+		<option value="9">Spruce</option>
+		<option value="16">Sundew</option>
+	</optgroup>
+	<optgroup label="Premium">
+		<option value="19">Balsam</option>
+		<option value="20">Clover</option>
+		<option value="29">Hawthorn</option>
+		<option value="23">Laurel</option>
+		<option value="24">Sage</option>
+		<option value="33">Starflower</option>
+		<option value="18">Thistle</option>
+		<option value="17">Tobacco</option>
+	</optgroup>
+</select></span>
+    </label>
+    <label class="fullWidth">
+        <b>About</b>
+        <span><textarea id="about" placeholder="Short, sweet, and to-the-point" required></textarea></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#add-species">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Add species form
+                                    <form id="form-species-add" data-type="grid" data-columns="2">
+    <blockquote class="fullWidth">Abilities and Weaknesses should be separated by an @ sign for correct parsing from the sheet. E.g., "strength one is this@strength two is this@strength three is this".</blockquote>
+    <label>
+        <b>Species</b>
+        <span><input type="text" id="species" placeholder="Species Name" required /></span>
+    </label>
+    <label>
+        <b>Aging</b>
+        <span><input type="text" id="aging" placeholder="Aging" required /></span>
+    </label>
+    <label>
+        <b>Lifespan</b>
+        <span><input type="text" id="lifespan" placeholder="Lifespan" required /></span>
+    </label>
+    <label>
+        <b>Custom Trait - Title</b>
+        <span><input type="text" id="custom-trait" placeholder="Custom Trait" required /></span>
+    </label>
+    <label>
+        <b>Physical Strength</b>
+        <span><input type="range" id="strength" value="0" min="0" max="100" required /></span>
+    </label>
+    <label>
+        <b>Longevity</b>
+        <span><input type="range" id="longevity" value="0" min="0" max="100" required /></span>
+    </label>
+    <label>
+        <b>Vulnerability</b>
+        <span><input type="range" id="vulnerability" value="0" min="0" max="100" required /></span>
+    </label>
+    <label>
+        <b>Custom Trait</b>
+        <span><input type="range" id="custom-percent" value="0" min="0" max="100" required /></span>
+    </label>
+    <label class="fullWidth">
+        <b>Physiology</b>
+        <span><textarea id="physiology" placeholder="Physiology - full sentences" required></textarea></span>
+    </label>
+    <label class="fullWidth">
+        <b>Community Structure</b>
+        <span><textarea id="community" placeholder="Community - full sentences" required></textarea></span>
+    </label>
+    <label>
+        <b>Abilities</b>
+        <span><textarea id="abilities" placeholder="Abilities - @ sign separated list" required></textarea></span>
+    </label>
+    <label>
+        <b>Weaknesses</b>
+        <span><textarea id="weaknesses" placeholder="Weaknesses - @ sign separated list" required></textarea></span>
+    </label>
+    <div class="h4 fullWidth">Filter Tags</div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Species Category</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="speciescat" id="speciescat" value="cat-premium" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Premium</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="speciescat" id="speciescat" value="cat-reg" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Regular</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="speciescat" id="speciescat" value="staffOnly" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Hide for future release</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Species Type</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-aquatic" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Aquatic</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-equine" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Equine</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-tele" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Empathic</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-faerie" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Faerie</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-spirit" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Spirit</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-misc" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Other</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Public Awareness</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="awareness" id="awareness" value="none">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="awareness" id="awareness" value="government">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Government</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="awareness" id="awareness" value="public">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Public</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Knowledge Level</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="none">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="low">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Low</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="medium">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Medium</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="high">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>High</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Lifespan</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-immortal" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Immortal</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-long" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Longer than a human</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-short" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Shorter than a human</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-average" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Same as a human</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Shifting</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-animal" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Animal</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-hybrid" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Human/Animal Hybrid</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-human" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Human Appearance</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-plant" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Plant</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-glamour" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Glamour Only</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-none" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Healing</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-fast" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Heals faster</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-lives" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Difficult to kill</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-both" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Heals faster and difficult to kill</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-specific" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Heals under specific circumstances</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-none" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Community</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-communal" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Community-oriented</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-species" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Species-oriented</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-solitary" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Solitary</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-varied" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Depends on the individual</strong>
+        </label>
+    </div></div>
+    <div class="fullWidth" data-type="grid"><div class="h6">Miscellaneous</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="misc" id="misc" value="misc-turning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Can turn others</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="misc" id="misc" value="misc-partshift" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Can partial shift</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="misc" id="misc" value="misc-healothers" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Can heal others</strong>
+        </label>
+    </div></div>
+    <div class="h4 fullWidth">Credit</div>
+    <label class="fullWidth">
+        <b>Number of Users</b>
+        <span><input type="number" id="credit-count" value="1" min="1" required /></span>
+    </label>
+    <div id="credit-clip" class="fullWidth" data-type="grid" data-columns="2"></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#add-subplot">
@@ -519,11 +1143,15 @@
                 const publicSortBot = `1124161944119685150/oH3fHzZWdI4Yzt7Td8AnvP0XcHLgXm_RJTq0pVI19s1lpCfiI2WkTqK7Y_BmpTLuFe1A`;
                 const publicSpeciesBot = `1124303807858344007/AW_ejzMEqfK0BbjLvNcA6n2RfCz8JLHo-f4sgeI0DayK4YYi_u1NLFXwCSIr8ETzryR_`;
                 const subplotBot = `1195395969433477251/lfJPrZBczyPeUNVfpO6qWYhvijdiry38IPfJ1t3urdR2ScmFCHsNvRpi_qJSoohLMNC3`;
+                const speciesAnnouncement = `1195496716670083082/yJIenU4kdwM-T-xhA2Y1q1OhSvuwm0pDh2vicSfPaoJRzRcNSI1DrLl2K4RJvjMG5u-3`;
 
                 const claims = `https://opensheet.elk.sh/${sheetID}/Claims`;
                 const reserves = `https://opensheet.elk.sh/${sheetID}/Reserves`;
                 const subplotReserves = `https://opensheet.elk.sh/${sheetID}/SubplotReserves`;
                 const subplots = `https://opensheet.elk.sh/${sheetID}/Subplots`;
+                const businesses = `https://opensheet.elk.sh/${sheetID}/Businesses`;
+
+                let businessList = ``;
 
                 fetch(claims)
                 .then((response) => response.json())
@@ -548,9 +1176,61 @@
                                 formatSubplot(subplotData);
                                 initJoinSelect(subplotData, `#form-join-plot`);
                                 initJoinSelect(subplotData, `#form-reserve-plot`);
+
+                                fetch(businesses)
+                                .then((response) => response.json())
+                                .then((businessData) => {
+                                    let businessArray = businessData
+                                        .filter(item => item.Hiring !== 'No')
+                                        .sort((a, b) => {
+                                            if (a.Hiring.toLowerCase() === 'yes' && b.Hiring.toLowerCase() !== 'yes') {
+                                                return -1;
+                                            } else if (a.Hiring.toLowerCase() !== 'yes' && b.Hiring.toLowerCase() === 'yes') {
+                                                return 1;
+                                            } else if (a.Employer.toLowerCase().replace('the ', '') < b.Employer.toLowerCase().replace('the ', '')) {
+                                                return -1;
+                                            } else if (a.Employer.toLowerCase().replace('the ', '') > b.Employer.toLowerCase().replace('the ', '')) {
+                                                return 1;
+                                            } else {
+                                                return 0;
+                                            }
+                                        });
+
+                                    businessArray.forEach((business, i) => {
+                                        //First
+                                        if(i === 0) {
+                                            let optgroup = `Ask First`;
+                                            if(business.Hiring.toLowerCase() === 'yes') {
+                                                optgroup = `Actively Hiring`;
+                                            }
+                                            businessList += `<optgroup label="${optgroup}">`;
+                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
+                                        }
+                                        //Different Hiring Status
+                                        else if (businessArray[i - 1].Hiring.toLowerCase() !== business.Hiring.toLowerCase()) {
+                                            let optgroup = `Ask First`;
+                                            if(business.Hiring.toLowerCase() === 'yes') {
+                                                optgroup = `Actively Hiring`;
+                                            }
+                                            businessList += `</optgroup>`;
+                                            businessList += `<optgroup label="${optgroup}">`;
+                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
+                                        } else {
+                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
+                                        }
+                                        if(i === businessArray.length - 1) {
+                                            businessList += `</optgroup>`;
+                                        }
+                                    });
+
+                                    document.querySelectorAll('#job-count').forEach(jobCount => {
+                                        handleJobFields(jobCount.closest('form'), jobCount);
+                                    })
+                                    
+                                }).then(() => {
+                                    initWebpages();
+                                });
                                 
-                            }).then(() => {
-                                initWebpages();
                             });
                             
                         });

@@ -178,12 +178,12 @@
                             </tag-tab>
                             <tag-tab data-key="#add-business">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Add Business Form
+                                    @@include('../source/templates/forms/add-business.html')
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#sort">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Get Sorted Form
+                                    @@include('../source/templates/forms/sort.html')
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#join-subplot">
@@ -264,12 +264,12 @@
                         <tag-tabset>
                             <tag-tab data-key="#announce">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Announce Form
+                                    @@include('../source/templates/forms/announce.html')
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#add-species">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Add species form
+                                    @@include('../source/templates/forms/add-species.html')
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#add-subplot">
@@ -299,11 +299,15 @@
                 const publicSortBot = `1124161944119685150/oH3fHzZWdI4Yzt7Td8AnvP0XcHLgXm_RJTq0pVI19s1lpCfiI2WkTqK7Y_BmpTLuFe1A`;
                 const publicSpeciesBot = `1124303807858344007/AW_ejzMEqfK0BbjLvNcA6n2RfCz8JLHo-f4sgeI0DayK4YYi_u1NLFXwCSIr8ETzryR_`;
                 const subplotBot = `1195395969433477251/lfJPrZBczyPeUNVfpO6qWYhvijdiry38IPfJ1t3urdR2ScmFCHsNvRpi_qJSoohLMNC3`;
+                const speciesAnnouncement = `1195496716670083082/yJIenU4kdwM-T-xhA2Y1q1OhSvuwm0pDh2vicSfPaoJRzRcNSI1DrLl2K4RJvjMG5u-3`;
 
                 const claims = `https://opensheet.elk.sh/${sheetID}/Claims`;
                 const reserves = `https://opensheet.elk.sh/${sheetID}/Reserves`;
                 const subplotReserves = `https://opensheet.elk.sh/${sheetID}/SubplotReserves`;
                 const subplots = `https://opensheet.elk.sh/${sheetID}/Subplots`;
+                const businesses = `https://opensheet.elk.sh/${sheetID}/Businesses`;
+
+                let businessList = ``;
 
                 fetch(claims)
                 .then((response) => response.json())
@@ -328,9 +332,61 @@
                                 formatSubplot(subplotData);
                                 initJoinSelect(subplotData, `#form-join-plot`);
                                 initJoinSelect(subplotData, `#form-reserve-plot`);
+
+                                fetch(businesses)
+                                .then((response) => response.json())
+                                .then((businessData) => {
+                                    let businessArray = businessData
+                                        .filter(item => item.Hiring !== 'No')
+                                        .sort((a, b) => {
+                                            if (a.Hiring.toLowerCase() === 'yes' && b.Hiring.toLowerCase() !== 'yes') {
+                                                return -1;
+                                            } else if (a.Hiring.toLowerCase() !== 'yes' && b.Hiring.toLowerCase() === 'yes') {
+                                                return 1;
+                                            } else if (a.Employer.toLowerCase().replace('the ', '') < b.Employer.toLowerCase().replace('the ', '')) {
+                                                return -1;
+                                            } else if (a.Employer.toLowerCase().replace('the ', '') > b.Employer.toLowerCase().replace('the ', '')) {
+                                                return 1;
+                                            } else {
+                                                return 0;
+                                            }
+                                        });
+
+                                    businessArray.forEach((business, i) => {
+                                        //First
+                                        if(i === 0) {
+                                            let optgroup = `Ask First`;
+                                            if(business.Hiring.toLowerCase() === 'yes') {
+                                                optgroup = `Actively Hiring`;
+                                            }
+                                            businessList += `<optgroup label="${optgroup}">`;
+                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
+                                        }
+                                        //Different Hiring Status
+                                        else if (businessArray[i - 1].Hiring.toLowerCase() !== business.Hiring.toLowerCase()) {
+                                            let optgroup = `Ask First`;
+                                            if(business.Hiring.toLowerCase() === 'yes') {
+                                                optgroup = `Actively Hiring`;
+                                            }
+                                            businessList += `</optgroup>`;
+                                            businessList += `<optgroup label="${optgroup}">`;
+                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
+                                        } else {
+                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
+                                        }
+                                        if(i === businessArray.length - 1) {
+                                            businessList += `</optgroup>`;
+                                        }
+                                    });
+
+                                    document.querySelectorAll('#job-count').forEach(jobCount => {
+                                        handleJobFields(jobCount.closest('form'), jobCount);
+                                    })
+                                    
+                                }).then(() => {
+                                    initWebpages();
+                                });
                                 
-                            }).then(() => {
-                                initWebpages();
                             });
                             
                         });

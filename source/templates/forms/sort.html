@@ -1,0 +1,79 @@
+<blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+<ul><li>Privacy Badger</li>
+<li>UBlock</li>
+<li>Potentially AdBlock (Plus Only)</li></ul></blockquote><br>
+<form id="form-sort" data-type="grid" data-columns="2">
+    <div class="fullWidth h4">Basic Info</div>
+    <label>
+        <b>Member</b>
+        <span><input type="text" id="member" placeholder="Member" required /></span></span>
+    </label>
+    <label>
+        <b>Member Account ID</b>
+        <span><input type="text" id="memberid" placeholder="Member Account ID" required /></span>
+    </label>
+    <label>
+        <b>Character</b>
+        <span><input type="text" id="character" placeholder="Character" required /></span>
+    </label>
+    <label>
+        <b>Character Account ID</b>
+        <span><input type="text" id="characterid" placeholder="Character Account ID" required /></span>
+    </label>
+    <label>
+        <b>Group</b>
+        <span>@@include('../group-select.html')</span>
+    </label>
+    <label>
+        <b>Face Claim</b>
+        <span><input type="text" id="face" placeholder="Face Claim" required /></span>
+    </label>
+    <label>
+        <b>First Character?</b>
+        <span><select id="first" required>
+            <option value="">(select)</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select></span>
+    </label>
+    <label>
+        <b>For a Request?</b>
+        <span><select id="request" required>
+            <option value="">(select)</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select></span>
+    </label>
+    <label class="hidden ifFirst">
+        <b>Member Pronouns</b>
+        <span><input type="text" id="memberpronouns" placeholder="Member Pronouns" /></span>
+    </label>
+    <label class="hidden ifFirst">
+        <b>Member Type</b>
+        <span><select id="membergroup">
+            <option value="6" selected>Writer</option>
+            <option value="4">Admin</option>
+            <option value="28">Mod</option>
+            <option value="26">Ambassador</option>
+        </select></span>
+    </label>
+    <label class="hidden ifRequest fullWidth">
+        <b>Request URL / Creator</b>
+        <span><input type="text" id="request-data" placeholder="Request URL / Creator" /></span>
+    </label>
+    <div class="h4 fullWidth">Employment</div>
+    <label>
+        <b>Employed?</b>
+        <span><select id="employed" required>
+            <option value="">(select)</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select></span>
+    </label>
+    <label class="hidden ifEmployed">
+        <b>Number of Jobs</b>
+        <span><input type="number" id="job-count" value="1" min="1" /></span>
+    </label>
+    <div id="jobs-clip" class="hide ifEmployed fullWidth" data-type="grid" data-columns="2"></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
