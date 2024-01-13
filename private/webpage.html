@@ -245,17 +245,17 @@
                         <tag-tabset>
                             <tag-tab data-key="#editclaims">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Claims edit form
+                                    @@include('../source/templates/forms/edit-character.html')
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#edit-business">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Business edit form
+                                    @@include('../source/templates/forms/edit-business.html')
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#staff-help">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Staff help form
+                                    @@include('../source/templates/forms/mod.html')
                                 </div></div>
                             </tag-tab>
                         </tag-tabset>
@@ -282,9 +282,6 @@
                 </tag-tabset>
             </section>
 
-            <script src="../dist/js/webpageFunctions.js"></script>
-            <script src="../dist/js/formatFunctions.js"></script>
-            <script src="../dist/js/webpageScripts.js"></script>
             <script>
                 const sheetID = '1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU';
                 const deployID = 'AKfycbx-PjF_7gGgm9QOilpWR6x_QGuKRys5Cjd3wbexK-P2hyxquvLreQW7meY567tPomB2';
@@ -308,7 +305,11 @@
                 const businesses = `https://opensheet.elk.sh/${sheetID}/Businesses`;
 
                 let businessList = ``;
-
+            </script>
+            <script src="../dist/js/webpageFunctions.js"></script>
+            <script src="../dist/js/formatFunctions.js"></script>
+            <script src="../dist/js/webpageScripts.js"></script>
+            <script>
                 fetch(claims)
                 .then((response) => response.json())
                 .then((claimsData) => {
@@ -336,52 +337,7 @@
                                 fetch(businesses)
                                 .then((response) => response.json())
                                 .then((businessData) => {
-                                    let businessArray = businessData
-                                        .filter(item => item.Hiring !== 'No')
-                                        .sort((a, b) => {
-                                            if (a.Hiring.toLowerCase() === 'yes' && b.Hiring.toLowerCase() !== 'yes') {
-                                                return -1;
-                                            } else if (a.Hiring.toLowerCase() !== 'yes' && b.Hiring.toLowerCase() === 'yes') {
-                                                return 1;
-                                            } else if (a.Employer.toLowerCase().replace('the ', '') < b.Employer.toLowerCase().replace('the ', '')) {
-                                                return -1;
-                                            } else if (a.Employer.toLowerCase().replace('the ', '') > b.Employer.toLowerCase().replace('the ', '')) {
-                                                return 1;
-                                            } else {
-                                                return 0;
-                                            }
-                                        });
-
-                                    businessArray.forEach((business, i) => {
-                                        //First
-                                        if(i === 0) {
-                                            let optgroup = `Ask First`;
-                                            if(business.Hiring.toLowerCase() === 'yes') {
-                                                optgroup = `Actively Hiring`;
-                                            }
-                                            businessList += `<optgroup label="${optgroup}">`;
-                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
-                                        }
-                                        //Different Hiring Status
-                                        else if (businessArray[i - 1].Hiring.toLowerCase() !== business.Hiring.toLowerCase()) {
-                                            let optgroup = `Ask First`;
-                                            if(business.Hiring.toLowerCase() === 'yes') {
-                                                optgroup = `Actively Hiring`;
-                                            }
-                                            businessList += `</optgroup>`;
-                                            businessList += `<optgroup label="${optgroup}">`;
-                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
-                                        } else {
-                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
-                                        }
-                                        if(i === businessArray.length - 1) {
-                                            businessList += `</optgroup>`;
-                                        }
-                                    });
-
-                                    document.querySelectorAll('#job-count').forEach(jobCount => {
-                                        handleJobFields(jobCount.closest('form'), jobCount);
-                                    })
+                                    initBusinesses(businessData);
                                     
                                 }).then(() => {
                                     initWebpages();

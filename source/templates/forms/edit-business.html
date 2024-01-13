@@ -1,0 +1,159 @@
+<blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+    <ul><li>Privacy Badger</li>
+    <li>UBlock</li>
+    <li>Potentially AdBlock (Plus Only)</li></ul>
+</blockquote><br>
+<form id="form-job-edit" data-type="grid" data-columns="2">
+    <input type="hidden" id="name" value="<!-- |name| -->" />
+    <input type="hidden" id="id" value="<!-- |id| -->" />
+    <label>
+        <b>Employer</b>
+        <span><input type="text" id="employer" placeholder="Employer Name" required /></span>
+    </label>
+    <label>
+        <b>Hiring?</b>
+        <span><select id="hiring">
+            <option value="">(select)</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="ask">Ask First</option>
+        </select></span>
+    </label>
+    <div class="fullWidth" data-type="grid"><div class="h6">Weekday Hours</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="empty" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>No set hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="none" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Not Open</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="appointment" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>By Appointment</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="all" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>24 Hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="day" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Day (09:00 - 17:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="night" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Night (17:00 - 01:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="overnight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Overnight (01:00 - 09:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="witching" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Witching Hour (00:00 - 04:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="earlymorning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Early Morning (04:00 - 08:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="morning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Morning (08:00 - 12:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="afternoon" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Afternoon (12:00 - 16:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="evening" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Evening (16:00 - 20:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="latenight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Late Night (20:00 - 00:00)</strong>
+        </label>
+    </div></div>
+    <div class="fullWidth" data-type="grid"><div class="h6">Weekend Hours</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="empty" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>No set hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="none" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Not Open</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="appointment" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>By Appointment</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="all" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>24 Hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="day" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Day (09:00 - 17:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="night" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Night (17:00 - 01:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="overnight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Overnight (01:00 - 09:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="witching" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Witching Hour (00:00 - 04:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="earlymorning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Early Morning (04:00 - 08:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="morning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Morning (08:00 - 12:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="afternoon" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Afternoon (12:00 - 16:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="evening" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Evening (16:00 - 20:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="latenight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Late Night (20:00 - 00:00)</strong>
+        </label>
+    </div></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>

@@ -1,0 +1,78 @@
+<blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+    <ul><li>Privacy Badger</li>
+    <li>UBlock</li>
+    <li>Potentially AdBlock (Plus Only)</li></ul>
+</blockquote><br>
+<form id="form-edit" data-type="grid" data-columns="2">
+    <input type="hidden" id="editor" value="<!-- |name| --> (#<!-- |id| -->, <!-- |input_IP_ADDRESS| -->)" />
+    <label class="fullWidth">
+        <b>Character ID</b>
+        <span><input type="text" id="id" placeholder="URL or ID" required /></span>
+    </label>
+    <div class="h4 fullWidth">Please Update</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-alias" value="alias">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Alias</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-name" value="name">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Character Name</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-group" value="group">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Group</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-job-add" value="job-add">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Add Job(s)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-job-edit" value="job-edit">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Current Job(s)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-job-remove" value="job-remove">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Remove Current Job(s)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-plot-remove" value="plot-remove">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Remove Subplot Role(s)</strong>
+        </label>
+    </div>
+    <div class="h4 hidden ifAlias fullWidth">Change Alias</div>
+    <label class="hidden ifAlias fullWidth">
+        <b>Alias</b>
+        <span><input type="text" id="member" placeholder="Alias" /></span></span>
+    </label>
+    <div class="h4 hidden ifName fullWidth">Change Name</div>
+    <label class="hidden ifName fullWidth">
+        <b>Name</b>
+        <span><input type="text" id="character" placeholder="Name" /></span></span>
+    </label>
+    <div class="h4 hidden ifGroup fullWidth">Change Group</div>
+    <label class="hidden ifGroup fullWidth">
+        <b>Group</b>
+        <span>@@include('../group-select.html')</span>
+    </label>
+    <div class="h4 hidden ifAdd fullWidth">Add Jobs</div>
+    <label class="hidden ifAdd">
+        <b>Number of Jobs</b>
+        <span><input type="number" id="job-count" value="1" min="1" /></span>
+    </label>
+    <div id="jobs-clip" class="hidden ifAdd fullWidth" data-type="grid" data-columns="2"></div>
+    <div class="h4 hidden ifEdit fullWidth">Edit Jobs</div>
+    <div id="edit-jobs-clip" class="hidden ifEdit fullWidth" data-type="grid" data-columns="2"></div>
+    <div class="h4 hidden ifRemove fullWidth">Remove Jobs</div>
+    <div id="remove-jobs-clip" class="hidden ifRemove fullWidth multiSelect" data-type="flex"></div>
+    <div class="h4 hidden ifPlot fullWidth">Remove Subplot Roles</div>
+    <div id="remove-roles-clip" class="hidden ifPlot fullWidth multiSelect" data-type="flex"></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>

@@ -697,7 +697,7 @@ select {
           align-items: center;
   cursor: pointer; }
   .input-wrap input {
-    display: none; }
+    visibility: hidden; }
   .input-wrap:hover i {
     color: var(--text-secondary); }
   .input-wrap:hover strong {

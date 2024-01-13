@@ -401,8 +401,8 @@ document.querySelector('#form-sort').addEventListener('submit', e => {
     let wanted = form.querySelector('#request').options[form.querySelector('#request').selectedIndex].value === 'y' ? 'Yes' : 'No';
     let wantedURLs = form.querySelector('#request-data').value;
 
-    let embedTitle = `${capitalize(member)} has requested sorting for ${capitalize(character)}`;
-    let message = `${capitalize(character)} should be placed in the ${capitalize(group)} group.\n\n**Profile:** https://godlybehaviour.jcink.net/?showuser=${characterID}\n**Parent Account:** https://godlybehaviour.jcink.net/?showuser=${memberID}\n**First Character?** ${firstCharacter}\n**Requested?** ${wanted}`;
+    let staffTitle = `${capitalize(member)} has requested sorting for ${capitalize(character)}`;
+    let staffMessage = `${capitalize(character)} should be placed in the ${capitalize(group)} group.\n\n**Profile:** https://godlybehaviour.jcink.net/?showuser=${characterID}\n**Parent Account:** https://godlybehaviour.jcink.net/?showuser=${memberID}\n**First Character?** ${firstCharacter}\n**Requested?** ${wanted}`;
     if (wanted === 'Yes') {
         message += `\n${wantedURLs}`;
     }
@@ -416,48 +416,133 @@ document.querySelector('#form-sort').addEventListener('submit', e => {
 
     let groupColor = rgbToHex(colors[group][0], colors[group][1], colors[group][2]);
 
-    //get member data
-    fetch(claims)
-    .then((response) => response.json())
-    .then((claimsData) => {
-        let data = {
-            SubmissionType: `claims-submit`,
-            Member: member,
-            ParentID: memberID,
-            Character: character,
-            AccountID: characterID,
-            Group: group,
-            GroupID: groupID,
-            Face: face,
-            Jobs: jobs
-        }
+    let data = {
+        SubmissionType: `claims-submit`,
+        Member: member,
+        ParentID: memberID,
+        Character: character,
+        AccountID: characterID,
+        Group: group,
+        GroupID: groupID,
+        Face: face,
+        Jobs: jobs
+    }
 
-        let prevCharacter = claimsData.filter(item => item.ParentID === memberID);
-        if(prevCharacter.length > 0) {
-            data.MemberPronouns = prevCharacter[0].MemberPronouns;
-            data.MemberGroup = prevCharacter[0].MemberGroup;
-            data.MemberGroupID = prevCharacter[0].MemberGroupID;
-        } else {
-            let memberPronouns = form.querySelector('#memberpronouns').value.toLowerCase().trim();
-            let memberGroupField = form.querySelector('#membergroup');
-            let memberGroup = memberGroupField.options[memberGroupField.selectedIndex].innerText.toLowerCase().trim();
-            let memberGroupID = memberGroupField.options[memberGroupField.selectedIndex].value;
-            data.MemberPronouns = memberPronouns;
-            data.MemberGroup = memberGroup;
-            data.MemberGroupID = memberGroupID;
-        }
-        
-        let discord = {
-            staffTitle: embedTitle,
-            staffMessage: message,
-            publicTitle: publicTitle,
-            publicMessage: publicMessage,
-            groupColor: groupColor
-        }
+    let discord = {
+        staffTitle: staffTitle,
+        staffMessage: staffMessage,
+        publicTitle: publicTitle,
+        publicMessage: publicMessage,
+        groupColor: groupColor
+    }
 
-        let successMessage = `<blockquote class="fullWidth">Submission successful!</blockquote>
-        <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
-    
-        sendAjax(form, data, discord, successMessage);
-    });
+    submitClaims(form, data, discord);
+});
+
+//Edit Business 
+document.querySelector('#form-job-edit').addEventListener('submit', e => {
+    e.preventDefault();
+
+    let form = e.currentTarget;
+    let employer = form.querySelector('#employer').value.toLowerCase().trim();
+    let hiring = form.querySelector('#hiring').options[form.querySelector('#hiring').selectedIndex].innerHTML;
+
+    let weekdayHourOptions = form.querySelectorAll('[name="weekday"]');
+    let weekdayArray = Array.prototype.slice.call(weekdayHourOptions).filter(item => item.checked);
+    let weekdayHours = weekdayArray.map(item => item.parentNode.querySelector('strong').innerHTML).join(', ');
+
+    let weekendHourOptions = form.querySelectorAll('[name="weekend"]');
+    let weekendArray = Array.prototype.slice.call(weekendHourOptions).filter(item => item.checked);
+    let weekendHours = weekendArray.map(item => item.parentNode.querySelector('strong').innerHTML).join(', ');
+
+    let member = form.querySelector('#name').value.toLowerCase().trim();
+    let memberId = form.querySelector('#id').value.trim();
+
+    let data = {
+        Employer: employer,
+        Hiring: hiring,
+        WeekendHours: weekendHours,
+        WeekdayHours: weekdayHours,
+        member: member,
+        memberId: memberId
+    }
+
+    editBusinesses(form, data);
+});
+
+//Edit Claims
+document.querySelector('#form-edit').addEventListener('submit', e => {
+    e.preventDefault();
+
+    let form = e.currentTarget;
+    let characterId = form.querySelector('#id').value.split('?showuser=').length > 1 ? form.querySelector('#id').value.split('?showuser=')[1].toLowerCase().trim() : form.querySelector('#id').value;
+    let alias = form.querySelector('#member').value.toLowerCase().trim();
+    let editor = form.querySelector('#editor').value.toLowerCase().trim();
+    let character = form.querySelector('#character').value.toLowerCase().trim();
+    let groupField = form.querySelector('#group').options[form.querySelector('#group').selectedIndex];
+    let group = groupField.innerText.toLowerCase().trim();
+    let groupId = groupField.value.toLowerCase().trim();
+    let selectedChanges = Array.prototype.slice.call(form.querySelectorAll('[name="update"]')).filter(item => item.checked).map(item => item.value);
+
+    let data = {
+        SubmissionType: `claims-edit`,
+        AccountID: characterId,
+        selectedChanges: selectedChanges,
+        Member: alias,
+        Character: character,
+        Group: group,
+        GroupID: groupId,
+        editor: editor
+    }
+
+    editClaims(form, data);
+});
+
+//Edit Form Toggles
+let idField = document.querySelector('#form-edit #id');
+let aliasBox = document.querySelector('#form-edit [name="update"][value="alias"]');
+let nameBox = document.querySelector('#form-edit [name="update"][value="name"]');
+let groupBox = document.querySelector('#form-edit [name="update"][value="group"]');
+let addBox = document.querySelector('#form-edit [name="update"][value="job-add"]');
+let editBox = document.querySelector('#form-edit [name="update"][value="job-edit"]');
+let removeBox = document.querySelector('#form-edit [name="update"][value="job-remove"]');
+let plotBox = document.querySelector('#form-edit [name="update"][value="plot-remove"]');
+simpleCheckToggle(aliasBox, '.ifAlias');
+aliasBox.addEventListener('change', () => {
+    simpleCheckToggle(aliasBox, '.ifAlias');
+});
+simpleCheckToggle(nameBox, '.ifName');
+nameBox.addEventListener('change', () => {
+    simpleCheckToggle(nameBox, '.ifName');
+});
+simpleCheckToggle(groupBox, '.ifGroup');
+groupBox.addEventListener('change', () => {
+    simpleCheckToggle(groupBox, '.ifGroup');
+});
+simpleCheckToggle(addBox, '.ifAdd');
+addBox.addEventListener('change', () => {
+    simpleCheckToggle(addBox, '.ifAdd');
+});
+simpleCheckToggle(editBox, '.ifEdit');
+editJobs(editBox.closest('form'), editBox);
+editBox.addEventListener('change', () => {
+    simpleCheckToggle(editBox, '.ifEdit');
+    editJobs(editBox.closest('form'), editBox);
+});
+simpleCheckToggle(removeBox, '.ifRemove');
+removeJobs(removeBox.closest('form'), removeBox);
+removeBox.addEventListener('change', () => {
+    simpleCheckToggle(removeBox, '.ifRemove');
+    removeJobs(removeBox.closest('form'), removeBox);
+});
+simpleCheckToggle(plotBox, '.ifPlot');
+removePlots(plotBox.closest('form'), plotBox);
+plotBox.addEventListener('change', () => {
+    simpleCheckToggle(plotBox, '.ifPlot');
+    removePlots(plotBox.closest('form'), plotBox);
+});
+idField.addEventListener('change', () => {
+    editJobs(editBox.closest('form'), editBox);
+    removeJobs(removeBox.closest('form'), removeBox);
+    removePlots(plotBox.closest('form'), plotBox);
 });

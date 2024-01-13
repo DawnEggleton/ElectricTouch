@@ -739,17 +739,280 @@
                         <tag-tabset>
                             <tag-tab data-key="#editclaims">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Claims edit form
+                                    <blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+    <ul><li>Privacy Badger</li>
+    <li>UBlock</li>
+    <li>Potentially AdBlock (Plus Only)</li></ul>
+</blockquote><br>
+<form id="form-edit" data-type="grid" data-columns="2">
+    <input type="hidden" id="editor" value="<!-- |name| --> (#<!-- |id| -->, <!-- |input_IP_ADDRESS| -->)" />
+    <label class="fullWidth">
+        <b>Character ID</b>
+        <span><input type="text" id="id" placeholder="URL or ID" required /></span>
+    </label>
+    <div class="h4 fullWidth">Please Update</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-alias" value="alias">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Alias</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-name" value="name">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Character Name</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-group" value="group">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Group</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-job-add" value="job-add">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Add Job(s)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-job-edit" value="job-edit">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Current Job(s)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-job-remove" value="job-remove">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Remove Current Job(s)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-plot-remove" value="plot-remove">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Remove Subplot Role(s)</strong>
+        </label>
+    </div>
+    <div class="h4 hidden ifAlias fullWidth">Change Alias</div>
+    <label class="hidden ifAlias fullWidth">
+        <b>Alias</b>
+        <span><input type="text" id="member" placeholder="Alias" /></span></span>
+    </label>
+    <div class="h4 hidden ifName fullWidth">Change Name</div>
+    <label class="hidden ifName fullWidth">
+        <b>Name</b>
+        <span><input type="text" id="character" placeholder="Name" /></span></span>
+    </label>
+    <div class="h4 hidden ifGroup fullWidth">Change Group</div>
+    <label class="hidden ifGroup fullWidth">
+        <b>Group</b>
+        <span><select id="group">
+	<option value="">(select)</option>
+	<optgroup label="Standard">
+		<option value="15">Amaranth</option>
+		<option value="7">Birch</option>
+		<option value="11">Blueberry</option>
+		<option value="22">Cedar</option>
+		<option value="10">Dandelion</option>
+		<option value="25">Goldenrod</option>
+		<option value="13">Hemlock</option>
+		<option value="12">Juniper</option>
+		<option value="8">Lupin</option>
+		<option value="14">Nettle</option>
+		<option value="30">Periwinkle</option>
+		<option value="31">Primrose</option>
+		<option value="9">Spruce</option>
+		<option value="16">Sundew</option>
+	</optgroup>
+	<optgroup label="Premium">
+		<option value="19">Balsam</option>
+		<option value="20">Clover</option>
+		<option value="29">Hawthorn</option>
+		<option value="23">Laurel</option>
+		<option value="24">Sage</option>
+		<option value="33">Starflower</option>
+		<option value="18">Thistle</option>
+		<option value="17">Tobacco</option>
+	</optgroup>
+</select></span>
+    </label>
+    <div class="h4 hidden ifAdd fullWidth">Add Jobs</div>
+    <label class="hidden ifAdd">
+        <b>Number of Jobs</b>
+        <span><input type="number" id="job-count" value="1" min="1" /></span>
+    </label>
+    <div id="jobs-clip" class="hidden ifAdd fullWidth" data-type="grid" data-columns="2"></div>
+    <div class="h4 hidden ifEdit fullWidth">Edit Jobs</div>
+    <div id="edit-jobs-clip" class="hidden ifEdit fullWidth" data-type="grid" data-columns="2"></div>
+    <div class="h4 hidden ifRemove fullWidth">Remove Jobs</div>
+    <div id="remove-jobs-clip" class="hidden ifRemove fullWidth multiSelect" data-type="flex"></div>
+    <div class="h4 hidden ifPlot fullWidth">Remove Subplot Roles</div>
+    <div id="remove-roles-clip" class="hidden ifPlot fullWidth multiSelect" data-type="flex"></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#edit-business">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Business edit form
+                                    <blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+    <ul><li>Privacy Badger</li>
+    <li>UBlock</li>
+    <li>Potentially AdBlock (Plus Only)</li></ul>
+</blockquote><br>
+<form id="form-job-edit" data-type="grid" data-columns="2">
+    <input type="hidden" id="name" value="<!-- |name| -->" />
+    <input type="hidden" id="id" value="<!-- |id| -->" />
+    <label>
+        <b>Employer</b>
+        <span><input type="text" id="employer" placeholder="Employer Name" required /></span>
+    </label>
+    <label>
+        <b>Hiring?</b>
+        <span><select id="hiring">
+            <option value="">(select)</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="ask">Ask First</option>
+        </select></span>
+    </label>
+    <div class="fullWidth" data-type="grid"><div class="h6">Weekday Hours</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="empty" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>No set hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="none" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Not Open</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="appointment" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>By Appointment</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="all" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>24 Hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="day" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Day (09:00 - 17:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="night" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Night (17:00 - 01:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="overnight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Overnight (01:00 - 09:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="witching" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Witching Hour (00:00 - 04:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="earlymorning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Early Morning (04:00 - 08:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="morning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Morning (08:00 - 12:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="afternoon" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Afternoon (12:00 - 16:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="evening" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Evening (16:00 - 20:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="latenight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Late Night (20:00 - 00:00)</strong>
+        </label>
+    </div></div>
+    <div class="fullWidth" data-type="grid"><div class="h6">Weekend Hours</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="empty" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>No set hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="none" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Not Open</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="appointment" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>By Appointment</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="all" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>24 Hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="day" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Day (09:00 - 17:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="night" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Night (17:00 - 01:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="overnight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Overnight (01:00 - 09:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="witching" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Witching Hour (00:00 - 04:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="earlymorning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Early Morning (04:00 - 08:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="morning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Morning (08:00 - 12:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="afternoon" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Afternoon (12:00 - 16:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="evening" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Evening (16:00 - 20:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="latenight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Late Night (20:00 - 00:00)</strong>
+        </label>
+    </div></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
                                 </div></div>
                             </tag-tab>
                             <tag-tab data-key="#staff-help">
                                 <div class="webpage--content-inner"><div class="scroll">
-                                    Staff help form
+                                    
                                 </div></div>
                             </tag-tab>
                         </tag-tabset>
@@ -1126,9 +1389,6 @@
                 </tag-tabset>
             </section>
 
-            <script src="../dist/js/webpageFunctions.js"></script>
-            <script src="../dist/js/formatFunctions.js"></script>
-            <script src="../dist/js/webpageScripts.js"></script>
             <script>
                 const sheetID = '1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU';
                 const deployID = 'AKfycbx-PjF_7gGgm9QOilpWR6x_QGuKRys5Cjd3wbexK-P2hyxquvLreQW7meY567tPomB2';
@@ -1152,7 +1412,11 @@
                 const businesses = `https://opensheet.elk.sh/${sheetID}/Businesses`;
 
                 let businessList = ``;
-
+            </script>
+            <script src="../dist/js/webpageFunctions.js"></script>
+            <script src="../dist/js/formatFunctions.js"></script>
+            <script src="../dist/js/webpageScripts.js"></script>
+            <script>
                 fetch(claims)
                 .then((response) => response.json())
                 .then((claimsData) => {
@@ -1180,52 +1444,7 @@
                                 fetch(businesses)
                                 .then((response) => response.json())
                                 .then((businessData) => {
-                                    let businessArray = businessData
-                                        .filter(item => item.Hiring !== 'No')
-                                        .sort((a, b) => {
-                                            if (a.Hiring.toLowerCase() === 'yes' && b.Hiring.toLowerCase() !== 'yes') {
-                                                return -1;
-                                            } else if (a.Hiring.toLowerCase() !== 'yes' && b.Hiring.toLowerCase() === 'yes') {
-                                                return 1;
-                                            } else if (a.Employer.toLowerCase().replace('the ', '') < b.Employer.toLowerCase().replace('the ', '')) {
-                                                return -1;
-                                            } else if (a.Employer.toLowerCase().replace('the ', '') > b.Employer.toLowerCase().replace('the ', '')) {
-                                                return 1;
-                                            } else {
-                                                return 0;
-                                            }
-                                        });
-
-                                    businessArray.forEach((business, i) => {
-                                        //First
-                                        if(i === 0) {
-                                            let optgroup = `Ask First`;
-                                            if(business.Hiring.toLowerCase() === 'yes') {
-                                                optgroup = `Actively Hiring`;
-                                            }
-                                            businessList += `<optgroup label="${optgroup}">`;
-                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
-                                        }
-                                        //Different Hiring Status
-                                        else if (businessArray[i - 1].Hiring.toLowerCase() !== business.Hiring.toLowerCase()) {
-                                            let optgroup = `Ask First`;
-                                            if(business.Hiring.toLowerCase() === 'yes') {
-                                                optgroup = `Actively Hiring`;
-                                            }
-                                            businessList += `</optgroup>`;
-                                            businessList += `<optgroup label="${optgroup}">`;
-                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
-                                        } else {
-                                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
-                                        }
-                                        if(i === businessArray.length - 1) {
-                                            businessList += `</optgroup>`;
-                                        }
-                                    });
-
-                                    document.querySelectorAll('#job-count').forEach(jobCount => {
-                                        handleJobFields(jobCount.closest('form'), jobCount);
-                                    })
+                                    initBusinesses(businessData);
                                     
                                 }).then(() => {
                                     initWebpages();

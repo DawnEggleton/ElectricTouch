@@ -27,6 +27,12 @@ function sendAjax(form, data, discord, successMessage) {
                 case `claims-submit`:
                     sendDiscordMessage(`https://discord.com/api/webhooks/${sortBot}`, discord.staffTitle, discord.staffMessage, null, discord.groupColor);
                     break;
+                case `business-edit`:
+                    sendDiscordMessage(`https://discord.com/api/webhooks/${businessBot}`, discord.staffTitle, discord.staffMessage);
+                    break;
+                case `claims-edit`:
+                    sendDiscordMessage(`https://discord.com/api/webhooks/${editBot}`, discord.staffTitle, discord.staffMessage);
+                    break;
                 default:
                     console.log('Success');
                     break;
@@ -116,15 +122,15 @@ function addRoleFields() {
     return `<div class="section-wrap fullWidth">
         <label class="section-name">
             <b>Section Title</b>
-            <span><input type="text" placeholder="Title" required /></span>
+            <span><input type="text" placeholder="Title" /></span>
         </label>
         <label class="section-role-count">
             <b>Section Role Count</b>
-            <span><input type="number" value="1" min="1" required /></span>
+            <span><input type="number" value="1" min="1" /></span>
         </label>
         <label class="section-overview fullWidth">
             <b>Overview</b>
-            <span><textarea placeholder="Overview" required></textarea></span>
+            <span><textarea placeholder="Overview"></textarea></span>
         </label>
         <div class="section-role-group fullWidth" data-type="grid" data-columns="2"></div>
     </div>`;
@@ -288,11 +294,11 @@ function sortButton(button) {
 function addCreditFields(i) {
     let html = `<label class="user-name">
         <b>Member</b>
-        <span><input type="text" id="user-${i}" placeholder="Member" required /></span>
+        <span><input type="text" id="user-${i}" placeholder="Member" /></span>
     </label>
     <label class="user-id">
         <b>Member ID</b>
-        <span><input type="text" id="id-${i}" placeholder="Member ID" required /></span>
+        <span><input type="text" id="id-${i}" placeholder="Member ID" /></span>
     </label>`;
     return html;
 }
@@ -400,4 +406,415 @@ function simpleFieldToggle(field, ifclass) {
     } else {
         document.querySelectorAll(ifclass).forEach(item => item.classList.add('hidden'));
     }
+}
+function simpleCheckToggle(field, ifclass) {
+    if(field.checked) {
+        document.querySelectorAll(ifclass).forEach(item => item.classList.remove('hidden'));
+    } else {
+        document.querySelectorAll(ifclass).forEach(item => item.classList.add('hidden'));
+    }
+}
+function submitClaims(form, data, discord) {
+    fetch(claims)
+    .then((response) => response.json())
+    .then((claimsData) => {
+        let prevCharacter = claimsData.filter(item => item.ParentID === memberID);
+        if(prevCharacter.length > 0) {
+            data.MemberPronouns = prevCharacter[0].MemberPronouns;
+            data.MemberGroup = prevCharacter[0].MemberGroup;
+            data.MemberGroupID = prevCharacter[0].MemberGroupID;
+        } else {
+            let memberPronouns = form.querySelector('#memberpronouns').value.toLowerCase().trim();
+            let memberGroupField = form.querySelector('#membergroup');
+            let memberGroup = memberGroupField.options[memberGroupField.selectedIndex].innerText.toLowerCase().trim();
+            let memberGroupID = memberGroupField.options[memberGroupField.selectedIndex].value;
+            data.MemberPronouns = memberPronouns;
+            data.MemberGroup = memberGroup;
+            data.MemberGroupID = memberGroupID;
+        }
+
+        let successMessage = `<blockquote class="fullWidth">Submission successful!</blockquote>
+        <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
+    
+        sendAjax(form, data, discord, successMessage);
+    });
+}
+function editBusinesses(form, data) {
+    fetch(`https://opensheet.elk.sh/${sheetID}/Businesses`)
+    .then((response) => response.json())
+    .then((claimsData) => {
+        let existing = claimsData.filter(item => item.Employer.toLowerCase().trim() === data.Employer.toLowerCase().trim());
+
+        if(existing.length === 1) {
+            existing = existing[0];
+            let previous = ``;
+            let updated = ``;
+
+            if(data.Hiring && data.Hiring !== existing.Hiring) {
+                previous += `- Hiring: ${existing.Hiring}\n`;
+                updated += `- Hiring: ${data.Hiring}\n`;
+                existing.Hiring = data.Hiring;
+            }
+            if(data.WeekdayHours && data.WeekdayHours !== existing.WeekdayHours) {
+                previous += `- Weekday Hours: ${existing.WeekdayHours}\n`;
+                updated += `- Weekday Hours: ${data.WeekdayHours}\n`;
+                existing.WeekdayHours = data.WeekdayHours;
+            }
+            if(data.WeekendHours && data.WeekendHours !== existing.WeekendHours) {
+                previous += `- Weekend Hours: ${existing.WeekendHours}\n`;
+                updated += `- Weekend Hours: ${data.WeekendHours}\n`;
+                existing.WeekendHours = data.WeekendHours;
+            }
+
+            let staffTitle = `${capitalize(data.member)} (#${data.memberId}) has editted ${capitalize(data.Employer)}`;
+            let staffMessage = `**Previously:**\n${previous}\n**Updated to:**\n${updated}`; 
+
+            let sendData = {
+                SubmissionType: "business-edit",
+                Employer: existing.Employer,
+                Category: existing.Category,
+                Location: existing.Location,
+                LocationID: existing.LocationID,
+                Hiring: existing.Hiring,
+                Summary: existing.Summary,
+                WeekendHours: existing.WeekendHours,
+                WeekdayHours: existing.WeekdayHours,
+            }
+
+            let discord = {
+                staffTitle: staffTitle,
+                staffMessage: staffMessage,
+            }
+
+            let successMessage = `<blockquote class="fullWidth">Submission successful!</blockquote>
+            <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
+
+            sendAjax(form, sendData, discord, successMessage);
+
+        }
+            
+    });
+    
+    return false;
+}
+function editClaims(form, data) {
+    fetch(`https://opensheet.elk.sh/${sheetID}/Claims`)
+    .then((response) => response.json())
+    .then((claimsData) => {
+        let existing = claimsData.filter(item => item.AccountID === data.AccountID);
+
+        if(existing.length === 1) {
+            existing = existing[0]
+            let original = {...existing};
+            let staffMessage = ``;
+
+            if(data.selectedChanges.includes('alias')) {
+                existing.Member = data.Member;
+                if(staffMessage !== '') {
+                    staffMessage += `\n`
+                }
+                staffMessage += `**Alias Change:** From ${capitalize(original.Member)} to ${capitalize(existing.Member)}`;
+            }
+    
+            if(data.selectedChanges.includes('name')) {
+                existing.Character = data.Character;
+                if(staffMessage !== '') {
+                    staffMessage += `\n`
+                }
+                staffMessage += `**Name Change:** From ${capitalize(original.Character)} to ${capitalize(existing.Character)}`;
+            }
+    
+            if(data.selectedChanges.includes('group')) {
+                existing.Group = data.Group;
+                existing.GroupID = data.GroupID;
+                if(staffMessage !== '') {
+                    staffMessage += `\n`
+                }
+                staffMessage += `**Group Change:** From ${capitalize(original.Group)} to ${capitalize(existing.Group)}`;
+            }
+    
+            if(data.selectedChanges.includes('job-add') || data.selectedChanges.includes('job-edit') || data.selectedChanges.includes('job-remove')) {
+                let jobsArray = [];
+                if (original.Jobs) {
+                    jobsArray = original.Jobs.split('+').map(item => JSON.parse(item));
+                }
+                
+                //remove jobs first
+                if(data.selectedChanges.includes('job-remove')) {
+                    let removedJobs = Array.prototype.slice.call(form.querySelectorAll('[name="remove"]'))
+                        .filter(item => item.checked)
+                        .map(item => parseInt(item.value.split('-')[1]));
+                    removedJobs.forEach(job => {
+                        jobsArray[job].employer = 'remove';
+                        jobsArray[job].position = 'remove';
+                    });
+                    jobsArray = jobsArray.filter(item => item.employer !== 'remove' && item.position !== 'remove');
+                }
+
+                //then edit existing jobs
+                if(data.selectedChanges.includes('job-edit')) {
+                    let editedJobs = Array.prototype.slice.call(form.querySelectorAll('#edit-jobs-clip input'))
+                    .filter(item => item.value !== '');
+
+                    editedJobs.forEach(editJob => {
+                        jobsArray.forEach(job => {
+                            if(job.employer === editJob.dataset.employer && job.position === editJob.dataset.position) {
+                                job.position = editJob.value;
+                            }
+                        });
+                    });
+                }
+
+                //parse back to string
+                let jobsString = jobsArray.map(item => JSON.stringify(item)).join('+');
+
+                //then add new jobs
+                if(data.selectedChanges.includes('job-add')) {
+                    let addedEmployers = form.querySelectorAll('#jobs-clip .employer select');
+                    let addedJobs = form.querySelectorAll('#jobs-clip .job input');
+                    for(let i = 0; i < addedEmployers.length; i++) {
+			            let employer = addedEmployers[i];
+                        if(jobsArray.length > 0) {
+                            jobsString += `+`;
+                        }
+                        jobsString += `{"employer": "${employer.options[employer.selectedIndex].innerText.toLowerCase().trim()}", "position": "${addedJobs[i].value.toLowerCase().trim()}"}`;
+                        if(i !== addedEmployers.length - 1) {
+                            jobsString += `+`;
+                        }
+                    }
+                }
+
+                existing.Jobs = jobsString;
+
+                //now do message
+                let originalList = [];
+                if (original.Jobs) {
+                    originalList = original.Jobs.split('+').map(item => JSON.parse(item));
+                }
+                let newList = jobsString.split('+').map(item => JSON.parse(item));
+
+                if(staffMessage !== '') {
+                    staffMessage += `\n\n`
+                }
+
+                staffMessage += `**Jobs Updated From:**`;
+                originalList.forEach(job => {
+                    staffMessage += `\n${capitalize(job.employer)} - *${capitalize(job.position)}*`;
+                });
+
+                staffMessage += `\n\n**Jobs Updated To:**`;
+                newList.forEach(job => {
+                    staffMessage += `\n${capitalize(job.employer)} - *${capitalize(job.position)}*`;
+                })
+            }
+    
+            if(data.selectedChanges.includes('plot-remove')) {
+                let plotArray = [];
+                if (original.SubplotRoles) {
+                    plotArray = original.SubplotRoles.split('@').map(item => JSON.parse(item));
+                }
+
+                let removedRoles = Array.prototype.slice.call(form.querySelectorAll('[name="remove-plot"]'))
+                    .filter(item => item.checked)
+                    .map(item => parseInt(item.value.split('-')[1]));
+
+                removedRoles.forEach(role => {
+                    plotArray[role].plotId = 'remove';
+                });
+                plotArray = plotArray.filter(item => item.plotId !== 'remove');
+                console.log(plotArray);
+
+                //parse back to string
+                let plotString = plotArray.map(item => JSON.stringify(item)).join('@');
+
+                existing.SubplotRoles = plotString;
+
+                //now do message
+                let originalList = [];
+                if (original.SubplotRoles) {
+                    originalList = original.SubplotRoles.split('@').map(item => JSON.parse(item));
+                }
+                let newList = plotString.split('@').map(item => JSON.parse(item));
+
+                if(staffMessage !== '') {
+                    staffMessage += `\n\n`
+                }
+
+                staffMessage += `**Plot Roles Updated From:**`;
+                originalList.forEach(role => {
+                    staffMessage += `\n${capitalize(role.plot)} - ${capitalize(role.section)} - ${capitalize(role.role)}`;
+                });
+
+                staffMessage += `\n\n**Plot Roles Updated To:**`;
+                newList.forEach(role => {
+                    staffMessage += `\n${capitalize(role.plot)} - ${capitalize(role.section)} - ${capitalize(role.role)}`;
+                })
+            }
+    
+            if(data.selectedChanges.includes('group')) {
+                staffMessage += `\n\nPlease change the account's member group in the Admin CP before marking this log as reviewed.`;
+            }
+
+            let staffTitle = `${capitalize(data.editor)} has made edits to ${capitalize(existing.Character)} (#${data.AccountID})`;
+
+            let discord = {
+                staffTitle: staffTitle,
+                staffMessage: staffMessage
+            }
+
+            let successMessage = `<blockquote class="fullWidth">Submission successful!</blockquote>
+            <button onclick="reloadForm(this)" type="button" class="fullWidth submit">Back to form</button>`;
+
+            existing.SubmissionType = data.SubmissionType;
+
+            sendAjax(form, existing, discord, successMessage);
+        }
+            
+    });
+    
+    return false;
+}
+function editJobs(form, field) {
+    if(field.checked) {
+        let id = form.querySelector('#id').value.split('?showuser=').length > 1 ? form.querySelector('#id').value.split('?showuser=')[1].toLowerCase().trim() : form.querySelector('#id').value;
+        if(id && id !== '') {
+            loadExistingJobs(form, 'edit', id);
+        } else {
+            form.querySelector('#edit-jobs-clip').innerHTML = `<blockquote class="fullWidth">Please enter the ID of an accepted character first.</blockquote>`;
+        }
+    } else {
+        form.querySelector(`#edit-jobs-clip`).innerHTML = '';
+    }
+}
+function removeJobs(form, field) {
+    if(field.checked) {
+        let id = form.querySelector('#id').value.split('?showuser=').length > 1 ? form.querySelector('#id').value.split('?showuser=')[1].toLowerCase().trim() : form.querySelector('#id').value;
+        if(id && id !== '') {
+            loadExistingJobs(form, 'remove', id);
+        } else {
+            form.querySelector('#remove-jobs-clip').innerHTML = `<blockquote class="fullWidth">Please enter the ID of an accepted character first.</blockquote>`;
+        }
+    } else {
+        form.querySelector(`#remove-jobs-clip`).innerHTML = '';
+    }
+}
+function removePlots(form, field) {
+    if(field.checked) {
+        let id = form.querySelector('#id').value.split('?showuser=').length > 1 ? form.querySelector('#id').value.split('?showuser=')[1].toLowerCase().trim() : form.querySelector('#id').value;
+        if(id && id !== '') {
+            loadExistingPlots(form, id);
+        } else {
+            form.querySelector('#remove-jobs-clip').innerHTML = `<blockquote class="fullWidth">Please enter the ID of an accepted character first.</blockquote>`;
+        }
+    } else {
+        form.querySelector(`#remove-jobs-clip`).innerHTML = '';
+    }
+}
+function loadExistingJobs(form, type, id) {
+    fetch(`https://opensheet.elk.sh/${sheetID}/Claims`)
+    .then((response) => response.json())
+    .then((claimsData) => {
+        let character = claimsData.filter(item => item.AccountID === id)[0];
+        let jobs = [];
+        if(character.Jobs) {
+            jobs = character.Jobs.split('+').map(item => JSON.parse(item));
+        }
+        let html = ``;
+        if(type === 'edit') {
+            jobs.forEach((job, i) => {
+                html += `<label>
+                    <b>${capitalize(job.employer)}</b>
+                    <span><input type="text" id="edit-job-${i}" data-employer="${job.employer}" data-position="${job.position}" placeholder="${capitalize(job.position)}" /></span>
+                </label>`;
+            });
+            if(jobs.length === 0) {
+                html = `<blockquote class="fullWidth">This character is not employed</blockquote>`;
+            }
+            form.querySelector('#edit-jobs-clip').innerHTML = html;
+        }
+        if(type === 'remove') {
+            jobs.forEach((job, i) => {
+                html += `<label class="input-wrap">
+                    <input type="checkbox" name="remove" id="remove-job-${i}" value="job-${i}">
+                    <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+                    <strong>${job.employer} - ${job.position}</strong>
+                </label>`;
+            });
+            if(jobs.length === 0) {
+                html = `<blockquote class="fullWidth">This character is not employed</blockquote>`;
+            }
+            form.querySelector('#remove-jobs-clip').innerHTML = html;
+        }
+    });
+}
+function loadExistingPlots(form, id) {
+    fetch(`https://opensheet.elk.sh/${sheetID}/Claims`)
+    .then((response) => response.json())
+    .then((claimsData) => {
+        let character = claimsData.filter(item => item.AccountID === id)[0];
+        let plots = [];
+        if(character.SubplotRoles) {
+            plots = character.SubplotRoles.split('@').map(item => JSON.parse(item));
+        }
+        let html = ``;
+        plots.forEach((plot, i) => {
+            html += `<label class="input-wrap">
+                <input type="checkbox" name="remove-plot" id="remove-plot-${i}" value="plot-${i}">
+                <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+                <strong>${plot.plot} - ${plot.section} - ${plot.role}</strong>
+            </label>`;
+        });
+        if(plots.length === 0) {
+            html = `<blockquote class="fullWidth">This character is not part of any subplots.</blockquote>`;
+        }
+        form.querySelector('#remove-roles-clip').innerHTML = html;
+    });
+}
+function initBusinesses(businessData) {
+    let businessArray = businessData
+    .filter(item => item.Hiring !== 'No')
+    .sort((a, b) => {
+        if (a.Hiring.toLowerCase() === 'yes' && b.Hiring.toLowerCase() !== 'yes') {
+            return -1;
+        } else if (a.Hiring.toLowerCase() !== 'yes' && b.Hiring.toLowerCase() === 'yes') {
+            return 1;
+        } else if (a.Employer.toLowerCase().replace('the ', '') < b.Employer.toLowerCase().replace('the ', '')) {
+            return -1;
+        } else if (a.Employer.toLowerCase().replace('the ', '') > b.Employer.toLowerCase().replace('the ', '')) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    businessArray.forEach((business, i) => {
+        //First
+        if(i === 0) {
+            let optgroup = `Ask First`;
+            if(business.Hiring.toLowerCase() === 'yes') {
+                optgroup = `Actively Hiring`;
+            }
+            businessList += `<optgroup label="${optgroup}">`;
+            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
+        }
+        //Different Hiring Status
+        else if (businessArray[i - 1].Hiring.toLowerCase() !== business.Hiring.toLowerCase()) {
+            let optgroup = `Ask First`;
+            if(business.Hiring.toLowerCase() === 'yes') {
+                optgroup = `Actively Hiring`;
+            }
+            businessList += `</optgroup>`;
+            businessList += `<optgroup label="${optgroup}">`;
+            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
+        } else {
+            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
+        }
+        if(i === businessArray.length - 1) {
+            businessList += `</optgroup>`;
+        }
+    });
+
+    document.querySelectorAll('#job-count').forEach(jobCount => {
+        handleJobFields(jobCount.closest('form'), jobCount);
+    })
 }
