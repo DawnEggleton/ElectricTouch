@@ -410,9 +410,9 @@ document.querySelector('#form-sort').addEventListener('submit', e => {
     let staffTitle = `${capitalize(member)} has requested sorting for ${capitalize(character)}`;
     let staffMessage = `${capitalize(character)} should be placed in the ${capitalize(group)} group.\n\n**Profile:** https://godlybehaviour.jcink.net/?showuser=${characterID}\n**Parent Account:** https://godlybehaviour.jcink.net/?showuser=${memberID}\n**First Character?** ${firstCharacter}\n**Requested?** ${wanted}`;
     if (wanted === 'Yes') {
-        message += `\n${wantedURLs}`;
+        staffMessage += `\n${wantedURLs}`;
     }
-    message += `\n\nPlease follow the sorting procedure, available in Processes > #sorting of this Discord server. React to this notification when you begin reviewing the application.`;
+    staffMessage += `\n\nPlease follow the sorting procedure, available in Processes > #sorting of this Discord server. React to this notification when you begin reviewing the application.`;
 
     let publicTitle = `${capitalize(member)} has finished ${capitalize(character)}!`;
     let publicMessage = `**Learn More:** <https://godlybehaviour.jcink.net/?showuser=${characterID}>`;

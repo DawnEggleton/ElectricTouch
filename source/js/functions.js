@@ -223,6 +223,91 @@ function initSwitcher() {
 	switcher.insertAdjacentHTML('afterend', newSwitch);
 	switcher.remove();
 }
+function initMarkdown() {
+    document.querySelectorAll('tag-spoiler').forEach(spoiler => {
+        spoiler.addEventListener('click', e => {e.currentTarget.classList.add('is-visible')});
+    });
+
+    let tildelists = document.querySelectorAll('tl');
+    if(tildelists.length > 0) {
+        tildelists.forEach(tildelist => {
+            if(tildelist.innerHTML.split(`~ `).length > 0) {
+                tildelist.innerHTML = `<ul>
+                    ${tildelist
+                    .innerHTML.split(`~ `)
+                    .filter(item => item !== '' && item !== '\n')
+                    .map(item => `<li>${item}</li>`).join('')}
+                </ul>`;
+            }
+        });
+    }
+    
+    let cheatsheet = document.querySelector('.profile--cheatsheet .scroll');
+    let interested = document.querySelector('.profile--interested .scroll');
+    let avoiding = document.querySelector('.profile--avoiding .scroll');
+    
+    if(cheatsheet && cheatsheet.innerHTML.split(`~ `).length > 1 && cheatsheet.innerHTML.split('<ul>').length <= 1) {
+        cheatsheet.innerHTML = `<ul>
+            ${cheatsheet
+            .innerHTML.split(`~ `)
+            .filter(item => item !== '')
+            .map(item => `<li>${item}</li>`).join('')}
+        </ul>`;
+    }
+    
+    if(interested && interested.innerHTML.split(`~ `).length > 1 && interested.innerHTML.split('<ul>').length <= 1) {
+        interested.innerHTML = `<ul>
+            ${interested
+            .innerHTML.split(`~ `)
+            .filter(item => item !== '')
+            .map(item => `<li>${item}</li>`).join('')}
+        </ul>`;
+    }
+    if(avoiding && avoiding.innerHTML.split(`~ `).length > 1 && avoiding.innerHTML.split('<ul>').length <= 1) {
+        avoiding.innerHTML = `<ul>
+            ${avoiding
+            .innerHTML.split(`~ `)
+            .filter(item => item !== '')
+            .map(item => `<li>${item}</li>`).join('')}
+        </ul>`;
+    }
+
+    let markdownSafe = `.postcolor, .profile [data-key="#details"] .scroll, .profile [data-key="#plotting"] .scroll`;
+
+    if(document.querySelectorAll(markdownSafe).length > 0) {
+        document.querySelectorAll(markdownSafe).forEach(post => {
+        let str = post.innerHTML;
+        str = str
+                .split(`**`)
+                .map((value, index) => {
+                    if(index % 2 == 0) {
+                    return value;
+                    } else {
+                    return `<tag-spoken>"${value}"</tag-spoken>`;
+                    }
+                    }).join("");
+        str = str
+                .split(`_`)
+                .map((value, index) => {
+                    if(index % 2 == 0) {
+                    return value;
+                    } else {
+                    return `<tag-thought>${value}</tag-thought>`;
+                    }
+                    }).join("");
+        str = str
+                .split(`||`)
+                .map((value, index) => {
+                    if(index % 2 == 0) {
+                    return value;
+                    } else {
+                    return `<tag-spoiler>${value}</tag-spoiler>`;
+                    }
+                    }).join("");
+        post.innerHTML = str;
+        });
+    }
+}
 
 /****** Profile Initialization ******/
 function formatName(name) {
@@ -408,6 +493,7 @@ function initWebpages() {
     //accordions
     initAccordion();
 }
+
 function initTabs(isHash = false, wrapClass, menuClass, tabWrapClass, activeClass = 'is-active', categoryClass = null, firstClasses = []) {
     if(isHash) {
         window.addEventListener('hashchange', function(e){

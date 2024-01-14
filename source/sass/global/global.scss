@@ -63,7 +63,7 @@ main {
     }
 }
 
-h2,
+h2:not(.species--title),
 h3,
 h4,
 h5,
@@ -84,7 +84,7 @@ h8,
     }
 }
 
-h2,
+h2:not(.species--title),
 h3,
 h4,
 h5,
@@ -98,7 +98,7 @@ h5,
     width: max-content;
 }
 
-h2,
+h2:not(.species--title),
 h3,
 .h2,
 .h3 {
@@ -117,7 +117,7 @@ h3,
     }
 }
 
-h2,
+h2:not(.species--title),
 .h2 {
     padding: 15px 30px;
     @include fluid-type(16, 24, 480, 1920);
@@ -232,6 +232,14 @@ a {
         font-size: 1.2em;
         font-family: 'Font Awesome 6 Pro';
     }
+}
+b,
+tag-spoken {
+    font-weight: 700;
+}
+i,
+tag-thought {
+    font-style: italic;
 }
 
 input,

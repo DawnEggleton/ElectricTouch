@@ -24,31 +24,142 @@
                     <p>Loading</p>
                 </div>
             </div>
-            
+
             <!--Webpage-->
             <section class="webpage">
                 <div class="webpage--menu">
-                Filters
+                    <button class="onlyMobile" onClick="toggleWebpageMenu(this)">
+                        <div class="menu-bar menu-top"></div>
+                        <div class="menu-bar menu-middle"></div>
+                        <div class="menu-bar menu-bottom"></div>
+                    </button>
+                    <div class="accordion scroll">
+                        <div class="menu-static">
+                            <input id="quicksearch" class="forminput memberlist-namesearch" type="text" size="25" name="name" value="" placeholder="Filter by name...">
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Category</span>
+                        </div>
+                        <div class="accordion--content species--filter-group" data-filter-group="premium">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">reset</label>
+                            <label><input type="checkbox" value=".cat-premium">premium</label>
+                            <label><input type="checkbox" value=".cat-reg">free</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Form</span>
+                        </div>
+                        <div class="accordion--content species--filter-group" data-filter-group="type">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">reset</label>
+                            <label><input type="checkbox" value=".type-aquatic">aquatic</label>
+                            <label><input type="checkbox" value=".type-tele">empathic</label>
+                            <label><input type="checkbox" value=".type-equine">equine</label>
+                            <label><input type="checkbox" value=".type-faerie">faerie</label>
+                            <label><input type="checkbox" value=".type-spirit">spirit</label>
+                            <label><input type="checkbox" value=".type-misc">miscellaneous</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Lifespan</span>
+                        </div>
+                        <div class="accordion--content species--filter-group" data-filter-group="lifespan">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">reset</label>
+                            <label><input type="checkbox" value=".life-immortal">immortal</label>
+                            <label><input type="checkbox" value=".life-long">longer than average</label>
+                            <label><input type="checkbox" value=".life-short">shorter than average</label>
+                            <label><input type="checkbox" value=".life-average">average</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Shifting</span>
+                        </div>
+                        <div class="accordion--content species--filter-group" data-filter-group="shifting">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">reset</label>
+                            <label><input type="checkbox" value=".shift-animal">animal shift</label>
+                            <label><input type="checkbox" value=".shift-hybrid">hybrid shift</label>
+                            <label><input type="checkbox" value=".shift-human">appearance shift</label>
+                            <label><input type="checkbox" value=".shift-plant">plant shift</label>
+                            <label><input type="checkbox" value=".shift-glamour">glamour only</label>
+                            <label><input type="checkbox" value=".shift-none">cannot shift</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Healing</span>
+                        </div>
+                        <div class="accordion--content species--filter-group" data-filter-group="healing">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">reset</label>
+                            <label><input type="checkbox" value=".heal-fast">heals faster</label>
+                            <label><input type="checkbox" value=".heal-lives">difficult to kill</label>
+                            <label><input type="checkbox" value=".heal-both">both</label>
+                            <label><input type="checkbox" value=".heal-specific">under specific circumstances</label>
+                            <label><input type="checkbox" value=".heal-none">none</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Community</span>
+                        </div>
+                        <div class="accordion--content species--filter-group" data-filter-group="community">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">reset</label>
+                            <label><input type="checkbox" value=".comm-communal">communal among all</label>
+                            <label><input type="checkbox" value=".comm-species">communal among species</label>
+                            <label><input type="checkbox" value=".comm-solitary">solitary</label>
+                            <label><input type="checkbox" value=".comm-varied">varied</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Public Awareness</span>
+                        </div>
+                        <div class="accordion--content species--filter-group" data-filter-group="awareness">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">reset</label>
+                            <label><input type="checkbox" value=".aware-none">not publicly revealed</label>
+                            <label><input type="checkbox" value=".aware-government">known to the government</label>
+                            <label><input type="checkbox" value=".aware-public">known to the public</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Level of Knowledge</span>
+                        </div>
+                        <div class="accordion--content species--filter-group" data-filter-group="knowledge">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">reset</label>
+                            <label><input type="checkbox" value=".know-none">none</label>
+                            <label><input type="checkbox" value=".know-low">low</label>
+                            <label><input type="checkbox" value=".know-medium">medium</label>
+                            <label><input type="checkbox" value=".know-high">high</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Miscellaneous</span>
+                        </div>
+                        <div class="accordion--content species--filter-group" data-filter-group="misc">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">reset</label>
+                            <label><input type="checkbox" value=".staffOnly">staff review</label>
+                            <label><input type="checkbox" value=".misc-turning">can turn others</label>
+                            <label><input type="checkbox" value=".misc-partshift">can partial shift</label>
+                            <label><input type="checkbox" value=".misc-healothers">can heal others</label>
+                            <label><input type="checkbox" value=".misc-nohybrid">cannot hybridize</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="webpage--species">
-                <div class="webpage--content-inner">
-                    <div class="scroll">Species</div>
-                </div>
+                    <div class="scroll"><div id="species--rows"><div class="species-sizer"></div></div></div>
                 </div>
             </section>
-            
+
+            <script src="../dist/js/speciesFunctions.js"></script>
             <script>
                 const sheetID = '1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU';
-            
+
                 const species = `https://opensheet.elk.sh/${sheetID}/Species`;
-            
+
                 fetch(species)
                 .then((response) => response.json())
                 .then((data) => {
-                console.log(data);
-            
+                    formatSpecies(data);
                 }).then(() => {
-                    initWebpages();
+                    let $container = $('#species--rows');
+                    let gridItem = `.species--item`;
+                    $container.isotope({
+                        itemSelector: gridItem,
+                        percentPosition: true,
+                        masonry: {
+                            columnWidth: '.species-sizer',
+                            gutter: 15
+                        }
+                    });
+                }).then(() => {
+                    initSpecies();
                 });
             </script>
 

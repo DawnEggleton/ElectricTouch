@@ -50,7 +50,7 @@ function sendAjax(form, data, discord, successMessage) {
             window.scrollTo(0, 0);
             switch(data.SubmissionType) {
                 case `claims-submit`:
-                    sendDiscordMessage(`https://discord.com/api/webhooks/${publicSortBot}`, discord.publicTitle, discord.publicMessage, null, discord.groupColor);
+                    sendDiscordMessage(`https://discord.com/api/webhooks/${publicSortBot}`, discord.publicTitle, discord.publicMessage, `<@&1124161240378392717>`, discord.groupColor);
                     break;
                 default:
                     console.log('Complete');
@@ -388,7 +388,7 @@ function submitClaims(form, data, discord) {
     fetch(claims)
     .then((response) => response.json())
     .then((claimsData) => {
-        let prevCharacter = claimsData.filter(item => item.ParentID === memberID);
+        let prevCharacter = claimsData.filter(item => item.ParentID === data.ParentID);
         if(prevCharacter.length > 0) {
             data.MemberPronouns = prevCharacter[0].MemberPronouns;
             data.MemberGroup = prevCharacter[0].MemberGroup;

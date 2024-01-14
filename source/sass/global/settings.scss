@@ -2,24 +2,15 @@
     Settings
 ********************************/
 
-li::marker {
+li::marker,
+.webpage .accordion--content a.is-active::before,
+.webpage .accordion--content a:hover::before {
     content: '\f178';
 }
 .webpage .claim-member > span a::after,
 a[target="_blank"]:not(.staffOnly)::after {
     content: '\f08e';
 }
-.webpage {
-    .accordion {
-        &--content {
-            a {
-                &.is-active,
-                &:hover {
-                    &::before {
-                        content: '\f178';
-                    }
-                }
-            }
-        }
-    }
+.webpage .species--filter-group label::before {
+    content: '\f00c';
 }

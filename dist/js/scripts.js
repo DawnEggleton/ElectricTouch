@@ -33,6 +33,7 @@ if (typeof tippy === 'function') {
 setTheme();
 setSize();
 initModals();
+initMarkdown();
 
 /********** Window Click **********/
 document.querySelector('.invisibleEl').addEventListener('click', e => {
