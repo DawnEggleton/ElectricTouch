@@ -73,7 +73,7 @@ function rgbToHex(r, g, b) {
     return componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 function cleanText(text) {
-	return text.replaceAll(' ', '').replaceAll('&amp;', '').replaceAll('&', '').replaceAll(`'`, '').replaceAll(`"`, '').replaceAll(`.`, '').replaceAll(`(`, '').replaceAll(`)`, '');
+	return text.replaceAll(' ', '').replaceAll('&amp;', '').replaceAll('&', '').replaceAll(`'`, '').replaceAll(`"`, '').replaceAll(`.`, '').replaceAll(`(`, '').replaceAll(`)`, '').replaceAll(`,`, '');
 }
 function filterValue(e) {
     let searchValue = e.value.toLowerCase().trim();
@@ -104,6 +104,11 @@ function filterValue(e) {
         names.forEach(name => name.closest('.claim').classList.remove('hidden'));
         wraps.forEach(wrap => wrap.classList.remove('hidden'));
     }
+}
+function appendSearchQuery(param, value) {
+	const url = new URL(window.location.href);
+	url.searchParams.set(param, value);
+	window.history.replaceState(null, null, url);
 }
 
 /****** Settings ******/
@@ -323,7 +328,7 @@ function formatName(name) {
     return formattedName;
 }
 function formatRating(rating, selectorPrefix = ``) {
-    if(rating.value === 'All') {
+    if(rating.value === 'Any') {
         document.querySelector(`${selectorPrefix}${rating.type}-clip`).innerText = 3;
     } else if(rating.value === 'With Limits') {
         document.querySelector(`${selectorPrefix}${rating.type}-clip`).innerText = 2;
@@ -493,7 +498,6 @@ function initWebpages() {
     //accordions
     initAccordion();
 }
-
 function initTabs(isHash = false, wrapClass, menuClass, tabWrapClass, activeClass = 'is-active', categoryClass = null, firstClasses = []) {
     if(isHash) {
         window.addEventListener('hashchange', function(e){
@@ -584,6 +588,9 @@ function initHashTabs(wrapClass, menuClass, tabWrapClass, activeClass, categoryC
         hashMain.classList.add(activeClass);
         hashTab.classList.add(activeClass);
     }
+
+    document.querySelector(menuClass).classList.remove('is-open');
+
     window.scrollTo(0, 0);
 }
 function initFirstHashTab(firstClasses, activeClass) {
@@ -619,4 +626,278 @@ function initAccordion(target = '.accordion') {
             });
         })
     })
+}
+
+/****** Members Initialization ******/
+function initMembers() {
+    initAccordion();
+}
+function formatMemberRow(type, data, extraFilters = '') {
+    let mainInfo = ``;
+    let tagList = ``;
+    if(type === 'character') {
+        tagList = `${type} ${data.aliasClass} ${data.type} g-${data.groupID} ${data.speciesClass} ${data.ageClass} ${data.relationshipClass} ${data.locationClass} ${extraFilters}`;
+        mainInfo = `<div class="member--item">
+                <strong>Age</strong>
+                <span>${data.age} years old</span>
+            </div>
+            <div class="member--item">
+                <strong>Pronouns</strong>
+                <span>${data.pronouns}</span>
+            </div>
+            <div class="member--item">
+                <strong>Lives In</strong>
+                <span>${data.location}</span>
+            </div>
+            <div class="member--item">
+                <strong>Played By</strong>
+                <span>${data.alias}</span>
+            </div>
+            <div class="member--item fullWidth">
+                <strong>Species</strong>
+                <span>${data.species}</span>
+            </div>
+            <div class="member--item fullWidth">
+                <strong>Overview</strong>
+                <span class="scroll">${data.overview}</span>
+            </div>`;
+    } else {
+        tagList = `${type} ${data.aliasClass} ${data.type} g-${data.groupID} ${extraFilters}`;
+        mainInfo = `<div class="member--item">
+                <strong>Pronouns</strong>
+                <span>${data.memberPronouns}</span>
+            </div>
+            <div class="member--item">
+                <strong>Timezone</strong>
+                <span>${data.timezone}</span>
+            </div>
+            <div class="member--item">
+                <strong>Posts</strong>
+                <span>${data.postCount} posts</span>
+            </div>
+            <div class="member--item">
+                <strong>Joined</strong>
+                <span>${data.dates.joined}</span>
+            </div>
+            <div class="member--item fullWidth">
+                <strong>Last Post</strong>
+                <span>${data.dates.lastPost}</span>
+            </div>
+            <div class="member--item fullWidth">
+                <strong>Please Avoid</strong>
+                <span class="scroll">${data.triggers}</span>
+            </div>`;
+    }
+    return `<div class="grid-item ml--item ${tagList}">
+        <div class="member">
+            <div class="member--image">
+                <img src="${data.imageTall}" class="tall" loading="lazy" />
+                <img src="${data.imageWide}" class="wide" loading="lazy" />
+            </div>
+            <div class="member--main">
+                <div class="member--header">
+                    <div class="member--group-icon"><span>${data.groupName[0]}</span></div>
+                    <a href="?showuser=${data.id}">${data.name}</a>
+                </div>
+                <div class="member--info">
+                    ${mainInfo}
+                </div>
+            </div>
+        </div>
+        <div class="hidden">
+            <span class="mem--name">${data.nameClean}</span>
+            <span class="mem--age">${data.age}</span>
+            <span class="mem--posts">${data.postCount}</span>
+            <span class="mem--join">${data.dates.joined}</span>
+        </div>
+    </div>`;
+}
+function populatePage(array) {
+    let html = ``;
+    let members = [], membersClean = [];
+    let speciesList = [], speciesClean = [];
+
+    for (let i = 0; i < array.length; i++) {
+        //Make Member Array
+        let member = {raw: array[i].alias, clean: array[i].aliasClass};
+        if(jQuery.inArray(member.clean, membersClean) == -1 && member.clean != '') {
+            membersClean.push(member.clean);
+            members.push(member);
+        }
+        //Make Species Array
+        let species = {raw: array[i].speciesRaw, clean: array[i].speciesClass};
+        if(jQuery.inArray(species.clean, speciesClean) == -1 && species.clean != '') {
+            speciesClean.push(species.clean);
+            speciesList.push(species);
+        }
+
+        switch(array[i].groupID) {
+            //member only
+            case 4:
+            case 6:
+            case 26:
+            case 28:
+                html += formatMemberRow('writer', array[i]);
+                break;
+            //depends
+            case 3:
+                if(array[i].type === 'character') {
+                    html += formatMemberRow('character', array[i]);
+                } else {
+                    html += formatMemberRow('writer', array[i]);
+                }
+                break;
+            //character only
+            default: 
+                html += formatMemberRow('character', array[i], 'active');
+                break;
+        }
+    }
+    document.querySelector('#ml--rows').insertAdjacentHTML('beforeend', html);
+
+
+    //sort member array
+    members.sort((a, b) => {
+        if(a.clean < b.clean) {
+            return -1;
+        } else if (a.clean > b.clean) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+    //sort member array
+    speciesList.sort((a, b) => {
+        if(a.clean < b.clean) {
+            return -1;
+        } else if (a.clean > b.clean) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    //Append Arrays
+    members.forEach(member => {
+        document.querySelector('.ml--filter-group[data-filter-group="member"]').insertAdjacentHTML('beforeend', `<label><input type="checkbox" value=".${member.clean}"/>${member.raw}</label>`);
+    });
+
+    //Append Arrays
+    speciesList.forEach(species => {
+        document.querySelector('.ml--filter-group[data-filter-group="species"]').insertAdjacentHTML('beforeend', `<label><input type="checkbox" value=".${species.clean}"/>${species.raw}</label>`);
+    });
+}
+function setCustomFilter() {
+    //get search value
+    qsRegex = document.querySelector(typeSearch).value;
+    
+    //add show class to all items to reset
+    elements.forEach(el => el.classList.add(visible));
+    
+    //filter by nothing
+    let searchFilter = '';
+    
+    //check each item
+    elements.forEach(el => {
+        let name = el.querySelector(memName).textContent;
+        if(!name.toLowerCase().includes(qsRegex)) {
+            el.classList.remove(visible);
+            searchFilter = `.${visible}`;
+        }
+    });
+
+    let filterGroups = document.querySelectorAll(filterGroup);
+    let groups = [];
+    let checkFilters;
+    filterGroups.forEach(group => {
+        let filters = [];
+        group.querySelectorAll('label.is-checked input').forEach(filter => {
+            if(filter.value) {
+                filters.push(filter.value);
+            }
+        });
+        groups.push({group: group.dataset.filterGroup, selected: filters});
+    });
+
+    groups.forEach(group => {
+        let tagString = group.selected.join('_');
+        appendSearchQuery(group.group, tagString);
+    });
+
+    let filterCount = 0;
+    let comboFilters = [];
+    groups.forEach(group => {
+        // skip to next filter group if it doesn't have any values
+        if ( group.selected.length > 0 ) {
+            if ( filterCount === 0 ) {
+                // copy groups to comboFilters
+                comboFilters = group.selected;
+            } else {
+                var filterSelectors = [];
+                var groupCombo = comboFilters;
+                // merge filter Groups
+                for (var k = 0; k < group.selected.length; k++) {
+                    for (var j = 0; j < groupCombo.length; j++) {
+                        //accommodate weirdness with object vs not
+                        if(groupCombo[j].selected) {
+                            if(groupCombo[j].selected != group.selected[k]) {
+                                filterSelectors.push( groupCombo[j].selected + group.selected[k] );
+                            }
+                        } else if (!groupCombo[j].selected && group.selected[k]) {
+                            if(groupCombo[j] != group.selected[k]) {
+                                filterSelectors.push( groupCombo[j] + group.selected[k] );
+                            }
+                        }
+                    }
+                }
+                // apply filter selectors to combo filters for next group
+                comboFilters = filterSelectors;
+            }
+            filterCount++;
+        }
+    });
+    
+    //set filter to blank
+    let filter = [];
+    //check if it's only search
+    if(qsRegex.length > 0 && comboFilters.length === 0) {
+        filter = [`.${visible}`];
+    }
+    //check if it's only checkboxes
+    else if(qsRegex.length === 0 && comboFilters.length > 0) {
+        let combos = comboFilters.join(',').split(',');
+        filter = [...combos];
+    }
+    //check if it's both
+    else if (qsRegex.length > 0 && comboFilters.length > 0) {
+        let dualFilters = comboFilters.map(filter => filter + `.${visible}`);
+        filter = [...dualFilters];
+    }
+
+    //join array into string
+    filter = filter.join(', ');
+
+    // bind sort button click
+    let currentSort = document.querySelector('.ml--sort.is-checked');
+        
+    //render isotope
+    $container.isotope({
+        filter: filter,
+        sortBy: currentSort.dataset.sort,
+    });
+    $container.isotope('layout');
+}
+function debounce(fn, threshold) {
+    var timeout;
+    return function debounced() {
+        if (timeout) {
+        clearTimeout(timeout);
+        }
+
+        function delayed() {
+        fn();
+        timeout = null;
+        }
+        setTimeout(delayed, threshold || 100);
+    };
 }

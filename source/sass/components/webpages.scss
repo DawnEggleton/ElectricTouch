@@ -42,7 +42,7 @@
             }
         }
 
-        button {
+        & > button {
             width: 20px;
             height: 20px;
             margin: 10px 0;
@@ -557,26 +557,6 @@
         &-sizer,
         &--item {
             width: 100%;
-        
-            @include mq-up(md) {
-                //width: calc(50% - 7.5px);
-            }
-        
-            @include mq-up(lg) {
-                //width: calc((100% / 3) - 10px);
-            }
-
-            &.grid-item--width2 {
-                //width: 100%;
-            
-                @include mq-up(md) {
-                    //width: 100%;
-                }
-            
-                @include mq-up(lg) {
-                    //width: calc(((100% / 3) * 2) - 5px);
-                }
-            }
         }
 
         &--item {

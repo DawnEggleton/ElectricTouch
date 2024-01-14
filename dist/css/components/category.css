@@ -15,7 +15,8 @@
     font-weight: 900;
     font-size: 16px;
     line-height: 100%;
-    color: var(--text-secondary); }
+    color: var(--text-secondary);
+    margin: 0; }
     @media only screen and (min-width: 480px) {
       .category h2 {
         font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }

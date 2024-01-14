@@ -19,6 +19,7 @@
       @include fluid-type(16, 24, 480, 1920);
       line-height: 100%;
       color: var(--text-secondary);
+      margin: 0;
    }
 
    &--main {

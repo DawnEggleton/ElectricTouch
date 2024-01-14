@@ -56,62 +56,106 @@ main > br {
     #loading .loading-bubble i {
       font-size: 0.75em; }
 
-h2:not(.species--title),
-h3,
-h4,
-h5,
-h6,
-h7,
-h8,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-.h7,
-.h8 {
+.postcolor h2:not(.species--title),
+.postcolor h3,
+.postcolor h4,
+.postcolor h5,
+.postcolor h6,
+.postcolor h7,
+.postcolor h8,
+.postcolor .h2,
+.postcolor .h3,
+.postcolor .h4,
+.postcolor .h5,
+.postcolor .h6,
+.postcolor .h7,
+.postcolor .h8,
+.webpage--content h2:not(.species--title),
+.webpage--content h3,
+.webpage--content h4,
+.webpage--content h5,
+.webpage--content h6,
+.webpage--content h7,
+.webpage--content h8,
+.webpage--content .h2,
+.webpage--content .h3,
+.webpage--content .h4,
+.webpage--content .h5,
+.webpage--content .h6,
+.webpage--content .h7,
+.webpage--content .h8 {
   margin-bottom: 15px; }
-  h2:not(.species--title):not(:first-child),
-  h3:not(:first-child),
-  h4:not(:first-child),
-  h5:not(:first-child),
-  h6:not(:first-child),
-  h7:not(:first-child),
-  h8:not(:first-child),
-  .h2:not(:first-child),
-  .h3:not(:first-child),
-  .h4:not(:first-child),
-  .h5:not(:first-child),
-  .h6:not(:first-child),
-  .h7:not(:first-child),
-  .h8:not(:first-child) {
+  .postcolor h2:not(.species--title):not(:first-child),
+  .postcolor h3:not(:first-child),
+  .postcolor h4:not(:first-child),
+  .postcolor h5:not(:first-child),
+  .postcolor h6:not(:first-child),
+  .postcolor h7:not(:first-child),
+  .postcolor h8:not(:first-child),
+  .postcolor .h2:not(:first-child),
+  .postcolor .h3:not(:first-child),
+  .postcolor .h4:not(:first-child),
+  .postcolor .h5:not(:first-child),
+  .postcolor .h6:not(:first-child),
+  .postcolor .h7:not(:first-child),
+  .postcolor .h8:not(:first-child),
+  .webpage--content h2:not(.species--title):not(:first-child),
+  .webpage--content h3:not(:first-child),
+  .webpage--content h4:not(:first-child),
+  .webpage--content h5:not(:first-child),
+  .webpage--content h6:not(:first-child),
+  .webpage--content h7:not(:first-child),
+  .webpage--content h8:not(:first-child),
+  .webpage--content .h2:not(:first-child),
+  .webpage--content .h3:not(:first-child),
+  .webpage--content .h4:not(:first-child),
+  .webpage--content .h5:not(:first-child),
+  .webpage--content .h6:not(:first-child),
+  .webpage--content .h7:not(:first-child),
+  .webpage--content .h8:not(:first-child) {
     margin-top: 30px; }
 
-h2:not(.species--title),
-h3,
-h4,
-h5,
-.h2,
-.h3,
-.h4,
-.h5 {
+.postcolor h2:not(.species--title),
+.postcolor h3,
+.postcolor h4,
+.postcolor h5,
+.postcolor .h2,
+.postcolor .h3,
+.postcolor .h4,
+.postcolor .h5,
+.webpage--content h2:not(.species--title),
+.webpage--content h3,
+.webpage--content h4,
+.webpage--content h5,
+.webpage--content .h2,
+.webpage--content .h3,
+.webpage--content .h4,
+.webpage--content .h5 {
   font-weight: 900;
   font-family: var(--font-header);
   line-height: 160%;
   width: max-content; }
 
-h2:not(.species--title),
-h3,
-.h2,
-.h3 {
+.postcolor h2:not(.species--title),
+.postcolor h3,
+.postcolor .h2,
+.postcolor .h3,
+.webpage--content h2:not(.species--title),
+.webpage--content h3,
+.webpage--content .h2,
+.webpage--content .h3 {
   border: 1px solid var(--border-accent);
   background: var(--bg-accent-30);
   color: var(--text-secondary);
   text-transform: uppercase; }
-  h2:not(.species--title)::after,
-  h3::after,
-  .h2::after,
-  .h3::after {
+  .postcolor h2:not(.species--title)::after,
+  .postcolor h3::after,
+  .postcolor .h2::after,
+  .postcolor .h3::after,
+  .webpage--content h2:not(.species--title)::after,
+  .webpage--content h3::after,
+  .webpage--content .h2::after,
+  .webpage--content .h3::after {
     content: '';
     position: absolute;
     top: calc(50% - 0.5px);
@@ -119,83 +163,119 @@ h3,
     height: 1px;
     background: var(--border-accent); }
 
-h2:not(.species--title),
-.h2 {
+.postcolor h2:not(.species--title),
+.postcolor .h2,
+.webpage--content h2:not(.species--title),
+.webpage--content .h2 {
   padding: 15px 30px;
   font-size: 16px;
   max-width: calc(100% - 50px); }
   @media only screen and (min-width: 480px) {
-    h2:not(.species--title),
-    .h2 {
+    .postcolor h2:not(.species--title),
+    .postcolor .h2,
+    .webpage--content h2:not(.species--title),
+    .webpage--content .h2 {
       font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
-    h2:not(.species--title),
-    .h2 {
+    .postcolor h2:not(.species--title),
+    .postcolor .h2,
+    .webpage--content h2:not(.species--title),
+    .webpage--content .h2 {
       font-size: 24px; } }
-  h2:not(.species--title)::after,
-  .h2::after {
+  .postcolor h2:not(.species--title)::after,
+  .postcolor .h2::after,
+  .webpage--content h2:not(.species--title)::after,
+  .webpage--content .h2::after {
     width: 50px; }
 
-h3,
-.h3 {
+.postcolor h3,
+.postcolor .h3,
+.webpage--content h3,
+.webpage--content .h3 {
   padding: 10px 20px;
   font-size: 14px;
   max-width: calc(100% - 30px); }
   @media only screen and (min-width: 480px) {
-    h3,
-    .h3 {
+    .postcolor h3,
+    .postcolor .h3,
+    .webpage--content h3,
+    .webpage--content .h3 {
       font-size: calc(14px + 4 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
-    h3,
-    .h3 {
+    .postcolor h3,
+    .postcolor .h3,
+    .webpage--content h3,
+    .webpage--content .h3 {
       font-size: 18px; } }
-  h3::after,
-  .h3::after {
+  .postcolor h3::after,
+  .postcolor .h3::after,
+  .webpage--content h3::after,
+  .webpage--content .h3::after {
     width: 30px; }
 
-h4,
-h5,
-.h4,
-.h5 {
+.postcolor h4,
+.postcolor h5,
+.postcolor .h4,
+.postcolor .h5,
+.webpage--content h4,
+.webpage--content h5,
+.webpage--content .h4,
+.webpage--content .h5 {
   border-bottom: 1px solid var(--border-accent);
   color: var(--text-secondary); }
 
-h4,
-.h4 {
+.postcolor h4,
+.postcolor .h4,
+.webpage--content h4,
+.webpage--content .h4 {
   font-size: 16px;
   padding: 0 40px 5px 0; }
   @media only screen and (min-width: 480px) {
-    h4,
-    .h4 {
+    .postcolor h4,
+    .postcolor .h4,
+    .webpage--content h4,
+    .webpage--content .h4 {
       font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
-    h4,
-    .h4 {
+    .postcolor h4,
+    .postcolor .h4,
+    .webpage--content h4,
+    .webpage--content .h4 {
       font-size: 24px; } }
 
-h5,
-.h5 {
+.postcolor h5,
+.postcolor .h5,
+.webpage--content h5,
+.webpage--content .h5 {
   font-size: 14px;
   padding: 0 25px 5px 0; }
   @media only screen and (min-width: 480px) {
-    h5,
-    .h5 {
+    .postcolor h5,
+    .postcolor .h5,
+    .webpage--content h5,
+    .webpage--content .h5 {
       font-size: calc(14px + 4 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
-    h5,
-    .h5 {
+    .postcolor h5,
+    .postcolor .h5,
+    .webpage--content h5,
+    .webpage--content .h5 {
       font-size: 18px; } }
 
-h6,
-.h6 {
+.postcolor h6,
+.postcolor .h6,
+.webpage--content h6,
+.webpage--content .h6 {
   text-transform: uppercase;
   font-size: var(--size-sm);
   color: var(--text-secondary);
   max-width: calc(100% - 40px);
   width: max-content;
   line-height: 160%; }
-  h6::after,
-  .h6::after {
+  .postcolor h6::after,
+  .postcolor .h6::after,
+  .webpage--content h6::after,
+  .webpage--content .h6::after {
     content: '';
     position: absolute;
     top: calc(50% - 0.5px);
@@ -204,10 +284,14 @@ h6,
     background: var(--border-accent);
     width: 25px; }
 
-h7,
-h8,
-.h7,
-.h8 {
+.postcolor h7,
+.postcolor h8,
+.postcolor .h7,
+.postcolor .h8,
+.webpage--content h7,
+.webpage--content h8,
+.webpage--content .h7,
+.webpage--content .h8 {
   display: block;
   text-transform: uppercase;
   text-align: justify;
@@ -219,27 +303,48 @@ h8,
   width: 100%;
   line-height: 200%; }
 
-h8,
-.h8 {
+.postcolor h8,
+.postcolor .h8,
+.webpage--content h8,
+.webpage--content .h8 {
   background: var(--bg-accent);
   color: var(--text-on-accent);
   padding: 10px 15px; }
 
-p,
-ul {
+.postcolor p,
+.postcolor ul,
+.webpage--content p,
+.webpage--content ul {
   margin: 20px 0; }
-  p:first-child,
-  ul:first-child {
+  .postcolor p:first-child,
+  .postcolor ul:first-child,
+  .webpage--content p:first-child,
+  .webpage--content ul:first-child {
     margin-top: 0; }
-  p:last-child,
-  ul:last-child {
+  .postcolor p:last-child,
+  .postcolor ul:last-child,
+  .webpage--content p:last-child,
+  .webpage--content ul:last-child {
     margin-bottom: 0; }
 
-hr {
+.postcolor hr,
+.webpage--content hr {
   border: 1px solid var(--bg-accent);
   height: 10px;
   background: var(--bg-accent-30);
   margin: 20px auto; }
+
+.postcolor b,
+.postcolor tag-spoken,
+.webpage--content b,
+.webpage--content tag-spoken {
+  font-weight: 700; }
+
+.postcolor i,
+.postcolor tag-thought,
+.webpage--content i,
+.webpage--content tag-thought {
+  font-style: italic; }
 
 a {
   color: var(--text-accent); }
@@ -248,14 +353,6 @@ a {
   a[target="_blank"]:not(.staffOnly)::after {
     font-size: 1.2em;
     font-family: 'Font Awesome 6 Pro'; }
-
-b,
-tag-spoken {
-  font-weight: 700; }
-
-i,
-tag-thought {
-  font-style: italic; }
 
 input,
 select,

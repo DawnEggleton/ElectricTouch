@@ -309,9 +309,3 @@ function initSpecies() {
     //accordions
     initAccordion();
 }
-
-function appendSearchQuery(param, value) {
-	const url = new URL(window.location.href);
-	url.searchParams.set(param, value);
-	window.history.replaceState(null, null, url);
-}

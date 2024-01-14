@@ -17,30 +17,323 @@
         <main>
             <a name="top"></a>
 		
-            <form action='index.php' method='get'>
-                <input type='hidden' name='act' value='Members' />
-                <!--Members-->
-            </form>
-        </main>
-
-        </div>
-<!-- Copyright Information -->
-        <div class="tableborder" align="center">
-            <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
-                <div class="copyright" align="center">
-                    Powered by 
-                    <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a>
-                    (<a href="http://jcink.com" target="_blank">Jcink.com </a>
-                    <a href="https://jcink.com" target="_blank">Forum Hosting</a>
-                    ) © 2020 &nbsp;
-                    <a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a>
-                    <br>
-                    Page creation time: 0.0054 <!-- http://luxtradition.b1.jcink.com -->  · 
-                    <a href="index.php?act=Mobile">Mobile Version</a> · 
-                    <a href="index.php?act=privacy">Privacy Policy</a>
+		
+            <div id="loading">
+                <div class="loading-bubble">
+                    <i class="fa-regular fa-spinner fa-spin"></i>
+                    <p>Loading</p>
                 </div>
             </div>
-        </div> 
+
+            <section class="webpage">
+                <div class="webpage--menu">
+                    <button class="onlyMobile" onClick="toggleWebpageMenu(this)">
+                        <div class="menu-bar menu-top"></div>
+                        <div class="menu-bar menu-middle"></div>
+                        <div class="menu-bar menu-bottom"></div>
+                    </button>
+                    <div class="accordion scroll">
+                        <div class="menu-static">
+                            <input id="quicksearch" class="forminput memberlist-namesearch" type="text" size="25" name="name" value="" placeholder="Filter by name...">
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Sort By</span>
+                        </div>
+                        <div class="accordion--content ml--sort-buttons">
+                            <button type="button" class="ml--sort is-checked" data-sort="nameAsc">Name (A - Z)</button>
+                            <button type="button" class="ml--sort" data-sort="nameDesc">Name (Z - A)</button>
+                            <button type="button" class="ml--sort" data-sort="ageAsc">Age (Asc)</button>
+                            <button type="button" class="ml--sort" data-sort="ageDesc">Age (Desc)</button>
+                            <button type="button" class="ml--sort" data-sort="postsAsc">Posts (Asc)</button>
+                            <button type="button" class="ml--sort" data-sort="postsDesc">Posts (Desc)</button>
+                            <button type="button" class="ml--sort" data-sort="newest">Newest</button>
+                            <button type="button" class="ml--sort" data-sort="oldest">Oldest</button>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Member</span>
+                        </div>
+                        <div class="accordion--content ml--filter-group" data-filter-group="member">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Account Type</span>
+                        </div>
+                        <div class="accordion--content ml--filter-group" data-filter-group="account">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all</label>
+                            <label><input type="checkbox" value=".staff">staff</label>
+                            <label><input type="checkbox" value=".g-6">writers</label>
+                            <label><input type="checkbox" value=".active">active</label>
+                            <label><input type="checkbox" value=".g-3">unsorted</label>
+                            <label><input type="checkbox" value=".g-27">retired</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Member Group</span>
+                        </div>
+                        <div class="accordion--content ml--filter-group" data-filter-group="group">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all</label>
+                            <label><input type="checkbox" value=".g-15">amaranth</label>
+                            <label><input type="checkbox" value=".g-19">balsam</label>
+                            <label><input type="checkbox" value=".g-7">birch</label>
+                            <label><input type="checkbox" value=".g-11">blueberry</label>
+                            <label><input type="checkbox" value=".g-35">buttercup</label>
+                            <label><input type="checkbox" value=".g-22">cedar</label>
+                            <label><input type="checkbox" value=".g-20">clover</label>
+                            <label><input type="checkbox" value=".g-10">dandelion</label>
+                            <label><input type="checkbox" value=".g-25">goldenrod</label>
+                            <label><input type="checkbox" value=".g-29">hawthorn</label>
+                            <label><input type="checkbox" value=".g-13">hemlock</label>
+                            <label><input type="checkbox" value=".g-12">juniper</label>
+                            <label><input type="checkbox" value=".g-23">laurel</label>
+                            <label><input type="checkbox" value=".g-8">lupin</label>
+                            <label><input type="checkbox" value=".g-14">nettle</label>
+                            <label><input type="checkbox" value=".g-30">periwinkle</label>
+                            <label><input type="checkbox" value=".g-31">primrose</label>
+                            <label><input type="checkbox" value=".g-24">sage</label>
+                            <label><input type="checkbox" value=".g-34">seaweed</label>
+                            <label><input type="checkbox" value=".g-9">spruce</label>
+                            <label><input type="checkbox" value=".g-33">starflower</label>
+                            <label><input type="checkbox" value=".g-16">sundew</label>
+                            <label><input type="checkbox" value=".g-32">sweetgrass</label>
+                            <label><input type="checkbox" value=".g-18">thistle</label>
+                            <label><input type="checkbox" value=".g-17">tobacco</label>
+                            <label><input type="checkbox" value=".g-36">yarrow</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Species</span>
+                        </div>
+                        <div class="accordion--content ml--filter-group" data-filter-group="species">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Age</span>
+                        </div>
+                        <div class="accordion--content ml--filter-group" data-filter-group="age">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all</label>
+                            <label><input type="checkbox" value=".1825">18 - 25</label>
+                            <label><input type="checkbox" value=".2635">26 - 35</label>
+                            <label><input type="checkbox" value=".3645">36 - 45</label>
+                            <label><input type="checkbox" value=".4655">46 - 55</label>
+                            <label><input type="checkbox" value=".56100">56 - 100</label>
+                            <label><input type="checkbox" value=".101500">101 - 500</label>
+                            <label><input type="checkbox" value=".5011000">501 - 1000</label>
+                            <label><input type="checkbox" value=".10012000">1001 - 2000</label>
+                            <label><input type="checkbox" value=".20013000">2001 - 3000</label>
+                            <label><input type="checkbox" value=".3000">3000+</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Relationship Status</span>
+                        </div>
+                        <div class="accordion--content ml--filter-group" data-filter-group="relationship">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all</label>
+                            <label><input type="checkbox" value=".single">single</label>
+                            <label><input type="checkbox" value=".dating">dating</label>
+                            <label><input type="checkbox" value=".engaged">engaged</label>
+                            <label><input type="checkbox" value=".married">married</label>
+                            <label><input type="checkbox" value=".itscomplicated">complicated</label>
+                            <label><input type="checkbox" value=".separated">separated</label>
+                            <label><input type="checkbox" value=".divorced">divorced</label>
+                            <label><input type="checkbox" value=".widowed">widowed</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Lives In</span>
+                        </div>
+                        <div class="accordion--content ml--filter-group" data-filter-group="housing">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all</label>
+                            <label><input type="checkbox" value=".temperancens">temperance</label>
+                            <label><input type="checkbox" value=".sydneyns">sydney</label>
+                            <label><input type="checkbox" value=".ruralcapebreton">rural cape breton</label>
+                        </div>
+                        <div class="accordion--trigger">
+                            <span>Tags</span>
+                        </div>
+                        <div class="accordion--content ml--filter-group" data-filter-group="tags">
+                            <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all</label>
+                            <label><input type="checkbox" value=".mortal">mortal</label>
+                            <label><input type="checkbox" value=".immortal">immortal</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="ml"><form action='index.php' method='get'><input type='hidden' name='act' value='Members' />
+                    <div class="scroll"><div id="ml--rows"><div class="member-sizer"></div></div></div>
+                </form></div>
+                <script>
+                    //remove loading screen
+                    document.onreadystatechange = function() {
+                        if (
+                            (document.querySelectorAll('body#Members').length > 0 && document.readyState === "complete")
+                            || (document.querySelectorAll('body#Members').length === 0 && document.readyState === "interactive")
+                        ) {
+                            document.querySelector('body').classList.remove('loading');
+                            document.querySelector('#loading').remove();
+                        }
+                    };
+
+
+                    //set variables
+                    let accounts = [];
+                    let filters = {};
+                    let $container = $('#ml--rows');
+                    let typeSearch = `#quicksearch`;
+                    let memName = `.mem--name`;
+                    let visible = `is-visible`;
+                    let filterGroup = `.ml--filter-group`;
+                    let filterOptions = `.ml--filter-group input`;
+                    let sorts = `.ml--sort-buttons button`;
+                    let gridItem = `.grid-item`;
+                    let defaultShow = `.character`;
+
+                    </script><script src="../dist/js/fakeAccounts.js"></script><script>
+
+                    populatePage(accounts);
+
+                    //initialize isotope
+                    // quick search regex
+                    let qsRegex;
+                    let elements = document.querySelectorAll(gridItem);
+                    
+                    // init Isotope
+                    $(window).on('load', function() {
+                        $container.isotope({
+                            itemSelector: gridItem,
+                            percentPosition: true,
+                            masonry: {
+                                columnWidth: '.member-sizer',
+                                gutter: 30
+                            },
+                            filter: defaultShow,
+                            sortBy: 'name',
+                            getSortData: {
+                                nameAsc: '.mem--name',
+                                nameDesc: '.mem--name',
+                                ageAsc: '.mem--age parseInt',
+                                ageDesc: '.mem--age parseInt',
+                                postsAsc: '.mem--posts parseInt',
+                                postsDesc: '.mem--posts parseInt',
+                                newest: function ($elem) {
+                                    return Date.parse($elem.querySelector('.mem--join').innerText);
+                                },
+                                oldest: function ($elem) {
+                                    return Date.parse($elem.querySelector('.mem--join').innerText);
+                                },
+                            },
+                            sortAscending: {
+                                nameAsc: true,
+                                nameDesc: false,
+                                ageAsc: true,
+                                ageDesc: false,
+                                postsAsc: true,
+                                postsDesc: false,
+                                newest: false,
+                                oldest: true,
+                            }
+                        });
+
+                        //handle filter storage
+                        let queryParamsArray = window.location.search.split('&').map(param => param.split('='));
+                        let queryParams = {};
+                        queryParamsArray.forEach(param => {
+                            queryParams[param[0]] = param[1];
+                        });
+                        for (const param in queryParams) {
+                            if(param !== '') {
+                                let key = param;
+                                let values = queryParams[param].split('_');
+                
+                                if(document.querySelector(`[data-filter-group="${key}"]`) && values.length > 0) {
+                                    document.querySelector(`[data-filter-group="${key}"] .all`).classList.remove('is-checked');
+                                    values.forEach(value => {
+                                        document.querySelector(`[data-filter-group="${key}"] [value="${value}"]`)
+                                        .closest('label')
+                                        .classList.add('is-checked');
+                                    });
+                                    setCustomFilter();
+                                }
+                            }
+                        }
+
+                        if(window.location.search.split('typesearch=')[1]) {
+                            document.querySelector(typeSearch).value = window.location.search.split('typesearch=')[1].split('&')[0];
+                            setCustomFilter();
+                        }
+                    });
+                
+                    //use value of input select to filter
+                    let checkboxes = document.querySelectorAll(filterOptions);
+                    checkboxes.forEach(checkbox => {
+                        checkbox.addEventListener('change', e => {
+                            if(e.currentTarget.classList.contains('all')) {
+                                e.currentTarget.checked = true;
+                                e.currentTarget.parentElement.classList.add('is-checked');
+                                e.currentTarget.parentElement.parentElement.querySelectorAll('input:not(.all)').forEach(input => {
+                                    input.checked = false;
+                                    input.parentElement.classList.remove('is-checked');
+                                });
+                            } else {
+                                if(e.currentTarget.parentElement.classList.contains('is-checked')) {
+                                    e.currentTarget.checked = false;
+                                    e.currentTarget.parentElement.classList.remove('is-checked');
+                                } else {
+                                    e.currentTarget.checked = true;
+                                    e.currentTarget.parentElement.classList.add('is-checked');
+                                    e.currentTarget.parentElement.parentElement.querySelector('input.all').checked = false;
+                                    e.currentTarget.parentElement.parentElement.querySelector('input.all').parentElement.classList.remove('is-checked');
+                                }
+                            }
+                            let labels = e.currentTarget.parentElement.parentElement.querySelectorAll('label');
+                            let checked = 0;
+                            labels.forEach(label => {
+                                if(label.classList.contains('is-checked')) {
+                                    checked++;
+                                }
+                            });
+                            if(checked === 0) {
+                                e.currentTarget.parentElement.parentElement.querySelector('input.all').checked = true;
+                                e.currentTarget.parentElement.parentElement.querySelector('input.all').parentElement.classList.add('is-checked');
+                            }
+                            //set filters
+                            setCustomFilter();
+                        });
+                    });
+                
+                    // use value of search field to filter
+                    document.querySelector(typeSearch).addEventListener('keyup', e => {
+                    appendSearchQuery('typesearch', e.currentTarget.value);
+                        setCustomFilter();
+                    });
+
+                    // bind sort button click
+                    let sortButtons = document.querySelectorAll(sorts);
+                    sortButtons.forEach(button => {
+                        button.addEventListener('click', e => {
+                            let sortValue = e.currentTarget.dataset.sort;
+                            $container.isotope({ sortBy: sortValue });
+                            sortButtons.forEach(button => {
+                                button.classList.remove('is-checked');
+                            });
+                            e.currentTarget.classList.add('is-checked');
+                        });
+                    });
+                </script>
+            </section>
+
+            <!-- Copyright Information -->
+                    <div class="tableborder" align="center">
+                        <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+                            <div class="copyright" align="center">
+                                Powered by 
+                                <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a>
+                                (<a href="http://jcink.com" target="_blank">Jcink.com </a>
+                                <a href="https://jcink.com" target="_blank">Forum Hosting</a>
+                                ) © 2020 &nbsp;
+                                <a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a>
+                                <br>
+                                Page creation time: 0.0054 <!-- http://luxtradition.b1.jcink.com -->  · 
+                                <a href="index.php?act=Mobile">Mobile Version</a> · 
+                                <a href="index.php?act=privacy">Privacy Policy</a>
+                            </div>
+                        </div>
+                    </div> 
+        </main>
 
         
         @@include('../source/templates/scripts.html', {

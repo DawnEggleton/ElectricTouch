@@ -10,5 +10,7 @@ li::marker,
 a[target="_blank"]:not(.staffOnly)::after {
   content: '\f08e'; }
 
-.webpage .species--filter-group label::before {
+.webpage .species--filter-group label::before,
+.ml--filter-group label::before,
+.ml--sort-buttons button::before {
   content: '\f00c'; }

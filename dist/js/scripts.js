@@ -45,4 +45,12 @@ document.querySelector('.invisibleEl').addEventListener('click', e => {
 /********** Index & Category View Only **********/
 if(pageType === 'idx' || pageType === 'SC') {
 	initForums();
+
+    document.querySelector('.stats--recent').innerHTML = document.querySelector('#recent-topics table').outerHTML;
+    document.querySelector('#recent-topics').remove();
+}
+
+/********** Member List Only **********/
+if(pageType === 'Members') {
+	initMembers();
 }
