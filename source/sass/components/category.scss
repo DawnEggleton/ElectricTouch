@@ -86,7 +86,7 @@
          @include fluid-type(18, 30, 480, 1920);
          font-family: var(--font-header);
          font-weight: 800;
-         padding: 0 20px 10px;
+         padding: 0 45px 10px 20px;
          align-self: end;
          text-transform: capitalize;
          line-height: 100%;
@@ -164,7 +164,7 @@
       border-top: 1px solid var(--border-accent);
       display: flex;
       flex-wrap: wrap;
-      padding: 0 20px;
+      padding: 0 45px 0 20px;
       text-transform: uppercase;
       font-weight: 600;
       font-size: var(--size-xs);

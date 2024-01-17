@@ -166,15 +166,283 @@
             </table>
 
             <br>
+
+            <!--Category-->
+            <section class="category">
+                <h2>Subforums</h2>
+                <div class="category--main">
+                    <!-- Manual Links and Subforums: Default -->
+                    <div class="forum f-4">
+                        <div class="forum--marker">
+                            <i class="fa-thin fa-bookmark"></i>
+                            <i class="fa-solid fa-bookmark"></i>
+                            <i class="fa-thin fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <div class="forum--main">
+                            <a href="./topiclist.html">Manual and Subforum Links</a>
+                            <div class="forum--stats">
+                                <div class="forum--stat">
+                                    <b>00</b>
+                                    <span>Topics</span>
+                                </div>
+                                <div class="forum--stat">
+                                    <b>00</b>
+                                    <span>Replies</span>
+                                </div>
+                            </div>
+                            <div class="forum--avatar">
+                                <img src="https://picsum.photos/150" />
+                            </div>
+                        </div>
+                        <div class="forum--latest">
+                            <a href="./post.html">Thread title goes in here and can be longer</a>
+                            <span>Posted by <a href="./member.html" class="g-7">First Last</a></span>
+                            <span>January 4, 2024 at 9:03 PM</span>
+                        </div>
+                        <div class="forum--links">
+                            <div class="forum--manual-links">
+                                <a href="/">Manual Links</a>
+                                <a href="/">Go Here</a>
+                            </div>
+                            <span class="subforums">
+                                <a class="subforums-macro" href="https://godlybehaviour.jcink.net/index.php?showtopic=1468&amp;view=getlastpost"></a> <a class="tooltip" href="https://godlybehaviour.jcink.net/index.php?showforum=10">Group Development</a> 
+                                <a class="subforums-macro" href="https://godlybehaviour.jcink.net/index.php?showforum=122"></a> <a class="tooltip" href="https://godlybehaviour.jcink.net/index.php?showforum=122">Member Development</a> 
+                                <a class="subforums-macro" href="https://godlybehaviour.jcink.net/index.php?showforum=127"></a> <a class="tooltip" href="https://godlybehaviour.jcink.net/index.php?showforum=127">Worldbuilding</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
             
             <form action="?act=modcp&amp;f=1&amp;CODE=topicchoice" name="mod_topics" method="POST">
                 <input type="hidden" id="tact" name="tact" value="close">	
                 
-                <!--Topic List-->
-                <section class="topic"></section>
+                <section class="category">
+                    <h2>Topics</h2>
+                    <div class="category--main">
+
+                        <div class="macro--header">Pinned</div>
+                        <div class="topiclist--section">
+                            <div class="topic">
+                                <div class="topic--marker pinned">
+                                    <i class="fa-thin fa-bookmark"></i>
+                                    <i class="fa-solid fa-bookmark"></i>
+                                    <i class="fa-thin fa-thumbtack"></i>
+                                    <i class="fa-thin fa-lock"></i>
+                                    <i class="fa-thin fa-arrow-up-right-from-square"></i>
+                                </div>
+                                <div class="topic--main">
+                                    <a href="./post.html">This is a thread title it can be p long tbh</a>
+                                    <div class="topic--stats">
+                                        <div class="topic--stat">
+                                            <b>00</b>
+                                            <span>Views</span>
+                                        </div>
+                                        <div class="topic--stat">
+                                            <a href="/"><b>00</b></a>
+                                            <span>Replies</span>
+                                        </div>
+                                    </div>
+                                    <div class="topic--avatar">
+                                        <img src="https://picsum.photos/150" />
+                                    </div>
+                                </div>
+                                <div class="topic--latest">
+                                    <div class="topic--latest-section">
+                                        <span>Last Post by <a href="./member.html" class="g-7">First Last</a></span>
+                                        <span>January 4, 2024 at 9:03 PM</span>
+                                    </div>
+                                    <div class="topic--latest-section">
+                                        <span>Started by <a href="./member.html" class="g-7">First Last</a></span>
+                                        <span>January 4, 2024 at 9:03 PM</span>
+                                    </div>
+                                </div>
+                                <div class="topic--description"></div>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic--marker old">
+                                <i class="fa-thin fa-bookmark"></i>
+                                <i class="fa-solid fa-bookmark"></i>
+                                <i class="fa-thin fa-thumbtack"></i>
+                                <i class="fa-thin fa-lock"></i>
+                                <i class="fa-thin fa-arrow-up-right-from-square"></i>
+                            </div>
+                            <div class="topic--main">
+                                <a href="./post.html">This is a thread title it can be p long tbh</a>
+                                <div class="topic--stats">
+                                    <div class="topic--stat">
+                                        <b>00</b>
+                                        <span>Views</span>
+                                    </div>
+                                    <div class="topic--stat">
+                                        <a href="/"><b>00</b></a>
+                                        <span>Replies</span>
+                                    </div>
+                                </div>
+                                <div class="topic--avatar">
+                                    <img src="https://picsum.photos/150" />
+                                </div>
+                            </div>
+                            <div class="topic--latest">
+                                <div class="topic--latest-section">
+                                    <span>Last Post by <a href="./member.html" class="g-7">First Last</a></span>
+                                    <span>January 4, 2024 at 9:03 PM</span>
+                                </div>
+                                <div class="topic--latest-section">
+                                    <span>Started by <a href="./member.html" class="g-7">First Last</a></span>
+                                    <span>January 4, 2024 at 9:03 PM</span>
+                                </div>
+                            </div>
+                            <div class="topic--description">No formatting</div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic--marker new">
+                                <i class="fa-thin fa-bookmark"></i>
+                                <i class="fa-solid fa-bookmark"></i>
+                                <i class="fa-thin fa-thumbtack"></i>
+                                <i class="fa-thin fa-lock"></i>
+                                <i class="fa-thin fa-arrow-up-right-from-square"></i>
+                            </div>
+                            <div class="topic--main">
+                                <a href="./post.html">This is a thread title it can be p long tbh</a>
+                                <div class="topic--stats">
+                                    <div class="topic--stat">
+                                        <b>00</b>
+                                        <span>Views</span>
+                                    </div>
+                                    <div class="topic--stat">
+                                        <a href="/"><b>00</b></a>
+                                        <span>Replies</span>
+                                    </div>
+                                </div>
+                                <div class="topic--avatar">
+                                    <img src="https://picsum.photos/150" />
+                                </div>
+                            </div>
+                            <div class="topic--latest">
+                                <div class="topic--latest-section">
+                                    <span>Last Post by <a href="./member.html" class="g-7">First Last</a></span>
+                                    <span>January 4, 2024 at 9:03 PM</span>
+                                </div>
+                                <div class="topic--latest-section">
+                                    <span>Started by <a href="./member.html" class="g-7">First Last</a></span>
+                                    <span>January 4, 2024 at 9:03 PM</span>
+                                </div>
+                            </div>
+                            <div class="topic--description">[blocked formatting]</div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic--marker pinned">
+                                <i class="fa-thin fa-bookmark"></i>
+                                <i class="fa-solid fa-bookmark"></i>
+                                <i class="fa-thin fa-thumbtack"></i>
+                                <i class="fa-thin fa-lock"></i>
+                                <i class="fa-thin fa-arrow-up-right-from-square"></i>
+                            </div>
+                            <div class="topic--main">
+                                <a href="./post.html">This is a thread title it can be p long tbh</a>
+                                <div class="topic--stats">
+                                    <div class="topic--stat">
+                                        <b>00</b>
+                                        <span>Views</span>
+                                    </div>
+                                    <div class="topic--stat">
+                                        <a href="/"><b>00</b></a>
+                                        <span>Replies</span>
+                                    </div>
+                                </div>
+                                <div class="topic--avatar">
+                                    <img src="https://picsum.photos/150" />
+                                </div>
+                            </div>
+                            <div class="topic--latest">
+                                <div class="topic--latest-section">
+                                    <span>Last Post by <a href="./member.html" class="g-7">First Last</a></span>
+                                    <span>January 4, 2024 at 9:03 PM</span>
+                                </div>
+                                <div class="topic--latest-section">
+                                    <span>Started by <a href="./member.html" class="g-7">First Last</a></span>
+                                    <span>January 4, 2024 at 9:03 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic--marker closed">
+                                <i class="fa-thin fa-bookmark"></i>
+                                <i class="fa-solid fa-bookmark"></i>
+                                <i class="fa-thin fa-thumbtack"></i>
+                                <i class="fa-thin fa-lock"></i>
+                                <i class="fa-thin fa-arrow-up-right-from-square"></i>
+                            </div>
+                            <div class="topic--main">
+                                <a href="./post.html">This is a thread title it can be p long tbh</a>
+                                <div class="topic--stats">
+                                    <div class="topic--stat">
+                                        <b>00</b>
+                                        <span>Views</span>
+                                    </div>
+                                    <div class="topic--stat">
+                                        <a href="/"><b>00</b></a>
+                                        <span>Replies</span>
+                                    </div>
+                                </div>
+                                <div class="topic--avatar">
+                                    <img src="https://picsum.photos/150" />
+                                </div>
+                            </div>
+                            <div class="topic--latest">
+                                <div class="topic--latest-section">
+                                    <span>Last Post by <a href="./member.html" class="g-7">First Last</a></span>
+                                    <span>January 4, 2024 at 9:03 PM</span>
+                                </div>
+                                <div class="topic--latest-section">
+                                    <span>Started by <a href="./member.html" class="g-7">First Last</a></span>
+                                    <span>January 4, 2024 at 9:03 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic--marker moved">
+                                <i class="fa-thin fa-bookmark"></i>
+                                <i class="fa-solid fa-bookmark"></i>
+                                <i class="fa-thin fa-thumbtack"></i>
+                                <i class="fa-thin fa-lock"></i>
+                                <i class="fa-thin fa-arrow-up-right-from-square"></i>
+                            </div>
+                            <div class="topic--main">
+                                <a href="./post.html">This is a thread title it can be p long tbh</a>
+                                <div class="topic--stats">
+                                    <div class="topic--stat">
+                                        <b>00</b>
+                                        <span>Views</span>
+                                    </div>
+                                    <div class="topic--stat">
+                                        <a href="/"><b>00</b></a>
+                                        <span>Replies</span>
+                                    </div>
+                                </div>
+                                <div class="topic--avatar">
+                                    <img src="https://picsum.photos/150" />
+                                </div>
+                            </div>
+                            <div class="topic--latest">
+                                <div class="topic--latest-section">
+                                    <span>Last Post by <a href="./member.html" class="g-7">First Last</a></span>
+                                    <span>January 4, 2024 at 9:03 PM</span>
+                                </div>
+                                <div class="topic--latest-section">
+                                    <span>Started by <a href="./member.html" class="g-7">First Last</a></span>
+                                    <span>January 4, 2024 at 9:03 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
             </form>
 
-            <div class="topiclist--info">
+            <div class="topiclist--info"><div class="topiclist--info-inner">
                 <form action="https://victis.jcink.net/index.php?act=SF&amp;f=5&amp;st=" method="post">      
                     <div class="darkrow2" style="padding:4px" align="center">Showing 2 of 2 topics sorted by <select name="sort_key" class="forminput">
             <option value="last_post" selected="selected">last post date</option>
@@ -204,7 +472,7 @@
                 <div class="darkrow2" style="padding:6px">1 User(s) are browsing this forum (0 Guests and 0 Anonymous Users)</div>
                 <div class="row2" style="padding:6px">1 Members: <a href="https://victis.jcink.net/index.php?showuser=1">lux</a></div>
                 <span id="forumName" class="hide">Lux</span>
-            </div>
+            </div></div>
             <br>
             <table width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tbody><tr>

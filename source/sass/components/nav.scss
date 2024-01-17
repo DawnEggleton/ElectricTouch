@@ -103,9 +103,14 @@
         text-transform: uppercase;
         letter-spacing: 0.1em;
         z-index: 10;
+        line-height: 120%;
 
         a {
             color: var(--text-primary);
+        }
+
+        i {
+            margin: 0 5px;
         }
     }
     &--popout {

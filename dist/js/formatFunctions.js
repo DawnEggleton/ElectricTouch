@@ -1,7 +1,7 @@
 function formatSelect(data) {
     let html = `<option value="">(select)</option>`;
     data.forEach(item => {
-        html += `<option value=${item.value}>${capitalize(item.title)}</option>`;
+        html += `<option value=${item.value}>${capitalize(item.title, [' ', '(', '-'])}</option>`;
     });
     return html;
 }
@@ -73,14 +73,14 @@ function formatSubplot(data) {
                             }
                         });
 
-            sections += `<h4>${capitalize(section.title)}</h4>
+            sections += `<h4>${capitalize(section.title, [' ', '(', '-'])}</h4>
             ${section.overview}
             <ul>
-                ${roles.map(item => `<li class="subplot-role">${capitalize(item)}</li>`).join('')}
+                ${roles.map(item => `<li class="subplot-role">${capitalize(item, [' ', '(', '-'])}</li>`).join('')}
             </ul>`;
         });
 
-        labels += `<a href="#${item.PlotID}">${capitalize(item.Plot)}</a>`;
+        labels += `<a href="#${item.PlotID}">${capitalize(item.Plot, [' ', '(', '-'])}</a>`;
         content += `<tag-tab data-key="#${item.PlotID}">
             <div class="webpage--content-inner"><div class="scroll">
                 <h2>${item.Plot}</h2>
@@ -387,7 +387,7 @@ function formatSubplotReserves(data) {
         if (i === 0) {
             html += formatHeader(reserve.Subplot, `2`);
             html += openGrid();
-            html += formatClaim(capitalize(reserve.RoleTitle), [
+            html += formatClaim(capitalize(reserve.RoleTitle, [' ', '(', '-']), [
                 `From ${reserve.Section}`,
                 `Reserved by ${reserve.Member}`,
                 `Expires ${expiry}`
@@ -398,7 +398,7 @@ function formatSubplotReserves(data) {
             html += closeGrid();
             html += formatHeader(reserve.Subplot, `2`);
             html += openGrid();
-            html += formatClaim(capitalize(reserve.RoleTitle), [
+            html += formatClaim(capitalize(reserve.RoleTitle, [' ', '(', '-']), [
                 `From ${reserve.Section}`,
                 `Reserved by ${reserve.Member}`,
                 `Expires ${expiry}`
@@ -406,7 +406,7 @@ function formatSubplotReserves(data) {
         }
         //Same Plot
         else {
-            html += formatClaim(capitalize(reserve.RoleTitle), [
+            html += formatClaim(capitalize(reserve.RoleTitle, [' ', '(', '-']), [
                 `From ${reserve.Section}`,
                 `Reserved by ${reserve.Member}`,
                 `Expires ${expiry}`

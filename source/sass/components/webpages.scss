@@ -205,7 +205,7 @@
             font-weight: 900;
             font-size: 24px;
             line-height: 140%;
-            display: block;
+            display: block !important;
             padding-bottom: 10px;
             margin-bottom: 10px;
             cursor: pointer;
@@ -230,13 +230,13 @@
         }
 
         &--content {
-            display: none;
+            display: none !important;
             flex-direction: column;
             padding-bottom: 20px;
             gap: 7.5px;
 
             &.is-active {
-                display: flex;
+                display: flex !important;
             }
 
             a {

@@ -3,3 +3,263 @@
 /*******************************
     Topic List
 ********************************/
+#ST,
+#SF {
+    main {
+        & > table {
+            background: var(--bg-accent);
+            color: var(--text-on-accent);
+            padding: 10px;
+
+            tr {
+                display: flex;
+                gap: 10px 20px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                td {
+                    width: max-content;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+            }
+            a {
+                color: var(--text-on-accent)
+            }
+
+            &:first-of-type {
+                position: sticky;
+                top: 70px;
+                z-index: 2;
+            }
+            &:last-of-type {
+                & ~ div[align="right"] {
+                    margin: 60px auto;
+                    max-width: 1240px;
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+}
+.topiclist {
+    &--info {
+        margin: 60px auto;
+        max-width: 1240px;
+        padding: 0 20px;
+    
+        &-inner {
+            background: var(--bg-transparent-low);
+            border: 1px solid var(--border-primary);
+            padding: 15px;
+            text-align: center;
+            font-size: var(--size-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+    }
+    &--section {
+        margin: 0 -30px;
+        padding: 0 30px 30px;
+        border-bottom: 1px dotted var(--border-accent);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include mq-up(xxs) {
+            gap: 30px;
+        }
+    }
+}
+.topic {
+    display: grid;
+    background: var(--bg-secondary);
+
+    @include mq-up(md) {
+        grid-template-columns: 40px 1fr 325px;
+    }
+
+    .input-wrap {
+        width: 16px;
+        height: 16px;
+        margin: 0 auto 10px;
+
+        body.g-4 &,
+        body.g-26 &,
+        body.g-28 & {
+            display: block;
+        }
+    }
+
+    .fancy-input {
+        border-color: var(--text-on-accent);
+        opacity: 0.5;
+    }
+
+    input[type="checkbox"]:checked + .fancy-input i,
+    .input-wrap:hover .fancy-input i {
+        color: var(--text-on-accent);
+    }
+
+    &--marker {
+        background: var(--bg-accent);
+        width: 100%;
+        height: 100%;
+        color: var(--text-on-accent);
+        font-size: 18px;
+        padding: 10px;
+
+        @include mq-up(md) {
+            text-align: center;
+        }
+
+        &:not(.old) .fa-thin.fa-bookmark,
+        .fa-solid.fa-bookmark,
+        .fa-thumbtack,
+        .fa-lock,
+        .fa-arrow-up-right-from-square {
+            display: none;
+        }
+        &.new .fa-solid.fa-bookmark,
+        &.pinned .fa-thumbtack,
+        &.closed .fa-lock,
+        &.moved .fa-arrow-up-right-from-square {
+            display: initial;
+        }
+    }
+
+    &--main {
+        display: grid;
+        align-items: center;
+        padding: 30px 30px 30px 0;
+
+        @include mq-up(md) {
+            min-height: 150px;
+            padding: 20px 0;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        & > a {
+            @include fluid-type(16, 24, 480, 1920);
+            font-family: var(--font-header);
+            font-weight: 800;
+            padding: 0 40px 10px 15px;
+            align-self: end;
+            text-transform: capitalize;
+            line-height: 100%;
+        }
+    }
+
+    &--avatar {
+        position: absolute;
+        top: calc(50% - 25px);
+        right: 20px;
+        padding: 5px;
+        border: 1px solid var(--border-accent);
+        width: 50px;
+        height: 50px;
+        background: var(--bg-secondary);
+        z-index: 1;
+
+        @include mq-up(md) {
+            right: -25px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &--latest {
+        background: var(--bg-accent);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        color: var(--text-on-accent);
+        font-size: var(--size-md);
+        line-height: 160%;
+        justify-content: center;
+
+        @include mq-up(md) {
+            padding: 20px 20px 20px 45px;
+        }
+        
+        &-section {
+            & > span {
+                &:last-child {
+                    font-style: italic;
+                    font-size: var(--size-sm);
+                }
+
+                a {
+                    color: var(--text-on-accent);
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    &--stats {
+        border-top: 1px solid var(--border-accent);
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 40px 0 15px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: var(--size-xs);
+        letter-spacing: 0.15em;
+        gap: 20px;
+        align-self: start;
+    }
+
+    &--stat {
+        display: flex;
+        align-items: center;
+        gap: 3.5px;
+
+        b {
+            color: var(--text-accent);
+            font-size: 1.2em;
+        }
+    }
+
+    &--latest-section {
+        display: flex;
+        flex-direction: column;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--text-on-accent);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &--description {
+        grid-column: 1 / -1;
+        border-top: 1px solid var(--border-primary);
+        background: var(--bg-tertiary);
+        text-transform: uppercase;
+        font-size: var(--size-xs);
+        letter-spacing: 0.15em;
+        font-weight: 400;
+        line-height: 160%;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        &:empty {
+            display: none;
+        }
+    
+        tag-highlight {
+            border: 1px solid var(--border-accent);
+            background: var(--bg-accent-30);
+            color: var(--text-secondary);
+            padding: 8px 15px;
+            transition-duration: 0.3s;
+        }
+    }
+}

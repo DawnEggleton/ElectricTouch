@@ -29,11 +29,28 @@ if (typeof tippy === 'function') {
     });
 }
 
+//init clipboards
+let clipboards = document.querySelectorAll('tag-code');
+let codes = document.querySelectorAll(`table[id='CODE-WRAP']`);
+if (clipboards.length > 0) {
+    initClipboard();
+}
+if (codes.length > 0) {
+    initCodebox();
+}
+
+//handle translations
+document.querySelectorAll('tag-translation').forEach(translation => {
+    translation.dataset.result = translation.innerText;
+});
+
 /********** Initializations **********/
 setTheme();
 setSize();
 initModals();
 initMarkdown();
+initCopyLink();
+highlightCode();
 
 /********** Window Click **********/
 document.querySelector('.invisibleEl').addEventListener('click', e => {
@@ -48,6 +65,19 @@ if(pageType === 'idx' || pageType === 'SC') {
 
     document.querySelector('.stats--recent').innerHTML = document.querySelector('#recent-topics table').outerHTML;
     document.querySelector('#recent-topics').remove();
+}
+
+/********** Topic List Only **********/
+if(pageType === 'SF') {
+	initForums();
+    initTopicsWrap();
+    initTopicDescription('.topic--description');
+}
+
+/********** Post View Only **********/
+if(pageType === 'ST') {
+    initPostRowDescription();
+    initPostContentAlter();
 }
 
 /********** Member List Only **********/

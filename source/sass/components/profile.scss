@@ -82,7 +82,7 @@
         }
 
         @include mq-down(xs) {
-            display: none;
+            display: none !important;
         }
 
         span {
@@ -282,6 +282,7 @@
 
             .profile--links {
                 display: flex;
+                gap: 10px 30px;
             }
         }
     }
@@ -473,6 +474,17 @@
             border: 1px solid var(--border-accent);
         }
 
+        u {
+            background: var(--bg-accent-30);
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-accent);
+            text-decoration: none;
+        }
+
         & > span {
             border-left: 1px dotted var(--bg-accent);
             padding: 10px 0 10px 12px;
@@ -653,7 +665,9 @@
             color: var(--text-on-accent);
             padding: 5px 10px;
             margin: 0 -10px 10px;
-            display: inline-block;
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 5px 15px;
 
             a {
                 color: var(--text-on-accent);

@@ -81,7 +81,7 @@ function initBusinessListing(data) {
 
 function openBusinessMenu(business) {
     return `<tag-label data-category="${cleanText(business.Category)}" class="tab-category accordion--trigger">
-        <span>${capitalize(business.Category)}</span>
+        <span>${capitalize(business.Category, [' ', '(', '-'])}</span>
     </tag-label>
     <div data-category="${cleanText(business.Category)}" class="tab-category accordion--content">
         ${businessLabel(business)}`;
@@ -90,7 +90,7 @@ function closeBusinessMenu() {
     return `</div>`;
 }
 function businessLabel(business) {
-    return `<a href="#${cleanText(business.Employer)}">${capitalize(business.Employer)}</a>`;
+    return `<a href="#${cleanText(business.Employer)}">${capitalize(business.Employer, [' ', '(', '-'])}</a>`;
 }
 function openBusinessCategory(business) {
     return `<tag-tab class="tab-category" data-category="${cleanText(business.Category)}">
@@ -107,7 +107,7 @@ function businessTab(business) {
             <div class="business">
                 <div class="business--main">
                     <h2>${business.Employer}</h2>
-                    <p class="h6">Located in <a href="?showforum=${business.LocationID}">${capitalize(business.Location)}</a></p>
+                    <p class="h6">Located in <a href="?showforum=${business.LocationID}">${capitalize(business.Location, [' ', '(', '-'])}</a></p>
                     <p class="h6"><strong>Hiring?</strong> ${business.Hiring}</p>
                     <p>${business.Summary}</p>
                 </div>
@@ -222,7 +222,7 @@ function formatJobClaims(data) {
 
     jobs.forEach(job => {
         let html = formatClaim(job.character, [
-            capitalize(job.position),
+            capitalize(job.position, [' ', '(', '-']),
             `Played by <a href="?showuser=${job.memberId}">${job.member}</a>`
         ], job.groupId, `?showuser=${job.id}`);
         console.log(cleanText(job.employer));

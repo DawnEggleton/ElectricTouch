@@ -110,6 +110,68 @@ function appendSearchQuery(param, value) {
 	url.searchParams.set(param, value);
 	window.history.replaceState(null, null, url);
 }
+function initClipboard() {
+    let clipboard = new Clipboard('.clipboard');
+    clipboard.on('success', function(e) {
+        console.log('clipboard success: ' + e);
+    });
+    clipboard.on('error', function(e) {
+        console.log('clipboard error: ' + e);
+    });
+    let clipcode = new Clipboard('.codeclick', {
+        target: function(trigger) {
+        return trigger.nextElementSibling;
+        }
+    });
+}
+function initCodebox() {
+    $("table[id='CODE-WRAP']").each(function() {
+        var cc = $(this).find("td[id='CODE']").html();
+
+        $(this).html(
+            "<div class='codeblock code--wrapper'><div class='c-title codeclick'>Click to Copy</div><div class='codecon'><pre><code class='scroll'>"
+            + cc +
+            "</code></pre></div></div>"
+        );
+    });
+}
+function initCopyLink() {
+    let clippedURL = new Clipboard('.post--permalink');
+    document.querySelectorAll('.post--permalink').forEach(link => {
+        link.addEventListener('click', e => {
+            e.currentTarget.querySelector('.note').style.opacity = 1;
+            setTimeout(() => {
+                document.querySelectorAll('.note').forEach(note => note.style.opacity = 0);
+            }, 3000);
+        });
+    });
+}
+function translationSwitch(e) {
+        let current = e.innerText;
+        let original = e.dataset.original;
+        let translation = e.dataset.result;
+        if(current === original) {
+            e.innerText = translation;
+        } else {
+            e.innerText = original;
+        }
+}
+function htmlencode(str) {
+    return str.replace(/[&<>"']/g, function($0) {
+        return "&" + {"&":"amp", "<":"lt", ">":"gt", '"':"quot", "'":"#39"}[$0] + ";";
+    });
+}
+function highlightCode() {
+    let clipcodeQuick = new Clipboard('.copyQuick', {
+        target: function(trigger) {
+            if(trigger.nextElementSibling.querySelector('textarea')) {
+                return trigger.nextElementSibling.querySelector('textarea');
+            } else {
+                return trigger.nextElementSibling.querySelector('code');
+            }
+        }
+    });
+}
 
 /****** Settings ******/
 function setTheme() {
@@ -184,6 +246,97 @@ function toggleSideMenu(e) {
 }
 function toggleWebpageMenu(e) {
     e.closest('.webpage--menu').classList.toggle('is-open');
+}
+
+/****** Carousel Functions ******/
+function carouselArrowIndex(e) {
+    let {bullets, slides} = carouselVariableSetup(e);
+    let index;
+    bullets.forEach((bullet, i) => {
+        if(bullet.classList.contains('is-active')) {
+            index = i;
+        }
+    });
+    
+    //remove all active
+    bullets.forEach(bullet => bullet.classList.remove('is-active'));
+    slides.forEach(slide => slide.classList.remove('is-active'));
+
+    return index;
+}
+function carouselVariableSetup(e, level = 0) {
+    let wrapper;
+    if(level === 1) {
+        wrapper = e.parentNode.parentNode.parentNode;
+    } else {
+        wrapper = e.parentNode.parentNode;
+    }
+
+    let bullets = wrapper.querySelectorAll('.post--carousel-bullet');
+    let slides = wrapper.querySelectorAll('.post--carousel-slide');
+
+    return {bullets, slides, wrapper};
+}
+function carouselArrowAct(index, bullets, slides, wrapper) {
+    //add active as needed
+    bullets[index].classList.add('is-active');
+    slides[index].classList.add('is-active');
+
+    //move slides
+    slides.forEach(slide => {
+        slide.style.left = `${index * -100}%`;
+    });
+    
+    //handle image
+    if(index !== 0) {
+        wrapper.classList.remove('is-image');
+    } else {
+        wrapper.classList.add('is-image');
+    }
+}
+function carouselLeft(e) {
+    //set up variables
+    let index = carouselArrowIndex(e);
+    let {bullets, slides, wrapper} = carouselVariableSetup(e);
+
+    //determine new index
+    if(index === 0) {
+        index = bullets.length - 1;
+    } else {
+        index--;
+    }
+
+    //act on new index
+    carouselArrowAct(index, bullets, slides, wrapper);
+}
+function carouselRight(e) {
+    //set up variables
+    let index = carouselArrowIndex(e);
+    let {bullets, slides, wrapper} = carouselVariableSetup(e);
+
+    //determine new index
+    if(index === bullets.length - 1) {
+        index = 0;
+    } else {
+        index++;
+    }
+
+    //act on new index
+    carouselArrowAct(index, bullets, slides, wrapper);
+}
+function carouselPage(e) {
+    let {bullets, slides, wrapper} = carouselVariableSetup(e, 1);
+    let bulletsArray = Array.from(bullets);
+    let index = bulletsArray.indexOf.call(bulletsArray, e);
+    console.log(index);
+    console.log(slides);
+    
+    //remove all active
+    bullets.forEach(bullet => bullet.classList.remove('is-active'));
+    slides.forEach(slide => slide.classList.remove('is-active'));
+
+    //act on new index
+    carouselArrowAct(index, bullets, slides, wrapper);
 }
 
 /****** Global Initialization ******/
@@ -277,7 +430,7 @@ function initMarkdown() {
         </ul>`;
     }
 
-    let markdownSafe = `.postcolor, .profile [data-key="#details"] .scroll, .profile [data-key="#plotting"] .scroll`;
+    let markdownSafe = `.postcolor, .profile [data-key="#details"] .scroll, .profile [data-key="#plotting"] .scroll, tl`;
 
     if(document.querySelectorAll(markdownSafe).length > 0) {
         document.querySelectorAll(markdownSafe).forEach(post => {
@@ -476,6 +629,45 @@ function initForums() {
     document.querySelectorAll('.forum--image-replace').forEach(image => {
         image.closest('.forum').querySelector('.forum--avatar').innerHTML = image.innerHTML;
     });
+}
+
+/****** Topic Initialization ******/
+function initTopicDescription(selector) {
+    document.querySelectorAll(selector).forEach(desc => {
+        desc.innerHTML = desc.innerHTML.replaceAll('[', '<tag-highlight>').replaceAll(']', '</tag-highlight>');
+    });
+}
+function initTopicsWrap() {
+    $(`.macro--header`).each(function (index) {
+        $(this).nextUntil(`.macro--header`).wrapAll(`<div class="topiclist--section"></div>`);
+    }); 
+}
+
+/****** Post Initialization ******/
+function initPostRowDescription() {
+    let descript = $('.topic-desc').html();
+    if (descript != undefined) {
+        var newDescript = descript.replace(", ", "");
+        $('.topic-desc').html(newDescript);
+    }
+    let desc = document.querySelector('.maintitle .topic-desc');
+    if(desc.innerText) {
+        if(desc.innerText.includes('[')) {
+            desc.classList.add('no-border');
+        }
+        initTopicDescription('.topic-desc');
+    } else {
+        desc.remove();
+        document.querySelector('.postlinksbar').classList.add('no-descript');
+    }
+}
+function initPostContentAlter() {
+    document.querySelectorAll('.post--content .postcolor').forEach(post => {
+        if(!post.innerHTML.includes('tag-wrap') && !post.innerHTML.includes('tag-comm') && !post.innerHTML.includes('tag-social')) {
+            post.classList.add('no-template');
+        }
+    });
+    document.querySelectorAll('.post.g-4 .charOnly, .post.g-6 .charOnly, .post.g-26 .charOnly, .post.g-28 .charOnly, .post.g-3.type-Member .charOnly').forEach(item => item.remove());
 }
 
 /****** Webpage Initialization ******/

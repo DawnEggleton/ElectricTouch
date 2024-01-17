@@ -149,7 +149,7 @@
       font-weight: 900;
       font-size: 24px;
       line-height: 140%;
-      display: block;
+      display: block !important;
       padding-bottom: 10px;
       margin-bottom: 10px;
       cursor: pointer; }
@@ -165,12 +165,12 @@
       .webpage .accordion--trigger.is-active::after, .webpage .accordion--trigger:hover::after {
         width: 100%; }
     .webpage .accordion--content {
-      display: none;
+      display: none !important;
       flex-direction: column;
       padding-bottom: 20px;
       gap: 7.5px; }
       .webpage .accordion--content.is-active {
-        display: flex; }
+        display: flex !important; }
       .webpage .accordion--content a {
         font-size: var(--size-lg);
         line-height: 200%; }

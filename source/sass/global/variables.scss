@@ -133,11 +133,15 @@ body {
         --accent-90: rgba(var(--rgb), 0.8);
 
         --border-accent: var(--accent);
+        --border-accent-static: var(--accent-static);
         --bg-accent: var(--accent);
         --bg-accent-solid: var(--accent);
         --bg-accent-30: var(--accent-30);
         --bg-accent-50: var(--accent-50);
         --text-accent: var(--accent);
+    }
+    &[class*="g-"] {
+        --accent-static: rgb(var(--rgb));
     }
 
     //Other
@@ -373,7 +377,7 @@ body {
     [data-group="hawthorn"],
     [data-group="Hawthorn"],
     [data-group="HAWTHORN"] {
-        --rgb: 104, 54, 54;
+        --rgb: 142, 63, 63;
         --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/hawthorn1.jpg);
     }
 
