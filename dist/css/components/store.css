@@ -1,3 +1,749 @@
 /*******************************
     Store
 ********************************/
+#store main > table:first-of-type {
+  display: block; }
+  #store main > table:first-of-type ~ * {
+    display: none; }
+  #store main > table:first-of-type > tbody {
+    display: block; }
+    #store main > table:first-of-type > tbody > tr {
+      height: calc(100vh - 70px);
+      min-height: 600px;
+      display: grid;
+      grid-template-columns: 300px auto;
+      grid-template-rows: minmax(600px, calc(100vh - 70px)); }
+      @media (max-width: 768px) {
+        #store main > table:first-of-type > tbody > tr {
+          grid-template-columns: 100%; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            z-index: 2;
+            overflow: hidden;
+            padding-top: 0; }
+            #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion {
+              height: calc(100% - 40px); }
+            #store main > table:first-of-type > tbody > tr > td#ucpmenu.is-open {
+              height: calc(100vh - 70px); } }
+      #store main > table:first-of-type > tbody > tr > td#ucpmenu {
+        background: var(--bg-accent);
+        color: var(--text-on-accent);
+        padding: 20px;
+        z-index: 2; }
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu a {
+          color: var(--text-on-accent); }
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu > button {
+          width: 20px;
+          height: 20px;
+          margin: 10px 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 4px; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu > button:hover .menu-middle {
+            width: 100%; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu > button:hover .menu-bottom {
+            width: 100%; }
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar {
+          position: absolute;
+          left: 0;
+          background: var(--text-on-accent);
+          height: 1px;
+          transition-duration: 0.3s; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar.menu-top {
+            top: calc(50% - 5px);
+            width: 100%; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar.menu-middle {
+            top: 50%;
+            width: 60%; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar.menu-bottom {
+            top: calc(50% + 5px);
+            width: 30%; }
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-top {
+          opacity: 0; }
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-middle,
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-bottom {
+          top: 10px;
+          width: 100%; }
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-middle {
+          transform: rotate(45deg); }
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-bottom {
+          transform: rotate(-45deg); }
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion {
+          height: 100%;
+          display: block;
+          scrollbar-color: var(--text-on-accent) transparent; }
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger {
+          font-family: var(--font-header);
+          font-weight: 900;
+          font-size: 24px;
+          line-height: 140%;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+          cursor: pointer; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger:not(.staffOnly) {
+            display: block !important; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger::after {
+            content: '';
+            height: 1px;
+            width: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: var(--text-on-accent);
+            transition-duration: 0.3s; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger:hover::after {
+            width: 100%; }
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger.is-active {
+          display: block !important; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger.is-active::after {
+            width: 100%; }
+        #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content {
+          display: none !important;
+          flex-direction: column;
+          padding-bottom: 20px;
+          gap: 7.5px; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a {
+            font-size: var(--size-lg);
+            line-height: 200%; }
+            #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a::before {
+              transition-duration: 0.3s;
+              font-family: 'Font Awesome 6 Pro';
+              margin-right: 10px;
+              font-weight: 100; }
+            #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a.is-active {
+              font-weight: 700; }
+              #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a.is-active::before {
+                font-weight: 700; }
+          #store main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content.is-active {
+            display: flex !important; }
+      #store main > table:first-of-type > tbody > tr > td:nth-child(2) {
+        display: none; }
+      #store main > table:first-of-type > tbody > tr > td#ucpcontent {
+        height: 100%;
+        padding: 30px; }
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent > table,
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner {
+          background: var(--bg-transparent-low);
+          border: 1px solid var(--bg-accent-50);
+          padding: 15px 7.5px 15px 15px;
+          height: 100%; }
+          @media (min-width: 601px) {
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent > table,
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner {
+              padding: 30px 20px 30px 30px; }
+              #store main > table:first-of-type > tbody > tr > td#ucpcontent > table > tbody,
+              #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > tbody {
+                padding: 20px; }
+              #store main > table:first-of-type > tbody > tr > td#ucpcontent > table > .scroll,
+              #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll {
+                padding: 20px; } }
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent > table > tbody,
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent > table > .scroll,
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > tbody,
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll {
+            display: block;
+            overflow: auto;
+            scrollbar-color: var(--bg-accent) transparent;
+            scrollbar-width: thin;
+            height: 100%;
+            padding: 7.5px; }
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent > table > tbody::-webkit-scrollbar,
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent > table > .scroll::-webkit-scrollbar,
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > tbody::-webkit-scrollbar,
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll::-webkit-scrollbar {
+              width: 6px; }
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent > table > tbody::-webkit-scrollbar-thumb,
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent > table > .scroll::-webkit-scrollbar-thumb,
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > tbody::-webkit-scrollbar-thumb,
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll::-webkit-scrollbar-thumb {
+              background: var(--bg-accent);
+              border-radius: 3px; }
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent > table > tbody::-webkit-scrollbar-track,
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent > table > .scroll::-webkit-scrollbar-track,
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > tbody::-webkit-scrollbar-track,
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll::-webkit-scrollbar-track {
+              background: transparent; }
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent > table::before, #store main > table:first-of-type > tbody > tr > td#ucpcontent > table::after,
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::before,
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::after {
+            content: '';
+            height: 1px;
+            position: absolute;
+            top: calc(50% - 0.5px);
+            background: var(--bg-accent-50); }
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent > table::before,
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::before {
+            width: 100%;
+            right: calc(100% + 1px); }
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent > table::after,
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::after {
+            width: 30px;
+            right: -31px; }
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent input[type="text"],
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent input[type="file"],
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent input[type="password"],
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent textarea,
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent select {
+          width: 100%; }
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent .maintitle {
+          display: none; }
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table {
+          display: block; }
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody {
+            display: block; }
+            #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              margin-bottom: 15px; }
+              @media (min-width: 481px) {
+                #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr {
+                  margin-bottom: 30px; } }
+              @media (min-width: 769px) {
+                #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr {
+                  gap: 15px; } }
+              #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft b,
+              #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft strong,
+              #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft label {
+                line-height: 160%;
+                display: block;
+                max-width: max-content;
+                padding: 5px 10px; }
+                #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft b ~ br,
+                #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft strong ~ br,
+                #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft label ~ br {
+                  display: none; }
+              #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformright {
+                display: flex;
+                gap: 5px;
+                height: max-content; }
+              #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr > *:only-child {
+                grid-column: 1 / -1; }
+              #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr:last-child .pformstrip:only-child {
+                margin-bottom: 0;
+                padding: 0;
+                text-align: center; }
+
+#store.store-home #ucpcontent .scroll > table > tbody > tr {
+  display: flex;
+  flex-direction: column;
+  text-align: left; }
+  #store.store-home #ucpcontent .scroll > table > tbody > tr:not(:nth-child(4)) {
+    margin-top: 30px; }
+  #store.store-home #ucpcontent .scroll > table > tbody > tr td {
+    text-align: justify;
+    padding: 0; }
+    #store.store-home #ucpcontent .scroll > table > tbody > tr td a {
+      display: block;
+      line-height: 160%;
+      max-width: max-content;
+      font-family: var(--font-header);
+      font-weight: 900;
+      text-transform: capitalize;
+      font-size: 18px; }
+      @media only screen and (min-width: 480px) {
+        #store.store-home #ucpcontent .scroll > table > tbody > tr td a {
+          font-size: calc(18px + 6 * (100vw - 480px) / (1920 - 480)); } }
+      @media only screen and (min-width: 1920px) {
+        #store.store-home #ucpcontent .scroll > table > tbody > tr td a {
+          font-size: 24px; } }
+      #store.store-home #ucpcontent .scroll > table > tbody > tr td a + br {
+        display: none; }
+  #store.store-home #ucpcontent .scroll > table > tbody > tr:nth-child(1), #store.store-home #ucpcontent .scroll > table > tbody > tr:nth-child(2), #store.store-home #ucpcontent .scroll > table > tbody > tr:nth-child(3) {
+    display: none; }
+
+#store.store-shop #ucpcontent .scroll > table {
+  display: block; }
+  #store.store-shop #ucpcontent .scroll > table > tbody {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px; }
+    @media (min-width: 769px) {
+      #store.store-shop #ucpcontent .scroll > table > tbody {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1025px) {
+      #store.store-shop #ucpcontent .scroll > table > tbody {
+        grid-template-columns: repeat(3, 1fr); } }
+    #store.store-shop #ucpcontent .scroll > table > tbody > tr {
+      display: flex;
+      flex-wrap: wrap; }
+      @media (min-width: 769px) {
+        #store.store-shop #ucpcontent .scroll > table > tbody > tr {
+          flex: 0 0 calc(50% - calc(15px / 2)); } }
+      @media (min-width: 1025px) {
+        #store.store-shop #ucpcontent .scroll > table > tbody > tr {
+          flex: 0 0 calc((100% / 3) - calc(15px * 2 / 3)); } }
+      #store.store-shop #ucpcontent .scroll > table > tbody > tr img {
+        width: var(--size--store-image-width);
+        height: var(--size--store-image-width);
+        object-fit: contain;
+        object-position: center; }
+      #store.store-shop #ucpcontent .scroll > table > tbody > tr:first-child {
+        display: none; }
+      #store.store-shop #ucpcontent .scroll > table > tbody > tr:last-child {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--bg-accent);
+        color: var(--text-on-accent);
+        padding: 10px; }
+        #store.store-shop #ucpcontent .scroll > table > tbody > tr:last-child a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 30px;
+          border: 1px solid var(--text-on-accent);
+          padding: 0 15px;
+          transition-duration: 0.3s;
+          color: var(--text-on-accent);
+          font-weight: 900;
+          font-family: var(--font-header);
+          font-size: var(--size-md);
+          text-transform: capitalize; }
+          #store.store-shop #ucpcontent .scroll > table > tbody > tr:last-child a:hover {
+            background: var(--text-on-accent);
+            color: var(--bg-accent); }
+        #store.store-shop #ucpcontent .scroll > table > tbody > tr:last-child > td {
+          display: block;
+          text-align: left; }
+          #store.store-shop #ucpcontent .scroll > table > tbody > tr:last-child > td:nth-child(2) {
+            text-align: center; }
+          #store.store-shop #ucpcontent .scroll > table > tbody > tr:last-child > td:last-child {
+            text-align: right; }
+      #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) {
+        padding: 15px;
+        display: -ms-grid;
+        display: grid;
+        grid-template-columns: var(--size--store-image-width) 1fr 1fr var(--size--store-image-width);
+        grid-template-rows: max-content auto max-content max-content max-content;
+        border: 1px solid var(--border-primary);
+        background: var(--bg-transparent-low); }
+        #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td {
+          padding: 0;
+          text-align: left; }
+          #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:first-child {
+            height: var(--size--store-image-width);
+            align-self: center; }
+          #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(2) {
+            grid-column: span 3;
+            line-height: 160%;
+            max-width: max-content;
+            font-weight: 700;
+            font-size: var(--size-xl);
+            font-family: var(--font-header);
+            padding-left: 10px;
+            color: var(--text-accent); }
+          #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(3) {
+            grid-column: 1 / -1;
+            padding: 10px 0;
+            border-top: 1px solid var(--border-primary);
+            border-bottom: 1px solid var(--border-primary);
+            margin: 10px 0;
+            font-size: calc(var(--size-sm) + 1px);
+            text-align: justify; }
+          #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(4) {
+            grid-column: span 2; }
+            #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(4)::before {
+              content: '$'; }
+          #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(5) {
+            grid-column: span 2;
+            text-align: right; }
+            #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(5)::after {
+              content: ' In Stock'; }
+          #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(6):last-child {
+            grid-column: 1 / -1;
+            padding: 5px 0 0; }
+            #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(6):last-child a {
+              font-size: var(--size-md);
+              max-width: max-content;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              height: 30px;
+              border: 1px solid var(--border-accent);
+              color: var(--text-accent);
+              padding: 0 15px;
+              transition-duration: 0.3s;
+              z-index: 1;
+              font-weight: 700; }
+              #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(6):last-child a:hover {
+                background: var(--bg-accent);
+                color: var(--text-on-accent); }
+          #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(6):not(:last-child) {
+            grid-column: span 2;
+            padding: 15px 0 0;
+            font-size: 0; }
+            #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(6):not(:last-child) a {
+              font-size: var(--size-md);
+              max-width: max-content;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              height: 30px;
+              border: 1px solid var(--border-accent);
+              color: var(--text-accent);
+              padding: 0 15px;
+              transition-duration: 0.3s;
+              z-index: 1;
+              font-weight: 700; }
+              #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(6):not(:last-child) a:hover {
+                background: var(--bg-accent);
+                color: var(--text-on-accent); }
+          #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(7):last-child {
+            grid-column: span 2;
+            padding: 15px 0 0;
+            font-size: 0; }
+            #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(7):last-child a {
+              font-size: var(--size-md);
+              max-width: max-content;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              height: 30px;
+              border: 1px solid var(--border-accent);
+              color: var(--text-accent);
+              padding: 0 15px;
+              transition-duration: 0.3s;
+              z-index: 1;
+              font-weight: 700; }
+              #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(7):last-child a:hover {
+                background: var(--bg-accent);
+                color: var(--text-on-accent); }
+              #store.store-shop #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(7):last-child a::before {
+                content: 'Buy '; }
+
+#store.store-inventory #ucpcontent .scroll > table {
+  display: block; }
+  #store.store-inventory #ucpcontent .scroll > table > tbody {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px; }
+    @media (min-width: 769px) {
+      #store.store-inventory #ucpcontent .scroll > table > tbody {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1281px) {
+      #store.store-inventory #ucpcontent .scroll > table > tbody {
+        grid-template-columns: repeat(3, 1fr); } }
+    #store.store-inventory #ucpcontent .scroll > table > tbody > tr {
+      display: flex;
+      flex-wrap: wrap; }
+      @media (min-width: 769px) {
+        #store.store-inventory #ucpcontent .scroll > table > tbody > tr {
+          flex: 0 0 calc(50% - calc(15px / 2)); } }
+      @media (min-width: 1281px) {
+        #store.store-inventory #ucpcontent .scroll > table > tbody > tr {
+          flex: 0 0 calc((100% / 3) - calc(15px * 2 / 3)); } }
+      #store.store-inventory #ucpcontent .scroll > table > tbody > tr img {
+        width: var(--size--store-image-width);
+        height: 24px;
+        object-fit: contain;
+        object-position: center; }
+      #store.store-inventory #ucpcontent .scroll > table > tbody > tr:first-child {
+        grid-column: 1 / -1;
+        display: grid; }
+        #store.store-inventory #ucpcontent .scroll > table > tbody > tr:first-child > td {
+          width: 100%;
+          padding: 0; }
+          #store.store-inventory #ucpcontent .scroll > table > tbody > tr:first-child > td:first-child {
+            line-height: 160%;
+            max-width: max-content;
+            display: block;
+            max-width: max-content; }
+      #store.store-inventory #ucpcontent .scroll > table > tbody > tr:nth-child(3), #store.store-inventory #ucpcontent .scroll > table > tbody > tr:nth-child(2) {
+        display: none; }
+      #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) {
+        padding: 15px;
+        display: grid;
+        grid-template-columns: var(--size--store-image-width) calc(100% - var(--size--store-image-width) - 15px);
+        grid-template-rows: max-content max-content max-content 1fr;
+        border: 1px solid var(--border-primary);
+        background: var(--bg-transparent-low); }
+        #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td {
+          padding: 0;
+          width: 100%; }
+          #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:first-child {
+            order: 1; }
+          #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:nth-child(2) {
+            order: 2;
+            line-height: 160%;
+            max-width: max-content;
+            font-weight: 700;
+            font-size: var(--size-xl);
+            font-family: var(--font-header);
+            padding-left: 10px;
+            color: var(--text-accent); }
+          #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:not(:first-child):not(:nth-child(2)) {
+            grid-column: 1 / -1; }
+          #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:nth-child(3) {
+            margin-top: 10px;
+            border-top: 1px solid var(--border-primary);
+            text-align: justify;
+            order: 4;
+            padding: 10px 0 0;
+            font-size: calc(var(--size-sm) + 1px); }
+            #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:nth-child(3):empty {
+              display: none; }
+          #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:nth-child(4) {
+            flex: 0 0 100%;
+            order: 3;
+            text-align: left;
+            margin-bottom: calc(-1 * 5px); }
+            #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:nth-child(4)::after {
+              content: ' Owned'; }
+          #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:last-child {
+            display: flex;
+            align-items: end;
+            flex: 0 0 100%;
+            order: 5;
+            padding: 15px 0 0;
+            margin-top: 10px;
+            border-top: 1px solid var(--border-primary); }
+            #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:last-child a {
+              display: block;
+              max-width: max-content;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 30px;
+              border: 1px solid var(--border-accent);
+              color: var(--text-accent);
+              padding: 0 15px;
+              transition-duration: 0.3s;
+              z-index: 1;
+              font-weight: 700; }
+              #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:last-child a:hover {
+                background: var(--bg-accent);
+                color: var(--text-on-accent); }
+            #store.store-inventory #ucpcontent .scroll > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:last-child br {
+              display: none; }
+
+#store.store-donate_money #ucpcontent .scroll > table > tbody > tr:not(:last-child),
+#store.store-donate_money #ucpcontent > table > tbody > tr:not(:last-child),
+#store.store-donate_item #ucpcontent .scroll > table > tbody > tr:not(:last-child),
+#store.store-donate_item #ucpcontent > table > tbody > tr:not(:last-child),
+#store.store-fine #ucpcontent .scroll > table > tbody > tr:not(:last-child),
+#store.store-fine #ucpcontent > table > tbody > tr:not(:last-child),
+#store.store-edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child),
+#store.store-edit_points #ucpcontent > table > tbody > tr:not(:last-child),
+#store.store-do_edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child),
+#store.store-do_edit_points #ucpcontent > table > tbody > tr:not(:last-child),
+#store.store-edit_inventory #ucpcontent .scroll > table > tbody > tr:not(:last-child),
+#store.store-edit_inventory #ucpcontent > table > tbody > tr:not(:last-child),
+#store.store-useitem #ucpcontent .scroll > table > tbody > tr:not(:last-child),
+#store.store-useitem #ucpcontent > table > tbody > tr:not(:last-child) {
+  display: grid; }
+  #store.store-donate_money #ucpcontent .scroll > table > tbody > tr:not(:last-child) > td,
+  #store.store-donate_money #ucpcontent > table > tbody > tr:not(:last-child) > td,
+  #store.store-donate_item #ucpcontent .scroll > table > tbody > tr:not(:last-child) > td,
+  #store.store-donate_item #ucpcontent > table > tbody > tr:not(:last-child) > td,
+  #store.store-fine #ucpcontent .scroll > table > tbody > tr:not(:last-child) > td,
+  #store.store-fine #ucpcontent > table > tbody > tr:not(:last-child) > td,
+  #store.store-edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) > td,
+  #store.store-edit_points #ucpcontent > table > tbody > tr:not(:last-child) > td,
+  #store.store-do_edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) > td,
+  #store.store-do_edit_points #ucpcontent > table > tbody > tr:not(:last-child) > td,
+  #store.store-edit_inventory #ucpcontent .scroll > table > tbody > tr:not(:last-child) > td,
+  #store.store-edit_inventory #ucpcontent > table > tbody > tr:not(:last-child) > td,
+  #store.store-useitem #ucpcontent .scroll > table > tbody > tr:not(:last-child) > td,
+  #store.store-useitem #ucpcontent > table > tbody > tr:not(:last-child) > td {
+    width: 100%; }
+  #store.store-donate_money #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-donate_money #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-donate_money #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-donate_money #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-donate_money #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-donate_money #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-donate_item #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-donate_item #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-donate_item #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-donate_item #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-donate_item #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-donate_item #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-fine #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-fine #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-fine #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-fine #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-fine #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-fine #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-do_edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-do_edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-do_edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-do_edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-do_edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-do_edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-edit_inventory #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-edit_inventory #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-edit_inventory #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-edit_inventory #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-edit_inventory #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-edit_inventory #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-useitem #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-useitem #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-useitem #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label,
+  #store.store-useitem #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b,
+  #store.store-useitem #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong,
+  #store.store-useitem #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label {
+    max-width: max-content;
+    text-transform: uppercase;
+    line-height: 100%;
+    background: var(--bg-accent-30);
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: var(--size-xs);
+    letter-spacing: 0.15em;
+    padding: 8px 15px;
+    border: 1px solid var(--border-accent); }
+    #store.store-donate_money #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-donate_money #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-donate_money #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-donate_money #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-donate_money #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-donate_money #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-donate_item #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-donate_item #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-donate_item #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-donate_item #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-donate_item #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-donate_item #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-fine #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-fine #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-fine #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-fine #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-fine #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-fine #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-do_edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-do_edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-do_edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-do_edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-do_edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-do_edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-edit_inventory #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-edit_inventory #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-edit_inventory #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-edit_inventory #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-edit_inventory #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-edit_inventory #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-useitem #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-useitem #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-useitem #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br,
+    #store.store-useitem #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child b ~ br,
+    #store.store-useitem #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child strong ~ br,
+    #store.store-useitem #ucpcontent > table > tbody > tr:not(:last-child) .pformleft:first-child label ~ br {
+      display: none; }
+  #store.store-donate_money #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-donate_money #ucpcontent > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-donate_item #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-donate_item #ucpcontent > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-fine #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-fine #ucpcontent > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-do_edit_points #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-do_edit_points #ucpcontent > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-edit_inventory #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-edit_inventory #ucpcontent > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-useitem #ucpcontent .scroll > table > tbody > tr:not(:last-child) .pformleft + .pformleft,
+  #store.store-useitem #ucpcontent > table > tbody > tr:not(:last-child) .pformleft + .pformleft {
+    border-left: 1px dotted var(--bg-accent);
+    padding: 11px 0 10px 12px;
+    margin: 2px 0 0 10px;
+    height: 100%; }
+
+#store.store-do_staff_inventory #ucpcontent > table,
+#store.store-do_staff_inventory #ucpcontent .scroll > table {
+  display: block; }
+  #store.store-do_staff_inventory #ucpcontent > table > tbody,
+  #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; }
+    @media (min-width: 481px) {
+      #store.store-do_staff_inventory #ucpcontent > table > tbody,
+      #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody {
+        gap: 15px; } }
+    #store.store-do_staff_inventory #ucpcontent > table > tbody > tr,
+    #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr {
+      display: flex;
+      flex-wrap: wrap;
+      height: max-content;
+      flex: 0 0 100%;
+      align-items: center; }
+      #store.store-do_staff_inventory #ucpcontent > table > tbody > tr:not(:last-child),
+      #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr:not(:last-child) {
+        border-bottom: 1px solid var(--border-primary);
+        padding-bottom: 20px;
+        margin-bottom: 20px; }
+      #store.store-do_staff_inventory #ucpcontent > table > tbody > tr img,
+      #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr img {
+        width: var(--size--store-image-width);
+        height: var(--size--store-image-width);
+        object-fit: contain;
+        object-position: center; }
+      #store.store-do_staff_inventory #ucpcontent > table > tbody > tr > td,
+      #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr > td {
+        padding: 0;
+        height: max-content;
+        text-align: left; }
+        #store.store-do_staff_inventory #ucpcontent > table > tbody > tr > td:first-child,
+        #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr > td:first-child {
+          flex: 0 0 calc(10px + var(--size--store-image-width)); }
+        #store.store-do_staff_inventory #ucpcontent > table > tbody > tr > td:nth-child(2),
+        #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr > td:nth-child(2) {
+          flex: 0 0 calc(100% - (10px + var(--size--store-image-width) + 10px));
+          font-weight: 700;
+          font-size: var(--size-xl);
+          font-family: var(--font-header);
+          padding-left: 10px;
+          color: var(--text-accent);
+          text-align: left; }
+        #store.store-do_staff_inventory #ucpcontent > table > tbody > tr > td:nth-child(3),
+        #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr > td:nth-child(3) {
+          flex: 0 0 calc(100% - 10px);
+          text-align: justify; }
+          @media (min-width: 481px) {
+            #store.store-do_staff_inventory #ucpcontent > table > tbody > tr > td:nth-child(3),
+            #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr > td:nth-child(3) {
+              flex: 0 0 calc(100% - 15px); } }
+          #store.store-do_staff_inventory #ucpcontent > table > tbody > tr > td:nth-child(3):empty,
+          #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr > td:nth-child(3):empty {
+            display: none; }
+        #store.store-do_staff_inventory #ucpcontent > table > tbody > tr > td:nth-child(4),
+        #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr > td:nth-child(4) {
+          display: none; }
+        #store.store-do_staff_inventory #ucpcontent > table > tbody > tr > td:nth-child(5),
+        #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr > td:nth-child(5) {
+          flex: 0 0 100%; }
+          #store.store-do_staff_inventory #ucpcontent > table > tbody > tr > td:nth-child(5) .input-wrap::after,
+          #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr > td:nth-child(5) .input-wrap::after {
+            content: 'Delete'; }
+      #store.store-do_staff_inventory #ucpcontent > table > tbody > tr:first-child,
+      #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr:first-child {
+        display: none; }
+      #store.store-do_staff_inventory #ucpcontent > table > tbody > tr:nth-last-child(2):not(:nth-child(2)),
+      #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr:nth-last-child(2):not(:nth-child(2)) {
+        display: none; }
+      #store.store-do_staff_inventory #ucpcontent > table > tbody > tr:last-child,
+      #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr:last-child {
+        flex: 0 0 100%;
+        border: none; }
+        #store.store-do_staff_inventory #ucpcontent > table > tbody > tr:last-child td,
+        #store.store-do_staff_inventory #ucpcontent .scroll > table > tbody > tr:last-child td {
+          flex: 0 0 100%; }

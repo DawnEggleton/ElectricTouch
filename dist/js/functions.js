@@ -73,7 +73,7 @@ function rgbToHex(r, g, b) {
     return componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 function cleanText(text) {
-	return text.replaceAll(' ', '').replaceAll('&amp;', '').replaceAll('&', '').replaceAll(`'`, '').replaceAll(`"`, '').replaceAll(`.`, '').replaceAll(`(`, '').replaceAll(`)`, '').replaceAll(`,`, '');
+	return text.replaceAll(' ', '').replaceAll('&amp;', '').replaceAll('&', '').replaceAll(`'`, '').replaceAll(`"`, '').replaceAll(`.`, '').replaceAll(`(`, '').replaceAll(`)`, '').replaceAll(`,`, '').replaceAll(`’`, '').replaceAll(`é`, `e`).replaceAll(`è`, `e`).replaceAll(`ê`, `e`).replaceAll(`ë`, `e`).replaceAll(`ě`, `e`).replaceAll(`ẽ`, `e`).replaceAll(`ē`, `e`).replaceAll(`ė`, `e`).replaceAll(`ę`, `e`).replaceAll(`à`, `a`).replaceAll(`á`, `a`).replaceAll(`â`, `a`).replaceAll(`ä`, `a`).replaceAll(`ǎ`, `a`).replaceAll(`æ`, `ae`).replaceAll(`ã`, `a`).replaceAll(`å`, `a`).replaceAll(`ā`, `a`).replaceAll(`í`, `i`).replaceAll(`ì`, `i`).replaceAll(`ı`, `i`).replaceAll(`î`, `i`).replaceAll(`ï`, `i`).replaceAll(`ǐ`, `i`).replaceAll(`ĭ`, `i`).replaceAll(`ī`, `i`).replaceAll(`ĩ`, `i`).replaceAll(`į`, `i`).replaceAll(`ḯ`, `i`).replaceAll(`ỉ`, `i`).replaceAll(`ó`, `o`).replaceAll(`ò`, `o`).replaceAll(`ȯ`, `o`).replaceAll(`ô`, `o`).replaceAll(`ö`, `o`).replaceAll(`ǒ`, `o`).replaceAll(`ŏ`, `o`).replaceAll(`ō`, `o`).replaceAll(`õ`, `o`).replaceAll(`ǫ`, `o`).replaceAll(`ő`, `o`).replaceAll(`ố`, `o`).replaceAll(`ồ`, `o`).replaceAll(`ø`, `o`).replaceAll(`ṓ`, `o`).replaceAll(`ṑ`, `o`).replaceAll(`ȱ`, `o`).replaceAll(`ṍ`, `o`).replaceAll(`ú`, `u`).replaceAll(`ù`, `u`).replaceAll(`û`, `u`).replaceAll(`ü`, `u`).replaceAll(`ǔ`, `u`).replaceAll(`ŭ`, `u`).replaceAll(`ū`, `u`).replaceAll(`ũ`, `u`).replaceAll(`ů`, `u`).replaceAll(`ų`, `u`).replaceAll(`ű`, `u`).replaceAll(`ʉ`, `u`).replaceAll(`ǘ`, `u`).replaceAll(`ǜ`, `u`).replaceAll(`ǚ`, `u`).replaceAll(`ṹ`, `u`).replaceAll(`ǖ`, `u`).replaceAll(`ṻ`, `u`).replaceAll(`ủ`, `u`).replaceAll(`ȕ`, `u`).replaceAll(`ȗ`, `u`).replaceAll(`ư`, `u`);
 }
 function filterValue(e) {
     let searchValue = e.value.toLowerCase().trim();
@@ -91,10 +91,8 @@ function filterValue(e) {
             }
             let childrenArray = Array.from(name.closest('.claim-wrap').querySelectorAll('.claim')).filter(item => !item.classList.contains('hidden'));
             if(childrenArray.length === 0) {
-                name.closest('.claim-wrap').classList.add('hidden');
                 name.closest('.claim-wrap').previousElementSibling.classList.add('hidden');
             } else {
-                name.closest('.claim-wrap').classList.remove('hidden');
                 name.closest('.claim-wrap').previousElementSibling.classList.remove('hidden');
             }
         });
@@ -172,6 +170,59 @@ function highlightCode() {
         }
     });
 }
+function getAllTextNodes(element) {
+    if(element) {
+        return Array.from(element.childNodes).filter(node => node.nodeType === 3 && node.textContent.trim().length > 1);
+    }
+}
+function getAllTextNodesArray(elements) {
+    let array = [];
+    if(elements) {
+        elements.forEach(element => {
+            let nodes = Array.from(element.childNodes).filter(node => node.nodeType === 3 && node.textContent.trim().length > 1);
+            if(nodes.length > 0) {
+                array = [...array, ...nodes];
+            }
+        });
+    }
+    return array;
+}
+function inputWrap(el, next = null, type = 'checkbox') {
+    if(next) {
+        $(el).nextUntil(next).andSelf().wrapAll(`<label class="input-wrap ${type}"></label>`);
+    } else {
+        $(el).next().andSelf().wrapAll(`<label class="input-wrap ${type}"></label>`);
+    }
+}
+function fancyBoxes() {
+    document.querySelectorAll('.input-wrap.checkbox').forEach(label => {
+        label.querySelector('input').insertAdjacentHTML('afterend', `<div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>`);
+    });
+    document.querySelectorAll('.input-wrap.radio').forEach(label => {
+        label.querySelector('input').insertAdjacentHTML('afterend', `<div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>`);
+    });
+}
+function read_alerts() {
+    $('#recent-alerts').fadeOut();
+    $.get( "index.php?recent_alerts=1&read=1", function( data ) {
+        $( "#recent_alerts_data" ).html( data );
+    });
+    document.querySelectorAll('a[title="Alerts"]').forEach(alert => alert.classList.remove('new'));
+}
+function close_alerts() {
+    $('#recent-alerts').fadeOut();
+}
+function load_alerts() {
+    if($('#recent-alerts').is(':visible')) {
+        $('#recent-alerts').fadeOut();
+    } else {
+        $.get( "?recent_alerts=1", function( data ) {
+            $( "#recent-alerts-data" ).html( data );
+            console.log(document.querySelectorAll('.recent-alerts-msg'));
+        });
+        $("#recent-alerts").fadeIn();
+    }
+}
 
 /****** Settings ******/
 function setTheme() {
@@ -196,17 +247,25 @@ function setTheme() {
 function setSize() {
     if(localStorage.getItem('size') !== null) {
         switch(localStorage.getItem('size')) {
+            case 'xl':
+                document.querySelector('body').classList.remove('smFont');
+                document.querySelector('body').classList.remove('lgFont');
+                document.querySelector('body').classList.add('xlFont');
+                break;
             case 'large':
                 document.querySelector('body').classList.remove('smFont');
                 document.querySelector('body').classList.add('lgFont');
+                document.querySelector('body').classList.remove('xlFont');
                 break;
             case 'small':
             default:
                 document.querySelector('body').classList.remove('lgFont');
                 document.querySelector('body').classList.add('smFont');
+                document.querySelector('body').classList.remove('xlFont');
                 break;
         }
     } else {
+        document.querySelector('body').classList.remove('xlFont');
         document.querySelector('body').classList.remove('lgFont');
         document.querySelector('body').classList.add('smFont');
         localStorage.setItem('size', 'small');
@@ -227,6 +286,9 @@ function toggleSize() {
     if(localStorage.getItem('size') === 'small') {
         localStorage.setItem('size', 'large');
         setSize();
+    } else if(localStorage.getItem('size') === 'large') {
+        localStorage.setItem('size', 'xl');
+        setSize();
     } else {
         localStorage.setItem('size', 'small');
         setSize();
@@ -246,6 +308,9 @@ function toggleSideMenu(e) {
 }
 function toggleWebpageMenu(e) {
     e.closest('.webpage--menu').classList.toggle('is-open');
+}
+function toggleUCPMenu(e) {
+    e.closest('#ucpmenu').classList.toggle('is-open');
 }
 
 /****** Carousel Functions ******/
@@ -328,8 +393,6 @@ function carouselPage(e) {
     let {bullets, slides, wrapper} = carouselVariableSetup(e, 1);
     let bulletsArray = Array.from(bullets);
     let index = bulletsArray.indexOf.call(bulletsArray, e);
-    console.log(index);
-    console.log(slides);
     
     //remove all active
     bullets.forEach(bullet => bullet.classList.remove('is-active'));
@@ -340,6 +403,20 @@ function carouselPage(e) {
 }
 
 /****** Global Initialization ******/
+function initQuickLogin() {
+    if($('#quick-login').length) {
+        $('#quick-login').appendTo('#quick-login-clip');
+        document.querySelector('#quick-login-clip input[name="UserName"]').setAttribute('placeholder', 'Username');
+        document.querySelector('#quick-login-clip input[name="PassWord"]').setAttribute('placeholder', 'Password');
+    } else {
+        var main_url = location.href.split('?')[0];
+        $.get(main_url, function (data) {
+            $('#quick-login', data).appendTo('#quick-login-clip');
+            document.querySelector('#quick-login-clip input[name="UserName"]').setAttribute('placeholder', 'Username');
+            document.querySelector('#quick-login-clip input[name="PassWord"]').setAttribute('placeholder', 'Password');
+        });
+    }
+}
 function initModals() {
     document.querySelectorAll('.popup').forEach(popup => {
         popup.addEventListener('click', () => {
@@ -430,7 +507,7 @@ function initMarkdown() {
         </ul>`;
     }
 
-    let markdownSafe = `.postcolor, .profile [data-key="#details"] .scroll, .profile [data-key="#plotting"] .scroll, tl`;
+    let markdownSafe = `.postcolor tag-content, .postcolor tag-msg, .postcolor tag-action, .profile [data-key="#details"] .scroll, .profile [data-key="#plotting"] .scroll, tl, et-content, et-msg, et-action`;
 
     if(document.querySelectorAll(markdownSafe).length > 0) {
         document.querySelectorAll(markdownSafe).forEach(post => {
@@ -663,7 +740,7 @@ function initPostRowDescription() {
 }
 function initPostContentAlter() {
     document.querySelectorAll('.post--content .postcolor').forEach(post => {
-        if(!post.innerHTML.includes('tag-wrap') && !post.innerHTML.includes('tag-comm') && !post.innerHTML.includes('tag-social')) {
+        if(!post.querySelector('* > tag-wrap') && !post.querySelector('* > tag-comm') && !post.querySelector('* > tag-social') && !post.querySelector('* > et-wrap') && !post.querySelector('* > et-comm') && !post.querySelector('* > et-social')) {
             post.classList.add('no-template');
         }
     });
@@ -880,7 +957,7 @@ function formatMemberRow(type, data, extraFilters = '') {
                 <span class="scroll">${data.triggers}</span>
             </div>`;
     }
-    return `<div class="grid-item ml--item ${tagList}">
+    return `<div class="grid-item ml--item ${tagList} m-${data.id}">
         <div class="member">
             <div class="member--image">
                 <img src="${data.imageTall}" class="tall" loading="lazy" />
@@ -1092,4 +1169,212 @@ function debounce(fn, threshold) {
         }
         setTimeout(delayed, threshold || 100);
     };
+}
+
+/****** UserCP/Messages ******/
+function initUCPMenu() {
+    document.querySelector('#ucpmenu').innerHTML = `<button class="onlyMobile" onclick="toggleUCPMenu(this)">
+        <div class="menu-bar menu-top"></div>
+        <div class="menu-bar menu-middle"></div>
+        <div class="menu-bar menu-bottom"></div>
+    </button>
+    <div class="accordion scroll">
+        <div class="accordion--trigger" data-category="account"><b>Account</b></div>
+        <div class="accordion--content" data-category="account">
+            <a href="?act=UserCP&CODE=01">Edit Profile</a>
+            <a href="?act=UserCP&CODE=24">Update Avatar</a>
+            <a href="?act=UserCP&CODE=54">Sub-accounts</a>
+            <a href="?act=UserCP&CODE=52">Edit Username</a>
+            <a href="?act=UserCP&CODE=28">Change Password</a>
+            <a href="?act=UserCP&CODE=08">Update Email</a>
+        </div>
+        <div class="accordion--trigger" data-category="messages"><b>Messages</b></div>
+        <div class="accordion--content" data-category="messages">
+            <a href="?act=Msg&CODE=01">Inbox</a>
+            <a href="?act=Msg&CODE=04">Send Message</a>
+        </div>
+        <div class="accordion--trigger" data-category="tracking"><b>Tracking</b></div>
+        <div class="accordion--content" data-category="tracking">
+            <a href="?act=UserCP&CODE=alerts">Alerts</a>
+            <a href="?act=UserCP&CODE=50">Forums</a>
+            <a href="?act=UserCP&CODE=26">Topics</a>
+        </div>
+        <div class="accordion--trigger" data-category="settings"><b>Settings</b></div>
+        <div class="accordion--content" data-category="settings">
+            <a href="?act=UserCP&CODE=04">Board</a>
+            <a href="?act=UserCP&CODE=alerts_settings">Alerts</a>
+            <a href="?act=UserCP&CODE=02">Emails</a>
+        </div>
+    </div>`;
+
+    initAccordion();
+    initAccordionActive();
+
+
+    let textNodes = getAllTextNodesArray(document.querySelectorAll('#UserCP.code-01 #ucpcontent td.pformleft'));
+    textNodes.forEach(node => {
+        const paragraph = document.createElement('span');
+        node.after(paragraph);
+        paragraph.appendChild(node);
+    });
+}
+function initAccordionActive() {
+    if(pageType === 'Msg') {
+        document.querySelectorAll('[data-category="messages"]').forEach(item => item.classList.add('is-active'));
+    } else if (pageType === 'UserCP' && (pageClasses.contains('code-alerts') || pageClasses.contains('code-50') || pageClasses.contains('code-26'))) {
+        document.querySelectorAll('[data-category="tracking"]').forEach(item => item.classList.add('is-active'));
+    } else if (pageType === 'UserCP' && (pageClasses.contains('code-alerts_settings') || pageClasses.contains('code-04') || pageClasses.contains('code-02'))) {
+        document.querySelectorAll('[data-category="settings"]').forEach(item => item.classList.add('is-active'));
+    } else if (pageType === 'UserCP') {
+        document.querySelectorAll('[data-category="account"]').forEach(item => item.classList.add('is-active'));
+    } else if (pageType === 'store' && (pageClasses.contains('store-inventory') || pageClasses.contains('store-donate_money') || pageClasses.contains('store-donate_item'))) {
+        document.querySelectorAll('[data-category="personal"]').forEach(item => item.classList.add('is-active'));
+    } else if (pageType === 'store' && (pageClasses.contains('store-fine') || pageClasses.contains('store-do_edit_points') || pageClasses.contains('store-edit_points') || pageClasses.contains('store-do_staff_inventory') || pageClasses.contains('store-edit_inventory'))) {
+        document.querySelectorAll('[data-category="staff"]').forEach(item => item.classList.add('is-active'));
+    } else if (pageType === 'store' && pageClasses.contains('store-home')) {
+        document.querySelectorAll('[data-category="home"]').forEach(item => item.classList.add('is-active'));
+    } else if (pageType === 'store') {
+        document.querySelectorAll('[data-category="shop"]').forEach(item => item.classList.add('is-active'));
+    }
+    if(window.location.search) {
+        if(document.querySelector(`#ucpmenu a[href="${window.location.search}"]`)) {
+	    document.querySelector(`#ucpmenu a[href="${window.location.search}"]`).classList.add('is-active');
+	}
+    } else if (document.querySelector(`#ucpmenu a[href="${window.location.pathname.split('/usercp/')[1]}"]`)) {
+        document.querySelector(`#ucpmenu a[href="${window.location.pathname.split('/usercp/')[1]}"]`).classList.add('is-active');
+    } else if (document.querySelector(`#ucpmenu a[href="${window.location.pathname.split('/store/')[1]}"]`)) {
+        document.querySelector(`#ucpmenu a[href="${window.location.pathname.split('/store/')[1]}"]`).classList.add('is-active');
+    }
+}
+function cpShift() {
+	let imageType = document.querySelector(toggleFields[1]).value,
+	    account = document.querySelector(toggleFields[0]).value,
+        species = document.querySelector(toggleFields[2]).value,
+        relationships = document.querySelector(toggleFields[3]).value,
+	    showFields = [],
+	    hideFields = characterFields
+                    .concat(defaultImages)
+                    .concat(gridImages)
+                    .concat(mosaicImages)
+                    .concat(singleRelFields)
+                    .concat(sectionRelFields),
+	    showHeaders = allHeaders;
+
+	if(account == 'character') {
+        if(imageType === 'grid') {
+            showFields = characterFields
+                        .concat(defaultImages)
+                        .concat(gridImages);
+            hideFields = mosaicImages;
+            showHeaders = allHeaders
+                        .concat(charHeaders);
+            document.querySelector(defaultImages[0]).classList.remove('fullWidth');
+        } else if (imageType === 'mosaic') {
+            showFields = characterFields
+                        .concat(defaultImages)
+                        .concat(gridImages)
+                        .concat(mosaicImages);
+            hideFields = [];
+            showHeaders = allHeaders
+                        .concat(charHeaders);
+            document.querySelector(defaultImages[0]).classList.remove('fullWidth');
+        } else {
+            showFields = characterFields
+                        .concat(defaultImages);
+            hideFields = gridImages
+                        .concat(mosaicImages);
+            showHeaders = allHeaders
+                        .concat(charHeaders);
+            document.querySelector(defaultImages[0]).classList.add('fullWidth');
+        }
+
+        specialSpecies.forEach(special => {
+            if (special.species === species) {
+                showFields = showFields.concat(special.fields);
+            } else {
+                hideFields = hideFields.concat(special.fields);
+            }
+        });
+
+        if (relationships === 'a') {
+            showFields = showFields.concat(singleRelFields);
+            hideFields = hideFields.concat(sectionRelFields);
+        } else {
+            hideFields = hideFields.concat(singleRelFields);
+            showFields = showFields.concat(sectionRelFields);
+        }
+    } else {
+        specialSpecies.forEach(special => {
+            hideFields = hideFields.concat(special.fields);
+        });
+    }
+    
+    adjustCP(showFields, hideFields, showHeaders);
+}
+function adjustCP(show, hide, headers) {
+	show.forEach(field => {
+		showAccField(field);
+	});
+	hide.forEach(field => {
+		hideAccField(field);
+	});
+	document.querySelectorAll('.ucp--header').forEach(header => {
+		header.remove();
+	});
+	headers.forEach(header => {
+		insertCPHeader(header['title'], header['insertBefore']);
+	});
+}
+function hideAccField(field) {
+	if(document.querySelector(field)) {
+		document.querySelector(field).classList.add('hidden');
+	}
+}
+function showAccField(field) {
+	if(document.querySelector(field)) {
+		document.querySelector(field).classList.remove('hidden');
+	}
+}
+function insertCPHeader (title, field) {
+	$(field).before(`<tr class="pformstrip ucp--header"><td>${title}</td></tr>`);
+}
+
+/****** Store ******/
+function initStoreMenu() {
+    document.querySelector('#ucpmenu').innerHTML = `<button class="onlyMobile" onclick="toggleUCPMenu(this)">
+        <div class="menu-bar menu-top"></div>
+        <div class="menu-bar menu-middle"></div>
+        <div class="menu-bar menu-bottom"></div>
+    </button>
+    <div class="accordion scroll">
+        <a href="?act=store" class="accordion--trigger" data-category="home">Home</a>
+        <div class="accordion--trigger" data-category="shop"><b>Shop</b></div>
+        <div class="accordion--content" data-category="shop">
+            <a href="?act=store&code=shop&category=9">Appreciation Badges</a>
+            <a href="?act=store&code=shop&category=10">Event Badges</a>
+            <a href="?act=store&code=shop&category=3">Hobby Badges</a>
+            <a href="?act=store&code=shop&category=8">Loyalty Badges</a>
+            <a href="?act=store&code=shop&category=5">Player Badges</a>
+            <a href="?act=store&code=shop&category=11">Premium Features</a>
+            <a href="?act=store&code=shop&category=6">Relationship Badges</a>
+            <a href="?act=store&code=shop&category=7">Species Badges</a>
+            <a href="?act=store&code=shop&category=1">Trait Badges</a>
+            <a href="?act=store&code=shop&category=4">Zodiac Badges</a>
+        </div>
+        <div class="accordion--trigger" data-category="personal"><b>Personal</b></div>
+        <div class="accordion--content" data-category="personal">
+            <a href="?act=store&CODE=inventory">Inventory</a>
+            <a href="?act=store&code=donate_money">Send Money</a>
+            <a href="?act=store&code=donate_item">Send Item</a>
+        </div>
+        <div class="accordion--trigger staffOnly" data-category="staff"><b>Staff</b></div>
+        <div class="accordion--content staffOnly" data-category="staff">
+            <a href="?act=store&code=fine" class="staffOnly">Fine</a>
+            <a href="?act=store&code=edit_points" class="staffOnly">Edit Points</a>
+            <a href="?act=store&code=edit_inventory" class="staffOnly">Edit Inventory</a>
+        </div>
+    </div>`;
+
+    initAccordion();
+    initAccordionActive();
 }

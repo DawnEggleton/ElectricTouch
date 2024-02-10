@@ -1,3 +1,1078 @@
 /*******************************
     User CP
 ********************************/
+#UserCP main > table:first-of-type,
+#Msg main > table:first-of-type {
+  display: block; }
+  #UserCP main > table:first-of-type ~ *,
+  #Msg main > table:first-of-type ~ * {
+    display: none; }
+  #UserCP main > table:first-of-type > tbody,
+  #Msg main > table:first-of-type > tbody {
+    display: block; }
+    #UserCP main > table:first-of-type > tbody > tr,
+    #Msg main > table:first-of-type > tbody > tr {
+      height: calc(100vh - 70px);
+      min-height: 600px;
+      display: grid;
+      grid-template-rows: minmax(600px, calc(100vh - 70px)); }
+      @media (min-width: 769px) {
+        #UserCP main > table:first-of-type > tbody > tr,
+        #Msg main > table:first-of-type > tbody > tr {
+          grid-template-columns: 300px auto; } }
+      #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu,
+      #Msg main > table:first-of-type > tbody > tr > td#ucpmenu {
+        background: var(--bg-accent);
+        color: var(--text-on-accent);
+        padding: 20px;
+        z-index: 2; }
+        @media (max-width: 768px) {
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            z-index: 2;
+            overflow: hidden;
+            padding-top: 0; } }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu a,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpmenu a {
+          color: var(--text-on-accent); }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu > button,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpmenu > button {
+          width: 20px;
+          height: 20px;
+          margin: 10px 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 4px; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu > button:hover .menu-middle,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu > button:hover .menu-middle {
+            width: 100%; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu > button:hover .menu-bottom,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu > button:hover .menu-bottom {
+            width: 100%; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar {
+          position: absolute;
+          left: 0;
+          background: var(--text-on-accent);
+          height: 1px;
+          transition-duration: 0.3s; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar.menu-top,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar.menu-top {
+            top: calc(50% - 5px);
+            width: 100%; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar.menu-middle,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar.menu-middle {
+            top: 50%;
+            width: 60%; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar.menu-bottom,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .menu-bar.menu-bottom {
+            top: calc(50% + 5px);
+            width: 30%; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion {
+          height: calc(100% - 40px);
+          display: block;
+          scrollbar-color: var(--text-on-accent) transparent; }
+          @media (min-width: 769px) {
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion {
+              height: 100%; } }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger {
+          font-family: var(--font-header);
+          font-weight: 900;
+          font-size: 24px;
+          line-height: 140%;
+          display: block !important;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+          cursor: pointer; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger::after,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger::after {
+            content: '';
+            height: 1px;
+            width: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: var(--text-on-accent);
+            transition-duration: 0.3s; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger:hover::after,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger:hover::after {
+            width: 100%; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger.is-active::after,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--trigger.is-active::after {
+            width: 100%; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content {
+          display: none !important;
+          flex-direction: column;
+          padding-bottom: 20px;
+          gap: 7.5px; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a {
+            font-size: var(--size-lg);
+            line-height: 200%; }
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a::before,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a::before {
+              transition-duration: 0.3s;
+              font-family: 'Font Awesome 6 Pro';
+              margin-right: 10px;
+              font-weight: 100; }
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a.is-active,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a.is-active {
+              font-weight: 700; }
+              #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a.is-active::before,
+              #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content a.is-active::before {
+                font-weight: 700; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content.is-active,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu .accordion--content.is-active {
+            display: flex !important; }
+        @media (max-width: 768px) {
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu.is-open,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpmenu.is-open {
+            height: calc(100vh - 70px); } }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-top,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-top {
+          opacity: 0; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-middle,
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-bottom,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-middle,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-bottom {
+          top: 10px;
+          width: 100%; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-middle,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-middle {
+          transform: rotate(45deg); }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-bottom,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpmenu.is-open .menu-bottom {
+          transform: rotate(-45deg); }
+      #UserCP main > table:first-of-type > tbody > tr > td:nth-child(2),
+      #Msg main > table:first-of-type > tbody > tr > td:nth-child(2) {
+        display: none; }
+      #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent,
+      #Msg main > table:first-of-type > tbody > tr > td#ucpcontent {
+        height: 100%;
+        padding: 30px; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent tr.pformstrip:not(:last-child),
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent div.pformstrip:not(:last-child),
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--header,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent tr.pformstrip:not(:last-child),
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent div.pformstrip:not(:last-child),
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--header {
+          grid-column: 1 / -1;
+          font-weight: 900;
+          font-family: var(--font-header);
+          line-height: 160%;
+          width: max-content;
+          border-bottom: 1px solid var(--border-accent);
+          color: var(--text-secondary);
+          font-size: 16px;
+          padding: 0 40px 5px 0;
+          margin-bottom: 15px; }
+          @media only screen and (min-width: 480px) {
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent tr.pformstrip:not(:last-child),
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent div.pformstrip:not(:last-child),
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--header,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent tr.pformstrip:not(:last-child),
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent div.pformstrip:not(:last-child),
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--header {
+              font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+          @media only screen and (min-width: 1920px) {
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent tr.pformstrip:not(:last-child),
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent div.pformstrip:not(:last-child),
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--header,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent tr.pformstrip:not(:last-child),
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent div.pformstrip:not(:last-child),
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--header {
+              font-size: 24px; } }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent tr.pformstrip:not(:last-child):not(:nth-child(5)),
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent div.pformstrip:not(:last-child):not(:nth-child(5)),
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--header:not(:nth-child(5)),
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent tr.pformstrip:not(:last-child):not(:nth-child(5)),
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent div.pformstrip:not(:last-child):not(:nth-child(5)),
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--header:not(:nth-child(5)) {
+            margin-top: 30px; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent div.pformstrip:last-of-type,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent div.pformstrip:last-of-type {
+          border-bottom: 0; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form,
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner {
+          background: var(--bg-transparent-low);
+          border: 1px solid var(--bg-accent-50);
+          padding: 15px 7.5px 15px 15px;
+          height: 100%; }
+          @media (min-width: 601px) {
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form,
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner {
+              padding: 30px 20px 30px 30px; } }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form .scroll > form .pformstrip,
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner .scroll > form .pformstrip,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form .scroll > form .pformstrip,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner .scroll > form .pformstrip {
+            margin-top: 30px; }
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form .scroll > form .pformstrip:first-of-type,
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner .scroll > form .pformstrip:first-of-type,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form .scroll > form .pformstrip:first-of-type,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner .scroll > form .pformstrip:first-of-type {
+              margin-top: 0; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form > table,
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form > .scroll,
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > table,
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form > table,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form > .scroll,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > table,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll {
+            overflow: auto;
+            scrollbar-color: var(--bg-accent) transparent;
+            scrollbar-width: thin;
+            height: 100%;
+            padding: 7.5px; }
+            @media (min-width: 601px) {
+              #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form > table,
+              #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form > .scroll,
+              #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > table,
+              #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll,
+              #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form > table,
+              #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form > .scroll,
+              #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > table,
+              #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll {
+                padding: 20px; } }
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form > table::-webkit-scrollbar,
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form > .scroll::-webkit-scrollbar,
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > table::-webkit-scrollbar,
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll::-webkit-scrollbar,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form > table::-webkit-scrollbar,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form > .scroll::-webkit-scrollbar,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > table::-webkit-scrollbar,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll::-webkit-scrollbar {
+              width: 6px; }
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form > table::-webkit-scrollbar-thumb,
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form > .scroll::-webkit-scrollbar-thumb,
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > table::-webkit-scrollbar-thumb,
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll::-webkit-scrollbar-thumb,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form > table::-webkit-scrollbar-thumb,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form > .scroll::-webkit-scrollbar-thumb,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > table::-webkit-scrollbar-thumb,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll::-webkit-scrollbar-thumb {
+              background: var(--bg-accent);
+              border-radius: 3px; }
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form > table::-webkit-scrollbar-track,
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form > .scroll::-webkit-scrollbar-track,
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > table::-webkit-scrollbar-track,
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll::-webkit-scrollbar-track,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form > table::-webkit-scrollbar-track,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form > .scroll::-webkit-scrollbar-track,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > table::-webkit-scrollbar-track,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner > .scroll::-webkit-scrollbar-track {
+              background: transparent; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form::before, #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form::after,
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::before,
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::after,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form::before,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form::after,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::before,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::after {
+            content: '';
+            height: 1px;
+            position: absolute;
+            top: calc(50% - 0.5px);
+            background: var(--bg-accent-50); }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form::before,
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::before,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form::before,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::before {
+            width: 100%;
+            right: calc(100% + 1px); }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent > form::after,
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::after,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent > form::after,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .ucp--content-inner::after {
+            width: 30px;
+            right: -31px; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent input[type="text"],
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent input[type="file"],
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent input[type="password"],
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent textarea,
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent select,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent input[type="text"],
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent input[type="file"],
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent input[type="password"],
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent textarea,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent select {
+          width: 100%; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .maintitle,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .maintitle {
+          display: none; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table,
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table {
+          display: block; }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody {
+            display: block; }
+            #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr,
+            #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr {
+              display: flex;
+              flex-direction: column; }
+              #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft b,
+              #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft strong,
+              #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft label,
+              #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft b,
+              #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft strong,
+              #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft label {
+                line-height: 160%;
+                display: block;
+                max-width: max-content; }
+                #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft b ~ br,
+                #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft strong ~ br,
+                #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft label ~ br,
+                #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft b ~ br,
+                #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft strong ~ br,
+                #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr .pformleft label ~ br {
+                  display: none; }
+              #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr > :only-child,
+              #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr > :only-child {
+                grid-column: 1 / -1; }
+              #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr:last-child .pformstrip:only-child,
+              #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table > tbody > tr:last-child .pformstrip:only-child {
+                margin-bottom: 0;
+                padding: 0;
+                text-align: center; }
+
+#UserCP.code-01 #ucpcontent form > .pformstrip,
+#UserCP.code-01 #ucpcontent form #field-birthday,
+#UserCP.code-01 #ucpcontent form #field-website,
+#UserCP.code-01 #ucpcontent form #field-location,
+#UserCP.code-01 #ucpcontent form #field-interests {
+  display: none; }
+
+#UserCP.code-01 #ucpcontent form tbody {
+  display: grid !important;
+  gap: 15px; }
+  @media (min-width: 1025px) {
+    #UserCP.code-01 #ucpcontent form tbody {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px; } }
+  #UserCP.code-01 #ucpcontent form tbody tr {
+    margin-bottom: 0 !important;
+    grid-column: span 3; }
+    #UserCP.code-01 #ucpcontent form tbody tr .pformleft {
+      display: flex;
+      flex-direction: column; }
+      #UserCP.code-01 #ucpcontent form tbody tr .pformleft label {
+        max-width: max-content;
+        text-transform: uppercase;
+        line-height: 100%;
+        background: var(--bg-accent-30);
+        color: var(--text-secondary);
+        font-weight: 400;
+        font-size: var(--size-xs);
+        letter-spacing: 0.15em;
+        padding: 8px 15px;
+        border: 1px solid var(--border-accent); }
+        #UserCP.code-01 #ucpcontent form tbody tr .pformleft label ~ span {
+          border-left: 1px dotted var(--bg-accent);
+          padding: 11px 0 0 12px;
+          margin: -1px 0 0 10px;
+          font-size: calc(var(--size-sm) + 1px);
+          line-height: 160%; }
+    #UserCP.code-01 #ucpcontent form tbody tr .pformright {
+      border-left: 1px dotted var(--bg-accent);
+      padding: 11px 0 10px 12px;
+      margin: -1px 0 0 10px;
+      height: 100%; }
+      #UserCP.code-01 #ucpcontent form tbody tr .pformright input {
+        height: max-content; }
+
+#UserCP.code-24 .scroll .pformstrip:nth-of-type(2) {
+  margin-top: 0 !important; }
+
+#UserCP.code-24 p {
+  text-align: left;
+  padding-bottom: 30px; }
+
+#UserCP.code-24 #gallery_form {
+  display: none; }
+
+#UserCP.code-24 .tablepad {
+  font-size: 0;
+  text-align: left; }
+  #UserCP.code-24 .tablepad img {
+    width: 200px;
+    height: 200px; }
+  #UserCP.code-24 .tablepad br {
+    display: none; }
+
+#UserCP.code-24 .tablebasic + .tablebasic .pformleft {
+  display: none; }
+
+#UserCP.code-24 .tablebasic + .tablebasic .pformright {
+  grid-column: 1 / -1;
+  display: block;
+  padding: 0; }
+  #UserCP.code-24 .tablebasic + .tablebasic .pformright b,
+  #UserCP.code-24 .tablebasic + .tablebasic .pformright strong,
+  #UserCP.code-24 .tablebasic + .tablebasic .pformright label {
+    display: block; }
+    #UserCP.code-24 .tablebasic + .tablebasic .pformright b ~ br,
+    #UserCP.code-24 .tablebasic + .tablebasic .pformright strong ~ br,
+    #UserCP.code-24 .tablebasic + .tablebasic .pformright label ~ br {
+      display: none; }
+
+#UserCP.code-24 .tablebasic + .tablebasic + .pformstrip:last-child {
+  margin-bottom: 0;
+  padding: 0; }
+
+#UserCP.code-54 .scroll .pformstrip:nth-of-type(2) {
+  margin-top: 0 !important; }
+
+#UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody {
+  display: grid;
+  margin-top: 30px; }
+  @media (min-width: 1025px) {
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody {
+      grid-template-columns: repeat(2, 1fr); } }
+  #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0; }
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:first-child {
+      display: none; }
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:last-child {
+      grid-column: 1 / -1;
+      margin-top: 30px; }
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:nth-child(2):nth-last-child(2) {
+      flex: 0 0 100% !important; }
+      #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:nth-child(2):nth-last-child(2) td:only-child {
+        position: relative !important;
+        width: 100%; }
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:nth-child(2):nth-last-child(2) td:only-child > div {
+          text-align: left !important; }
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr .input-wrap {
+      position: absolute;
+      top: 0;
+      left: 0; }
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-primary); }
+      #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child):nth-child(even) {
+        border-right: 1px solid var(--border-primary); }
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child):nth-child(even):nth-last-child(2) {
+          border-bottom: 0; }
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child):nth-child(even):nth-last-child(3) {
+          border-bottom: 0; }
+      #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child):nth-child(odd):nth-last-child(2) {
+        border-bottom: 0; }
+      #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) > td {
+        margin: 0;
+        padding: 0 0 0 calc(10px + 20px);
+        text-align: left; }
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) > td:first-child {
+          text-transform: capitalize;
+          font-weight: 700;
+          font-size: var(--size-xl);
+          font-family: var(--font-header); }
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(2) {
+          font-size: var(--size-sm);
+          font-style: italic; }
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) > td:last-child {
+          position: absolute;
+          top: 14px;
+          left: 10px; }
+
+#UserCP.code-54 #ucpcontent .tableborder:not(:first-child) tr {
+  margin-bottom: 0;
+  margin-top: 30px; }
+
+#UserCP.code-54 #ucpcontent .tableborder:not(:first-child) .pformleft {
+  line-height: 160%;
+  text-align: left;
+  display: block;
+  max-width: max-content;
+  padding: 5px 10px; }
+
+#UserCP.code-52 .row2 + table {
+  margin: 20px 0; }
+  #UserCP.code-52 .row2 + table .pformleft {
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+    text-transform: uppercase;
+    line-height: 100%;
+    background: var(--bg-accent-30);
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: var(--size-xs);
+    letter-spacing: 0.15em;
+    padding: 8px 15px;
+    border: 1px solid var(--border-accent); }
+  #UserCP.code-52 .row2 + table .pformright {
+    border-left: 1px dotted var(--bg-accent);
+    padding: 11px 0 10px 12px;
+    margin: -1px 0 0 10px;
+    height: 100%; }
+    #UserCP.code-52 .row2 + table .pformright input {
+      height: max-content; }
+  #UserCP.code-52 .row2 + table > tbody > tr:nth-child(2) {
+    display: none !important; }
+  #UserCP.code-52 .row2 + table > tbody > tr:last-child {
+    margin-top: 20px; }
+
+#UserCP.code-28 form[name="form1"] > table, #UserCP.code-08 form[name="form1"] > table {
+  margin: 20px 0; }
+  #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:first-child, #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:first-child {
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+    text-transform: uppercase;
+    line-height: 100%;
+    background: var(--bg-accent-30);
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: var(--size-xs);
+    letter-spacing: 0.15em;
+    padding: 8px 15px;
+    border: 1px solid var(--border-accent);
+    width: 100%; }
+    #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:first-child b ~ br, #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:first-child b ~ br {
+      display: none; }
+  #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:last-child, #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:last-child {
+    border-left: 1px dotted var(--bg-accent);
+    padding: 11px 0 10px 12px;
+    margin: -1px 0 0 10px;
+    height: 100%; }
+    #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:last-child input, #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:last-child input {
+      height: max-content;
+      width: 100%; }
+  #UserCP.code-28 form[name="form1"] > table + .pformstrip, #UserCP.code-08 form[name="form1"] > table + .pformstrip {
+    margin-bottom: 0;
+    padding: 0; }
+
+#UserCP.code-alerts #ucpcontent .scroll > div:last-child {
+  display: none; }
+
+#UserCP.code-alerts #ucpcontent .scroll > table {
+  background: var(--bg-accent);
+  color: var(--text-on-accent); }
+  #UserCP.code-alerts #ucpcontent .scroll > table a {
+    color: var(--text-on-accent); }
+  #UserCP.code-alerts #ucpcontent .scroll > table img {
+    display: none; }
+  #UserCP.code-alerts #ucpcontent .scroll > table:first-of-type > tbody > tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    #UserCP.code-alerts #ucpcontent .scroll > table:first-of-type > tbody > tr .row1 {
+      text-align: left !important; }
+
+#UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table {
+  display: block; }
+  #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody {
+    display: grid; }
+    #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr {
+      display: grid;
+      margin: 0; }
+      #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr:first-child {
+        display: none; }
+      #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr:last-child td {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; }
+        #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr:last-child td input {
+          margin: 0; }
+        #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr:last-child td > div:first-child {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          align-items: center; }
+          #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr:last-child td > div:first-child select {
+            width: auto; }
+      #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) {
+        padding: 10px;
+        border-bottom: 1px solid var(--border-primary);
+        width: 100%; }
+        #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td {
+          margin: 0;
+          padding: 0 0 0 calc(10px + 20px);
+          text-align: left; }
+          #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td:first-child {
+            display: none; }
+          #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td:last-child {
+            position: absolute;
+            top: 15px;
+            left: 10px;
+            padding-left: 0; }
+        #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td.alert-text img {
+          display: none; }
+        #UserCP.code-alerts #ucpcontent .scroll > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td.alert-text + td {
+          font-size: var(--size-sm);
+          font-style: italic; }
+
+#UserCP.code-alerts #ucpcontent .pagination ~ br {
+  display: none; }
+
+#UserCP.code-50 #ucpcontent .tableborder > table, #UserCP.code-26 #ucpcontent .tableborder > table {
+  display: block; }
+  #UserCP.code-50 #ucpcontent .tableborder > table > tbody, #UserCP.code-26 #ucpcontent .tableborder > table > tbody {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; }
+    #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr {
+      display: flex;
+      flex-wrap: wrap; }
+      #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip), #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) {
+        flex: 0 0 100%;
+        padding: 15px;
+        background: var(--bg-transparent-low);
+        border: 1px solid var(--border-primary); }
+        @media (min-width: 1025px) {
+          #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip), #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) {
+            flex: 0 0 calc(50% - (30px / 2)); } }
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:first-child, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:first-child {
+          display: none; }
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2), #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) {
+          flex: 0 0 100%;
+          display: flex;
+          flex-direction: column;
+          line-height: 200%; }
+          #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) b:first-of-type, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) b:first-of-type {
+            font-weight: 700;
+            text-transform: capitalize;
+            font-family: var(--font-header);
+            font-size: var(--size-xl); }
+          #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) b:last-of-type, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) b:last-of-type {
+            font-size: var(--size-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            line-height: 200%;
+            margin-top: 1px; }
+          #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) .desc, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) .desc {
+            font-size: var(--size-sm);
+            text-transform: uppercase;
+            line-height: 160%; }
+            #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) .desc:empty, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) .desc:empty {
+              display: none; }
+          #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) br, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) br {
+            display: none; }
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:last-child, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:last-child {
+          flex: 0 0 100%;
+          border-top: 1px solid var(--border-primary);
+          margin-top: 10px;
+          padding-top: 10px; }
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3), #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3) {
+          font-weight: 700;
+          color: var(--text-accent);
+          font-size: var(--size-sm);
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          margin-right: 10px; }
+          #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3)::after, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3)::after {
+            content: ' topics';
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: var(--size-xs); }
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4), #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4) {
+          font-weight: 700;
+          color: var(--text-accent);
+          font-size: var(--size-sm);
+          text-transform: uppercase;
+          letter-spacing: 0.15em; }
+          #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4)::after, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4)::after {
+            content: ' replies';
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: var(--size-xs); }
+      #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:first-child, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:first-child {
+        display: none; }
+    #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr.pformstrip, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr.pformstrip {
+      flex: 0 0 100%;
+      padding: 5px 10px !important; }
+      #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr.pformstrip:nth-child(2), #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr.pformstrip:nth-child(2) {
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0 !important; }
+      #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr.pformstrip td, #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr.pformstrip td {
+        width: 100%;
+        padding: 0; }
+
+#UserCP.code-04 #ucpcontent .scroll > form > table > tbody > tr > td:first-child {
+  display: flex;
+  flex-direction: column;
+  max-width: max-content;
+  text-transform: uppercase;
+  line-height: 100%;
+  background: var(--bg-accent-30);
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: var(--size-xs);
+  letter-spacing: 0.15em;
+  padding: 8px 15px;
+  border: 1px solid var(--border-accent); }
+
+#UserCP.code-04 #ucpcontent .scroll > form > table > tbody > tr > td:last-child {
+  border-left: 1px dotted var(--bg-accent);
+  padding: 11px 0 10px 12px;
+  margin: -1px 0 0 10px;
+  height: 100%; }
+  #UserCP.code-04 #ucpcontent .scroll > form > table > tbody > tr > td:last-child input {
+    height: max-content; }
+
+#UserCP.code-04 #ucpcontent .input-wrap + br {
+  display: none; }
+
+#UserCP.code-04 #ucpcontent .pformstrip:last-child {
+  margin-bottom: 0;
+  padding: 0; }
+
+#UserCP.code-alerts_settings .input-wrap {
+  max-width: max-content; }
+
+#UserCP.code-alerts_settings table .pformstrip {
+  text-align: center;
+  padding: 0;
+  line-height: 160%;
+  margin: 10px 0 0;
+  width: 100% !important;
+  padding: 0 20px !important; }
+  #UserCP.code-alerts_settings table .pformstrip:first-child {
+    text-align: left; }
+
+#UserCP.code-alerts_settings table td.pformstrip {
+  grid-column: 1 / -1;
+  font-weight: 900;
+  font-family: var(--font-header);
+  line-height: 160%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-bottom: 1px solid var(--border-accent);
+  color: var(--text-secondary);
+  font-size: 16px;
+  padding: 0 40px 5px 0;
+  margin-bottom: 15px; }
+  @media only screen and (min-width: 480px) {
+    #UserCP.code-alerts_settings table td.pformstrip {
+      font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+  @media only screen and (min-width: 1920px) {
+    #UserCP.code-alerts_settings table td.pformstrip {
+      font-size: 24px; } }
+  #UserCP.code-alerts_settings table td.pformstrip:not(:nth-child(5)) {
+    margin-top: 30px; }
+
+#UserCP.code-alerts_settings table + .pformstrip {
+  text-align: center;
+  margin-bottom: 0;
+  padding: 0; }
+  #UserCP.code-alerts_settings table + .pformstrip::before {
+    display: none; }
+
+#UserCP.code-alerts_settings tr:not(:nth-last-child(4)):not(:first-child) td {
+  padding: 0 0 30px; }
+
+#UserCP.code-alerts_settings tr:nth-last-child(4) .pformstrip {
+  padding-top: 30px; }
+
+#UserCP.code-02 #ucpcontent form > table > tbody > tr {
+  display: grid !important;
+  grid-template-columns: max-content auto;
+  margin-bottom: 15px; }
+  #UserCP.code-02 #ucpcontent form > table > tbody > tr > td:first-child {
+    padding: 5px 10px 0 0; }
+  #UserCP.code-02 #ucpcontent form > table > tbody > tr > td b {
+    color: var(--text-accent);
+    font-weight: 700; }
+
+#UserCP.code-02 #ucpcontent .pformstrip:last-child {
+  margin-bottom: 0;
+  padding: 0; }
+
+#Msg.code-01 #ucpcontent .scroll > table > tbody > tr > td:first-child,
+#Msg.code-01 #ucpcontent .scroll > table > tbody > tr > td > br,
+#Msg.code-01 #ucpcontent .scroll > table > tbody > tr > td > form {
+  display: none; }
+
+#Msg.code-01 #ucpcontent .scroll > form > .tableborder > table > tbody > tr:first-child, #Msg.code-01 #ucpcontent .scroll > form > .tableborder > table > tbody > tr:last-child {
+  display: none; }
+
+#Msg.code-01 #ucpcontent .scroll > form > .tableborder > table > tbody > tr.dlight {
+  display: block;
+  padding: 10px; }
+  #Msg.code-01 #ucpcontent .scroll > form > .tableborder > table > tbody > tr.dlight:not(:nth-last-child(2)) {
+    border-bottom: 1px solid var(--border-primary); }
+  #Msg.code-01 #ucpcontent .scroll > form > .tableborder > table > tbody > tr.dlight > td:first-child {
+    display: block;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: var(--size-xs);
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    color: var(--text-secondary);
+    line-height: 160%; }
+  #Msg.code-01 #ucpcontent .scroll > form > .tableborder > table > tbody > tr.dlight > td:nth-child(2) {
+    display: block;
+    font-size: var(--size-xl);
+    font-weight: 700;
+    text-transform: capitalize;
+    font-family: var(--font-header);
+    line-height: 160%; }
+  #Msg.code-01 #ucpcontent .scroll > form > .tableborder > table > tbody > tr.dlight > td:nth-child(3) {
+    display: block;
+    font-size: 0;
+    margin-top: 5px; }
+    #Msg.code-01 #ucpcontent .scroll > form > .tableborder > table > tbody > tr.dlight > td:nth-child(3) a:first-child {
+      font-size: var(--size-md);
+      text-transform: capitalize;
+      line-height: 160%; }
+      #Msg.code-01 #ucpcontent .scroll > form > .tableborder > table > tbody > tr.dlight > td:nth-child(3) a:first-child::before {
+        content: 'Sent by ';
+        color: var(--text-primary); }
+  #Msg.code-01 #ucpcontent .scroll > form > .tableborder > table > tbody > tr.dlight > td:nth-child(4) {
+    display: block;
+    font-size: var(--size-sm);
+    font-style: italic;
+    line-height: 160%; }
+  #Msg.code-01 #ucpcontent .scroll > form > .tableborder > table > tbody > tr.dlight > td:nth-child(5) {
+    display: none; }
+
+#Msg.code-01 #ucpcontent .scroll > .pformstrip {
+  margin-top: 0 !important; }
+  #Msg.code-01 #ucpcontent .scroll > .pformstrip + table {
+    display: none; }
+
+#Msg.code-04 form > table > tbody > tr .pformstrip {
+  text-align: left; }
+
+#Msg.code-04 form > table > tbody > tr:first-child .pformstrip {
+  grid-column: 1 / -1;
+  font-weight: 900;
+  font-family: var(--font-header);
+  line-height: 160%;
+  width: max-content;
+  border-bottom: 1px solid var(--border-accent);
+  color: var(--text-secondary);
+  font-size: 16px;
+  padding: 0 40px 5px 0;
+  margin-bottom: 15px; }
+  @media only screen and (min-width: 480px) {
+    #Msg.code-04 form > table > tbody > tr:first-child .pformstrip {
+      font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+  @media only screen and (min-width: 1920px) {
+    #Msg.code-04 form > table > tbody > tr:first-child .pformstrip {
+      font-size: 24px; } }
+  #Msg.code-04 form > table > tbody > tr:first-child .pformstrip:not(:nth-child(5)) {
+    margin-top: 30px; }
+
+#Msg.code-04 form > table > tbody > tr:nth-child(2), #Msg.code-04 form > table > tbody > tr:nth-child(4), #Msg.code-04 form > table > tbody > tr:nth-child(5), #Msg.code-04 form > table > tbody > tr:nth-child(6), #Msg.code-04 form > table > tbody > tr:nth-last-child(3) {
+  display: none !important; }
+
+#Msg.code-04 form > table > tbody > tr:nth-child(3) .pformleft {
+  display: none; }
+
+#Msg.code-04 form > table > tbody > tr:nth-child(3) .pformright {
+  grid-column: 1 / -1;
+  padding: 0; }
+
+#Msg.code-04 form > table > tbody > tr:nth-child(7) {
+  grid-template-columns: 100%;
+  gap: 0; }
+  #Msg.code-04 form > table > tbody > tr:nth-child(7) .pformleft {
+    border: none;
+    padding: 0;
+    grid-column: 1 / -1;
+    font-weight: 900;
+    font-family: var(--font-header);
+    line-height: 160%;
+    width: max-content;
+    border-bottom: 1px solid var(--border-accent);
+    color: var(--text-secondary);
+    font-size: 16px;
+    padding: 0 40px 5px 0;
+    margin-bottom: 15px; }
+    @media only screen and (min-width: 480px) {
+      #Msg.code-04 form > table > tbody > tr:nth-child(7) .pformleft {
+        font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+    @media only screen and (min-width: 1920px) {
+      #Msg.code-04 form > table > tbody > tr:nth-child(7) .pformleft {
+        font-size: 24px; } }
+    #Msg.code-04 form > table > tbody > tr:nth-child(7) .pformleft:not(:nth-child(5)) {
+      margin-top: 30px; }
+  #Msg.code-04 form > table > tbody > tr:nth-child(7) .pformright {
+    padding: 0; }
+
+#Msg.code-04 form > table > tbody > tr:nth-last-child(2) .pformleft {
+  display: none; }
+
+#Msg.code-04 form > table > tbody > tr:nth-last-child(2) .pformright {
+  grid-column: 1 / -1;
+  padding: 0;
+  justify-content: center;
+  margin: 20px 0; }
+  #Msg.code-04 form > table > tbody > tr:nth-last-child(2) .pformright br {
+    display: none; }
+
+#Msg.code-04 form > table > tbody > tr#code-buttons-header {
+  display: none !important; }
+
+#Msg.code-04 form > table > tbody > tr#enter-your-post-header {
+  display: none !important; }
+  #Msg.code-04 form > table > tbody > tr#enter-your-post-header + tr {
+    display: block; }
+    #Msg.code-04 form > table > tbody > tr#enter-your-post-header + tr > td {
+      display: block; }
+      #Msg.code-04 form > table > tbody > tr#enter-your-post-header + tr > td textarea {
+        width: 100%;
+        height: 400px;
+        box-sizing: border-box; }
+      #Msg.code-04 form > table > tbody > tr#enter-your-post-header + tr > td.pformleft {
+        display: none; }
+      #Msg.code-04 form > table > tbody > tr#enter-your-post-header + tr > td.pformright {
+        padding: 0; }
+
+#Msg.code-04 form > table > tbody > tr#code-buttons {
+  display: block;
+  margin: 20px 0; }
+  #Msg.code-04 form > table > tbody > tr#code-buttons .pformleft {
+    display: none; }
+  #Msg.code-04 form > table > tbody > tr#code-buttons .pformright {
+    font-size: 0;
+    line-height: 0;
+    padding: 0; }
+    #Msg.code-04 form > table > tbody > tr#code-buttons .pformright > input,
+    #Msg.code-04 form > table > tbody > tr#code-buttons .pformright > br {
+      display: none; }
+    #Msg.code-04 form > table > tbody > tr#code-buttons .pformright #bbcode-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px; }
+      #Msg.code-04 form > table > tbody > tr#code-buttons .pformright #bbcode-buttons input,
+      #Msg.code-04 form > table > tbody > tr#code-buttons .pformright #bbcode-buttons select {
+        margin: 0;
+        width: auto;
+        cursor: pointer;
+        font-size: var(--size-sm);
+        line-height: 160%; }
+      #Msg.code-04 form > table > tbody > tr#code-buttons .pformright #bbcode-buttons > a,
+      #Msg.code-04 form > table > tbody > tr#code-buttons .pformright #bbcode-buttons > br {
+        display: none; }
+
+#Msg.code-03 #ucpcontent .scroll > .pformstrip:nth-of-type(2) {
+  margin-top: 0 !important; }
+  #Msg.code-03 #ucpcontent .scroll > .pformstrip:nth-of-type(2) + div {
+    font-size: 0; }
+    #Msg.code-03 #ucpcontent .scroll > .pformstrip:nth-of-type(2) + div a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      border: 1px solid var(--border-accent);
+      padding: 0 15px;
+      transition-duration: 0.3s;
+      font-size: var(--size-md);
+      background: transparent;
+      color: var(--bg-accent);
+      margin-left: 5px; }
+      #Msg.code-03 #ucpcontent .scroll > .pformstrip:nth-of-type(2) + div a:hover {
+        color: var(--text-on-accent);
+        background: var(--bg-accent); }
+  #Msg.code-03 #ucpcontent .scroll > .pformstrip:nth-of-type(2) ~ div:last-child {
+    font-size: 0; }
+    #Msg.code-03 #ucpcontent .scroll > .pformstrip:nth-of-type(2) ~ div:last-child a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      border: 1px solid var(--border-accent);
+      padding: 0 15px;
+      transition-duration: 0.3s;
+      font-size: var(--size-md);
+      background: transparent;
+      color: var(--bg-accent);
+      margin-left: 5px; }
+      #Msg.code-03 #ucpcontent .scroll > .pformstrip:nth-of-type(2) ~ div:last-child a:hover {
+        color: var(--text-on-accent);
+        background: var(--bg-accent); }
+
+#Msg.code-03 #ucpcontent .scroll > .tableborder + div,
+#Msg.code-03 #ucpcontent .scroll > .tableborder > .titlemedium {
+  display: none; }
+
+#Msg.code-03 #ucpcontent .msg-normal > table {
+  display: block;
+  margin-top: 20px; }
+  #Msg.code-03 #ucpcontent .msg-normal > table tbody {
+    display: flex;
+    flex-direction: column; }
+    #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 20px;
+      background: var(--bg-accent);
+      color: var(--text-on-accent); }
+      #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) td {
+        padding: 0;
+        width: 100%; }
+        #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) td:first-child {
+          width: max-content; }
+          #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) td:first-child a {
+            color: var(--text-on-accent);
+            font-size: 24px;
+            text-transform: capitalize;
+            font-family: var(--font-header);
+            font-weight: 900;
+            line-height: 100%; }
+            @media only screen and (min-width: 480px) {
+              #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) td:first-child a {
+                font-size: calc(24px + 12 * (100vw - 480px) / (1920 - 480)); } }
+            @media only screen and (min-width: 1920px) {
+              #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) td:first-child a {
+                font-size: 36px; } }
+        #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) td:last-child {
+          width: max-content; }
+          #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) td:last-child .row4 {
+            display: none; }
+          #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) td:last-child a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+            border: 1px solid var(--text-on-accent);
+            padding: 0 15px;
+            transition-duration: 0.3s;
+            font-size: var(--size-md);
+            color: var(--text-on-accent);
+            background: var(--bg-accent);
+            margin-left: 5px; }
+            #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) td:last-child a:hover {
+              background: var(--text-on-accent);
+              color: var(--bg-accent); }
+    #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n) {
+      display: block;
+      padding: 30px; }
+      #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n) td {
+        display: block;
+        width: 100%;
+        padding: 0;
+        text-align: justify;
+        line-height: 200%; }
+        #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n) td:first-child {
+          display: none; }
+    #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:last-child {
+      display: none; }

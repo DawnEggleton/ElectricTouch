@@ -31,9 +31,12 @@ const unusable = ['premium species', 'premium group', 'custom complex event', 'c
 
 const immortals = ['phoenix', 'vampire', 'jinn', 'kitsune', 'selkie', 'púca', 'barghest', 'faerie', 'spriggan', 'unicorn', 'faun', 'qilin', 'ghost', 'reaper', 'hellhound', 'aster', 'coaltus', 'marid', 'pegasus', 'supplicant'];
 
-const toggleFields = ['#field_1_input', '#field_40_input', '#field_27_input'];
+const toggleFields = ['#field_1_input', '#field_40_input', '#field_27_input', '#field_65_input'];
 
-const characterFields = ['#field_13', '#field_14', '#field_15', '#field_16', '#field_17', '#field_18', '#field_19', '#field_20', '#field_21', '#field_22', '#field_23', '#field_24', '#field_25', '#field_26', '#field_27', '#field_29', '#field_30', '#field_31', '#field_32', '#field_33', '#field_34', '#field_35', '#field_36', '#field_37', '#field_38', '#field_39', '#field_40', '#field_48', '#field_49', '#field_50', '#field_51', '#field_52', '#field_53', '#field_54', '#field_55'];
+const characterFields = ['#field_13', '#field_14', '#field_15', '#field_16', '#field_17', '#field_18', '#field_19', '#field_20', '#field_21', '#field_22', '#field_23', '#field_24', '#field_25', '#field_26', '#field_27', '#field_29', '#field_30', '#field_31', '#field_32', '#field_33', '#field_34', '#field_36', '#field_37', '#field_38', '#field_39', '#field_40', '#field_48', '#field_49', '#field_50', '#field_51', '#field_52', '#field_53', '#field_54', '#field_55', '#field_65', '#field_72', '#field_73', '#field_74', '#field_75', '#field_76', '#field_77'];
+
+const singleRelFields = ['#field_35'];
+const sectionRelFields = ['#field_66', '#field_67', '#field_68', '#field_69', '#field_70', '#field_71', '#field_72', '#field_78'];
 
 const hybridFields = ['#field_28'];
 const wereFields = ['#field_58'];
@@ -57,6 +60,7 @@ const charHeaders = [
     {'title': `Detailed Information`, 'insertBefore': '#field_29'},
     {'title': `Plotting`, 'insertBefore': '#field_32'},
     {'title': `Links`, 'insertBefore': '#field_36'},
+    {'title': `Relationships`, 'insertBefore': '#field_65'},
 ];
 
 const specialSpecies = [
@@ -82,15 +86,17 @@ trackerParams = {
     ignoreForumIds: ['1', '2', '3', '5', '6', '7', '11', '18', '26', '27', '28', '29', '30', '34', '35', '89', '127', '128', '129', '130'],
 
     //define au, comm, dev, archive forums
-    historyForumIds: ['33', '37', '38', '67', '94', '115'], //history
+    historyForumIds: ['33', '37', '38'], //history
     commForumIds: ['17'], //comm
     commHistoryForumIds: ['32'], //comm history
     socialForumIds: ['40', '41'], //social
     socialHistoryForumIds: ['39'], //social history
-    devForumIds: ['10', '123', '125', '152', '124', '126', '134', '135', '136', '137', '59', '60', '109', '73', '61', '145', '146', '147', '148', '105' ,'106', '107', '52', '53', '99', '54', '55', '56', '57', '153', '75', '81', '155', '156', '157', '69', '70', '98', '71', '72', '100', '101', '102', '103', '85','114', '8', '47', '48', '50', '49', '97', '51', '154', '76', '77', '78', '79', '80', '86', '138', '139', '140', '141', '142', '143', '144', '131', '133', '132', '9', '64', '117', '66', '108', '65', '68', '161', '162', '163', '164', '165', '168', '166', '170'], //dev
+    devForumIds: ['10', '123', '125', '152', '124', '126', '134', '135', '136', '137', '59', '60', '109', '73', '61', '145', '146', '147', '148', '105' ,'106', '107', '52', '53', '99', '54', '55', '56', '57', '153', '75', '81', '155', '156', '157', '69', '70', '98', '71', '72', '100', '101', '102', '103', '85','114', '8', '47', '48', '50', '49', '97', '51', '154', '76', '77', '78', '79', '80', '86', '138', '139', '140', '141', '142', '143', '144', '131', '133', '132', '9', '64', '117', '66', '108', '65', '68', '161', '162', '163', '164', '165', '168', '166', '170', '173', '174', '172','175'], //dev
     devHistoryForumIds: ['31'], //dev history
     reqForumIds: ['12', '13', '14', '15', '16', '167'], //requests
     reqHistoryForumIds: ['36'], //request history
+    eventForumIds: ['176', '177'], //events
+    eventHistoryForumIds: ['67', '115', '94', '104', '169'], //event history
 
     //set indicators
     indicators: ['fa-solid fa-check', 'fa-solid fa-star'], 

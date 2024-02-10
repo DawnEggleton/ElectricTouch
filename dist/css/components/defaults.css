@@ -1,3 +1,985 @@
 /*******************************
     Jcink Defaults
 ********************************/
+/***** Online List ******/
+#Online main {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 0 20px; }
+  #Online main > .tableborder:nth-of-type(2) .maintitle {
+    margin-bottom: 15px;
+    font-weight: 900;
+    font-family: var(--font-header);
+    line-height: 160%;
+    width: max-content;
+    border: 1px solid var(--border-accent);
+    background: var(--bg-accent-30);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    padding: 15px 30px;
+    font-size: 16px;
+    max-width: calc(100% - 50px);
+    margin-top: 20px; }
+    @media only screen and (min-width: 480px) {
+      #Online main > .tableborder:nth-of-type(2) .maintitle {
+        font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+    @media only screen and (min-width: 1920px) {
+      #Online main > .tableborder:nth-of-type(2) .maintitle {
+        font-size: 24px; } }
+    #Online main > .tableborder:nth-of-type(2) .maintitle::after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 0.5px);
+      left: 100%;
+      height: 1px;
+      background: var(--border-accent);
+      width: 50px; }
+    #Online main > .tableborder:nth-of-type(2) .maintitle + table {
+      display: block;
+      width: 100%; }
+      #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px; }
+        @media (min-width: 769px) {
+          #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody {
+            grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1025px) {
+          #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody {
+            grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 1281px) {
+          #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody {
+            grid-template-columns: repeat(4, 1fr); } }
+        #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: var(--bg-transparent-low);
+          border: 1px solid var(--border-primary);
+          padding: 15px; }
+          #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr:first-child {
+            display: none; }
+          #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr:last-child {
+            grid-column: 1 / -1; }
+          #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr > td {
+            display: block;
+            width: 100%;
+            padding: 0;
+            text-align: center; }
+            #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr > td:first-child {
+              text-align: center; }
+              #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr > td:first-child:not(:only-child) {
+                font-family: var(--font-header);
+                text-transform: capitalize;
+                font-size: 16px;
+                font-weight: 800; }
+                @media only screen and (min-width: 480px) {
+                  #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr > td:first-child:not(:only-child) {
+                    font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+                @media only screen and (min-width: 1920px) {
+                  #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr > td:first-child:not(:only-child) {
+                    font-size: 24px; } }
+              #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr > td:first-child a:first-child {
+                display: block;
+                line-height: 120%; }
+              #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr > td:first-child a:last-child {
+                display: block;
+                font-family: var(--font-body);
+                font-size: var(--size-sm);
+                font-weight: 400; }
+                #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr > td:first-child a:last-child:only-of-type {
+                  margin-top: 5px; }
+            #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr > td:nth-child(2) {
+              border-top: 1px solid var(--border-primary);
+              padding-top: 10px;
+              margin-top: 10px; }
+            #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr > td:not(:first-child) a {
+              text-transform: capitalize; }
+            #Online main > .tableborder:nth-of-type(2) .maintitle + table > tbody > tr > td:last-child:not(:only-child) {
+              display: none; }
+
+/***** New Post/Reply ******/
+#Post main {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 0 20px; }
+  #Post main > form ~ br {
+    display: none; }
+
+#Post #posting-form {
+  display: block; }
+  #Post #posting-form .maintitle {
+    margin-bottom: 15px;
+    font-weight: 900;
+    font-family: var(--font-header);
+    line-height: 160%;
+    width: max-content;
+    border: 1px solid var(--border-accent);
+    background: var(--bg-accent-30);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    padding: 15px 30px;
+    font-size: 16px;
+    max-width: calc(100% - 50px); }
+    @media only screen and (min-width: 480px) {
+      #Post #posting-form .maintitle {
+        font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+    @media only screen and (min-width: 1920px) {
+      #Post #posting-form .maintitle {
+        font-size: 24px; } }
+    #Post #posting-form .maintitle::after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 0.5px);
+      left: 100%;
+      height: 1px;
+      background: var(--border-accent);
+      width: 50px; }
+  #Post #posting-form > tbody {
+    display: block;
+    width: 100%; }
+    #Post #posting-form > tbody > tr {
+      margin-bottom: 20px; }
+      #Post #posting-form > tbody > tr:first-child {
+        display: block;
+        width: 100%; }
+      #Post #posting-form > tbody > tr:last-child {
+        display: block; }
+        #Post #posting-form > tbody > tr:last-child .pformstrip:only-child {
+          display: flex;
+          justify-content: center; }
+      #Post #posting-form > tbody > tr#topic-settings-header, #Post #posting-form > tbody > tr#code-buttons-header, #Post #posting-form > tbody > tr#enter-your-post-header, #Post #posting-form > tbody > tr#post-as-header, #Post #posting-form > tbody > tr#upload-files-header, #Post #posting-form > tbody > tr#upload-files-header, #Post #posting-form > tbody > tr#upload-files {
+        display: none; }
+      #Post #posting-form > tbody > tr#post-as {
+        display: block; }
+        #Post #posting-form > tbody > tr#post-as + tr:not(:last-child) {
+          display: none; }
+        #Post #posting-form > tbody > tr#post-as + tr + tr:not(:last-child) {
+          display: block; }
+          #Post #posting-form > tbody > tr#post-as + tr + tr:not(:last-child) .pformleft {
+            display: none; }
+          #Post #posting-form > tbody > tr#post-as + tr + tr:not(:last-child) td {
+            display: block;
+            text-align: center; }
+            #Post #posting-form > tbody > tr#post-as + tr + tr:not(:last-child) td select {
+              width: 100%;
+              max-width: 250px; }
+        #Post #posting-form > tbody > tr#post-as .pformleft {
+          display: none; }
+        #Post #posting-form > tbody > tr#post-as td {
+          display: block;
+          text-align: center; }
+          #Post #posting-form > tbody > tr#post-as td select {
+            width: 100%;
+            max-width: 250px; }
+      #Post #posting-form > tbody > tr#post-options {
+        display: block; }
+        #Post #posting-form > tbody > tr#post-options .pformleft {
+          display: none; }
+        #Post #posting-form > tbody > tr#post-options .pformright {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap; }
+          #Post #posting-form > tbody > tr#post-options .pformright > br {
+            display: none; }
+          #Post #posting-form > tbody > tr#post-options .pformright .input-wrap + br + .input-wrap:not(:last-child) {
+            display: none; }
+      #Post #posting-form > tbody > tr#enter-your-post {
+        display: block; }
+        #Post #posting-form > tbody > tr#enter-your-post .pformleft {
+          display: none; }
+        #Post #posting-form > tbody > tr#enter-your-post > td {
+          display: block; }
+          #Post #posting-form > tbody > tr#enter-your-post > td textarea {
+            width: 100%;
+            height: 400px;
+            box-sizing: border-box;
+            font-size: calc(var(--size-md) + 1px);
+            line-height: 180%; }
+      #Post #posting-form > tbody > tr#code-buttons {
+        display: block; }
+        #Post #posting-form > tbody > tr#code-buttons .pformleft {
+          display: none; }
+        #Post #posting-form > tbody > tr#code-buttons .pformright {
+          font-size: 0;
+          line-height: 0; }
+          #Post #posting-form > tbody > tr#code-buttons .pformright > input,
+          #Post #posting-form > tbody > tr#code-buttons .pformright > br {
+            display: none; }
+          #Post #posting-form > tbody > tr#code-buttons .pformright #bbcode-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px; }
+            #Post #posting-form > tbody > tr#code-buttons .pformright #bbcode-buttons input,
+            #Post #posting-form > tbody > tr#code-buttons .pformright #bbcode-buttons select {
+              margin: 0;
+              line-height: 160%;
+              font-size: var(--size-xs);
+              text-transform: uppercase;
+              letter-spacing: 0.15em;
+              padding: 7px 10px; }
+              #Post #posting-form > tbody > tr#code-buttons .pformright #bbcode-buttons input option,
+              #Post #posting-form > tbody > tr#code-buttons .pformright #bbcode-buttons select option {
+                font-size: var(--size-md); }
+            #Post #posting-form > tbody > tr#code-buttons .pformright #bbcode-buttons > a,
+            #Post #posting-form > tbody > tr#code-buttons .pformright #bbcode-buttons > br {
+              display: none; }
+      #Post #posting-form > tbody > tr#topic-title {
+        display: block; }
+        #Post #posting-form > tbody > tr#topic-title .pformleft {
+          display: none; }
+        #Post #posting-form > tbody > tr#topic-title .pformright {
+          display: block; }
+          #Post #posting-form > tbody > tr#topic-title .pformright input {
+            width: 100%;
+            box-sizing: border-box;
+            text-transform: none;
+            font-size: 24px;
+            padding: 10px 15px;
+            font-family: var(--font-header);
+            font-weight: 800; }
+            @media only screen and (min-width: 480px) {
+              #Post #posting-form > tbody > tr#topic-title .pformright input {
+                font-size: calc(24px + 12 * (100vw - 480px) / (1920 - 480)); } }
+            @media only screen and (min-width: 1920px) {
+              #Post #posting-form > tbody > tr#topic-title .pformright input {
+                font-size: 36px; } }
+      #Post #posting-form > tbody > tr#topic-desc {
+        display: block; }
+        #Post #posting-form > tbody > tr#topic-desc .pformleft {
+          display: none; }
+        #Post #posting-form > tbody > tr#topic-desc .pformright {
+          display: block; }
+          #Post #posting-form > tbody > tr#topic-desc .pformright input {
+            width: 100%;
+            box-sizing: border-box;
+            text-transform: none;
+            font-size: 16px;
+            padding: 10px 15px;
+            font-family: var(--font-header);
+            font-weight: 700; }
+            @media only screen and (min-width: 480px) {
+              #Post #posting-form > tbody > tr#topic-desc .pformright input {
+                font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+            @media only screen and (min-width: 1920px) {
+              #Post #posting-form > tbody > tr#topic-desc .pformright input {
+                font-size: 24px; } }
+      #Post #posting-form > tbody > tr#post-icon-options {
+        display: block; }
+        #Post #posting-form > tbody > tr#post-icon-options .pformleft {
+          display: none; }
+        #Post #posting-form > tbody > tr#post-icon-options .pformright {
+          display: flex;
+          flex-wrap: wrap; }
+
+#Post #topic-summary > .tableborder .pformstrip {
+  display: block;
+  text-align: center;
+  border-top: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
+  padding: 10px 0;
+  margin: 20px 0; }
+
+#Post #topic-summary > .tableborder > table {
+  display: block; }
+  #Post #topic-summary > .tableborder > table tbody {
+    display: flex;
+    flex-direction: column; }
+    #Post #topic-summary > .tableborder > table tbody tr:nth-child(2n + 1) {
+      line-height: 160%;
+      background: var(--bg-accent);
+      color: var(--text-on-accent);
+      padding: 20px; }
+      #Post #topic-summary > .tableborder > table tbody tr:nth-child(2n + 1) td:first-child {
+        font-family: var(--font-header);
+        font-weight: 900;
+        display: flex;
+        flex-direction: column;
+        line-height: 100%;
+        text-transform: capitalize;
+        font-size: 34px; }
+        @media only screen and (min-width: 480px) {
+          #Post #topic-summary > .tableborder > table tbody tr:nth-child(2n + 1) td:first-child {
+            font-size: calc(34px + 34 * (100vw - 480px) / (1920 - 480)); } }
+        @media only screen and (min-width: 1920px) {
+          #Post #topic-summary > .tableborder > table tbody tr:nth-child(2n + 1) td:first-child {
+            font-size: 68px; } }
+        #Post #topic-summary > .tableborder > table tbody tr:nth-child(2n + 1) td:first-child a {
+          color: var(--text-on-accent); }
+      #Post #topic-summary > .tableborder > table tbody tr:nth-child(2n + 1) td:last-child {
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: var(--size-sm);
+        letter-spacing: 0.1em;
+        line-height: 120%;
+        font-family: var(--font-header); }
+    #Post #topic-summary > .tableborder > table tbody tr:nth-child(2n) {
+      background: var(--bg-secondary);
+      padding: 30px;
+      text-align: justify;
+      font-size: calc(var(--size-md) + 1px);
+      line-height: 200%;
+      margin-bottom: 20px; }
+      #Post #topic-summary > .tableborder > table tbody tr:nth-child(2n) > td:first-child {
+        display: none; }
+      #Post #topic-summary > .tableborder > table tbody tr:nth-child(2n) > td:last-child {
+        display: block;
+        width: 100%; }
+
+#Post #post-preview .pformstrip {
+  margin: 30px 0 15px;
+  font-weight: 900;
+  font-family: var(--font-header);
+  line-height: 160%;
+  width: max-content;
+  border-bottom: 1px solid var(--border-accent);
+  color: var(--text-secondary);
+  font-size: 16px;
+  padding: 0 40px 5px 0; }
+  @media only screen and (min-width: 480px) {
+    #Post #post-preview .pformstrip {
+      font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+  @media only screen and (min-width: 1920px) {
+    #Post #post-preview .pformstrip {
+      font-size: 24px; } }
+
+#Post #post-preview .postcolor {
+  background: var(--bg-secondary);
+  padding: 30px;
+  text-align: justify;
+  font-size: calc(var(--size-md) + 1px);
+  line-height: 200%; }
+
+/***** Registration ******/
+#Reg main {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 0 20px;
+  max-width: 800px;
+  margin: 20px auto 60px; }
+  #Reg main > .tableborder:first-of-type {
+    font-size: calc(var(--size-md) + 1px); }
+    #Reg main > .tableborder:first-of-type > :not(.maintitle) {
+      background: var(--bg-transparent-low);
+      border-left: 1px solid var(--border-primary);
+      border-right: 1px solid var(--border-primary);
+      padding: 20px 20px 0; }
+    #Reg main > .tableborder:first-of-type .maintitle {
+      margin-bottom: 15px;
+      font-weight: 900;
+      font-family: var(--font-header);
+      line-height: 160%;
+      width: max-content;
+      border: 1px solid var(--border-accent) !important;
+      background: var(--bg-accent-30);
+      color: var(--text-secondary) !important;
+      text-transform: uppercase;
+      padding: 15px 30px !important;
+      font-size: 16px;
+      max-width: calc(100% - 50px);
+      margin-top: 20px; }
+      @media only screen and (min-width: 480px) {
+        #Reg main > .tableborder:first-of-type .maintitle {
+          font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+      @media only screen and (min-width: 1920px) {
+        #Reg main > .tableborder:first-of-type .maintitle {
+          font-size: 24px; } }
+      #Reg main > .tableborder:first-of-type .maintitle::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 0.5px);
+        left: 100%;
+        height: 1px;
+        background: var(--border-accent);
+        width: 50px; }
+      #Reg main > .tableborder:first-of-type .maintitle + .pformstrip {
+        border-top: 1px solid var(--border-primary); }
+    #Reg main > .tableborder:first-of-type .tablepad b {
+      display: block;
+      max-width: max-content;
+      color: var(--text-accent);
+      font-weight: 800;
+      font-family: var(--font-header);
+      font-size: 1.1em; }
+      #Reg main > .tableborder:first-of-type .tablepad b ~ br {
+        display: none; }
+      #Reg main > .tableborder:first-of-type .tablepad b + br + br {
+        display: none; }
+        #Reg main > .tableborder:first-of-type .tablepad b + br + br + br {
+          display: none; }
+    #Reg main > .tableborder:first-of-type .tablepad ~ .row2:last-child {
+      border-bottom: 1px solid var(--border-primary);
+      padding-bottom: 20px;
+      margin-bottom: 60px; }
+    #Reg main > .tableborder:first-of-type .input-wrap b {
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--text-accent);
+      font-weight: 500;
+      font-family: var(--font-header);
+      font-size: calc(var(--size-md) * 1.2);
+      gap: 7px; }
+  #Reg main > form {
+    display: flex;
+    flex-direction: column; }
+    #Reg main > form > .tableborder .maintitle {
+      margin-bottom: 15px;
+      font-weight: 900;
+      font-family: var(--font-header);
+      line-height: 160%;
+      width: max-content;
+      border-bottom: 1px solid var(--border-accent);
+      color: var(--text-secondary);
+      font-size: 16px;
+      padding: 0 40px 5px 0; }
+      @media only screen and (min-width: 480px) {
+        #Reg main > form > .tableborder .maintitle {
+          font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+      @media only screen and (min-width: 1920px) {
+        #Reg main > form > .tableborder .maintitle {
+          font-size: 24px; } }
+    #Reg main > form > .tableborder .tablepad b + br + br {
+      display: none; }
+      #Reg main > form > .tableborder .tablepad b + br + br + br {
+        display: none; }
+    #Reg main > form > p {
+      margin: 20px 0; }
+    #Reg main > form > b {
+      margin-bottom: 15px;
+      font-weight: 900;
+      font-family: var(--font-header);
+      line-height: 160%;
+      width: max-content;
+      border: 1px solid var(--border-accent) !important;
+      background: var(--bg-accent-30);
+      color: var(--text-secondary) !important;
+      text-transform: uppercase;
+      padding: 15px 30px !important;
+      font-size: 16px;
+      max-width: calc(100% - 50px);
+      margin-top: 20px; }
+      @media only screen and (min-width: 480px) {
+        #Reg main > form > b {
+          font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+      @media only screen and (min-width: 1920px) {
+        #Reg main > form > b {
+          font-size: 24px; } }
+      #Reg main > form > b::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 0.5px);
+        left: 100%;
+        height: 1px;
+        background: var(--border-accent);
+        width: 50px; }
+    #Reg main > form > br {
+      display: none; }
+    #Reg main > form .maintitle + .pformstrip {
+      display: none; }
+    #Reg main > form .tablepad {
+      margin-bottom: 60px; }
+      #Reg main > form .tablepad > table {
+        display: block; }
+        #Reg main > form .tablepad > table > tbody {
+          display: block; }
+          #Reg main > form .tablepad > table > tbody > tr:first-child {
+            display: flex;
+            flex-direction: column; }
+            #Reg main > form .tablepad > table > tbody > tr:first-child > td {
+              width: calc(100% - 20px);
+              margin: 0 10px; }
+              #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child,
+              #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td {
+                display: flex;
+                flex-direction: column;
+                gap: 10px; }
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child > br,
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td > br {
+                  display: none; }
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child fieldset,
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td fieldset {
+                  width: 100%;
+                  box-sizing: border-box;
+                  margin: 0;
+                  grid-column: 1 / -1; }
+                  #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child fieldset input,
+                  #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child fieldset select,
+                  #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child fieldset textarea,
+                  #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td fieldset input,
+                  #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td fieldset select,
+                  #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td fieldset textarea {
+                    width: 100%; }
+                  #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child fieldset table > tbody > tr,
+                  #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td fieldset table > tbody > tr {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 10px; }
+                    #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child fieldset table > tbody > tr > td:only-child,
+                    #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td fieldset table > tbody > tr > td:only-child {
+                      grid-column: 1 / -1; }
+                    #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child fieldset table > tbody > tr > td:nth-child(2n + 1):last-child,
+                    #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td fieldset table > tbody > tr > td:nth-child(2n + 1):last-child {
+                      grid-column: 1 / -1; }
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child > div > b,
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td > div > b {
+                  display: none; }
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child table,
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child tbody,
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child tr,
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:first-child td,
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td table,
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td tbody,
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td tr,
+                #Reg main > form .tablepad > table > tbody > tr:first-child > td:last-child > div > table > tbody > tr > td td {
+                  display: block; }
+          #Reg main > form .tablepad > table > tbody > tr:last-child {
+            display: block; }
+            #Reg main > form .tablepad > table > tbody > tr:last-child > td:first-child {
+              display: none; }
+            #Reg main > form .tablepad > table > tbody > tr:last-child > td:last-child {
+              display: block; }
+              #Reg main > form .tablepad > table > tbody > tr:last-child > td:last-child fieldset {
+                display: none; }
+              #Reg main > form .tablepad > table > tbody > tr:last-child > td:last-child .desc {
+                font-size: 0;
+                max-width: max-content; }
+                #Reg main > form .tablepad > table > tbody > tr:last-child > td:last-child .desc + br {
+                  display: none; }
+                #Reg main > form .tablepad > table > tbody > tr:last-child > td:last-child .desc .input-wrap {
+                  display: flex;
+                  margin: 30px 0 15px; }
+                  #Reg main > form .tablepad > table > tbody > tr:last-child > td:last-child .desc .input-wrap p {
+                    text-transform: none;
+                    letter-spacing: 0;
+                    color: var(--text-accent);
+                    font-weight: 500;
+                    font-family: var(--font-header);
+                    font-size: calc(var(--size-md) * 1.2);
+                    gap: 7px; }
+
+/***** Login ******/
+#Login main {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 0 20px; }
+
+#Login .container {
+  margin: 20px auto;
+  max-width: 800px;
+  background: var(--bg-transparent-low);
+  border: 1px solid var(--border-primary);
+  padding: 20px; }
+  #Login .container br {
+    display: none; }
+  #Login .container p {
+    margin: 20px 0; }
+  #Login .container .maintitle {
+    margin: 30px 0 15px;
+    font-weight: 900;
+    font-family: var(--font-header);
+    line-height: 160%;
+    width: max-content;
+    border-bottom: 1px solid var(--border-accent);
+    color: var(--text-secondary);
+    font-size: 16px;
+    padding: 0 40px 5px 0; }
+    @media only screen and (min-width: 480px) {
+      #Login .container .maintitle {
+        font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+    @media only screen and (min-width: 1920px) {
+      #Login .container .maintitle {
+        font-size: 24px; } }
+  #Login .container form .tablebasic:first-of-type {
+    width: 100%; }
+    #Login .container form .tablebasic:first-of-type tbody {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0; }
+      #Login .container form .tablebasic:first-of-type tbody .pformleftw {
+        display: none; }
+      #Login .container form .tablebasic:first-of-type tbody tr {
+        width: 100%; }
+      #Login .container form .tablebasic:first-of-type tbody td {
+        width: 100%;
+        display: block; }
+      #Login .container form .tablebasic:first-of-type tbody input {
+        width: 100%;
+        display: block; }
+    #Login .container form .tablebasic:first-of-type + .pformstrip {
+      display: none; }
+  #Login .container form .tablebasic:last-of-type {
+    display: none; }
+
+/***** Search Pages (Posts by User, Topics by User, Active Topics) *****/
+#Search main > br:nth-child(2) {
+  display: none; }
+
+#Search main .maintitle {
+  margin-bottom: 15px;
+  font-weight: 900;
+  font-family: var(--font-header);
+  line-height: 160%;
+  width: max-content;
+  border: 1px solid var(--border-accent);
+  background: var(--bg-accent-30);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  padding: 15px 30px;
+  font-size: 16px;
+  max-width: calc(100% - 50px); }
+  @media only screen and (min-width: 480px) {
+    #Search main .maintitle {
+      font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+  @media only screen and (min-width: 1920px) {
+    #Search main .maintitle {
+      font-size: 24px; } }
+  #Search main .maintitle::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 0.5px);
+    left: 100%;
+    height: 1px;
+    background: var(--border-accent);
+    width: 50px; }
+
+#Search #search-topics {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 0 20px; }
+  #Search #search-topics > .tableborder > .titlemedium {
+    margin: 20px 0;
+    border-top: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary);
+    text-align: center;
+    padding: 10px; }
+
+#Search #active-topics {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 0 20px; }
+  #Search #active-topics > .tableborder > .titlemedium {
+    margin: 20px 0;
+    border-top: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary);
+    text-align: center;
+    padding: 10px; }
+
+#Search.code-show main > #search-topics .tablebasic {
+  display: block; }
+  #Search.code-show main > #search-topics .tablebasic > tbody {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; }
+    @media (min-width: 769px) {
+      #Search.code-show main > #search-topics .tablebasic > tbody {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1281px) {
+      #Search.code-show main > #search-topics .tablebasic > tbody {
+        grid-template-columns: repeat(3, 1fr); } }
+    #Search.code-show main > #search-topics .tablebasic > tbody > tr {
+      display: flex;
+      flex-wrap: wrap;
+      background: var(--bg-transparent-low);
+      border: 1px solid var(--border-primary);
+      padding: 15px; }
+      #Search.code-show main > #search-topics .tablebasic > tbody > tr:first-child {
+        display: none; }
+      #Search.code-show main > #search-topics .tablebasic > tbody > tr > td {
+        flex: 0 0 100%;
+        width: 100%;
+        text-align: left;
+        padding: 0; }
+        #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(1), #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(2), #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(7) {
+          display: none; }
+        #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(3) {
+          order: 1; }
+          #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(3) tr > td:first-child {
+            display: none; }
+          #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(3) tr > td:last-child {
+            font-size: 0; }
+            #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(3) tr > td:last-child a {
+              font-family: var(--font-header);
+              font-weight: 900;
+              text-transform: capitalize;
+              font-size: 16px;
+              line-height: 200%; }
+              @media only screen and (min-width: 480px) {
+                #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(3) tr > td:last-child a {
+                  font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+              @media only screen and (min-width: 1920px) {
+                #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(3) tr > td:last-child a {
+                  font-size: 24px; } }
+          #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(3) .desc {
+            text-transform: capitalize;
+            line-height: 200%;
+            margin-top: -4px;
+            display: block;
+            font-size: calc(var(--size-sm) + 1px); }
+            #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(3) .desc:empty {
+              display: none; }
+        #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(4) {
+          order: 3;
+          border-top: 1px solid var(--border-primary);
+          padding-top: 10px;
+          margin-top: 10px; }
+          #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(4)::before {
+            content: 'Posted in '; }
+          #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(4) a {
+            text-transform: capitalize; }
+        #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(5) {
+          order: 4;
+          border-bottom: 1px solid var(--border-primary);
+          padding-bottom: 10px;
+          margin-bottom: 10px; }
+          #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(5)::before {
+            content: 'Started by '; }
+          #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(5) a {
+            text-transform: capitalize; }
+        #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(6) {
+          order: 2;
+          display: flex;
+          align-items: center;
+          gap: 3.5px;
+          color: var(--text-accent);
+          font-size: 1.2em;
+          text-transform: uppercase;
+          font-size: var(--size-sm);
+          letter-spacing: 0.15em;
+          font-weight: 700;
+          line-height: 200%; }
+          #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(6)::after {
+            content: ' Replies';
+            font-size: var(--size-xs);
+            color: var(--text-primary);
+            font-weight: 600; }
+        #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(8) {
+          display: flex;
+          flex-direction: column;
+          order: 5; }
+          #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(8) > a,
+          #Search.code-show main > #search-topics .tablebasic > tbody > tr > td:nth-child(8) > b {
+            order: -1; }
+
+#Search.code-show main > div:not(.wrapmini):not(.tableborder):not(#search-topics) {
+  position: sticky;
+  top: 70px;
+  z-index: 1;
+  background: var(--bg-accent);
+  padding: 10px; }
+
+#Search.code-show main #search-topics {
+  margin-top: 20px; }
+
+#Search.code-show main > .tableborder {
+  margin: 20px auto;
+  max-width: 1240px;
+  padding: 0 20px; }
+  #Search.code-show main > .tableborder .maintitle {
+    font-size: 0; }
+    #Search.code-show main > .tableborder .maintitle .small {
+      display: none; }
+    #Search.code-show main > .tableborder .maintitle a {
+      display: block;
+      line-height: 160%;
+      font-size: 16px; }
+      @media only screen and (min-width: 480px) {
+        #Search.code-show main > .tableborder .maintitle a {
+          font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+      @media only screen and (min-width: 1920px) {
+        #Search.code-show main > .tableborder .maintitle a {
+          font-size: 24px; } }
+  #Search.code-show main > .tableborder .tablebasic {
+    display: block; }
+    #Search.code-show main > .tableborder .tablebasic tbody {
+      display: flex;
+      flex-direction: column; }
+      #Search.code-show main > .tableborder .tablebasic tbody tr {
+        display: block;
+        width: 100%; }
+        #Search.code-show main > .tableborder .tablebasic tbody tr td {
+          padding: 0; }
+        #Search.code-show main > .tableborder .tablebasic tbody tr:first-child {
+          display: flex;
+          flex-direction: column;
+          line-height: 160%;
+          background: var(--bg-accent);
+          color: var(--text-on-accent);
+          padding: 20px; }
+          #Search.code-show main > .tableborder .tablebasic tbody tr:first-child > td:first-child {
+            font-family: var(--font-header);
+            font-weight: 900;
+            display: flex;
+            flex-direction: column;
+            line-height: 100%;
+            text-transform: capitalize;
+            font-size: 34px; }
+            @media only screen and (min-width: 480px) {
+              #Search.code-show main > .tableborder .tablebasic tbody tr:first-child > td:first-child {
+                font-size: calc(34px + 34 * (100vw - 480px) / (1920 - 480)); } }
+            @media only screen and (min-width: 1920px) {
+              #Search.code-show main > .tableborder .tablebasic tbody tr:first-child > td:first-child {
+                font-size: 68px; } }
+            #Search.code-show main > .tableborder .tablebasic tbody tr:first-child > td:first-child a {
+              color: var(--text-on-accent); }
+          #Search.code-show main > .tableborder .tablebasic tbody tr:first-child > td:last-child {
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: var(--size-sm);
+            letter-spacing: 0.1em;
+            line-height: 120%;
+            font-family: var(--font-header); }
+        #Search.code-show main > .tableborder .tablebasic tbody tr:nth-child(2) {
+          background: var(--bg-secondary);
+          padding: 30px;
+          text-align: justify;
+          font-size: calc(var(--size-md) + 1px);
+          line-height: 200%; }
+          #Search.code-show main > .tableborder .tablebasic tbody tr:nth-child(2) td:first-child {
+            display: none; }
+        #Search.code-show main > .tableborder .tablebasic tbody tr:last-child {
+          display: flex;
+          flex-direction: column;
+          line-height: 160%;
+          background: var(--bg-accent);
+          color: var(--text-on-accent);
+          padding: 20px;
+          margin-bottom: 40px; }
+          #Search.code-show main > .tableborder .tablebasic tbody tr:last-child a {
+            color: var(--text-on-accent);
+            font-weight: 700; }
+          #Search.code-show main > .tableborder .tablebasic tbody tr:last-child > td:first-child {
+            display: none; }
+
+#Search.code-show div:empty {
+  display: none; }
+
+#Search.code-getactive .tablebasic {
+  display: block; }
+  #Search.code-getactive .tablebasic > tbody {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; }
+    @media (min-width: 769px) {
+      #Search.code-getactive .tablebasic > tbody {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1281px) {
+      #Search.code-getactive .tablebasic > tbody {
+        grid-template-columns: repeat(3, 1fr); } }
+    #Search.code-getactive .tablebasic > tbody > tr {
+      display: flex;
+      flex-wrap: wrap;
+      background: var(--bg-transparent-low);
+      border: 1px solid var(--border-primary);
+      padding: 15px; }
+      #Search.code-getactive .tablebasic > tbody > tr:first-child {
+        display: none; }
+      #Search.code-getactive .tablebasic > tbody > tr > td {
+        flex: 0 0 100%;
+        width: 100%;
+        text-align: left;
+        padding: 0; }
+        #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(1), #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(2), #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(7) {
+          display: none; }
+        #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(3) {
+          order: 1; }
+          #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(3) tr > td:first-child {
+            display: none; }
+          #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(3) tr > td:last-child {
+            font-size: 0; }
+            #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(3) tr > td:last-child a {
+              font-family: var(--font-header);
+              font-weight: 900;
+              text-transform: capitalize;
+              font-size: 16px;
+              line-height: 200%; }
+              @media only screen and (min-width: 480px) {
+                #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(3) tr > td:last-child a {
+                  font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+              @media only screen and (min-width: 1920px) {
+                #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(3) tr > td:last-child a {
+                  font-size: 24px; } }
+          #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(3) .desc {
+            text-transform: capitalize;
+            line-height: 200%;
+            margin-top: -4px;
+            display: block;
+            font-size: calc(var(--size-sm) + 1px); }
+            #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(3) .desc:empty {
+              display: none; }
+        #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(4) {
+          order: 3;
+          border-top: 1px solid var(--border-primary);
+          padding-top: 10px;
+          margin-top: 10px; }
+          #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(4)::before {
+            content: 'Posted in '; }
+          #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(4) a {
+            text-transform: capitalize; }
+        #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(5) {
+          order: 4;
+          border-bottom: 1px solid var(--border-primary);
+          padding-bottom: 10px;
+          margin-bottom: 10px; }
+          #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(5)::before {
+            content: 'Started by '; }
+          #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(5) a {
+            text-transform: capitalize; }
+        #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(6) {
+          order: 2;
+          display: flex;
+          align-items: center;
+          gap: 3.5px;
+          color: var(--text-accent);
+          font-size: 1.2em;
+          text-transform: uppercase;
+          font-size: var(--size-sm);
+          letter-spacing: 0.15em;
+          font-weight: 700;
+          line-height: 200%; }
+          #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(6)::after {
+            content: ' Replies';
+            font-size: var(--size-xs);
+            color: var(--text-primary);
+            font-weight: 600; }
+        #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(8) {
+          display: flex;
+          flex-direction: column;
+          order: 5; }
+          #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(8) > a,
+          #Search.code-getactive .tablebasic > tbody > tr > td:nth-child(8) > b {
+            order: -1; }
+
+#Search.code-getactive main > form > div:not(.pagelinks) {
+  width: 100% !important; }
+  #Search.code-getactive main > form > div:not(.pagelinks) fieldset {
+    margin-left: 25px; }
+
+/***** Redirect ******/
+#redirect-screen {
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #redirect-screen > table {
+    width: max-content;
+    height: max-content;
+    display: block;
+    border: 1px solid #414141;
+    background: rgba(45, 45, 45, 0.5);
+    padding: 15px; }
+    #redirect-screen > table .tablefill {
+      max-width: 325px;
+      line-height: 160%;
+      font-size: 14px;
+      font-family: var(--font-body);
+      font-weight: 300; }
+      #redirect-screen > table .tablefill a {
+        color: #b07b6b;
+        font-weight: 600;
+        padding: 0 5px; }
