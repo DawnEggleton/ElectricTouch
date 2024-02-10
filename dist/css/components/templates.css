@@ -572,3 +572,10 @@ et-event {
       left: 15px;
       top: -11px;
       height: 11px; }
+
+tag-spoiler {
+  background: var(--bg-quaternary);
+  padding: 3px 8px;
+  border-radius: 2px; }
+  tag-spoiler:not(.is-visible) {
+    color: transparent !important; }

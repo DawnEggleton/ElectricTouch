@@ -68,9 +68,18 @@
     }
 
     &--aesthetic {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
         display: grid;
         padding: 20px;
         background: var(--bg-accent);
+
+        .profile:not(.is-first) & {
+            opacity: 0;
+          }
 
         @include mq-down(md) {
             position: absolute;
@@ -102,14 +111,12 @@
         }
 
         &.Grid {
-            display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, 1fr);
             gap: 10px;
         }
 
         &.Mosaic {
-            display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(3, 1fr);
             gap: 10px;
@@ -125,6 +132,84 @@
 
         .twoHigh {
             grid-row: span 2;
+        }
+    }
+
+    &--avatar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: -ms-grid;
+        display: grid;
+        padding: 20px;
+        background: var(--bg-accent);
+
+        .profile.is-first & {
+            position: fixed;
+            top: 125px;
+            left: auto;
+            right: 0;
+            height: 125px;
+            width: 125px;
+
+            @include mq-up(xs) {
+                opacity: 0;
+            }
+        }
+
+        span {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+
+    &--image-wrap {
+        @include mq-down(md) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 433px;
+            width: 300px;
+            z-index: 2;
+        }
+
+        @include mq-down(xs) {
+            width: 125px;
+            height: 125px;
+            top: 55px;
+        }
+
+        .profile:not(.is-first) & {
+            @include mq-down(xs) {
+                display: none;
+            }
+        }
+
+        .notTablet {
+            display: none;
+
+            @include mq-down(xs) {
+                display: initial;
+            }
+        }
+
+        .tabletOnly {
+            @include mq-down(xs) {
+                display: none;
+            }
         }
     }
 
@@ -169,6 +254,11 @@
 
                 &::-webkit-scrollbar-thumb {
                     background: var(--text-on-accent);
+                }
+
+                a,
+                b {
+                    color: var(--text-on-accent);
                 }
             }
         }
@@ -460,7 +550,7 @@
         flex-direction: column;
         font-size: var(--size-md);
 
-        strong {
+        & > strong {
             max-width: max-content;
             text-transform: uppercase;
             line-height: 100%;
@@ -474,7 +564,7 @@
             border: 1px solid var(--border-accent);
         }
 
-        u {
+        &.ratings u {
             background: var(--bg-accent-30);
             width: 24px;
             height: 24px;

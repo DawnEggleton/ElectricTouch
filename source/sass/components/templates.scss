@@ -779,3 +779,13 @@ et-event {
 		}
 	}
 }
+
+tag-spoiler {
+	background: var(--bg-quaternary);
+	padding: 3px 8px;
+	border-radius: 2px;
+
+	&:not(.is-visible) {
+		color: transparent !important;
+	}
+}
