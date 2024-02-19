@@ -55,11 +55,24 @@
         margin: -2px auto -2px 0;
         border-radius: 50%;
         background: var(--bg-accent); }
-    .light .nav--right button.toggle--theme div,
     .lgFont .nav--right button.toggle--size div {
       background: var(--bg-accent-50); }
-      .light .nav--right button.toggle--theme div span,
+      .lgFont .nav--right button.toggle--size div::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: var(--bg-accent-50);
+        border-radius: 2.5px; }
       .lgFont .nav--right button.toggle--size div span {
+        margin: -2px auto; }
+    .light .nav--right button.toggle--theme div,
+    .xlFont .nav--right button.toggle--size div {
+      background: var(--bg-accent-50); }
+      .light .nav--right button.toggle--theme div span,
+      .xlFont .nav--right button.toggle--size div span {
         margin: -2px 0 -2px auto; }
 
 .nav--breadcrumb {

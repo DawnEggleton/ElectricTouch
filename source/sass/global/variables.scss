@@ -14,6 +14,7 @@
     --size--main-menu-height: 40px;
     --size--sub-menu-height: 30px;
     --size--side-menu-width: 300px;
+    --size--store-image-width: 24px;
     
     --rgb: 176, 123, 107;
 
@@ -58,6 +59,13 @@ body {
         --size-md: 14px;
         --size-lg: 16px;
         --size-xl: 18px;
+    }
+    &.xlFont {
+        --size-xs: 12px;
+        --size-sm: 14px;
+        --size-md: 16px;
+        --size-lg: 18px;
+        --size-xl: 20px;
     }
     &.light {
         --bg-accent: var(--accent-90);

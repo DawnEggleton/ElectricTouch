@@ -286,6 +286,13 @@
                 letter-spacing: 0.15em;
                 width: 100%;
                 display: block;
+
+                .lgFont & {
+                    margin-left: 10.5px;
+                }
+                .xlFont & {
+                    margin-left: 11px;
+                }
             }
         }
     }

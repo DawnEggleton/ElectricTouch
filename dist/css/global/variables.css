@@ -12,6 +12,7 @@
   --size--main-menu-height: 40px;
   --size--sub-menu-height: 30px;
   --size--side-menu-width: 300px;
+  --size--store-image-width: 24px;
   --rgb: 176, 123, 107;
   --black: rgb(20, 20, 20);
   --black-75: rgba(20, 20, 20, 0.75);
@@ -49,6 +50,13 @@ body.lgFont {
   --size-md: 14px;
   --size-lg: 16px;
   --size-xl: 18px; }
+
+body.xlFont {
+  --size-xs: 12px;
+  --size-sm: 14px;
+  --size-md: 16px;
+  --size-lg: 18px;
+  --size-xl: 20px; }
 
 body.light {
   --bg-accent: var(--accent-90);

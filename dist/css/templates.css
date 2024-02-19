@@ -96,6 +96,8 @@ et-wrap {
           flex-direction: column;
   margin: 60px auto;
   max-width: 400px; }
+  et-wrap > br {
+    display: none; }
   et-wrap vl {
     margin: 0 auto !important; }
   et-wrap[data-width="xs"], et-wrap[data-width="Xs"], et-wrap[data-width="XS"] {
@@ -317,9 +319,12 @@ et-image {
 et-content {
   display: block;
   border: 1px solid var(--border-accent);
-  padding: 15px 20px;
+  padding: 10px 15px;
   background: var(--bg-tertiary);
   white-space: pre-line; }
+  @media (min-width: 481px) {
+    et-content {
+      padding: 15px 20px; } }
 
 et-scroll {
   display: block;

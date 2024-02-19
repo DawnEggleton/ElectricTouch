@@ -27,6 +27,12 @@ body {
     }
 }
 
+body.g-2 .memOnly,
+body:not(.g-2) .guestOnly,
+body:not(.g-4):not(.g-28):not(.g-26) .staffOnly {
+    display: none !important;
+}
+
 main {
     & > br {
         display: none;
@@ -70,6 +76,10 @@ main {
     }
 }
 
+#quick-login {
+    display: block !important;
+}
+
 [data-new] {
     color: var(--text-accent) !important;
 }
@@ -79,7 +89,8 @@ main {
 
 .postcolor,
 .webpage--content,
-.profile .scroll {
+.profile .scroll,
+.member--item .scroll {
     h2:not(.species--title),
     h3,
     h4,
@@ -1081,7 +1092,9 @@ tag-code {
 }
 
 .copyright,
-#mark-as-read-subto {
+#mark-as-read-subto,
+#delcookiesrow {
+    text-align: center;
     font-size: var(--size-xs);
     text-transform: uppercase;
     letter-spacing: 0.15em;

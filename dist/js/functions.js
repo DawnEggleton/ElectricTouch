@@ -92,8 +92,14 @@ function filterValue(e) {
             let childrenArray = Array.from(name.closest('.claim-wrap').querySelectorAll('.claim')).filter(item => !item.classList.contains('hidden'));
             if(childrenArray.length === 0) {
                 name.closest('.claim-wrap').previousElementSibling.classList.add('hidden');
+		if (e.dataset.hideWrap === 'true') {
+                    name.closest('.claim-wrap').classList.add('hidden');
+		}
             } else {
                 name.closest('.claim-wrap').previousElementSibling.classList.remove('hidden');
+		if (e.dataset.hideWrap === 'true') {
+                    name.closest('.claim-wrap').classList.remove('hidden');
+		}
             }
         });
     } else {
@@ -507,7 +513,7 @@ function initMarkdown() {
         </ul>`;
     }
 
-    let markdownSafe = `.postcolor tag-content, .postcolor tag-msg, .postcolor tag-action, .profile [data-key="#details"] .scroll, .profile [data-key="#plotting"] .scroll, tl, et-content, et-msg, et-action`;
+    let markdownSafe = `.postcolor tag-content, .postcolor tag-msg, .postcolor tag-action, .profile [data-key="#details"] .scroll, .profile [data-key="#plotting"] .scroll, tl, et-content, et-msg, et-action, .member--item .scroll`;
 
     if(document.querySelectorAll(markdownSafe).length > 0) {
         document.querySelectorAll(markdownSafe).forEach(post => {
@@ -740,7 +746,7 @@ function initPostRowDescription() {
 }
 function initPostContentAlter() {
     document.querySelectorAll('.post--content .postcolor').forEach(post => {
-        if(!post.querySelector('* > tag-wrap') && !post.querySelector('* > tag-comm') && !post.querySelector('* > tag-social') && !post.querySelector('* > et-wrap') && !post.querySelector('* > et-comm') && !post.querySelector('* > et-social')) {
+        if(!post.querySelector('* > tag-wrap') && !post.querySelector('* > tag-comm') && !post.querySelector('* > tag-social') && !post.querySelector('* > et-wrap') && !post.querySelector('* > et-comm') && !post.querySelector('* > et-social') && !post.querySelector('.spyder--outershell')) {
             post.classList.add('no-template');
         }
     });

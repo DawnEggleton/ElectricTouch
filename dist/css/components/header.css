@@ -63,6 +63,8 @@ header {
     gap: 10px; }
     body.lgFont .header--info {
       grid-template-rows: 150px 81px 107px; }
+    body.xlFont .header--info {
+      grid-template-rows: 150px 91px 97px; }
     @media (min-width: 769px) {
       .header--info {
         display: grid; } }

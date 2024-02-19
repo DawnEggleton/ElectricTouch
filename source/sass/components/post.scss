@@ -143,6 +143,52 @@
             }
         }
     }
+    .activeuserstrip {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: var(--size-sm);
+        margin-top: 60px;
+
+        & + .row2 {
+            border-top: 1px solid var(--border-primary);
+            margin-top: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: var(--size-sm);
+
+            & + .activeuserstrip {
+                margin-top: 0;
+                border-top: 1px solid var(--border-primary);
+                padding-top: 10px;
+            }
+        }
+    }
+    .bar {
+        margin: 60px auto 0;
+        max-width: 1240px;
+        padding: 0 20px !important;
+
+        & ~ div[align="right"] {
+            margin: 20px auto;
+            max-width: 1240px;
+            padding: 0 20px !important;
+
+            & > br {
+                display: none;
+            }
+
+            & > form:first-child {
+                margin-bottom: 20px;
+            }
+
+            & ~ form {
+                margin: 20px auto 60px;
+                max-width: 1240px;
+                padding: 0 20px !important;
+                text-align: right;
+            }
+        }
+    }
 }
 .post {
     display: grid;
@@ -166,6 +212,39 @@
         gap: 30px;
     }
 
+    .profile--warning {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        max-width: 400px;
+        margin: 50px auto 10px;
+
+        i {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--text-accent);
+            color: var(--text-accent);
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            font-style: normal;
+            font-size: var(--size-xl);
+            font-weight: 500;
+        }
+        
+        span {
+            border-top: 1px solid var(--border-accent);
+            margin-top: 19.5px;
+            padding: 10px 15px;
+            font-size: var(--size-sm);
+            letter-spacing: 0.1em;
+            text-align: justify;
+
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+    }
+    
     &.g-4,
     &.g-6,
     &.g-26,
@@ -348,14 +427,22 @@
 
     &--content {
         background: var(--bg-secondary);
-        padding: 30px;
+        padding: 15px;
         text-align: justify;
         font-size: calc(var(--size-md) + 1px);
         line-height: 200%;
 
+        @include mq-up(xxs) {
+            padding: 30px;
+        }
+
         .postcolor.no-template {
             max-width: 500px;
-            margin: 50px auto;
+            margin: 15px auto;
+
+            @include mq-up(xxs) {
+                margin: 50px auto;
+            }
         }
     }
 
@@ -665,6 +752,69 @@
         input[type="button"] { 
             font-size: var(--size-md);
             width: auto;
+        }
+    }
+}
+
+#qr_open,
+#topic_open {
+  margin: 30px auto;
+  padding: 0 20px;
+  max-width: 800px;
+
+    .maintitle {
+        background: var(--bg-accent-30);
+        border: 1px solid var(--border-accent);
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content;
+        padding: 20px 30px;
+        font-family: var(--font-header);
+        text-transform: uppercase;
+        font-weight: 900;
+        @include fluid-type(16, 24, 480, 1920);
+        line-height: 100%;
+        color: var(--text-secondary);
+        margin: 0;
+
+        a {
+            color: var(--text-secondary);
+        }
+    }
+
+    .tablepad {
+        padding: 20px 0;
+
+        @include mq-up(xxs) {
+            border-left: 1px dotted var(--border-accent);
+            margin-left: 30px;
+            padding: 30px;
+        }
+    }
+}
+#qr_open {
+    .tablepad {
+        font-size: 0;
+
+        & > br,
+        & > input[type="checkbox"] {
+            display: none;
+        }
+
+        & > a {
+            font-size: var(--size-sm);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #post_as_selector {
+            margin-top: -45px;
+            display: block;
+        }
+
+        input[name="preview"] {
+            margin: 0 10px;
         }
     }
 }

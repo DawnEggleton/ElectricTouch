@@ -67,6 +67,10 @@ header {
             grid-template-rows: 150px 81px 107px;
         }
 
+        body.xlFont & {
+            grid-template-rows: 150px 91px 97px;
+        }
+
         @include mq-up(sm) {
             display: grid;
         }

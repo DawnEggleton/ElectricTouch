@@ -23,15 +23,26 @@ $('*[title=""]').removeAttr('title');
 $('*[tooltip=""]').removeAttr('tooltip');
 if (typeof tippy === 'function') {
     tippy(document.querySelectorAll('[title]'), {
-    content: (reference) => {
-	if(!reference.querySelector('.macro--button')) {
-            const title = reference.getAttribute('title');
-            reference.removeAttribute('title');
-            return title;
-	}
-    },
-    theme: 'godlybehaviour',
-    arrow: false
+        content: (reference) => {
+	    function htmlDecode(input){
+		var e = document.createElement('div');
+		e.innerHTML = input;
+		return e.childNodes[0].nodeValue;
+	    }
+	    if(!reference.querySelector('.macro--button')) {
+                const title = reference.getAttribute('title');
+                reference.removeAttribute('title');
+		const stringified = JSON.stringify({title: title});
+		
+		if(reference.classList.contains('profile-link')) {
+                    return capitalize(htmlDecode(title));
+		} else {
+                    return htmlDecode(title);
+		}
+	    }
+        },
+        theme: 'godlybehaviour',
+        arrow: false
     });
 }
 

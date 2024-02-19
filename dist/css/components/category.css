@@ -37,10 +37,12 @@
 
 .forum {
   display: grid;
+  grid-template-rows: max-content max-content max-content max-content;
   background: var(--bg-secondary); }
   @media (min-width: 1025px) {
     .forum {
-      grid-template-columns: 60px 1fr 325px; } }
+      grid-template-columns: 60px 1fr 325px;
+      grid-template-rows: max-content max-content; } }
   .forum--marker {
     background: var(--bg-accent);
     width: 100%;
@@ -53,6 +55,8 @@
         text-align: center;
         padding: 20px 10px;
         font-size: 26px; } }
+    .forum--marker i {
+      color: var(--text-on-accent); }
     .forum--marker .fa-solid,
     .forum--marker.forum-new-post .fa-thin,
     .forum--marker .fa-arrow-up-right-from-square,

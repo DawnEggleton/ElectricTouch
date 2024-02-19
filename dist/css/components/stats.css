@@ -226,3 +226,7 @@
       letter-spacing: 0.15em;
       width: 100%;
       display: block; }
+      .lgFont .stats--recent tr .recent-topics-date {
+        margin-left: 10.5px; }
+      .xlFont .stats--recent tr .recent-topics-date {
+        margin-left: 11px; }

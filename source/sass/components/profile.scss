@@ -550,7 +550,8 @@
         flex-direction: column;
         font-size: var(--size-md);
 
-        & > strong {
+        & > strong,
+        .profile--tracker-section > strong {
             max-width: max-content;
             text-transform: uppercase;
             line-height: 100%;

@@ -38,10 +38,12 @@
 }
 .forum {
    display: grid;
+   grid-template-rows: max-content max-content max-content max-content;
    background: var(--bg-secondary);
 
    @include mq-up(md) {
       grid-template-columns: 60px 1fr 325px;
+      grid-template-rows: max-content max-content;
    }
 
    &--marker {
@@ -56,6 +58,10 @@
          text-align: center;
          padding: 20px 10px;
          font-size: 26px;
+      }
+
+      i {
+         color: var(--text-on-accent);
       }
 
       .fa-solid,

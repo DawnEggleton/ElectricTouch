@@ -22,6 +22,11 @@ body {
     filter: grayscale(1) contrast(120%) brightness(70%);
     opacity: 0.1; }
 
+body.g-2 .memOnly,
+body:not(.g-2) .guestOnly,
+body:not(.g-4):not(.g-28):not(.g-26) .staffOnly {
+  display: none !important; }
+
 main > br {
   display: none; }
 
@@ -61,6 +66,9 @@ main > br {
     gap: 10px; }
     #loading .loading-bubble i {
       font-size: 0.75em; }
+
+#quick-login {
+  display: block !important; }
 
 [data-new] {
   color: var(--text-accent) !important; }
@@ -109,7 +117,21 @@ main > br {
 .profile .scroll .h5,
 .profile .scroll .h6,
 .profile .scroll .h7,
-.profile .scroll .h8 {
+.profile .scroll .h8,
+.member--item .scroll h2:not(.species--title),
+.member--item .scroll h3,
+.member--item .scroll h4,
+.member--item .scroll h5,
+.member--item .scroll h6,
+.member--item .scroll h7,
+.member--item .scroll h8,
+.member--item .scroll .h2,
+.member--item .scroll .h3,
+.member--item .scroll .h4,
+.member--item .scroll .h5,
+.member--item .scroll .h6,
+.member--item .scroll .h7,
+.member--item .scroll .h8 {
   margin-bottom: 15px; }
   .postcolor h2:not(.species--title):not(:first-child),
   .postcolor h3:not(:first-child),
@@ -152,7 +174,21 @@ main > br {
   .profile .scroll .h5:not(:first-child),
   .profile .scroll .h6:not(:first-child),
   .profile .scroll .h7:not(:first-child),
-  .profile .scroll .h8:not(:first-child) {
+  .profile .scroll .h8:not(:first-child),
+  .member--item .scroll h2:not(.species--title):not(:first-child),
+  .member--item .scroll h3:not(:first-child),
+  .member--item .scroll h4:not(:first-child),
+  .member--item .scroll h5:not(:first-child),
+  .member--item .scroll h6:not(:first-child),
+  .member--item .scroll h7:not(:first-child),
+  .member--item .scroll h8:not(:first-child),
+  .member--item .scroll .h2:not(:first-child),
+  .member--item .scroll .h3:not(:first-child),
+  .member--item .scroll .h4:not(:first-child),
+  .member--item .scroll .h5:not(:first-child),
+  .member--item .scroll .h6:not(:first-child),
+  .member--item .scroll .h7:not(:first-child),
+  .member--item .scroll .h8:not(:first-child) {
     margin-top: 30px; }
 
 .postcolor h2:not(.species--title),
@@ -178,7 +214,15 @@ main > br {
 .profile .scroll .h2,
 .profile .scroll .h3,
 .profile .scroll .h4,
-.profile .scroll .h5 {
+.profile .scroll .h5,
+.member--item .scroll h2:not(.species--title),
+.member--item .scroll h3,
+.member--item .scroll h4,
+.member--item .scroll h5,
+.member--item .scroll .h2,
+.member--item .scroll .h3,
+.member--item .scroll .h4,
+.member--item .scroll .h5 {
   font-weight: 900;
   font-family: var(--font-header);
   line-height: 160%;
@@ -196,7 +240,11 @@ main > br {
 .profile .scroll h2:not(.species--title),
 .profile .scroll h3,
 .profile .scroll .h2,
-.profile .scroll .h3 {
+.profile .scroll .h3,
+.member--item .scroll h2:not(.species--title),
+.member--item .scroll h3,
+.member--item .scroll .h2,
+.member--item .scroll .h3 {
   border: 1px solid var(--border-accent);
   background: var(--bg-accent-30);
   color: var(--text-secondary);
@@ -212,7 +260,11 @@ main > br {
   .profile .scroll h2:not(.species--title)::after,
   .profile .scroll h3::after,
   .profile .scroll .h2::after,
-  .profile .scroll .h3::after {
+  .profile .scroll .h3::after,
+  .member--item .scroll h2:not(.species--title)::after,
+  .member--item .scroll h3::after,
+  .member--item .scroll .h2::after,
+  .member--item .scroll .h3::after {
     content: '';
     position: absolute;
     top: calc(50% - 0.5px);
@@ -225,7 +277,9 @@ main > br {
 .webpage--content h2:not(.species--title),
 .webpage--content .h2,
 .profile .scroll h2:not(.species--title),
-.profile .scroll .h2 {
+.profile .scroll .h2,
+.member--item .scroll h2:not(.species--title),
+.member--item .scroll .h2 {
   padding: 15px 30px;
   font-size: 16px;
   max-width: calc(100% - 50px); }
@@ -235,7 +289,9 @@ main > br {
     .webpage--content h2:not(.species--title),
     .webpage--content .h2,
     .profile .scroll h2:not(.species--title),
-    .profile .scroll .h2 {
+    .profile .scroll .h2,
+    .member--item .scroll h2:not(.species--title),
+    .member--item .scroll .h2 {
       font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h2:not(.species--title),
@@ -243,14 +299,18 @@ main > br {
     .webpage--content h2:not(.species--title),
     .webpage--content .h2,
     .profile .scroll h2:not(.species--title),
-    .profile .scroll .h2 {
+    .profile .scroll .h2,
+    .member--item .scroll h2:not(.species--title),
+    .member--item .scroll .h2 {
       font-size: 24px; } }
   .postcolor h2:not(.species--title)::after,
   .postcolor .h2::after,
   .webpage--content h2:not(.species--title)::after,
   .webpage--content .h2::after,
   .profile .scroll h2:not(.species--title)::after,
-  .profile .scroll .h2::after {
+  .profile .scroll .h2::after,
+  .member--item .scroll h2:not(.species--title)::after,
+  .member--item .scroll .h2::after {
     width: 50px; }
 
 .postcolor h3,
@@ -258,7 +318,9 @@ main > br {
 .webpage--content h3,
 .webpage--content .h3,
 .profile .scroll h3,
-.profile .scroll .h3 {
+.profile .scroll .h3,
+.member--item .scroll h3,
+.member--item .scroll .h3 {
   padding: 10px 20px;
   font-size: 14px;
   max-width: calc(100% - 30px); }
@@ -268,7 +330,9 @@ main > br {
     .webpage--content h3,
     .webpage--content .h3,
     .profile .scroll h3,
-    .profile .scroll .h3 {
+    .profile .scroll .h3,
+    .member--item .scroll h3,
+    .member--item .scroll .h3 {
       font-size: calc(14px + 4 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h3,
@@ -276,14 +340,18 @@ main > br {
     .webpage--content h3,
     .webpage--content .h3,
     .profile .scroll h3,
-    .profile .scroll .h3 {
+    .profile .scroll .h3,
+    .member--item .scroll h3,
+    .member--item .scroll .h3 {
       font-size: 18px; } }
   .postcolor h3::after,
   .postcolor .h3::after,
   .webpage--content h3::after,
   .webpage--content .h3::after,
   .profile .scroll h3::after,
-  .profile .scroll .h3::after {
+  .profile .scroll .h3::after,
+  .member--item .scroll h3::after,
+  .member--item .scroll .h3::after {
     width: 30px; }
 
 .postcolor h4,
@@ -297,7 +365,11 @@ main > br {
 .profile .scroll h4,
 .profile .scroll h5,
 .profile .scroll .h4,
-.profile .scroll .h5 {
+.profile .scroll .h5,
+.member--item .scroll h4,
+.member--item .scroll h5,
+.member--item .scroll .h4,
+.member--item .scroll .h5 {
   border-bottom: 1px solid var(--border-accent);
   color: var(--text-secondary); }
 
@@ -306,7 +378,9 @@ main > br {
 .webpage--content h4,
 .webpage--content .h4,
 .profile .scroll h4,
-.profile .scroll .h4 {
+.profile .scroll .h4,
+.member--item .scroll h4,
+.member--item .scroll .h4 {
   font-size: 16px;
   padding: 0 40px 5px 0; }
   @media only screen and (min-width: 480px) {
@@ -315,7 +389,9 @@ main > br {
     .webpage--content h4,
     .webpage--content .h4,
     .profile .scroll h4,
-    .profile .scroll .h4 {
+    .profile .scroll .h4,
+    .member--item .scroll h4,
+    .member--item .scroll .h4 {
       font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h4,
@@ -323,7 +399,9 @@ main > br {
     .webpage--content h4,
     .webpage--content .h4,
     .profile .scroll h4,
-    .profile .scroll .h4 {
+    .profile .scroll .h4,
+    .member--item .scroll h4,
+    .member--item .scroll .h4 {
       font-size: 24px; } }
 
 .postcolor h5,
@@ -331,7 +409,9 @@ main > br {
 .webpage--content h5,
 .webpage--content .h5,
 .profile .scroll h5,
-.profile .scroll .h5 {
+.profile .scroll .h5,
+.member--item .scroll h5,
+.member--item .scroll .h5 {
   font-size: 14px;
   padding: 0 25px 5px 0; }
   @media only screen and (min-width: 480px) {
@@ -340,7 +420,9 @@ main > br {
     .webpage--content h5,
     .webpage--content .h5,
     .profile .scroll h5,
-    .profile .scroll .h5 {
+    .profile .scroll .h5,
+    .member--item .scroll h5,
+    .member--item .scroll .h5 {
       font-size: calc(14px + 4 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h5,
@@ -348,7 +430,9 @@ main > br {
     .webpage--content h5,
     .webpage--content .h5,
     .profile .scroll h5,
-    .profile .scroll .h5 {
+    .profile .scroll .h5,
+    .member--item .scroll h5,
+    .member--item .scroll .h5 {
       font-size: 18px; } }
 
 .postcolor h6,
@@ -356,7 +440,9 @@ main > br {
 .webpage--content h6,
 .webpage--content .h6,
 .profile .scroll h6,
-.profile .scroll .h6 {
+.profile .scroll .h6,
+.member--item .scroll h6,
+.member--item .scroll .h6 {
   text-transform: uppercase;
   font-size: var(--size-sm);
   color: var(--text-secondary);
@@ -369,7 +455,9 @@ main > br {
   .webpage--content h6::after,
   .webpage--content .h6::after,
   .profile .scroll h6::after,
-  .profile .scroll .h6::after {
+  .profile .scroll .h6::after,
+  .member--item .scroll h6::after,
+  .member--item .scroll .h6::after {
     content: '';
     position: absolute;
     top: calc(50% - 0.5px);
@@ -389,7 +477,11 @@ main > br {
 .profile .scroll h7,
 .profile .scroll h8,
 .profile .scroll .h7,
-.profile .scroll .h8 {
+.profile .scroll .h8,
+.member--item .scroll h7,
+.member--item .scroll h8,
+.member--item .scroll .h7,
+.member--item .scroll .h8 {
   display: block;
   text-transform: uppercase;
   text-align: justify;
@@ -406,7 +498,9 @@ main > br {
 .webpage--content h8,
 .webpage--content .h8,
 .profile .scroll h8,
-.profile .scroll .h8 {
+.profile .scroll .h8,
+.member--item .scroll h8,
+.member--item .scroll .h8 {
   background: var(--bg-accent);
   color: var(--text-on-accent);
   padding: 10px 15px; }
@@ -416,26 +510,33 @@ main > br {
 .webpage--content p,
 .webpage--content ul,
 .profile .scroll p,
-.profile .scroll ul {
+.profile .scroll ul,
+.member--item .scroll p,
+.member--item .scroll ul {
   margin: 20px 0; }
   .postcolor p:first-child,
   .postcolor ul:first-child,
   .webpage--content p:first-child,
   .webpage--content ul:first-child,
   .profile .scroll p:first-child,
-  .profile .scroll ul:first-child {
+  .profile .scroll ul:first-child,
+  .member--item .scroll p:first-child,
+  .member--item .scroll ul:first-child {
     margin-top: 0; }
   .postcolor p:last-child,
   .postcolor ul:last-child,
   .webpage--content p:last-child,
   .webpage--content ul:last-child,
   .profile .scroll p:last-child,
-  .profile .scroll ul:last-child {
+  .profile .scroll ul:last-child,
+  .member--item .scroll p:last-child,
+  .member--item .scroll ul:last-child {
     margin-bottom: 0; }
 
 .postcolor hr,
 .webpage--content hr,
-.profile .scroll hr {
+.profile .scroll hr,
+.member--item .scroll hr {
   display: block;
   height: 6px;
   background: var(--bg-accent-30);
@@ -446,7 +547,8 @@ main > br {
 
 .postcolor hl,
 .webpage--content hl,
-.profile .scroll hl {
+.profile .scroll hl,
+.member--item .scroll hl {
   display: block;
   height: 4px;
   background: var(--bg-accent);
@@ -460,7 +562,10 @@ main > br {
   .webpage--content hl[data-style="thin"],
   .profile .scroll hl[data-style="thin"],
   .profile .scroll hl[data-style="thin"],
-  .profile .scroll hl[data-style="thin"] {
+  .profile .scroll hl[data-style="thin"],
+  .member--item .scroll hl[data-style="thin"],
+  .member--item .scroll hl[data-style="thin"],
+  .member--item .scroll hl[data-style="thin"] {
     height: 1px;
     border-radius: 0; }
   .postcolor hl[data-style="outline"], .postcolor hl[data-style="outline"], .postcolor hl[data-style="outline"],
@@ -469,7 +574,10 @@ main > br {
   .webpage--content hl[data-style="outline"],
   .profile .scroll hl[data-style="outline"],
   .profile .scroll hl[data-style="outline"],
-  .profile .scroll hl[data-style="outline"] {
+  .profile .scroll hl[data-style="outline"],
+  .member--item .scroll hl[data-style="outline"],
+  .member--item .scroll hl[data-style="outline"],
+  .member--item .scroll hl[data-style="outline"] {
     background: var(--bg-accent-30);
     border: 1px solid var(--border-accent);
     border-radius: 1px;
@@ -480,7 +588,10 @@ main > br {
   .webpage--content hl[data-style="dotted"],
   .profile .scroll hl[data-style="dotted"],
   .profile .scroll hl[data-style="dotted"],
-  .profile .scroll hl[data-style="dotted"] {
+  .profile .scroll hl[data-style="dotted"],
+  .member--item .scroll hl[data-style="dotted"],
+  .member--item .scroll hl[data-style="dotted"],
+  .member--item .scroll hl[data-style="dotted"] {
     background: none;
     height: 0;
     border-top: 1px dotted var(--border-accent); }
@@ -490,7 +601,10 @@ main > br {
   .webpage--content hl[data-width="xs"],
   .profile .scroll hl[data-width="xs"],
   .profile .scroll hl[data-width="xs"],
-  .profile .scroll hl[data-width="xs"] {
+  .profile .scroll hl[data-width="xs"],
+  .member--item .scroll hl[data-width="xs"],
+  .member--item .scroll hl[data-width="xs"],
+  .member--item .scroll hl[data-width="xs"] {
     height: 250px; }
   .postcolor hl[data-width="sm"], .postcolor hl[data-width="sm"], .postcolor hl[data-width="sm"],
   .webpage--content hl[data-width="sm"],
@@ -498,7 +612,10 @@ main > br {
   .webpage--content hl[data-width="sm"],
   .profile .scroll hl[data-width="sm"],
   .profile .scroll hl[data-width="sm"],
-  .profile .scroll hl[data-width="sm"] {
+  .profile .scroll hl[data-width="sm"],
+  .member--item .scroll hl[data-width="sm"],
+  .member--item .scroll hl[data-width="sm"],
+  .member--item .scroll hl[data-width="sm"] {
     height: 325px; }
   .postcolor hl[data-width="lg"], .postcolor hl[data-width="lg"], .postcolor hl[data-width="lg"],
   .webpage--content hl[data-width="lg"],
@@ -506,7 +623,10 @@ main > br {
   .webpage--content hl[data-width="lg"],
   .profile .scroll hl[data-width="lg"],
   .profile .scroll hl[data-width="lg"],
-  .profile .scroll hl[data-width="lg"] {
+  .profile .scroll hl[data-width="lg"],
+  .member--item .scroll hl[data-width="lg"],
+  .member--item .scroll hl[data-width="lg"],
+  .member--item .scroll hl[data-width="lg"] {
     height: 475px; }
   .postcolor hl[data-width="xl"], .postcolor hl[data-width="xl"], .postcolor hl[data-width="xl"],
   .webpage--content hl[data-width="xl"],
@@ -514,12 +634,16 @@ main > br {
   .webpage--content hl[data-width="xl"],
   .profile .scroll hl[data-width="xl"],
   .profile .scroll hl[data-width="xl"],
-  .profile .scroll hl[data-width="xl"] {
+  .profile .scroll hl[data-width="xl"],
+  .member--item .scroll hl[data-width="xl"],
+  .member--item .scroll hl[data-width="xl"],
+  .member--item .scroll hl[data-width="xl"] {
     height: 550px; }
 
 .postcolor vl,
 .webpage--content vl,
-.profile .scroll vl {
+.profile .scroll vl,
+.member--item .scroll vl {
   display: block;
   height: 200px;
   background: var(--bg-accent);
@@ -532,7 +656,10 @@ main > br {
   .webpage--content vl[data-style="thin"],
   .profile .scroll vl[data-style="thin"],
   .profile .scroll vl[data-style="thin"],
-  .profile .scroll vl[data-style="thin"] {
+  .profile .scroll vl[data-style="thin"],
+  .member--item .scroll vl[data-style="thin"],
+  .member--item .scroll vl[data-style="thin"],
+  .member--item .scroll vl[data-style="thin"] {
     width: 1px;
     border-radius: 0; }
   .postcolor vl[data-style="outline"], .postcolor vl[data-style="outline"], .postcolor vl[data-style="outline"],
@@ -541,7 +668,10 @@ main > br {
   .webpage--content vl[data-style="outline"],
   .profile .scroll vl[data-style="outline"],
   .profile .scroll vl[data-style="outline"],
-  .profile .scroll vl[data-style="outline"] {
+  .profile .scroll vl[data-style="outline"],
+  .member--item .scroll vl[data-style="outline"],
+  .member--item .scroll vl[data-style="outline"],
+  .member--item .scroll vl[data-style="outline"] {
     background: var(--bg-accent-30);
     border: 1px solid var(--border-accent);
     border-radius: 1px;
@@ -552,7 +682,10 @@ main > br {
   .webpage--content vl[data-style="dotted"],
   .profile .scroll vl[data-style="dotted"],
   .profile .scroll vl[data-style="dotted"],
-  .profile .scroll vl[data-style="dotted"] {
+  .profile .scroll vl[data-style="dotted"],
+  .member--item .scroll vl[data-style="dotted"],
+  .member--item .scroll vl[data-style="dotted"],
+  .member--item .scroll vl[data-style="dotted"] {
     background: none;
     width: 0;
     border-left: 1px dotted var(--border-accent); }
@@ -562,7 +695,10 @@ main > br {
   .webpage--content vl[data-height="xxs"],
   .profile .scroll vl[data-height="xxs"],
   .profile .scroll vl[data-height="xxs"],
-  .profile .scroll vl[data-height="xxs"] {
+  .profile .scroll vl[data-height="xxs"],
+  .member--item .scroll vl[data-height="xxs"],
+  .member--item .scroll vl[data-height="xxs"],
+  .member--item .scroll vl[data-height="xxs"] {
     height: 30px; }
   .postcolor vl[data-height="xs"], .postcolor vl[data-height="xs"], .postcolor vl[data-height="xs"],
   .webpage--content vl[data-height="xs"],
@@ -570,7 +706,10 @@ main > br {
   .webpage--content vl[data-height="xs"],
   .profile .scroll vl[data-height="xs"],
   .profile .scroll vl[data-height="xs"],
-  .profile .scroll vl[data-height="xs"] {
+  .profile .scroll vl[data-height="xs"],
+  .member--item .scroll vl[data-height="xs"],
+  .member--item .scroll vl[data-height="xs"],
+  .member--item .scroll vl[data-height="xs"] {
     height: 50px; }
   .postcolor vl[data-height="sm"], .postcolor vl[data-height="sm"], .postcolor vl[data-height="sm"],
   .webpage--content vl[data-height="sm"],
@@ -578,7 +717,10 @@ main > br {
   .webpage--content vl[data-height="sm"],
   .profile .scroll vl[data-height="sm"],
   .profile .scroll vl[data-height="sm"],
-  .profile .scroll vl[data-height="sm"] {
+  .profile .scroll vl[data-height="sm"],
+  .member--item .scroll vl[data-height="sm"],
+  .member--item .scroll vl[data-height="sm"],
+  .member--item .scroll vl[data-height="sm"] {
     height: 125px; }
   .postcolor vl[data-height="lg"], .postcolor vl[data-height="lg"], .postcolor vl[data-height="lg"],
   .webpage--content vl[data-height="lg"],
@@ -586,7 +728,10 @@ main > br {
   .webpage--content vl[data-height="lg"],
   .profile .scroll vl[data-height="lg"],
   .profile .scroll vl[data-height="lg"],
-  .profile .scroll vl[data-height="lg"] {
+  .profile .scroll vl[data-height="lg"],
+  .member--item .scroll vl[data-height="lg"],
+  .member--item .scroll vl[data-height="lg"],
+  .member--item .scroll vl[data-height="lg"] {
     height: 275px; }
   .postcolor vl[data-height="xl"], .postcolor vl[data-height="xl"], .postcolor vl[data-height="xl"],
   .webpage--content vl[data-height="xl"],
@@ -594,7 +739,10 @@ main > br {
   .webpage--content vl[data-height="xl"],
   .profile .scroll vl[data-height="xl"],
   .profile .scroll vl[data-height="xl"],
-  .profile .scroll vl[data-height="xl"] {
+  .profile .scroll vl[data-height="xl"],
+  .member--item .scroll vl[data-height="xl"],
+  .member--item .scroll vl[data-height="xl"],
+  .member--item .scroll vl[data-height="xl"] {
     height: 350px; }
 
 .postcolor b,
@@ -602,7 +750,9 @@ main > br {
 .webpage--content b,
 .webpage--content tag-spoken,
 .profile .scroll b,
-.profile .scroll tag-spoken {
+.profile .scroll tag-spoken,
+.member--item .scroll b,
+.member--item .scroll tag-spoken {
   color: var(--text-accent);
   font-weight: 800;
   font-family: var(--font-header);
@@ -613,14 +763,17 @@ main > br {
 .webpage--content i,
 .webpage--content tag-thought,
 .profile .scroll i,
-.profile .scroll tag-thought {
+.profile .scroll tag-thought,
+.member--item .scroll i,
+.member--item .scroll tag-thought {
   font-style: italic;
   color: var(--text-secondary);
   font-weight: 500; }
 
 .postcolor u,
 .webpage--content u,
-.profile .scroll u {
+.profile .scroll u,
+.member--item .scroll u {
   border-bottom: 1px dotted var(--border-accent);
   padding: 0 5px;
   color: var(--text-secondary);
@@ -628,7 +781,8 @@ main > br {
 
 .postcolor s,
 .webpage--content s,
-.profile .scroll s {
+.profile .scroll s,
+.member--item .scroll s {
   text-decoration-line: line-through;
   text-decoration-color: var(--border-accent);
   text-decoration-thickness: 1px;
@@ -637,7 +791,8 @@ main > br {
 
 .postcolor a,
 .webpage--content a,
-.profile .scroll a {
+.profile .scroll a,
+.member--item .scroll a {
   color: var(--text-accent);
   text-transform: uppercase;
   font-size: 0.9em;
@@ -1202,7 +1357,9 @@ tag-code {
         align-self: end; }
 
 .copyright,
-#mark-as-read-subto {
+#mark-as-read-subto,
+#delcookiesrow {
+  text-align: center;
   font-size: var(--size-xs);
   text-transform: uppercase;
   letter-spacing: 0.15em;

@@ -121,6 +121,40 @@
     padding: 8px 15px;
     border: 1px solid var(--border-accent); }
 
+#ST .activeuserstrip {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: var(--size-sm);
+  margin-top: 60px; }
+  #ST .activeuserstrip + .row2 {
+    border-top: 1px solid var(--border-primary);
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--size-sm); }
+    #ST .activeuserstrip + .row2 + .activeuserstrip {
+      margin-top: 0;
+      border-top: 1px solid var(--border-primary);
+      padding-top: 10px; }
+
+#ST .bar {
+  margin: 60px auto 0;
+  max-width: 1240px;
+  padding: 0 20px !important; }
+  #ST .bar ~ div[align="right"] {
+    margin: 20px auto;
+    max-width: 1240px;
+    padding: 0 20px !important; }
+    #ST .bar ~ div[align="right"] > br {
+      display: none; }
+    #ST .bar ~ div[align="right"] > form:first-child {
+      margin-bottom: 20px; }
+    #ST .bar ~ div[align="right"] ~ form {
+      margin: 20px auto 60px;
+      max-width: 1240px;
+      padding: 0 20px !important;
+      text-align: right; }
+
 .post {
   display: grid;
   gap: 10px;
@@ -139,6 +173,31 @@
     .post {
       grid-template-columns: 270px 1fr;
       gap: 30px; } }
+  .post .profile--warning {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    max-width: 400px;
+    margin: 50px auto 10px; }
+    .post .profile--warning i {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--text-accent);
+      color: var(--text-accent);
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      font-style: normal;
+      font-size: var(--size-xl);
+      font-weight: 500; }
+    .post .profile--warning span {
+      border-top: 1px solid var(--border-accent);
+      margin-top: 19.5px;
+      padding: 10px 15px;
+      font-size: var(--size-sm);
+      letter-spacing: 0.1em;
+      text-align: justify; }
+      .post .profile--warning span::first-letter {
+        text-transform: uppercase; }
   .post.g-4 .charOnly, .post.g-6 .charOnly, .post.g-26 .charOnly, .post.g-28 .charOnly, .post.g-3.type-Member .charOnly {
     display: none; }
   .post--avatar {
@@ -279,13 +338,19 @@
       font-family: var(--font-header); }
   .post--content {
     background: var(--bg-secondary);
-    padding: 30px;
+    padding: 15px;
     text-align: justify;
     font-size: calc(var(--size-md) + 1px);
     line-height: 200%; }
+    @media (min-width: 481px) {
+      .post--content {
+        padding: 30px; } }
     .post--content .postcolor.no-template {
       max-width: 500px;
-      margin: 50px auto; }
+      margin: 15px auto; }
+      @media (min-width: 481px) {
+        .post--content .postcolor.no-template {
+          margin: 50px auto; } }
   .post--buttons {
     position: absolute;
     top: 10px;
@@ -516,3 +581,60 @@
   .quick-edit .right-buttons input[type="button"] {
     font-size: var(--size-md);
     width: auto; }
+
+#qr_open,
+#topic_open {
+  margin: 30px auto;
+  padding: 0 20px;
+  max-width: 800px; }
+  #qr_open .maintitle,
+  #topic_open .maintitle {
+    background: var(--bg-accent-30);
+    border: 1px solid var(--border-accent);
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    padding: 20px 30px;
+    font-family: var(--font-header);
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 100%;
+    color: var(--text-secondary);
+    margin: 0; }
+    @media only screen and (min-width: 480px) {
+      #qr_open .maintitle,
+      #topic_open .maintitle {
+        font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
+    @media only screen and (min-width: 1920px) {
+      #qr_open .maintitle,
+      #topic_open .maintitle {
+        font-size: 24px; } }
+    #qr_open .maintitle a,
+    #topic_open .maintitle a {
+      color: var(--text-secondary); }
+  #qr_open .tablepad,
+  #topic_open .tablepad {
+    padding: 20px 0; }
+    @media (min-width: 481px) {
+      #qr_open .tablepad,
+      #topic_open .tablepad {
+        border-left: 1px dotted var(--border-accent);
+        margin-left: 30px;
+        padding: 30px; } }
+
+#qr_open .tablepad {
+  font-size: 0; }
+  #qr_open .tablepad > br,
+  #qr_open .tablepad > input[type="checkbox"] {
+    display: none; }
+  #qr_open .tablepad > a {
+    font-size: var(--size-sm);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px; }
+  #qr_open .tablepad #post_as_selector {
+    margin-top: -45px;
+    display: block; }
+  #qr_open .tablepad input[name="preview"] {
+    margin: 0 10px; }

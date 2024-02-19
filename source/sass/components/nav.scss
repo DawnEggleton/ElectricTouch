@@ -76,9 +76,29 @@
                     background: var(--bg-accent);
                 }
             }
+            .lgFont &.toggle--size {
+                div {
+                    background: var(--bg-accent-50);
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 50%;
+                        height: 100%;
+                        background: var(--bg-accent-50);
+                        border-radius: 2.5px;
+                    }
+
+                    span {
+                        margin: -2px auto;
+                    }
+                }
+            }
 
             .light &.toggle--theme,
-            .lgFont &.toggle--size {
+            .xlFont &.toggle--size {
                 div {
                     background: var(--bg-accent-50);
 
