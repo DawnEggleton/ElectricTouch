@@ -3407,18 +3407,34 @@ header {
     max-width: 1240px;
     padding: 0 20px; }
 
-.topiclist--info {
+#ST .topiclist--info ~ div[align="right"],
+#SF .topiclist--info ~ div[align="right"] {
   margin: 60px auto;
   max-width: 1240px;
   padding: 0 20px; }
-  .topiclist--info-inner {
-    background: var(--bg-transparent-low);
-    border: 1px solid var(--border-primary);
-    padding: 15px;
-    text-align: center;
-    font-size: var(--size-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.15em; }
+  #ST .topiclist--info ~ div[align="right"] > br,
+  #SF .topiclist--info ~ div[align="right"] > br {
+    display: none; }
+  #ST .topiclist--info ~ div[align="right"] > form:first-child,
+  #SF .topiclist--info ~ div[align="right"] > form:first-child {
+    margin-bottom: 20px; }
+  #ST .topiclist--info ~ div[align="right"] > form:last-child,
+  #SF .topiclist--info ~ div[align="right"] > form:last-child {
+    margin-top: 20px; }
+
+.topiclist--info {
+  margin: 60px auto;
+  max-width: 1240px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: var(--size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em; }
+  .topiclist--info > .darkrow2 {
+    border-top: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary);
+    margin: 10px 0;
+    padding: 10px 0; }
 
 .topiclist--section {
   margin: 0 -30px;
