@@ -22,7 +22,8 @@ body.g-28 .staffOnly {
   display: initial; }
 
 .scroll {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-color: var(--bg-accent) transparent;
   scrollbar-width: thin;
   padding-right: 20px; }
@@ -381,37 +382,37 @@ body.g-28 .staffOnly {
 [data-box-align="left"],
 [data-box-align="Left"],
 [data-box-align="LEFT"] {
-  margin: 0 auto 0 0; }
+  margin: 0 auto 0 0 !important; }
 
 [data-box-align="center"],
 [data-box-align="Center"],
 [data-box-align="CENTER"] {
-  margin: 0 auto; }
+  margin: 0 auto !important; }
 
 [data-box-align="right"],
 [data-box-align="Right"],
 [data-box-align="RIGHT"] {
-  margin: 0 0 0 auto; }
+  margin: 0 0 0 auto !important; }
 
 [data-text-align="left"],
 [data-text-align="Left"],
 [data-text-align="LEFT"] {
-  text-align: left; }
+  text-align: left !important; }
 
 [data-text-align="center"],
 [data-text-align="Center"],
 [data-text-align="CENTER"] {
-  text-align: center; }
+  text-align: center !important; }
 
 [data-text-align="right"],
 [data-text-align="Right"],
 [data-text-align="RIGHT"] {
-  text-align: right; }
+  text-align: right !important; }
 
 [data-text-align="justify"],
 [data-text-align="Justify"],
 [data-text-align="JUSTIFY"] {
-  text-align: justify; }
+  text-align: justify !important; }
 
 .blur {
   filter: blur(5px);

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        @@include('../source/templates/head.html', {
+            "prefix": "../dist"
+        })  
+    </head>
+    <body id="Pages" class="g-4">
+        @@include('../source/templates/header.html', {
+            "prefix": ".."
+        })
+      @@include('../source/templates/nav.html', {
+            "prefix": ".."
+        })
+
+        <!--Main Body-->
+        <main>
+            <a name="top"></a>
+		
+		
+            <div id="loading">
+                <div class="loading-bubble">
+                    <i class="fa-regular fa-spinner fa-spin"></i>
+                    <p>Loading</p>
+                </div>
+            </div>
+
+            <!--Webpage-->
+            <section class="webpage">
+                <div class="webpage--menu">
+                    <button class="onlyMobile" onClick="toggleWebpageMenu(this)">
+                        <div class="menu-bar menu-top"></div>
+                        <div class="menu-bar menu-middle"></div>
+                        <div class="menu-bar menu-bottom"></div>
+                    </button>
+                    <tag-labels class="accordion scroll">
+                        <tag-label data-category="forms" class="tab-category accordion--trigger">
+                            <span>Forms</span>
+                        </tag-label>
+                        <div data-category="forms" class="tab-category accordion--content">
+                            <a href="#address">Register an Address</a>
+                            <a href="#update-address">Change an Address</a>
+                            <a href="#connection">Submit a Connection</a>
+                        </div>
+                        <tag-label data-category="info" class="tab-category accordion--trigger">
+                            <span>Information</span>
+                        </tag-label>
+                        <div data-category="info" class="tab-category accordion--content">
+                            <a href="#temperance-neighbourhoods">Temperance Neighbourhoods</a>
+                            <a href="#sydney-neighbourhoods">Sydney Neighbourhoods</a>
+                            <a href="#lookup">Address Lookup</a>
+                        </div>
+                        <tag-label data-category="addresses" class="tab-category accordion--trigger">
+                            <span>Address Book</span>
+                        </tag-label>
+                        <div data-category="addresses" class="tab-category accordion--content">
+                            <a href="#temperance">Temperance</a>
+                            <a href="#sydney">Sydney</a>
+                            <a href="#rural">Rural / Other</a>
+                        </div>
+                        <tag-label data-category="connections" class="tab-category accordion--trigger">
+                            <span>Connections</span>
+                        </tag-label>
+                        <div data-category="connections" class="tab-category accordion--content">
+                            <a href="#historical">Historical</a>
+                            <a href="#local">Local</a>
+                        </div>
+                    </tag-labels>
+                </div>
+                <tag-tabset class="webpage--content">
+                    <tag-tab class="tab-category" data-category="forms">
+                        <tag-tabset>
+                            <tag-tab data-key="#address">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    @@include('../source/templates/forms/address.html')
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#update-address">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    @@include('../source/templates/forms/change-address.html')
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#connection">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    @@include('../source/templates/forms/connection.html')
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="info">
+                        <tag-tabset>
+                            <tag-tab data-key="#temperance-neighbourhoods">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <% temperance %>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#sydney-neighbourhoods">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <% sydney %>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#lookup">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    @@include('../source/templates/forms/lookup.html')
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="addresses">
+                        <tag-tabset>
+                            <tag-tab data-key="#temperance">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="h8">No residents recorded.</div>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#sydney">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="h8">No residents recorded.</div>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#rural">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="h8">No residents recorded.</div>
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="connections">
+                        <tag-tabset>
+                            <tag-tab data-key="#historical">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="h8">No figures of note.</div>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#local">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="h8">No data submitted.</div>
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                </tag-tabset>
+            </section>
+
+            <script>
+                const sheetID = '1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU';
+                const deployID = 'AKfycbx-PjF_7gGgm9QOilpWR6x_QGuKRys5Cjd3wbexK-P2hyxquvLreQW7meY567tPomB2';
+                
+                const businessBot = `1177012692863688714/hnbLmkEeWwLvy2Mogz0EEXtFZdMLk4Pc4_LXUqgYfCwKtzNhNbNMaNeqjv9Rr6MU7FUr`;
+
+                const claims = `https://opensheet.elk.sh/${sheetID}/Claims`;
+                const businesses = `https://opensheet.elk.sh/${sheetID}/Businesses`;
+
+                let businessList = ``;
+                let lookupList = [];
+            </script>
+            <script src="../dist/js/webpageFunctions.js"></script>
+            <script src="../dist/js/formatFunctions.js"></script>
+            <script src="../dist/js/webpageScripts.js"></script>
+            <script src="../dist/js/connectionScripts.js"></script>
+            <script>
+                fetch(claims)
+                .then((response) => response.json())
+                .then((claimsData) => {
+                    fetch(businesses)
+                    .then((response) => response.json())
+                    .then((businessData) => {
+                        let residents = claimsData.filter(data => data.Address && data.Address !== '');
+                        let businessAddresses = businessData.filter(data => data.Address && data.Address !== '');
+                        let connected = claimsData.filter(data => data.Connections && data.Connections !== '');
+                        let addresses = [...residents, ...businessAddresses];
+                        formatResidents(addresses);
+                        formatConnections(connected);
+                        businessData.sort((a, b) => {
+                            if (a.Employer.toLowerCase().trim().replace('the ', '') < b.Employer.toLowerCase().trim().replace('the ', '')) {
+                                return -1;
+                            } else if (a.Employer.toLowerCase().trim().replace('the ', '') > b.Employer.toLowerCase().trim().replace('the ', '')) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        })
+                        businessData.forEach(business => {
+                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
+                            lookupList.push({
+                                name: business.Employer.toLowerCase().trim(),
+                                address: business.Address,
+                            });
+                        });
+                        residents.forEach(resident => {
+                            lookupList.push({
+                                name: resident.Character.toLowerCase().trim(),
+                                address: resident.Address,
+                            });
+                        });
+                        lookupList.sort((a, b) => {
+                            if(a.name < b.name) {
+                                return -1;
+                            } else if(a.name > b.name) {
+                                return 1;
+                            } else {
+                                return 0
+                            }
+                        })
+                    }).then(() => {
+                        document.querySelectorAll('.business-select').forEach(select => select.insertAdjacentHTML('beforeend', businessList));
+                        initConnections();
+                    });
+                });
+            </script>
+
+            <!-- Copyright Information -->
+                <div class="tableborder" align="center">
+                    <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+                        <div class="copyright" align="center">
+                            Powered by 
+                            <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a>
+                            (<a href="http://jcink.com" target="_blank">Jcink.com </a>
+                            <a href="https://jcink.com" target="_blank">Forum Hosting</a>
+                            ) © 2020 &nbsp;
+                            <a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a>
+                            <br>
+                            Page creation time: 0.0054 <!-- http://luxtradition.b1.jcink.com -->  · 
+                            <a href="index.php?act=Mobile">Mobile Version</a> · 
+                            <a href="index.php?act=privacy">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div> 
+        </main>
+
+        
+        @@include('../source/templates/scripts.html', {
+            "prefix": "../dist"
+        })   
+    </body>
+</html>

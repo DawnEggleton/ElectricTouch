@@ -64,6 +64,22 @@
         }
     }
 }
+.alert-options {
+    background: var(--bg-tertiary);
+    display: flex;
+    padding: 10px;
+    justify-content: end;
+    flex-wrap: wrap;
+    gap: 5px;
+    position: sticky;
+    top: 120px;
+    z-index: 2;
+
+    select {
+        width: 100%;
+        max-width: 150px;
+    }
+}
 .topiclist {
     &--info {
         margin: 60px auto;

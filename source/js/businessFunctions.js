@@ -136,7 +136,6 @@ function filterBusinesses(e) {
     let accordionTriggers = document.querySelectorAll(`.accordion--trigger`);
     let matches = [];
     if(searchValue !== '') {
-        e.parentNode.classList.add('pb');
         names.forEach(name => {
             let nameValue = name.innerText.toLowerCase().trim();
             if (nameValue.indexOf(searchValue) > -1) {
@@ -154,6 +153,37 @@ function filterBusinesses(e) {
         }
     } else {
         names.forEach(name => name.classList.remove('hidden'));
+        accordions.forEach(accordion => accordion.classList.remove('is-active'));
+        accordionTriggers.forEach(trigger => trigger.classList.remove('is-active'));
+    }
+}
+function filterEmployees(e) {
+    let searchValue = e.value.toLowerCase().trim();
+    let names = document.querySelectorAll(`.claim-wrap .claim strong`);
+    let businesses = document.querySelectorAll(`.webpage--menu .accordion--content a`);
+    let businessNames = Array.from(businesses).map(business => business.innerText.toLowerCase().trim());
+    let accordions = document.querySelectorAll(`.accordion--content`);
+    let accordionTriggers = document.querySelectorAll(`.accordion--trigger`);
+    let matches = [];
+    businesses.forEach(business => business.classList.add('hidden'));
+    if(searchValue !== '') {
+        names.forEach(name => {
+            let nameValue = name.innerText.toLowerCase().trim();
+            let employer = name.dataset.employer.toLowerCase().trim();
+            let index = businessNames.findIndex(business => business === employer);
+            if (nameValue.indexOf(searchValue) > -1) {
+                businesses[index].classList.remove('hidden');
+                matches.push(businesses[index]);
+            }
+        });
+        if(matches.length > 0) {
+            matches.forEach(match => {
+                match.closest('.accordion--content').classList.add('is-active');
+                match.closest('.accordion--content').previousElementSibling.classList.add('is-active');
+            })
+        }
+    } else {
+        businesses.forEach(name => name.classList.remove('hidden'));
         accordions.forEach(accordion => accordion.classList.remove('is-active'));
         accordionTriggers.forEach(trigger => trigger.classList.remove('is-active'));
     }
@@ -224,8 +254,9 @@ function formatJobClaims(data) {
         let html = formatClaim(job.character, [
             capitalize(job.position, [' ', '(', '-']),
             `Played by <a href="?showuser=${job.memberId}">${job.member}</a>`
-        ], job.groupId, `?showuser=${job.id}`);
-        console.log(cleanText(job.employer));
-        document.querySelector(`#${cleanText(job.employer)}-clip`).insertAdjacentHTML('beforeend', html);
+        ], job.groupId, `?showuser=${job.id}`, `data-employer="${job.employer}"`);
+        if(document.querySelector(`#${cleanText(job.employer)}-clip`)) {
+            document.querySelector(`#${cleanText(job.employer)}-clip`).insertAdjacentHTML('beforeend', html);
+        }
     });
 }

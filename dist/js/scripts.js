@@ -110,6 +110,70 @@ if(pageType === 'SF') {
 if(pageType === 'ST') {
     initPostRowDescription();
     initPostContentAlter();
+
+    let channels = ``, users = ``;
+    taggingChannels.forEach(channel => channels += `<option value="${channel.hook}">${channel.name}</option>`);
+    taggingUsers.sort((a, b) => {
+	if(a.name < b.name) {
+	    return -1;
+	} else if (a.name > b.name) {
+	    return 1;
+	} else {
+	    return 0;
+	}
+    }).forEach(user => users += `<option value="${user.id}">${user.name}</option>`);
+
+    document.querySelector('#ST main > table').insertAdjacentHTML('afterend', `<div class="alert-options">
+	<select id="alert-channel">
+		<option value="">-- None --</option>
+		${channels}
+	</select>
+	<select id="alert-user">
+		<option value="">-- None --</option>
+		${users}
+	</select>
+	<input type="button" name="sendAlert" id="sendAlert" value="Send Alert" />
+</div>`);
+
+    document.querySelector('#sendAlert').addEventListener('click', e => {
+        let channel = document.querySelector('#alert-channel');
+        let user = document.querySelector('#alert-user');
+        let topic = document.querySelector('.topic-title').innerText;
+        let url = `${window.location.origin}${window.location.search}view=getnewpost`;
+        var characters = document.querySelector('.topic-title').innerText;
+        var includes = [...new Set(Array.from(document.querySelectorAll('.post--header > a')).map(item => item.dataset.fullName))];
+        var characterList = ``;
+        includes.forEach((character, i) => {
+            if(includes.length > 2 && i < includes.length && i !== 0) {
+                characterList += `, `;
+            }
+            if(includes.length === 2 && i !== 0) {
+                characterList += ` `;
+            }
+            if ((includes.length === 2 && i !== 0) || (includes.length > 2 && i === includes.length - 1)) {
+                characterList += `and `;
+            }
+            characterList += capitalize(character.toLowerCase()).trim();
+        });
+        let triggerBlock = document.querySelectorAll('.post--main');
+        let triggers = triggerBlock.length > 0 && triggerBlock[triggerBlock.length - 1].querySelector('.profile--warning span') ? triggerBlock[triggerBlock.length - 1].querySelector('.profile--warning span').innerText : false;
+        let message = `Featuring ${characterList}`;
+        if(triggers) {
+            message += `\n**TW:** ${triggers}`;
+        }
+
+        if(channel.options[channel.selectedIndex].value !== '' && user.options[user.selectedIndex].value !== '') {
+            sendDiscordTag(channel.options[channel.selectedIndex].value, `You've been tagged!`, `[${capitalize(topic.toLowerCase(), [` `, `-`])}](<${url}>)
+    ${message}`, `<@${user.options[user.selectedIndex].value}>`);
+        }
+
+        document.querySelector('#alert-channel').value = '';
+        document.querySelector('#alert-user').value = '';
+        document.querySelector('#sendAlert').value = 'Sent!';
+        setTimeout(function () {
+            document.querySelector('#sendAlert').value = 'Send Alert';
+        }, 1000);
+    });
 }
 
 /********** Member List Only **********/

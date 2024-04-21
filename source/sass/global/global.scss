@@ -90,7 +90,8 @@ main {
 .postcolor,
 .webpage--content,
 .profile .scroll,
-.member--item .scroll {
+.member--item .scroll,
+.species--section {
     h2:not(.species--title),
     h3,
     h4,
@@ -105,10 +106,22 @@ main {
     .h6,
     .h7,
     .h8 {
+        font-weight: 700;
         margin-bottom: 15px;
+
+        &.innerHeader {
+            margin-bottom: -15px !important;
+        }
     
         &:not(:first-child) {
             margin-top: 30px;
+        }
+
+        button {
+            border: 0;
+            background: 0;
+            color: inherit;
+            text-transform: inherit;
         }
     }
     
@@ -150,7 +163,7 @@ main {
     .h2 {
         padding: 15px 30px;
         @include fluid-type(16, 24, 480, 1920);
-        max-width: calc(100% - 50px);
+        max-width: calc(100% - 60px);
     
         &::after {
             width: 50px;
@@ -161,7 +174,7 @@ main {
     .h3 {
         padding: 10px 20px;
         @include fluid-type(14, 18, 480, 1920);
-        max-width: calc(100% - 30px);
+        max-width: calc(100% - 40px);
     
         &::after {
             width: 30px;
@@ -195,7 +208,6 @@ main {
         color: var(--text-secondary);
         max-width: calc(100% - 40px);
         width: max-content;
-        max-width: 100%;
         line-height: 160%;
     
         &::after {
@@ -289,25 +301,25 @@ main {
         &[data-width="xs"],
         &[data-width="xs"],
         &[data-width="xs"] {
-            height: 250px;
+            width: 250px;
         }
 
         &[data-width="sm"],
         &[data-width="sm"],
         &[data-width="sm"] {
-            height: 325px;
+            width: 325px;
         }
         
         &[data-width="lg"],
         &[data-width="lg"],
         &[data-width="lg"] {
-            height: 475px;
+            width: 475px;
         }
 
         &[data-width="xl"],
         &[data-width="xl"],
         &[data-width="xl"] {
-            height: 550px;
+            width: 550px;
         }
     }
 
@@ -652,11 +664,41 @@ ol {
     }
 }
 
+fieldset {
+    border: 0;
+    border-left: 1px dotted var(--bg-accent);
+    padding: 11px 0 10px 12px;
+    margin: 20px;
+    height: 100%;
+    text-align: left;
+
+    legend {
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content;
+        text-transform: uppercase;
+        line-height: 100%;
+        background: var(--bg-accent-30);
+        color: var(--text-secondary);
+        font-weight: 400;
+        font-size: var(--size-xs);
+        letter-spacing: 0.15em;
+        padding: 8px 15px;
+        border: 1px solid var(--border-accent);
+        margin-left: -22px;
+    }
+}
+
 button {
     border: 0;
     padding: 0;
     background: none;
     cursor: pointer;
+
+    &[type="button"],
+    &[type="submit"] {
+        cursor: pointer;
+    }
 }
 
 tag-code {
@@ -1091,6 +1133,12 @@ tag-code {
     }
 }
 
+tag-translation {
+    border-bottom: 1px dotted var(--text-secondary);
+    padding: 0 3px;
+    cursor: help;
+}
+
 .copyright,
 #mark-as-read-subto,
 #delcookiesrow {
@@ -1104,28 +1152,28 @@ tag-code {
 }
 
 .fa-brand {
-    font-family: 'Font Awesome 6 Brands';
-    font-style: normal;
-    font-weight: 700;
+    font-family: 'Font Awesome 6 Brands' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
 }
 .fa-solid,
 .fa-regular,
 .fa-light,
 .fa-thin {
-    font-family: 'Font Awesome 6 Pro';
-    font-style: normal;
+    font-family: 'Font Awesome 6 Pro' !important;
+    font-style: normal !important;
 }
 .fa-solid {
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 .fa-regular {
-    font-weight: 500;
+    font-weight: 500 !important;
 }
 .fa-light {
-    font-weight: 300;
+    font-weight: 300 !important;
 }
 .fa-thin {
-    font-weight: 100;
+    font-weight: 100 !important;
 }
 
 .newstext,

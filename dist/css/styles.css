@@ -129,6 +129,13 @@ body.light {
   body.light [data-group="BUTTERCUP"] {
     --rgb: 187, 173, 132;
     --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/buttercup1.jpg); }
+  body.light.g-39,
+  body.light .g-39,
+  body.light [data-group="dogwood"],
+  body.light [data-group="Dogwood"],
+  body.light [data-group="DOGWOOD"] {
+    --rgb: 198, 179, 158;
+    --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/yarrow1.jpg); }
 
 body[class*="g-"],
 body [class*="g-"] {
@@ -389,6 +396,38 @@ body [data-group="YARROW"] {
   --rgb: 113, 75, 64;
   --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/yarrow1.jpg); }
 
+body.g-37,
+body .g-37,
+body [data-group="bearberry"],
+body [data-group="Bearberry"],
+body [data-group="BEARBERRY"] {
+  --rgb: 204, 79, 131;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/bearberry1.jpg); }
+
+body.g-38,
+body .g-38,
+body [data-group="crowberry"],
+body [data-group="Crowberry"],
+body [data-group="CROWBERRY"] {
+  --rgb: 79, 70, 98;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/crowberry1.jpg); }
+
+body.g-39,
+body .g-39,
+body [data-group="dogwood"],
+body [data-group="Dogwood"],
+body [data-group="DOGWOOD"] {
+  --rgb: 217, 205, 192;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/dogwood1.jpg); }
+
+body.g-40,
+body .g-40,
+body [data-group="cattail"],
+body [data-group="Cattail"],
+body [data-group="CATTAIL"] {
+  --rgb: 134, 47, 28;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/cattail1.jpg); }
+
 /*******************************
     Global
 ********************************/
@@ -534,8 +573,94 @@ main > br {
 .member--item .scroll .h5,
 .member--item .scroll .h6,
 .member--item .scroll .h7,
-.member--item .scroll .h8 {
+.member--item .scroll .h8,
+.species--section h2:not(.species--title),
+.species--section h3,
+.species--section h4,
+.species--section h5,
+.species--section h6,
+.species--section h7,
+.species--section h8,
+.species--section .h2,
+.species--section .h3,
+.species--section .h4,
+.species--section .h5,
+.species--section .h6,
+.species--section .h7,
+.species--section .h8 {
+  font-weight: 700;
   margin-bottom: 15px; }
+  .postcolor h2:not(.species--title).innerHeader,
+  .postcolor h3.innerHeader,
+  .postcolor h4.innerHeader,
+  .postcolor h5.innerHeader,
+  .postcolor h6.innerHeader,
+  .postcolor h7.innerHeader,
+  .postcolor h8.innerHeader,
+  .postcolor .h2.innerHeader,
+  .postcolor .h3.innerHeader,
+  .postcolor .h4.innerHeader,
+  .postcolor .h5.innerHeader,
+  .postcolor .h6.innerHeader,
+  .postcolor .h7.innerHeader,
+  .postcolor .h8.innerHeader,
+  .webpage--content h2:not(.species--title).innerHeader,
+  .webpage--content h3.innerHeader,
+  .webpage--content h4.innerHeader,
+  .webpage--content h5.innerHeader,
+  .webpage--content h6.innerHeader,
+  .webpage--content h7.innerHeader,
+  .webpage--content h8.innerHeader,
+  .webpage--content .h2.innerHeader,
+  .webpage--content .h3.innerHeader,
+  .webpage--content .h4.innerHeader,
+  .webpage--content .h5.innerHeader,
+  .webpage--content .h6.innerHeader,
+  .webpage--content .h7.innerHeader,
+  .webpage--content .h8.innerHeader,
+  .profile .scroll h2:not(.species--title).innerHeader,
+  .profile .scroll h3.innerHeader,
+  .profile .scroll h4.innerHeader,
+  .profile .scroll h5.innerHeader,
+  .profile .scroll h6.innerHeader,
+  .profile .scroll h7.innerHeader,
+  .profile .scroll h8.innerHeader,
+  .profile .scroll .h2.innerHeader,
+  .profile .scroll .h3.innerHeader,
+  .profile .scroll .h4.innerHeader,
+  .profile .scroll .h5.innerHeader,
+  .profile .scroll .h6.innerHeader,
+  .profile .scroll .h7.innerHeader,
+  .profile .scroll .h8.innerHeader,
+  .member--item .scroll h2:not(.species--title).innerHeader,
+  .member--item .scroll h3.innerHeader,
+  .member--item .scroll h4.innerHeader,
+  .member--item .scroll h5.innerHeader,
+  .member--item .scroll h6.innerHeader,
+  .member--item .scroll h7.innerHeader,
+  .member--item .scroll h8.innerHeader,
+  .member--item .scroll .h2.innerHeader,
+  .member--item .scroll .h3.innerHeader,
+  .member--item .scroll .h4.innerHeader,
+  .member--item .scroll .h5.innerHeader,
+  .member--item .scroll .h6.innerHeader,
+  .member--item .scroll .h7.innerHeader,
+  .member--item .scroll .h8.innerHeader,
+  .species--section h2:not(.species--title).innerHeader,
+  .species--section h3.innerHeader,
+  .species--section h4.innerHeader,
+  .species--section h5.innerHeader,
+  .species--section h6.innerHeader,
+  .species--section h7.innerHeader,
+  .species--section h8.innerHeader,
+  .species--section .h2.innerHeader,
+  .species--section .h3.innerHeader,
+  .species--section .h4.innerHeader,
+  .species--section .h5.innerHeader,
+  .species--section .h6.innerHeader,
+  .species--section .h7.innerHeader,
+  .species--section .h8.innerHeader {
+    margin-bottom: -15px !important; }
   .postcolor h2:not(.species--title):not(:first-child),
   .postcolor h3:not(:first-child),
   .postcolor h4:not(:first-child),
@@ -591,8 +716,96 @@ main > br {
   .member--item .scroll .h5:not(:first-child),
   .member--item .scroll .h6:not(:first-child),
   .member--item .scroll .h7:not(:first-child),
-  .member--item .scroll .h8:not(:first-child) {
+  .member--item .scroll .h8:not(:first-child),
+  .species--section h2:not(.species--title):not(:first-child),
+  .species--section h3:not(:first-child),
+  .species--section h4:not(:first-child),
+  .species--section h5:not(:first-child),
+  .species--section h6:not(:first-child),
+  .species--section h7:not(:first-child),
+  .species--section h8:not(:first-child),
+  .species--section .h2:not(:first-child),
+  .species--section .h3:not(:first-child),
+  .species--section .h4:not(:first-child),
+  .species--section .h5:not(:first-child),
+  .species--section .h6:not(:first-child),
+  .species--section .h7:not(:first-child),
+  .species--section .h8:not(:first-child) {
     margin-top: 30px; }
+  .postcolor h2:not(.species--title) button,
+  .postcolor h3 button,
+  .postcolor h4 button,
+  .postcolor h5 button,
+  .postcolor h6 button,
+  .postcolor h7 button,
+  .postcolor h8 button,
+  .postcolor .h2 button,
+  .postcolor .h3 button,
+  .postcolor .h4 button,
+  .postcolor .h5 button,
+  .postcolor .h6 button,
+  .postcolor .h7 button,
+  .postcolor .h8 button,
+  .webpage--content h2:not(.species--title) button,
+  .webpage--content h3 button,
+  .webpage--content h4 button,
+  .webpage--content h5 button,
+  .webpage--content h6 button,
+  .webpage--content h7 button,
+  .webpage--content h8 button,
+  .webpage--content .h2 button,
+  .webpage--content .h3 button,
+  .webpage--content .h4 button,
+  .webpage--content .h5 button,
+  .webpage--content .h6 button,
+  .webpage--content .h7 button,
+  .webpage--content .h8 button,
+  .profile .scroll h2:not(.species--title) button,
+  .profile .scroll h3 button,
+  .profile .scroll h4 button,
+  .profile .scroll h5 button,
+  .profile .scroll h6 button,
+  .profile .scroll h7 button,
+  .profile .scroll h8 button,
+  .profile .scroll .h2 button,
+  .profile .scroll .h3 button,
+  .profile .scroll .h4 button,
+  .profile .scroll .h5 button,
+  .profile .scroll .h6 button,
+  .profile .scroll .h7 button,
+  .profile .scroll .h8 button,
+  .member--item .scroll h2:not(.species--title) button,
+  .member--item .scroll h3 button,
+  .member--item .scroll h4 button,
+  .member--item .scroll h5 button,
+  .member--item .scroll h6 button,
+  .member--item .scroll h7 button,
+  .member--item .scroll h8 button,
+  .member--item .scroll .h2 button,
+  .member--item .scroll .h3 button,
+  .member--item .scroll .h4 button,
+  .member--item .scroll .h5 button,
+  .member--item .scroll .h6 button,
+  .member--item .scroll .h7 button,
+  .member--item .scroll .h8 button,
+  .species--section h2:not(.species--title) button,
+  .species--section h3 button,
+  .species--section h4 button,
+  .species--section h5 button,
+  .species--section h6 button,
+  .species--section h7 button,
+  .species--section h8 button,
+  .species--section .h2 button,
+  .species--section .h3 button,
+  .species--section .h4 button,
+  .species--section .h5 button,
+  .species--section .h6 button,
+  .species--section .h7 button,
+  .species--section .h8 button {
+    border: 0;
+    background: 0;
+    color: inherit;
+    text-transform: inherit; }
 
 .postcolor h2:not(.species--title),
 .postcolor h3,
@@ -625,7 +838,15 @@ main > br {
 .member--item .scroll .h2,
 .member--item .scroll .h3,
 .member--item .scroll .h4,
-.member--item .scroll .h5 {
+.member--item .scroll .h5,
+.species--section h2:not(.species--title),
+.species--section h3,
+.species--section h4,
+.species--section h5,
+.species--section .h2,
+.species--section .h3,
+.species--section .h4,
+.species--section .h5 {
   font-weight: 900;
   font-family: var(--font-header);
   line-height: 160%;
@@ -649,7 +870,11 @@ main > br {
 .member--item .scroll h2:not(.species--title),
 .member--item .scroll h3,
 .member--item .scroll .h2,
-.member--item .scroll .h3 {
+.member--item .scroll .h3,
+.species--section h2:not(.species--title),
+.species--section h3,
+.species--section .h2,
+.species--section .h3 {
   border: 1px solid var(--border-accent);
   background: var(--bg-accent-30);
   color: var(--text-secondary);
@@ -669,7 +894,11 @@ main > br {
   .member--item .scroll h2:not(.species--title)::after,
   .member--item .scroll h3::after,
   .member--item .scroll .h2::after,
-  .member--item .scroll .h3::after {
+  .member--item .scroll .h3::after,
+  .species--section h2:not(.species--title)::after,
+  .species--section h3::after,
+  .species--section .h2::after,
+  .species--section .h3::after {
     content: '';
     position: absolute;
     top: calc(50% - 0.5px);
@@ -684,10 +913,12 @@ main > br {
 .profile .scroll h2:not(.species--title),
 .profile .scroll .h2,
 .member--item .scroll h2:not(.species--title),
-.member--item .scroll .h2 {
+.member--item .scroll .h2,
+.species--section h2:not(.species--title),
+.species--section .h2 {
   padding: 15px 30px;
   font-size: 16px;
-  max-width: calc(100% - 50px); }
+  max-width: calc(100% - 60px); }
   @media only screen and (min-width: 480px) {
     .postcolor h2:not(.species--title),
     .postcolor .h2,
@@ -696,7 +927,9 @@ main > br {
     .profile .scroll h2:not(.species--title),
     .profile .scroll .h2,
     .member--item .scroll h2:not(.species--title),
-    .member--item .scroll .h2 {
+    .member--item .scroll .h2,
+    .species--section h2:not(.species--title),
+    .species--section .h2 {
       font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h2:not(.species--title),
@@ -706,7 +939,9 @@ main > br {
     .profile .scroll h2:not(.species--title),
     .profile .scroll .h2,
     .member--item .scroll h2:not(.species--title),
-    .member--item .scroll .h2 {
+    .member--item .scroll .h2,
+    .species--section h2:not(.species--title),
+    .species--section .h2 {
       font-size: 24px; } }
   .postcolor h2:not(.species--title)::after,
   .postcolor .h2::after,
@@ -715,7 +950,9 @@ main > br {
   .profile .scroll h2:not(.species--title)::after,
   .profile .scroll .h2::after,
   .member--item .scroll h2:not(.species--title)::after,
-  .member--item .scroll .h2::after {
+  .member--item .scroll .h2::after,
+  .species--section h2:not(.species--title)::after,
+  .species--section .h2::after {
     width: 50px; }
 
 .postcolor h3,
@@ -725,10 +962,12 @@ main > br {
 .profile .scroll h3,
 .profile .scroll .h3,
 .member--item .scroll h3,
-.member--item .scroll .h3 {
+.member--item .scroll .h3,
+.species--section h3,
+.species--section .h3 {
   padding: 10px 20px;
   font-size: 14px;
-  max-width: calc(100% - 30px); }
+  max-width: calc(100% - 40px); }
   @media only screen and (min-width: 480px) {
     .postcolor h3,
     .postcolor .h3,
@@ -737,7 +976,9 @@ main > br {
     .profile .scroll h3,
     .profile .scroll .h3,
     .member--item .scroll h3,
-    .member--item .scroll .h3 {
+    .member--item .scroll .h3,
+    .species--section h3,
+    .species--section .h3 {
       font-size: calc(14px + 4 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h3,
@@ -747,7 +988,9 @@ main > br {
     .profile .scroll h3,
     .profile .scroll .h3,
     .member--item .scroll h3,
-    .member--item .scroll .h3 {
+    .member--item .scroll .h3,
+    .species--section h3,
+    .species--section .h3 {
       font-size: 18px; } }
   .postcolor h3::after,
   .postcolor .h3::after,
@@ -756,7 +999,9 @@ main > br {
   .profile .scroll h3::after,
   .profile .scroll .h3::after,
   .member--item .scroll h3::after,
-  .member--item .scroll .h3::after {
+  .member--item .scroll .h3::after,
+  .species--section h3::after,
+  .species--section .h3::after {
     width: 30px; }
 
 .postcolor h4,
@@ -774,7 +1019,11 @@ main > br {
 .member--item .scroll h4,
 .member--item .scroll h5,
 .member--item .scroll .h4,
-.member--item .scroll .h5 {
+.member--item .scroll .h5,
+.species--section h4,
+.species--section h5,
+.species--section .h4,
+.species--section .h5 {
   border-bottom: 1px solid var(--border-accent);
   color: var(--text-secondary); }
 
@@ -785,7 +1034,9 @@ main > br {
 .profile .scroll h4,
 .profile .scroll .h4,
 .member--item .scroll h4,
-.member--item .scroll .h4 {
+.member--item .scroll .h4,
+.species--section h4,
+.species--section .h4 {
   font-size: 16px;
   padding: 0 40px 5px 0; }
   @media only screen and (min-width: 480px) {
@@ -796,7 +1047,9 @@ main > br {
     .profile .scroll h4,
     .profile .scroll .h4,
     .member--item .scroll h4,
-    .member--item .scroll .h4 {
+    .member--item .scroll .h4,
+    .species--section h4,
+    .species--section .h4 {
       font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h4,
@@ -806,7 +1059,9 @@ main > br {
     .profile .scroll h4,
     .profile .scroll .h4,
     .member--item .scroll h4,
-    .member--item .scroll .h4 {
+    .member--item .scroll .h4,
+    .species--section h4,
+    .species--section .h4 {
       font-size: 24px; } }
 
 .postcolor h5,
@@ -816,7 +1071,9 @@ main > br {
 .profile .scroll h5,
 .profile .scroll .h5,
 .member--item .scroll h5,
-.member--item .scroll .h5 {
+.member--item .scroll .h5,
+.species--section h5,
+.species--section .h5 {
   font-size: 14px;
   padding: 0 25px 5px 0; }
   @media only screen and (min-width: 480px) {
@@ -827,7 +1084,9 @@ main > br {
     .profile .scroll h5,
     .profile .scroll .h5,
     .member--item .scroll h5,
-    .member--item .scroll .h5 {
+    .member--item .scroll .h5,
+    .species--section h5,
+    .species--section .h5 {
       font-size: calc(14px + 4 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h5,
@@ -837,7 +1096,9 @@ main > br {
     .profile .scroll h5,
     .profile .scroll .h5,
     .member--item .scroll h5,
-    .member--item .scroll .h5 {
+    .member--item .scroll .h5,
+    .species--section h5,
+    .species--section .h5 {
       font-size: 18px; } }
 
 .postcolor h6,
@@ -847,7 +1108,9 @@ main > br {
 .profile .scroll h6,
 .profile .scroll .h6,
 .member--item .scroll h6,
-.member--item .scroll .h6 {
+.member--item .scroll .h6,
+.species--section h6,
+.species--section .h6 {
   text-transform: uppercase;
   font-size: var(--size-sm);
   color: var(--text-secondary);
@@ -855,7 +1118,6 @@ main > br {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  max-width: 100%;
   line-height: 160%; }
   .postcolor h6::after,
   .postcolor .h6::after,
@@ -864,7 +1126,9 @@ main > br {
   .profile .scroll h6::after,
   .profile .scroll .h6::after,
   .member--item .scroll h6::after,
-  .member--item .scroll .h6::after {
+  .member--item .scroll .h6::after,
+  .species--section h6::after,
+  .species--section .h6::after {
     content: '';
     position: absolute;
     top: calc(50% - 0.5px);
@@ -888,7 +1152,11 @@ main > br {
 .member--item .scroll h7,
 .member--item .scroll h8,
 .member--item .scroll .h7,
-.member--item .scroll .h8 {
+.member--item .scroll .h8,
+.species--section h7,
+.species--section h8,
+.species--section .h7,
+.species--section .h8 {
   display: block;
   text-transform: uppercase;
   text-align: justify;
@@ -907,7 +1175,9 @@ main > br {
 .profile .scroll h8,
 .profile .scroll .h8,
 .member--item .scroll h8,
-.member--item .scroll .h8 {
+.member--item .scroll .h8,
+.species--section h8,
+.species--section .h8 {
   background: var(--bg-accent);
   color: var(--text-on-accent);
   padding: 10px 15px; }
@@ -919,7 +1189,9 @@ main > br {
 .profile .scroll p,
 .profile .scroll ul,
 .member--item .scroll p,
-.member--item .scroll ul {
+.member--item .scroll ul,
+.species--section p,
+.species--section ul {
   margin: 20px 0; }
   .postcolor p:first-child,
   .postcolor ul:first-child,
@@ -928,7 +1200,9 @@ main > br {
   .profile .scroll p:first-child,
   .profile .scroll ul:first-child,
   .member--item .scroll p:first-child,
-  .member--item .scroll ul:first-child {
+  .member--item .scroll ul:first-child,
+  .species--section p:first-child,
+  .species--section ul:first-child {
     margin-top: 0; }
   .postcolor p:last-child,
   .postcolor ul:last-child,
@@ -937,13 +1211,16 @@ main > br {
   .profile .scroll p:last-child,
   .profile .scroll ul:last-child,
   .member--item .scroll p:last-child,
-  .member--item .scroll ul:last-child {
+  .member--item .scroll ul:last-child,
+  .species--section p:last-child,
+  .species--section ul:last-child {
     margin-bottom: 0; }
 
 .postcolor hr,
 .webpage--content hr,
 .profile .scroll hr,
-.member--item .scroll hr {
+.member--item .scroll hr,
+.species--section hr {
   display: block;
   height: 6px;
   background: var(--bg-accent-30);
@@ -955,7 +1232,8 @@ main > br {
 .postcolor hl,
 .webpage--content hl,
 .profile .scroll hl,
-.member--item .scroll hl {
+.member--item .scroll hl,
+.species--section hl {
   display: block;
   height: 4px;
   background: var(--bg-accent);
@@ -972,7 +1250,10 @@ main > br {
   .profile .scroll hl[data-style="thin"],
   .member--item .scroll hl[data-style="thin"],
   .member--item .scroll hl[data-style="thin"],
-  .member--item .scroll hl[data-style="thin"] {
+  .member--item .scroll hl[data-style="thin"],
+  .species--section hl[data-style="thin"],
+  .species--section hl[data-style="thin"],
+  .species--section hl[data-style="thin"] {
     height: 1px;
     border-radius: 0; }
   .postcolor hl[data-style="outline"], .postcolor hl[data-style="outline"], .postcolor hl[data-style="outline"],
@@ -984,7 +1265,10 @@ main > br {
   .profile .scroll hl[data-style="outline"],
   .member--item .scroll hl[data-style="outline"],
   .member--item .scroll hl[data-style="outline"],
-  .member--item .scroll hl[data-style="outline"] {
+  .member--item .scroll hl[data-style="outline"],
+  .species--section hl[data-style="outline"],
+  .species--section hl[data-style="outline"],
+  .species--section hl[data-style="outline"] {
     background: var(--bg-accent-30);
     border: 1px solid var(--border-accent);
     border-radius: 1px;
@@ -998,7 +1282,10 @@ main > br {
   .profile .scroll hl[data-style="dotted"],
   .member--item .scroll hl[data-style="dotted"],
   .member--item .scroll hl[data-style="dotted"],
-  .member--item .scroll hl[data-style="dotted"] {
+  .member--item .scroll hl[data-style="dotted"],
+  .species--section hl[data-style="dotted"],
+  .species--section hl[data-style="dotted"],
+  .species--section hl[data-style="dotted"] {
     background: none;
     height: 0;
     border-top: 1px dotted var(--border-accent); }
@@ -1011,8 +1298,11 @@ main > br {
   .profile .scroll hl[data-width="xs"],
   .member--item .scroll hl[data-width="xs"],
   .member--item .scroll hl[data-width="xs"],
-  .member--item .scroll hl[data-width="xs"] {
-    height: 250px; }
+  .member--item .scroll hl[data-width="xs"],
+  .species--section hl[data-width="xs"],
+  .species--section hl[data-width="xs"],
+  .species--section hl[data-width="xs"] {
+    width: 250px; }
   .postcolor hl[data-width="sm"], .postcolor hl[data-width="sm"], .postcolor hl[data-width="sm"],
   .webpage--content hl[data-width="sm"],
   .webpage--content hl[data-width="sm"],
@@ -1022,8 +1312,11 @@ main > br {
   .profile .scroll hl[data-width="sm"],
   .member--item .scroll hl[data-width="sm"],
   .member--item .scroll hl[data-width="sm"],
-  .member--item .scroll hl[data-width="sm"] {
-    height: 325px; }
+  .member--item .scroll hl[data-width="sm"],
+  .species--section hl[data-width="sm"],
+  .species--section hl[data-width="sm"],
+  .species--section hl[data-width="sm"] {
+    width: 325px; }
   .postcolor hl[data-width="lg"], .postcolor hl[data-width="lg"], .postcolor hl[data-width="lg"],
   .webpage--content hl[data-width="lg"],
   .webpage--content hl[data-width="lg"],
@@ -1033,8 +1326,11 @@ main > br {
   .profile .scroll hl[data-width="lg"],
   .member--item .scroll hl[data-width="lg"],
   .member--item .scroll hl[data-width="lg"],
-  .member--item .scroll hl[data-width="lg"] {
-    height: 475px; }
+  .member--item .scroll hl[data-width="lg"],
+  .species--section hl[data-width="lg"],
+  .species--section hl[data-width="lg"],
+  .species--section hl[data-width="lg"] {
+    width: 475px; }
   .postcolor hl[data-width="xl"], .postcolor hl[data-width="xl"], .postcolor hl[data-width="xl"],
   .webpage--content hl[data-width="xl"],
   .webpage--content hl[data-width="xl"],
@@ -1044,13 +1340,17 @@ main > br {
   .profile .scroll hl[data-width="xl"],
   .member--item .scroll hl[data-width="xl"],
   .member--item .scroll hl[data-width="xl"],
-  .member--item .scroll hl[data-width="xl"] {
-    height: 550px; }
+  .member--item .scroll hl[data-width="xl"],
+  .species--section hl[data-width="xl"],
+  .species--section hl[data-width="xl"],
+  .species--section hl[data-width="xl"] {
+    width: 550px; }
 
 .postcolor vl,
 .webpage--content vl,
 .profile .scroll vl,
-.member--item .scroll vl {
+.member--item .scroll vl,
+.species--section vl {
   display: block;
   height: 200px;
   background: var(--bg-accent);
@@ -1066,7 +1366,10 @@ main > br {
   .profile .scroll vl[data-style="thin"],
   .member--item .scroll vl[data-style="thin"],
   .member--item .scroll vl[data-style="thin"],
-  .member--item .scroll vl[data-style="thin"] {
+  .member--item .scroll vl[data-style="thin"],
+  .species--section vl[data-style="thin"],
+  .species--section vl[data-style="thin"],
+  .species--section vl[data-style="thin"] {
     width: 1px;
     border-radius: 0; }
   .postcolor vl[data-style="outline"], .postcolor vl[data-style="outline"], .postcolor vl[data-style="outline"],
@@ -1078,7 +1381,10 @@ main > br {
   .profile .scroll vl[data-style="outline"],
   .member--item .scroll vl[data-style="outline"],
   .member--item .scroll vl[data-style="outline"],
-  .member--item .scroll vl[data-style="outline"] {
+  .member--item .scroll vl[data-style="outline"],
+  .species--section vl[data-style="outline"],
+  .species--section vl[data-style="outline"],
+  .species--section vl[data-style="outline"] {
     background: var(--bg-accent-30);
     border: 1px solid var(--border-accent);
     border-radius: 1px;
@@ -1092,7 +1398,10 @@ main > br {
   .profile .scroll vl[data-style="dotted"],
   .member--item .scroll vl[data-style="dotted"],
   .member--item .scroll vl[data-style="dotted"],
-  .member--item .scroll vl[data-style="dotted"] {
+  .member--item .scroll vl[data-style="dotted"],
+  .species--section vl[data-style="dotted"],
+  .species--section vl[data-style="dotted"],
+  .species--section vl[data-style="dotted"] {
     background: none;
     width: 0;
     border-left: 1px dotted var(--border-accent); }
@@ -1105,7 +1414,10 @@ main > br {
   .profile .scroll vl[data-height="xxs"],
   .member--item .scroll vl[data-height="xxs"],
   .member--item .scroll vl[data-height="xxs"],
-  .member--item .scroll vl[data-height="xxs"] {
+  .member--item .scroll vl[data-height="xxs"],
+  .species--section vl[data-height="xxs"],
+  .species--section vl[data-height="xxs"],
+  .species--section vl[data-height="xxs"] {
     height: 30px; }
   .postcolor vl[data-height="xs"], .postcolor vl[data-height="xs"], .postcolor vl[data-height="xs"],
   .webpage--content vl[data-height="xs"],
@@ -1116,7 +1428,10 @@ main > br {
   .profile .scroll vl[data-height="xs"],
   .member--item .scroll vl[data-height="xs"],
   .member--item .scroll vl[data-height="xs"],
-  .member--item .scroll vl[data-height="xs"] {
+  .member--item .scroll vl[data-height="xs"],
+  .species--section vl[data-height="xs"],
+  .species--section vl[data-height="xs"],
+  .species--section vl[data-height="xs"] {
     height: 50px; }
   .postcolor vl[data-height="sm"], .postcolor vl[data-height="sm"], .postcolor vl[data-height="sm"],
   .webpage--content vl[data-height="sm"],
@@ -1127,7 +1442,10 @@ main > br {
   .profile .scroll vl[data-height="sm"],
   .member--item .scroll vl[data-height="sm"],
   .member--item .scroll vl[data-height="sm"],
-  .member--item .scroll vl[data-height="sm"] {
+  .member--item .scroll vl[data-height="sm"],
+  .species--section vl[data-height="sm"],
+  .species--section vl[data-height="sm"],
+  .species--section vl[data-height="sm"] {
     height: 125px; }
   .postcolor vl[data-height="lg"], .postcolor vl[data-height="lg"], .postcolor vl[data-height="lg"],
   .webpage--content vl[data-height="lg"],
@@ -1138,7 +1456,10 @@ main > br {
   .profile .scroll vl[data-height="lg"],
   .member--item .scroll vl[data-height="lg"],
   .member--item .scroll vl[data-height="lg"],
-  .member--item .scroll vl[data-height="lg"] {
+  .member--item .scroll vl[data-height="lg"],
+  .species--section vl[data-height="lg"],
+  .species--section vl[data-height="lg"],
+  .species--section vl[data-height="lg"] {
     height: 275px; }
   .postcolor vl[data-height="xl"], .postcolor vl[data-height="xl"], .postcolor vl[data-height="xl"],
   .webpage--content vl[data-height="xl"],
@@ -1149,7 +1470,10 @@ main > br {
   .profile .scroll vl[data-height="xl"],
   .member--item .scroll vl[data-height="xl"],
   .member--item .scroll vl[data-height="xl"],
-  .member--item .scroll vl[data-height="xl"] {
+  .member--item .scroll vl[data-height="xl"],
+  .species--section vl[data-height="xl"],
+  .species--section vl[data-height="xl"],
+  .species--section vl[data-height="xl"] {
     height: 350px; }
 
 .postcolor b,
@@ -1159,7 +1483,9 @@ main > br {
 .profile .scroll b,
 .profile .scroll tag-spoken,
 .member--item .scroll b,
-.member--item .scroll tag-spoken {
+.member--item .scroll tag-spoken,
+.species--section b,
+.species--section tag-spoken {
   color: var(--text-accent);
   font-weight: 800;
   font-family: var(--font-header);
@@ -1172,7 +1498,9 @@ main > br {
 .profile .scroll i,
 .profile .scroll tag-thought,
 .member--item .scroll i,
-.member--item .scroll tag-thought {
+.member--item .scroll tag-thought,
+.species--section i,
+.species--section tag-thought {
   font-style: italic;
   color: var(--text-secondary);
   font-weight: 500; }
@@ -1180,7 +1508,8 @@ main > br {
 .postcolor u,
 .webpage--content u,
 .profile .scroll u,
-.member--item .scroll u {
+.member--item .scroll u,
+.species--section u {
   border-bottom: 1px dotted var(--border-accent);
   padding: 0 5px;
   color: var(--text-secondary);
@@ -1189,7 +1518,8 @@ main > br {
 .postcolor s,
 .webpage--content s,
 .profile .scroll s,
-.member--item .scroll s {
+.member--item .scroll s,
+.species--section s {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
   -webkit-text-decoration-color: var(--border-accent);
@@ -1202,7 +1532,8 @@ main > br {
 .postcolor a,
 .webpage--content a,
 .profile .scroll a,
-.member--item .scroll a {
+.member--item .scroll a,
+.species--section a {
   color: var(--text-accent);
   text-transform: uppercase;
   font-size: 0.9em;
@@ -1459,11 +1790,35 @@ ol {
     ol li:not(:last-child) {
       margin-bottom: 10px; }
 
+fieldset {
+  border: 0;
+  border-left: 1px dotted var(--bg-accent);
+  padding: 11px 0 10px 12px;
+  margin: 20px;
+  height: 100%;
+  text-align: left; }
+  fieldset legend {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    text-transform: uppercase;
+    line-height: 100%;
+    background: var(--bg-accent-30);
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: var(--size-xs);
+    letter-spacing: 0.15em;
+    padding: 8px 15px;
+    border: 1px solid var(--border-accent);
+    margin-left: -22px; }
+
 button {
   border: 0;
   padding: 0;
   background: none;
   cursor: pointer; }
+  button[type="button"], button[type="submit"] {
+    cursor: pointer; }
 
 tag-code {
   display: -ms-grid;
@@ -1907,6 +2262,11 @@ tag-code {
         -ms-grid-row-align: end;
             align-self: end; }
 
+tag-translation {
+  border-bottom: 1px dotted var(--text-secondary);
+  padding: 0 3px;
+  cursor: help; }
+
 .copyright,
 #mark-as-read-subto,
 #delcookiesrow {
@@ -1919,28 +2279,28 @@ tag-code {
   margin: 0 auto 20px; }
 
 .fa-brand {
-  font-family: 'Font Awesome 6 Brands';
-  font-style: normal;
-  font-weight: 700; }
+  font-family: 'Font Awesome 6 Brands' !important;
+  font-style: normal !important;
+  font-weight: 700 !important; }
 
 .fa-solid,
 .fa-regular,
 .fa-light,
 .fa-thin {
-  font-family: 'Font Awesome 6 Pro';
-  font-style: normal; }
+  font-family: 'Font Awesome 6 Pro' !important;
+  font-style: normal !important; }
 
 .fa-solid {
-  font-weight: 700; }
+  font-weight: 700 !important; }
 
 .fa-regular {
-  font-weight: 500; }
+  font-weight: 500 !important; }
 
 .fa-light {
-  font-weight: 300; }
+  font-weight: 300 !important; }
 
 .fa-thin {
-  font-weight: 100; }
+  font-weight: 100 !important; }
 
 .newstext,
 .wrapmini,
@@ -1972,7 +2332,8 @@ body.g-28 .staffOnly {
   display: initial; }
 
 .scroll {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-color: var(--bg-accent) transparent;
   scrollbar-width: thin;
   padding-right: 20px; }
@@ -2352,37 +2713,37 @@ body.g-28 .staffOnly {
 [data-box-align="left"],
 [data-box-align="Left"],
 [data-box-align="LEFT"] {
-  margin: 0 auto 0 0; }
+  margin: 0 auto 0 0 !important; }
 
 [data-box-align="center"],
 [data-box-align="Center"],
 [data-box-align="CENTER"] {
-  margin: 0 auto; }
+  margin: 0 auto !important; }
 
 [data-box-align="right"],
 [data-box-align="Right"],
 [data-box-align="RIGHT"] {
-  margin: 0 0 0 auto; }
+  margin: 0 0 0 auto !important; }
 
 [data-text-align="left"],
 [data-text-align="Left"],
 [data-text-align="LEFT"] {
-  text-align: left; }
+  text-align: left !important; }
 
 [data-text-align="center"],
 [data-text-align="Center"],
 [data-text-align="CENTER"] {
-  text-align: center; }
+  text-align: center !important; }
 
 [data-text-align="right"],
 [data-text-align="Right"],
 [data-text-align="RIGHT"] {
-  text-align: right; }
+  text-align: right !important; }
 
 [data-text-align="justify"],
 [data-text-align="Justify"],
 [data-text-align="JUSTIFY"] {
-  text-align: justify; }
+  text-align: justify !important; }
 
 .blur {
   -webkit-filter: blur(5px);
@@ -2674,10 +3035,17 @@ header {
     display: -ms-flexbox;
     display: flex;
     gap: 10px;
-    height: 150px; }
+    height: 150px;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
     .header--staff a {
-      height: 100%;
-      width: 100%; }
+      height: calc(50% - 5px);
+      width: 100%;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 calc(50% - 5px);
+          -ms-flex: 0 0 calc(50% - 5px);
+              flex: 0 0 calc(50% - 5px); }
     .header--staff img {
       position: absolute;
       top: 0;
@@ -3422,6 +3790,29 @@ header {
   #SF .topiclist--info ~ div[align="right"] > form:last-child {
     margin-top: 20px; }
 
+.alert-options {
+  background: var(--bg-tertiary);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  gap: 5px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 120px;
+  z-index: 2; }
+  .alert-options select {
+    width: 100%;
+    max-width: 150px; }
+
 .topiclist--info {
   margin: 60px auto;
   max-width: 1240px;
@@ -4043,7 +4434,7 @@ header {
     display: -ms-flexbox;
     display: flex;
     gap: 10px 30px;
-    margin-top: 10px;
+    margin-top: 20px;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
@@ -5206,15 +5597,20 @@ header {
     height: max-content; }
     .profile--tracker-item a {
       color: var(--text-accent);
-      font-weight: 800; }
+      font-weight: 800 !important;
+      border: none !important;
+      padding: 0 !important;
+      font-size: inherit !important; }
     .profile--tracker-item > a {
-      font-size: var(--size-lg);
-      text-transform: capitalize;
+      font-size: var(--size-lg) !important;
+      text-transform: capitalize !important;
       line-height: 200%;
       display: block;
       margin-bottom: 5px;
       font-family: var(--font-header);
-      font-weight: 900; }
+      font-weight: 900 !important;
+      border: none !important;
+      padding: 0 !important; }
     .profile--tracker-item span:first-of-type {
       background: var(--bg-accent);
       color: var(--text-on-accent);
@@ -5297,6 +5693,50 @@ header {
       @media (max-width: 1024px) {
         .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll, .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll {
           max-height: 400px; } }
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll et-image + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll hl + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll vl + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h1 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h2 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h3 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h5 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h6 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h7 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h8 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h1 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h2 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h3 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h5 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h6 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h7 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h8 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll blockquote + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll hl + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll hl + br + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll vl + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll vl + br + et-iamge::before, .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll et-image + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll hl + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll vl + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h1 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h2 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h3 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h5 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h6 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h7 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h8 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h1 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h2 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h3 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h5 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h6 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h7 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h8 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll blockquote + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll hl + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll hl + br + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll vl + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll vl + br + et-iamge::before {
+        display: none; }
   .profile .profile--main > tag-tabset > tag-tab .profile--side-scroll {
     height: 100%;
     -webkit-box-ordinal-group: 2;
@@ -5911,9 +6351,12 @@ header {
       padding: 8px 15px;
       margin-top: 5px;
       border: 1px solid var(--border-accent);
-      font-family: var(--font-header); }
+      font-family: var(--font-header);
+      text-align: left; }
       .webpage .claim strong a {
-        color: var(--text-secondary); }
+        color: var(--text-secondary);
+        border: none;
+        padding: 0; }
     .webpage .claim > span {
       border-left: 1px dotted var(--bg-accent);
       padding: 5px 0 5px 12px;
@@ -6309,7 +6752,12 @@ header {
       margin-top: 10px; }
       .webpage .menu-static > div strong {
         color: var(--text-on-accent);
-        margin-bottom: 5px; }
+        margin-bottom: 5px;
+        font-family: var(--font-header);
+        font-weight: 900;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-size: var(--size-sm); }
   .webpage .business {
     display: -ms-grid;
     display: grid;
@@ -6332,6 +6780,74 @@ header {
       padding: 15px; }
       .webpage .business--hours ul:not(:last-child) {
         margin-bottom: 20px; }
+  .webpage .toggle button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .webpage .toggle:not(.is-active) .fa-minus {
+    display: none; }
+  .webpage .toggle:not(.is-active) + .claim-wrap {
+    display: none; }
+  .webpage .toggle.is-active .fa-plus {
+    display: none; }
+  .webpage--flex-info {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: var(--size-xs);
+    letter-spacing: 0.15em;
+    gap: 20px;
+    -webkit-align-self: start;
+        -ms-flex-item-align: start;
+                -ms-grid-row-align: start;
+            align-self: start; }
+    .webpage--flex-info-item {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      gap: 3.5px; }
+      .webpage--flex-info-item b {
+        color: var(--text-accent);
+        font-size: 1.2em; }
+      .webpage--flex-info-item .fa-solid {
+        color: var(--text-accent); }
+    .webpage--flex-info-range-item {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      gap: 3.5px;
+      line-height: 100%;
+      margin-top: 10px; }
+      .webpage--flex-info-range-item i {
+        font-size: 1.5em; }
+        .webpage--flex-info-range-item i.fa-thin {
+          opacity: 0.75; }
+  .webpage #lookup-results:not(:empty) {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-accent); }
 
 /*******************************
     Jcink Defaults
@@ -6554,7 +7070,45 @@ header {
             display: none; }
       #Post #posting-form > tbody > tr#enter-your-post {
         display: block; }
-        #Post #posting-form > tbody > tr#enter-your-post .pformleft {
+        #Post #posting-form > tbody > tr#enter-your-post #smilies-table {
+          display: block;
+          width: 100%; }
+          #Post #posting-form > tbody > tr#enter-your-post #smilies-table tbody {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+            -webkit-box-pack: start;
+            -webkit-justify-content: start;
+                -ms-flex-pack: start;
+                    justify-content: start;
+            gap: 10px;
+            font-size: 0;
+            width: 100%;
+            line-height: 0;
+            border: 1px dotted var(--border-accent);
+            background: var(--bg-secondary);
+            padding: 10px;
+            margin-bottom: -4px; }
+            #Post #posting-form > tbody > tr#enter-your-post #smilies-table tbody > tr {
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-flex-wrap: wrap;
+                  -ms-flex-wrap: wrap;
+                      flex-wrap: wrap;
+              -webkit-box-pack: start;
+              -webkit-justify-content: start;
+                  -ms-flex-pack: start;
+                      justify-content: start;
+              gap: 5px; }
+              #Post #posting-form > tbody > tr#enter-your-post #smilies-table tbody > tr:first-child, #Post #posting-form > tbody > tr#enter-your-post #smilies-table tbody > tr:last-child {
+                display: none; }
+        #Post #posting-form > tbody > tr#enter-your-post .desc {
           display: none; }
         #Post #posting-form > tbody > tr#enter-your-post > td {
           display: block; }

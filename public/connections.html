@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Site Name</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--Styles-->
+<link rel="stylesheet" href="../dist/css/styles.css" />
+
+<!--Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+
+
+<!--Icons-->
+<link href="https://dawneggleton.github.io/css/all.css" rel="stylesheet" />
+
+<!--Script Libraries-->
+<script type='text/javascript' src='https://files.jcink.net/html/jquery-1.7.2.min.js'></script>
+<script type='text/javascript' src='https://files.jcink.net/html/jquery.cookie-1.3.1.js'></script> 
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+<script src="../dist/js/clipboard.js"></script>
+<script src="../dist/js/functions.js"></script>
+
+<!--Settings-->
+<script type='text/javascript' src='../dist/js/settings.js'></script>
+<link rel="stylesheet" href="../dist/css/settings.css" />  
+    </head>
+    <body id="Pages" class="g-4">
+        <header>
+    <div class="header">
+        <div class="header--main">
+            <a href="../public/index.html"><h1>
+                <span>Godly</span>
+                <strong>Behaviour</strong>
+            </h1></a>
+            <p>but in this twilight, our choices seal our fate</p>
+        </div>
+        <div class="header--info">
+            <div class="header--staff">
+                <a href="?showuser=1">
+                    <img src="https://dawneggleton.github.io/images/photo/eq/2017-despook2.jpg" loading="lazy">
+                    <div class="header--staff-inner">
+                        <b>L</b>
+                        <span>admin</span>
+                    </div>
+                </a>
+                <a href="?showuser=2">
+                    <img src="https://i.imgur.com/4p3skvE.jpg" loading="lazy">
+                    <div class="header--staff-inner">
+                        <b>S</b>
+                        <span>admin</span>
+                    </div>
+                </a>
+                <a href="?showuser=9">
+                    <img src="https://i.postimg.cc/c1XTSRBt/20423849-10212974789225825-7372318396940445403-o.jpg" loading="lazy">
+                    <div class="header--staff-inner">
+                        <b>D</b>
+                        <span>mod</span>
+                    </div>
+                </a>
+            </div>
+            <div class="header--links">
+                <a href="/">read our latest announcement</a>
+                <a href="/">visit our active event</a>
+            </div>
+            <div class="header--intro scroll">
+                Welcome to Godly Behaviour! We are a supernatural, small town roleplay set in the imaginary coastal town of Temperance, Cape Breton. We feature open species lore and restrict our member base to 18+.
+            </div>
+        </div>
+    </div>
+</header>
+      <nav class="nav--main">
+    <div class="nav--left">
+        <button title="Open Menu" onClick="toggleSideMenu(this)" class="button--menu">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="../public/index.html" title="Home" class="notMobile"><i class="fa-solid fa-home"></i></a>
+        <a href="../public/webpage.html" title="Guidebook" class="notMobile"><i class="fa-solid fa-books"></i></a>
+        <a href="../public/profile.html" title="View First Last" class="memOnly notMobile"><i class="fa-solid fa-user"></i></a>
+        <a href="../public/usercp/user-edit.html" title="Edit Profile" class="memOnly"><i class="fa-solid fa-cog"></i></a>
+        <a href="../public/usercp/user-inbox.html" title="Inbox (0)" data-new="0" class="memOnly"><i class="fa-solid fa-envelope"></i></a>
+        <a href="/" title="Alerts (0)" data-new="1" class="memOnly"><i class="fa-solid fa-bell"></i></a>
+        <button title="Switch Accounts" class="popup memOnly" data-modal="switch"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+        <a href="../public/defaults/login.html" title="Logout" class="memOnly"><i class="fa-solid fa-power-off"></i></a>
+        <a href="../public/store/store.html" title="Store" class="memOnly notMobile"><i class="fa-solid fa-store"></i></a>
+        <a href="https://discord.gg/c67nREygaA" title="Join Discord" class="notMobile"><i class="fa-brand fa-discord"></i></a>
+        <a href="/admin.php" title="Admin CP" target="_blank" class="staffOnly notMobile"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+        <button title="Login" class="guestOnly"><i class="fa-solid fa-sign-in"></i></button>
+        <a href="../public/defaults/register1.html" title="Register" class="guestOnly"><i class="fa-solid fa-user-plus"></i></a>
+    </div>
+    <div class="nav--right">
+        <button title="Toggle color mode" onClick="toggleTheme()" class="toggle--theme">
+            <i class="fa-solid fa-sun"></i>
+            <div><span></span></div>
+        </button>
+        <button title="Toggle font size" onClick="toggleSize()" class="toggle--size">
+            <i class="fa-solid fa-font-case"></i>
+            <div><span></span></div>
+        </button>
+        <a href="#top"><i class="fa-solid fa-angle-up"></i></a>
+        <a href="#bottom"><i class="fa-solid fa-angle-down"></i></a>
+    </div>
+</nav>
+<nav class="nav--breadcrumb">
+    <div id="navstrip" align="left">&nbsp;<a href="../public/index.html">Site Name</a></div>
+</nav>
+<nav class="nav--popout">
+    <div class="scroll">
+        <a href="../public/profile.html" class="memOnly onlyMobile">First Last</a>
+	    <a href="../public/webpage.html" class="onlyMobile">Guidebook</a>
+	    <a href="../public/businesses.html">Business Directory</a>
+	    <a href="../public/species.html">Species Guide</a>
+	    <a href="?act=store" class="onlyMobile memOnly">Store</a>
+	    <a href="https://discord.gg/c67nREygaA" class="onlyMobile memOnly">Join the Discord</a>
+	    <a href="/admin.php" target="_blank" class="onlyMobile staffOnly">Admin CP</a>
+	    <tag-code>
+	        <button onclick="highlightCode()" class="copyQuick">copy</button>
+	        <pre><textarea class="scroll">tbd</textarea></pre>
+	    </tag-code>
+	</div>
+</nav>
+<div class="invisibleEl"></div>
+
+        <!--Main Body-->
+        <main>
+            <a name="top"></a>
+		
+		
+            <div id="loading">
+                <div class="loading-bubble">
+                    <i class="fa-regular fa-spinner fa-spin"></i>
+                    <p>Loading</p>
+                </div>
+            </div>
+
+            <!--Webpage-->
+            <section class="webpage">
+                <div class="webpage--menu">
+                    <button class="onlyMobile" onClick="toggleWebpageMenu(this)">
+                        <div class="menu-bar menu-top"></div>
+                        <div class="menu-bar menu-middle"></div>
+                        <div class="menu-bar menu-bottom"></div>
+                    </button>
+                    <tag-labels class="accordion scroll">
+                        <tag-label data-category="forms" class="tab-category accordion--trigger">
+                            <span>Forms</span>
+                        </tag-label>
+                        <div data-category="forms" class="tab-category accordion--content">
+                            <a href="#address">Register an Address</a>
+                            <a href="#update-address">Change an Address</a>
+                            <a href="#connection">Submit a Connection</a>
+                        </div>
+                        <tag-label data-category="info" class="tab-category accordion--trigger">
+                            <span>Information</span>
+                        </tag-label>
+                        <div data-category="info" class="tab-category accordion--content">
+                            <a href="#temperance-neighbourhoods">Temperance Neighbourhoods</a>
+                            <a href="#sydney-neighbourhoods">Sydney Neighbourhoods</a>
+                            <a href="#lookup">Address Lookup</a>
+                        </div>
+                        <tag-label data-category="addresses" class="tab-category accordion--trigger">
+                            <span>Address Book</span>
+                        </tag-label>
+                        <div data-category="addresses" class="tab-category accordion--content">
+                            <a href="#temperance">Temperance</a>
+                            <a href="#sydney">Sydney</a>
+                            <a href="#rural">Rural / Other</a>
+                        </div>
+                        <tag-label data-category="connections" class="tab-category accordion--trigger">
+                            <span>Connections</span>
+                        </tag-label>
+                        <div data-category="connections" class="tab-category accordion--content">
+                            <a href="#historical">Historical</a>
+                            <a href="#local">Local</a>
+                        </div>
+                    </tag-labels>
+                </div>
+                <tag-tabset class="webpage--content">
+                    <tag-tab class="tab-category" data-category="forms">
+                        <tag-tabset>
+                            <tag-tab data-key="#address">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <form id="form-address" data-type="grid" data-columns="2">
+    <label class="fullWidth">
+        <b>Address Type</b>
+        <span><select id="type" required>
+            <option value="">(select)</option>
+            <option value="residential">Residential</option>
+            <option value="business">Business</option>
+        </select></span>
+    </label>
+    <label class="hidden residentOnly fullWidth">
+        <b>Profile URL / ID</b>
+        <span><input type="text" id="id" placeholder="ID" /></span>
+    </label>
+    <label class="hidden businessOnly fullWidth">
+        <b>Business Name</b>
+        <span><select id="employer" class="business-select"><option value="">(select)</option></select></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Location</b>
+        <span><select id="location" required>
+            <option value="">(select)</option>
+            <option value="temperance">Temperance, NS</option>
+            <option value="sydney">Sydney, NS</option>
+            <option value="rural">Elsewhere</option>
+        </select></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Neighbourhood</b>
+        <span><select id="neighbourhood">
+            <option value="">(select)</option>
+            <option value="1" class="hidden tempOnly">Main Street</option>
+            <option value="2" class="hidden tempOnly">Village</option>
+            <option value="3" class="hidden tempOnly">Waterfront</option>
+            <option value="4" class="hidden tempOnly">Inland</option>
+            <option value="5" class="hidden sydOnly">Ashby</option>
+            <option value="6" class="hidden sydOnly">Southend</option>
+            <option value="7" class="hidden sydOnly">Northend</option>
+            <option value="8" class="hidden sydOnly">Waterfront District</option>
+            <option value="9" class="hidden sydOnly">Shipyard</option>
+            <option value="10" class="hidden sydOnly">Hardwood Hill</option>
+            <option value="11" class="hidden sydOnly">Boulderwood</option>
+            <option value="12" class="hidden sydOnly">Membertou</option>
+            <option value="13" class="hidden sydOnly">Whitney Pier</option>
+            <option value="14" class="hidden sydOnly">Sydney River</option>
+            <option value="15" class="hidden sydOnly">Westmount</option>
+            <option value="16" class="hidden sydOnly">Coxheath</option>
+            <option value="17" class="hidden sydOnly">Mira Road</option>
+            <option value="18" class="hidden sydOnly">Outskirts</option>
+            <option value="" class="hidden ruralOnly">Not Applicable</option>
+        </select></span>
+    </label>
+    <label class="fullWidth hidden typeOnly">
+        <b>Street Name</b>
+        <span><input type="text" id="street" placeholder="Street Name" required /></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>House / Building Number</b>
+        <span><input type="number" id="houseNumber" min="1" placeholder="1" required /></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Apartment Number</b>
+        <span><input type="number" id="apartmentNumber" min="1" placeholder="1" /></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#update-address">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <form id="form-change-address" data-type="grid" data-columns="2">
+    <label class="fullWidth">
+        <b>Address Type</b>
+        <span><select id="type" required>
+            <option value="">(select)</option>
+            <option value="residential">Residential</option>
+            <option value="business">Business</option>
+        </select></span>
+    </label>
+    <label class="hidden residentOnly fullWidth">
+        <b>Profile URL / ID</b>
+        <span><input type="text" id="id" placeholder="ID" /></span>
+    </label>
+    <label class="hidden businessOnly fullWidth">
+        <b>Business Name</b>
+        <span><select id="employer" class="business-select"><option value="">(select)</option></select></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Location</b>
+        <span><select id="location" required>
+            <option value="">(select)</option>
+            <option value="temperance">Temperance, NS</option>
+            <option value="sydney">Sydney, NS</option>
+            <option value="rural">Elsewhere</option>
+        </select></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Neighbourhood</b>
+        <span><select id="neighbourhood">
+            <option value="">(select)</option>
+            <option value="1" class="hidden tempOnly">Main Street</option>
+            <option value="2" class="hidden tempOnly">Village</option>
+            <option value="3" class="hidden tempOnly">Waterfront</option>
+            <option value="4" class="hidden tempOnly">Inland</option>
+            <option value="5" class="hidden sydOnly">Ashby</option>
+            <option value="6" class="hidden sydOnly">Southend</option>
+            <option value="7" class="hidden sydOnly">Northend</option>
+            <option value="8" class="hidden sydOnly">Waterfront District</option>
+            <option value="9" class="hidden sydOnly">Shipyard</option>
+            <option value="10" class="hidden sydOnly">Hardwood Hill</option>
+            <option value="11" class="hidden sydOnly">Boulderwood</option>
+            <option value="12" class="hidden sydOnly">Membertou</option>
+            <option value="13" class="hidden sydOnly">Whitney Pier</option>
+            <option value="14" class="hidden sydOnly">Sydney River</option>
+            <option value="15" class="hidden sydOnly">Westmount</option>
+            <option value="16" class="hidden sydOnly">Coxheath</option>
+            <option value="17" class="hidden sydOnly">Mira Road</option>
+            <option value="18" class="hidden sydOnly">Outskirts</option>
+            <option value="" class="hidden ruralOnly">Not Applicable</option>
+        </select></span>
+    </label>
+    <label class="fullWidth hidden typeOnly">
+        <b>Street Name</b>
+        <span><input type="text" id="street" placeholder="Street Name" required /></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>House / Building Number</b>
+        <span><input type="number" id="houseNumber" min="1" placeholder="1" required /></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Apartment Number</b>
+        <span><input type="number" id="apartmentNumber" min="1" placeholder="1" /></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#connection">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <form id="form-connection" data-type="grid" data-columns="2">
+    <label>
+        <b>Type</b>
+        <span><select id="type" required>
+            <option value="">(select)</option>
+            <option value="historical">Historical</option>
+            <option value="local">Local</option>
+        </select></span>
+    </label>
+    <label>
+        <b>Profile URL / ID</b>
+        <span><input type="text" id="id" placeholder="ID" /></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Category</b>
+        <span><select id="category" required>
+            <option value="">(select)</option>
+            <option value="1" class="hidden histOnly">Ancient History (Pre-450 AD)</option>
+            <option value="2" class="hidden histOnly">Middle Ages (450 - 1500 AD)</option>
+            <option value="3" class="hidden histOnly">Early Modern (1500 - 1700 AD)</option>
+            <option value="4" class="hidden histOnly">1700s</option>
+            <option value="5" class="hidden histOnly">1800s</option>
+            <option value="6" class="hidden histOnly">1900s</option>
+            <option value="7" class="hidden histOnly">2000s</option>
+            <option value="1" class="hidden localOnly">Municipal Leadership</option>
+            <option value="2" class="hidden localOnly">High School</option>
+            <option value="3" class="hidden localOnly">University</option>
+            <option value="4" class="hidden localOnly">Volunteer Work</option>
+            <option value="5" class="hidden localOnly">Sports</option>
+            <option value="6" class="hidden localOnly">Interest Clubs</option>
+        </select></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Subcategory</b>
+        <span><input type="text" id="subcategory" placeholder="Subcategory" required /></span>
+    </label>
+    <label class="hidden localOnly">
+        <b>Location</b>
+        <span><select id="local-location">
+            <option value="">(select)</option>
+            <option value="temperance">Temperance, NS</option>
+            <option value="sydney">Sydney, NS</option>
+            <option value="rural">Elsewhere</option>
+        </select></span>
+    </label>
+    <label class="hidden histOnly">
+        <b>Location</b>
+        <span><input type="text" id="hist-location" placeholder="Location" /></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Role / Position / Detail</b>
+        <span><input type="text" id="role" placeholder="Role / Position / Detail" /></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="info">
+                        <tag-tabset>
+                            <tag-tab data-key="#temperance-neighbourhoods">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <% temperance %>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#sydney-neighbourhoods">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <% sydney %>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#lookup">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <form id="form-lookup" data-type="grid" data-columns="2">
+    <label class="fullWidth">
+        <b>Character / Business Name</b>
+        <span><input type="text" id="name" placeholder="Name" /></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Search</button>
+</form>
+<div id="lookup-results"></div>
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="addresses">
+                        <tag-tabset>
+                            <tag-tab data-key="#temperance">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="h8">No residents recorded.</div>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#sydney">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="h8">No residents recorded.</div>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#rural">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="h8">No residents recorded.</div>
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="connections">
+                        <tag-tabset>
+                            <tag-tab data-key="#historical">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="h8">No figures of note.</div>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#local">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="h8">No data submitted.</div>
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                </tag-tabset>
+            </section>
+
+            <script>
+                const sheetID = '1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU';
+                const deployID = 'AKfycbx-PjF_7gGgm9QOilpWR6x_QGuKRys5Cjd3wbexK-P2hyxquvLreQW7meY567tPomB2';
+                
+                const businessBot = `1177012692863688714/hnbLmkEeWwLvy2Mogz0EEXtFZdMLk4Pc4_LXUqgYfCwKtzNhNbNMaNeqjv9Rr6MU7FUr`;
+
+                const claims = `https://opensheet.elk.sh/${sheetID}/Claims`;
+                const businesses = `https://opensheet.elk.sh/${sheetID}/Businesses`;
+
+                let businessList = ``;
+                let lookupList = [];
+            </script>
+            <script src="../dist/js/webpageFunctions.js"></script>
+            <script src="../dist/js/formatFunctions.js"></script>
+            <script src="../dist/js/webpageScripts.js"></script>
+            <script src="../dist/js/connectionScripts.js"></script>
+            <script>
+                fetch(claims)
+                .then((response) => response.json())
+                .then((claimsData) => {
+                    fetch(businesses)
+                    .then((response) => response.json())
+                    .then((businessData) => {
+                        let residents = claimsData.filter(data => data.Address && data.Address !== '');
+                        let businessAddresses = businessData.filter(data => data.Address && data.Address !== '');
+                        let connected = claimsData.filter(data => data.Connections && data.Connections !== '');
+                        let addresses = [...residents, ...businessAddresses];
+                        formatResidents(addresses);
+                        formatConnections(connected);
+                        businessData.sort((a, b) => {
+                            if (a.Employer.toLowerCase().trim().replace('the ', '') < b.Employer.toLowerCase().trim().replace('the ', '')) {
+                                return -1;
+                            } else if (a.Employer.toLowerCase().trim().replace('the ', '') > b.Employer.toLowerCase().trim().replace('the ', '')) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        })
+                        businessData.forEach(business => {
+                            businessList += `<option value="${business.Employer}">${capitalize(business.Employer)}</option>`;
+                            lookupList.push({
+                                name: business.Employer.toLowerCase().trim(),
+                                address: business.Address,
+                            });
+                        });
+                        residents.forEach(resident => {
+                            lookupList.push({
+                                name: resident.Character.toLowerCase().trim(),
+                                address: resident.Address,
+                            });
+                        });
+                        lookupList.sort((a, b) => {
+                            if(a.name < b.name) {
+                                return -1;
+                            } else if(a.name > b.name) {
+                                return 1;
+                            } else {
+                                return 0
+                            }
+                        })
+                    }).then(() => {
+                        document.querySelectorAll('.business-select').forEach(select => select.insertAdjacentHTML('beforeend', businessList));
+                        initConnections();
+                    });
+                });
+            </script>
+
+            <!-- Copyright Information -->
+                <div class="tableborder" align="center">
+                    <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+                        <div class="copyright" align="center">
+                            Powered by 
+                            <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a>
+                            (<a href="http://jcink.com" target="_blank">Jcink.com </a>
+                            <a href="https://jcink.com" target="_blank">Forum Hosting</a>
+                            ) © 2020 &nbsp;
+                            <a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a>
+                            <br>
+                            Page creation time: 0.0054 <!-- http://luxtradition.b1.jcink.com -->  · 
+                            <a href="index.php?act=Mobile">Mobile Version</a> · 
+                            <a href="index.php?act=privacy">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div> 
+        </main>
+
+        
+        <script src="../dist/js/scripts.js"></script>   
+    </body>
+</html>

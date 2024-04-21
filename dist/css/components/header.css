@@ -71,10 +71,12 @@ header {
   .header--staff {
     display: flex;
     gap: 10px;
-    height: 150px; }
+    height: 150px;
+    flex-wrap: wrap; }
     .header--staff a {
-      height: 100%;
-      width: 100%; }
+      height: calc(50% - 5px);
+      width: 100%;
+      flex: 0 0 calc(50% - 5px); }
     .header--staff img {
       position: absolute;
       top: 0;

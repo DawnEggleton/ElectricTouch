@@ -235,9 +235,12 @@
       padding: 8px 15px;
       margin-top: 5px;
       border: 1px solid var(--border-accent);
-      font-family: var(--font-header); }
+      font-family: var(--font-header);
+      text-align: left; }
       .webpage .claim strong a {
-        color: var(--text-secondary); }
+        color: var(--text-secondary);
+        border: none;
+        padding: 0; }
     .webpage .claim > span {
       border-left: 1px dotted var(--bg-accent);
       padding: 5px 0 5px 12px;
@@ -555,7 +558,12 @@
       margin-top: 10px; }
       .webpage .menu-static > div strong {
         color: var(--text-on-accent);
-        margin-bottom: 5px; }
+        margin-bottom: 5px;
+        font-family: var(--font-header);
+        font-weight: 900;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-size: var(--size-sm); }
   .webpage .business {
     display: grid;
     gap: 15px; }
@@ -576,3 +584,45 @@
       padding: 15px; }
       .webpage .business--hours ul:not(:last-child) {
         margin-bottom: 20px; }
+  .webpage .toggle button {
+    display: flex;
+    gap: 10px;
+    align-items: center; }
+  .webpage .toggle:not(.is-active) .fa-minus {
+    display: none; }
+  .webpage .toggle:not(.is-active) + .claim-wrap {
+    display: none; }
+  .webpage .toggle.is-active .fa-plus {
+    display: none; }
+  .webpage--flex-info {
+    display: flex;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: var(--size-xs);
+    letter-spacing: 0.15em;
+    gap: 20px;
+    align-self: start; }
+    .webpage--flex-info-item {
+      display: flex;
+      align-items: center;
+      gap: 3.5px; }
+      .webpage--flex-info-item b {
+        color: var(--text-accent);
+        font-size: 1.2em; }
+      .webpage--flex-info-item .fa-solid {
+        color: var(--text-accent); }
+    .webpage--flex-info-range-item {
+      display: flex;
+      align-items: center;
+      gap: 3.5px;
+      line-height: 100%;
+      margin-top: 10px; }
+      .webpage--flex-info-range-item i {
+        font-size: 1.5em; }
+        .webpage--flex-info-range-item i.fa-thin {
+          opacity: 0.75; }
+  .webpage #lookup-results:not(:empty) {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-accent); }

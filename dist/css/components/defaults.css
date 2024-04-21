@@ -186,7 +186,29 @@
             display: none; }
       #Post #posting-form > tbody > tr#enter-your-post {
         display: block; }
-        #Post #posting-form > tbody > tr#enter-your-post .pformleft {
+        #Post #posting-form > tbody > tr#enter-your-post #smilies-table {
+          display: block;
+          width: 100%; }
+          #Post #posting-form > tbody > tr#enter-your-post #smilies-table tbody {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+            font-size: 0;
+            width: 100%;
+            line-height: 0;
+            border: 1px dotted var(--border-accent);
+            background: var(--bg-secondary);
+            padding: 10px;
+            margin-bottom: -4px; }
+            #Post #posting-form > tbody > tr#enter-your-post #smilies-table tbody > tr {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: start;
+              gap: 5px; }
+              #Post #posting-form > tbody > tr#enter-your-post #smilies-table tbody > tr:first-child, #Post #posting-form > tbody > tr#enter-your-post #smilies-table tbody > tr:last-child {
+                display: none; }
+        #Post #posting-form > tbody > tr#enter-your-post .desc {
           display: none; }
         #Post #posting-form > tbody > tr#enter-your-post > td {
           display: block; }

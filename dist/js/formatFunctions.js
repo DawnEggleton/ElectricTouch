@@ -8,13 +8,29 @@ function formatSelect(data) {
 function formatHeader(title, level) {
     return `<h${level}>${title}</h${level}>`
 }
-function formatClaim(name, lines, group = ``, url = null) {
+function formatInnerHeader(title, level) {
+    return `<div class="h${level} fullWidth innerHeader">${title}</div>`
+}
+function formatToggleHeader(title, level) {
+    return `<h${level} class="toggle">
+        <button onClick="toggleSection(this)">
+            <span>${title}</span>
+            <i class="fa-regular fa-plus"></i>
+            <i class="fa-regular fa-minus"></i>
+        </button>
+    </h${level}>`;
+}
+function formatClaim(name, lines, group = ``, url = null, data = null) {
     let title = name;
+    let openingStrong = `<strong>`;
     if(url) {
         title = `<a href="${url}">${name}</a>`;
     }
+    if(data) {
+        openingStrong = `<strong ${data}>`;
+    }
     return `<div class="claim g-${group}">
-        <strong>${title}</strong>
+        ${openingStrong}${title}</strong>
         ${lines && lines.map(line => `<span>${line}</span>`).join('')}
     </div>`;
 }

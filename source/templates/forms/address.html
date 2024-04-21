@@ -1,0 +1,65 @@
+<form id="form-address" data-type="grid" data-columns="2">
+    <label class="fullWidth">
+        <b>Address Type</b>
+        <span><select id="type" required>
+            <option value="">(select)</option>
+            <option value="residential">Residential</option>
+            <option value="business">Business</option>
+        </select></span>
+    </label>
+    <label class="hidden residentOnly fullWidth">
+        <b>Profile URL / ID</b>
+        <span><input type="text" id="id" placeholder="ID" /></span>
+    </label>
+    <label class="hidden businessOnly fullWidth">
+        <b>Business Name</b>
+        <span><select id="employer" class="business-select"><option value="">(select)</option></select></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Location</b>
+        <span><select id="location" required>
+            <option value="">(select)</option>
+            <option value="temperance">Temperance, NS</option>
+            <option value="sydney">Sydney, NS</option>
+            <option value="rural">Elsewhere</option>
+        </select></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Neighbourhood</b>
+        <span><select id="neighbourhood">
+            <option value="">(select)</option>
+            <option value="1" class="hidden tempOnly">Main Street</option>
+            <option value="2" class="hidden tempOnly">Village</option>
+            <option value="3" class="hidden tempOnly">Waterfront</option>
+            <option value="4" class="hidden tempOnly">Inland</option>
+            <option value="5" class="hidden sydOnly">Ashby</option>
+            <option value="6" class="hidden sydOnly">Southend</option>
+            <option value="7" class="hidden sydOnly">Northend</option>
+            <option value="8" class="hidden sydOnly">Waterfront District</option>
+            <option value="9" class="hidden sydOnly">Shipyard</option>
+            <option value="10" class="hidden sydOnly">Hardwood Hill</option>
+            <option value="11" class="hidden sydOnly">Boulderwood</option>
+            <option value="12" class="hidden sydOnly">Membertou</option>
+            <option value="13" class="hidden sydOnly">Whitney Pier</option>
+            <option value="14" class="hidden sydOnly">Sydney River</option>
+            <option value="15" class="hidden sydOnly">Westmount</option>
+            <option value="16" class="hidden sydOnly">Coxheath</option>
+            <option value="17" class="hidden sydOnly">Mira Road</option>
+            <option value="18" class="hidden sydOnly">Outskirts</option>
+            <option value="" class="hidden ruralOnly">Not Applicable</option>
+        </select></span>
+    </label>
+    <label class="fullWidth hidden typeOnly">
+        <b>Street Name</b>
+        <span><input type="text" id="street" placeholder="Street Name" required /></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>House / Building Number</b>
+        <span><input type="number" id="houseNumber" min="1" placeholder="1" required /></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Apartment Number</b>
+        <span><input type="number" id="apartmentNumber" min="1" placeholder="1" /></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>

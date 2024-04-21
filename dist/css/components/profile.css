@@ -560,15 +560,20 @@
     height: max-content; }
     .profile--tracker-item a {
       color: var(--text-accent);
-      font-weight: 800; }
+      font-weight: 800 !important;
+      border: none !important;
+      padding: 0 !important;
+      font-size: inherit !important; }
     .profile--tracker-item > a {
-      font-size: var(--size-lg);
-      text-transform: capitalize;
+      font-size: var(--size-lg) !important;
+      text-transform: capitalize !important;
       line-height: 200%;
       display: block;
       margin-bottom: 5px;
       font-family: var(--font-header);
-      font-weight: 900; }
+      font-weight: 900 !important;
+      border: none !important;
+      padding: 0 !important; }
     .profile--tracker-item span:first-of-type {
       background: var(--bg-accent);
       color: var(--text-on-accent);
@@ -629,6 +634,50 @@
       @media (max-width: 1024px) {
         .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll, .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll {
           max-height: 400px; } }
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll et-image + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll hl + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll vl + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h1 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h2 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h3 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h5 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h6 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h7 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll h8 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h1 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h2 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h3 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h5 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h6 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h7 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll .h8 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll blockquote + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll hl + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll hl + br + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll vl + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll .scroll vl + br + et-iamge::before, .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll et-image + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll hl + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll vl + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h1 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h2 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h3 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h5 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h6 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h7 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll h8 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h1 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h2 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h3 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h5 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h6 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h7 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll .h8 + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll blockquote + br,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll hl + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll hl + br + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll vl + et-image::before,
+      .profile .profile--main > tag-tabset > tag-tab .profile--main-scroll.scroll vl + br + et-iamge::before {
+        display: none; }
   .profile .profile--main > tag-tabset > tag-tab .profile--side-scroll {
     height: 100%;
     order: 1; }

@@ -283,10 +283,41 @@
 
                 &#enter-your-post {
                     display: block;
+					
+					#smilies-table {
+						display: block;
+						width: 100%;
 
-                    .pformleft {
-                        display: none;
-                    }
+						tbody {
+							display: flex;
+							flex-wrap: wrap;
+							justify-content: start;
+							gap: 10px;
+							font-size: 0;
+							width: 100%;
+							line-height: 0;
+							border: 1px dotted var(--border-accent);
+							background: var(--bg-secondary);
+							padding: 10px;
+							margin-bottom: -4px;
+
+							& > tr {
+								display: flex;
+								flex-wrap: wrap;
+								justify-content: start;
+								gap: 5px;
+
+								&:first-child, 
+								&:last-child {
+									display: none;
+								}
+							}
+						}
+					}
+
+					.desc {
+						display: none;
+					}
 
                     & > td {
                         display: block;

@@ -47,6 +47,20 @@
   #SF .topiclist--info ~ div[align="right"] > form:last-child {
     margin-top: 20px; }
 
+.alert-options {
+  background: var(--bg-tertiary);
+  display: flex;
+  padding: 10px;
+  justify-content: end;
+  flex-wrap: wrap;
+  gap: 5px;
+  position: sticky;
+  top: 120px;
+  z-index: 2; }
+  .alert-options select {
+    width: 100%;
+    max-width: 150px; }
+
 .topiclist--info {
   margin: 60px auto;
   max-width: 1240px;

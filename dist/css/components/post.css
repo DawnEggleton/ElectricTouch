@@ -327,7 +327,7 @@
   .post--links {
     display: flex;
     gap: 10px 30px;
-    margin-top: 10px;
+    margin-top: 20px;
     flex-wrap: wrap; }
     .post--links a {
       text-transform: uppercase;

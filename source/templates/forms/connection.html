@@ -1,0 +1,55 @@
+<form id="form-connection" data-type="grid" data-columns="2">
+    <label>
+        <b>Type</b>
+        <span><select id="type" required>
+            <option value="">(select)</option>
+            <option value="historical">Historical</option>
+            <option value="local">Local</option>
+        </select></span>
+    </label>
+    <label>
+        <b>Profile URL / ID</b>
+        <span><input type="text" id="id" placeholder="ID" /></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Category</b>
+        <span><select id="category" required>
+            <option value="">(select)</option>
+            <option value="1" class="hidden histOnly">Ancient History (Pre-450 AD)</option>
+            <option value="2" class="hidden histOnly">Middle Ages (450 - 1500 AD)</option>
+            <option value="3" class="hidden histOnly">Early Modern (1500 - 1700 AD)</option>
+            <option value="4" class="hidden histOnly">1700s</option>
+            <option value="5" class="hidden histOnly">1800s</option>
+            <option value="6" class="hidden histOnly">1900s</option>
+            <option value="7" class="hidden histOnly">2000s</option>
+            <option value="1" class="hidden localOnly">Municipal Leadership</option>
+            <option value="2" class="hidden localOnly">High School</option>
+            <option value="3" class="hidden localOnly">University</option>
+            <option value="4" class="hidden localOnly">Volunteer Work</option>
+            <option value="5" class="hidden localOnly">Sports</option>
+            <option value="6" class="hidden localOnly">Interest Clubs</option>
+        </select></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Subcategory</b>
+        <span><input type="text" id="subcategory" placeholder="Subcategory" required /></span>
+    </label>
+    <label class="hidden localOnly">
+        <b>Location</b>
+        <span><select id="local-location">
+            <option value="">(select)</option>
+            <option value="temperance">Temperance, NS</option>
+            <option value="sydney">Sydney, NS</option>
+            <option value="rural">Elsewhere</option>
+        </select></span>
+    </label>
+    <label class="hidden histOnly">
+        <b>Location</b>
+        <span><input type="text" id="hist-location" placeholder="Location" /></span>
+    </label>
+    <label class="hidden typeOnly">
+        <b>Role / Position / Detail</b>
+        <span><input type="text" id="role" placeholder="Role / Position / Detail" /></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>

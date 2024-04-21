@@ -40,7 +40,7 @@ function sendAjax(form, data, discord, successMessage) {
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log('error');
-            document.querySelector('.form--sort-warning').innerHTML = `Whoops! The sheet connection didn't quite work. Please refresh the page and try again! If this persists, please open the console (ctrl + shift + J) and send Lux a screenshot of what's there.`;
+            form.innerHTML = `Whoops! The sheet connection didn't quite work. Please refresh the page and try again! If this persists, please open the console (ctrl + shift + J) and send Lux a screenshot of what's there.`;
         },
         complete: function () {
             $('#form-reserve button[type="submit"]').text('Submit');
@@ -372,6 +372,20 @@ function addJobFields(i) {
 }
 function simpleFieldToggle(field, ifclass) {
     if(field.options[field.selectedIndex].value === 'y') {
+        document.querySelectorAll(ifclass).forEach(item => item.classList.remove('hidden'));
+    } else {
+        document.querySelectorAll(ifclass).forEach(item => item.classList.add('hidden'));
+    }
+}
+function complexFieldToggle(field, ifclass, value) {
+    if(field.options[field.selectedIndex].value === value) {
+        document.querySelectorAll(ifclass).forEach(item => item.classList.remove('hidden'));
+    } else {
+        document.querySelectorAll(ifclass).forEach(item => item.classList.add('hidden'));
+    }
+}
+function anyValueToggle(field, ifclass) {
+    if(field.options[field.selectedIndex].value !== '') {
         document.querySelectorAll(ifclass).forEach(item => item.classList.remove('hidden'));
     } else {
         document.querySelectorAll(ifclass).forEach(item => item.classList.add('hidden'));
@@ -787,4 +801,7 @@ function initBusinesses(businessData) {
     document.querySelectorAll('#job-count').forEach(jobCount => {
         handleJobFields(jobCount.closest('form'), jobCount);
     })
+}
+function toggleSection(e) {
+    e.parentNode.classList.toggle('is-active');
 }

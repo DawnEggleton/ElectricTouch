@@ -740,16 +740,21 @@
 
         a {
             color: var(--text-accent);
-            font-weight: 800;
+            font-weight: 800 !important;
+            border: none !important;
+            padding: 0 !important;
+            font-size: inherit !important;
         }
         & > a {
-            font-size: var(--size-lg);
-            text-transform: capitalize;
+            font-size: var(--size-lg) !important;
+            text-transform: capitalize !important;
             line-height: 200%;
             display: block;
             margin-bottom: 5px;
             font-family: var(--font-header);
-            font-weight: 900;
+            font-weight: 900 !important;
+            border: none !important;
+            padding: 0 !important;
         }
         span:first-of-type {
             background: var(--bg-accent);
@@ -846,6 +851,31 @@
 
                 @include mq-down(md) {
                     max-height: 400px;
+                }
+
+                et-image + br,
+                hl + br,
+                vl + br,
+                h1 + br,
+                h2 + br,
+                h3 + br,
+                h5 + br,
+                h6 + br,
+                h7 + br,
+                h8 + br,
+                .h1 + br,
+                .h2 + br,
+                .h3 + br,
+                .h5 + br,
+                .h6 + br,
+                .h7 + br,
+                .h8 + br,
+                blockquote + br,
+                hl + et-image::before,
+                hl + br + et-image::before,
+                vl + et-image::before,
+                vl + br + et-iamge::before {
+                    display: none;
                 }
             }
         }

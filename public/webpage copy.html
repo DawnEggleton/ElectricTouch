@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Site Name</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--Styles-->
+<link rel="stylesheet" href="../dist/css/styles.css" />
+
+<!--Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+
+
+<!--Icons-->
+<link href="https://dawneggleton.github.io/css/all.css" rel="stylesheet" />
+
+<!--Script Libraries-->
+<script type='text/javascript' src='https://files.jcink.net/html/jquery-1.7.2.min.js'></script>
+<script type='text/javascript' src='https://files.jcink.net/html/jquery.cookie-1.3.1.js'></script> 
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+<script src="../dist/js/clipboard.js"></script>
+<script src="../dist/js/functions.js"></script>
+
+<!--Settings-->
+<script type='text/javascript' src='../dist/js/settings.js'></script>
+<link rel="stylesheet" href="../dist/css/settings.css" />  
+    </head>
+    <body id="Pages" class="g-4">
+        <header>
+    <div class="header">
+        <div class="header--main">
+            <a href="../public/index.html"><h1>
+                <span>Godly</span>
+                <strong>Behaviour</strong>
+            </h1></a>
+            <p>but in this twilight, our choices seal our fate</p>
+        </div>
+        <div class="header--info">
+            <div class="header--staff">
+                <a href="?showuser=1">
+                    <img src="https://dawneggleton.github.io/images/photo/eq/2017-despook2.jpg" loading="lazy">
+                    <div class="header--staff-inner">
+                        <b>L</b>
+                        <span>admin</span>
+                    </div>
+                </a>
+                <a href="?showuser=2">
+                    <img src="https://i.imgur.com/4p3skvE.jpg" loading="lazy">
+                    <div class="header--staff-inner">
+                        <b>S</b>
+                        <span>admin</span>
+                    </div>
+                </a>
+                <a href="?showuser=9">
+                    <img src="https://i.postimg.cc/c1XTSRBt/20423849-10212974789225825-7372318396940445403-o.jpg" loading="lazy">
+                    <div class="header--staff-inner">
+                        <b>D</b>
+                        <span>mod</span>
+                    </div>
+                </a>
+            </div>
+            <div class="header--links">
+                <a href="/">read our latest announcement</a>
+                <a href="/">visit our active event</a>
+            </div>
+            <div class="header--intro scroll">
+                Welcome to Godly Behaviour! We are a supernatural, small town roleplay set in the imaginary coastal town of Temperance, Cape Breton. We feature open species lore and restrict our member base to 18+.
+            </div>
+        </div>
+    </div>
+</header>
+      <nav class="nav--main">
+    <div class="nav--left">
+        <button title="Open Menu" onClick="toggleSideMenu(this)" class="button--menu">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="../public/index.html" title="Home" class="notMobile"><i class="fa-solid fa-home"></i></a>
+        <a href="../public/webpage.html" title="Guidebook" class="notMobile"><i class="fa-solid fa-books"></i></a>
+        <a href="../public/profile.html" title="View First Last" class="memOnly notMobile"><i class="fa-solid fa-user"></i></a>
+        <a href="../public/usercp/user-edit.html" title="Edit Profile" class="memOnly"><i class="fa-solid fa-cog"></i></a>
+        <a href="../public/usercp/user-inbox.html" title="Inbox (0)" data-new="0" class="memOnly"><i class="fa-solid fa-envelope"></i></a>
+        <a href="/" title="Alerts (0)" data-new="1" class="memOnly"><i class="fa-solid fa-bell"></i></a>
+        <button title="Switch Accounts" class="popup memOnly" data-modal="switch"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+        <a href="../public/defaults/login.html" title="Logout" class="memOnly"><i class="fa-solid fa-power-off"></i></a>
+        <a href="../public/store/store.html" title="Store" class="memOnly notMobile"><i class="fa-solid fa-store"></i></a>
+        <a href="https://discord.gg/c67nREygaA" title="Join Discord" class="notMobile"><i class="fa-brand fa-discord"></i></a>
+        <a href="/admin.php" title="Admin CP" target="_blank" class="staffOnly notMobile"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+        <button title="Login" class="guestOnly"><i class="fa-solid fa-sign-in"></i></button>
+        <a href="../public/defaults/register1.html" title="Register" class="guestOnly"><i class="fa-solid fa-user-plus"></i></a>
+    </div>
+    <div class="nav--right">
+        <button title="Toggle color mode" onClick="toggleTheme()" class="toggle--theme">
+            <i class="fa-solid fa-sun"></i>
+            <div><span></span></div>
+        </button>
+        <button title="Toggle font size" onClick="toggleSize()" class="toggle--size">
+            <i class="fa-solid fa-font-case"></i>
+            <div><span></span></div>
+        </button>
+        <a href="#top"><i class="fa-solid fa-angle-up"></i></a>
+        <a href="#bottom"><i class="fa-solid fa-angle-down"></i></a>
+    </div>
+</nav>
+<nav class="nav--breadcrumb">
+    <div id="navstrip" align="left">&nbsp;<a href="../public/index.html">Site Name</a></div>
+</nav>
+<nav class="nav--popout">
+    <div class="scroll">
+        <a href="../public/profile.html" class="memOnly onlyMobile">First Last</a>
+	    <a href="../public/webpage.html" class="onlyMobile">Guidebook</a>
+	    <a href="../public/businesses.html">Business Directory</a>
+	    <a href="../public/species.html">Species Guide</a>
+	    <a href="?act=store" class="onlyMobile memOnly">Store</a>
+	    <a href="https://discord.gg/c67nREygaA" class="onlyMobile memOnly">Join the Discord</a>
+	    <a href="/admin.php" target="_blank" class="onlyMobile staffOnly">Admin CP</a>
+	    <tag-code>
+	        <button onclick="highlightCode()" class="copyQuick">copy</button>
+	        <pre><textarea class="scroll">tbd</textarea></pre>
+	    </tag-code>
+	</div>
+</nav>
+<div class="invisibleEl"></div>
+
+        <!--Main Body-->
+        <main>
+            <a name="top"></a>
+		
+		
+            <div id="loading">
+                <div class="loading-bubble">
+                    <i class="fa-regular fa-spinner fa-spin"></i>
+                    <p>Loading</p>
+                </div>
+            </div>
+
+            <!--Webpage-->
+            <section class="webpage">
+                <div class="webpage--menu">
+                    <button class="onlyMobile" onClick="toggleWebpageMenu(this)">
+                        <div class="menu-bar menu-top"></div>
+                        <div class="menu-bar menu-middle"></div>
+                        <div class="menu-bar menu-bottom"></div>
+                    </button>
+                    <tag-labels class="accordion scroll">
+                        <tag-label data-category="info" class="tab-category accordion--trigger">
+                            <span>Required Reading</span>
+                        </tag-label>
+                        <div data-category="info" class="tab-category accordion--content">
+                            <a href="#etiquette">Etiquette</a>
+                            <a href="#plot">Plot</a>
+                            <a href="#setting">Setting</a>
+                            <a href="#groups">Member Groups</a>
+                            <a href="#credits">Credits</a>
+                        </div>
+                        <tag-label data-category="subplots" class="tab-category accordion--trigger">
+                            <span>Subplots</span>
+                        </tag-label>
+                        <div data-category="subplots" class="tab-category accordion--content"></div>
+                        <tag-label data-category="guides" class="tab-category accordion--trigger">
+                            <span>Guides</span>
+                        </tag-label>
+                        <div data-category="guides" class="tab-category accordion--content">
+                            <a href="#start">Getting Started</a>
+                            <a href="#application">Applications</a>
+                            <a href="./species.html">Species</a>
+                            <a href="./businesses.html">Businesses</a>
+                        </div>
+                        <tag-label data-category="registration" class="tab-category accordion--trigger">
+                            <span>Registration</span>
+                        </tag-label>
+                        <div data-category="registration" class="tab-category accordion--content">
+                            <a href="#reserve-face">Reserve a Face</a>
+                            <a href="#reserve-role">Reserve a Subplot Role</a>
+                            <a href="#species-request">Request a Species</a>
+                            <a href="#add-business">Add a Business</a>
+                            <a href="#sort">Get Sorted</a>
+                            <a href="#join-subplot">Join a Subplot</a>
+                        </div>
+                        <tag-label data-category="claims" class="tab-category accordion--trigger">
+                            <span>Claims</span>
+                        </tag-label>
+                        <div data-category="claims" class="tab-category accordion--content">
+                            <a href="#reserves">Face Reserves</a>
+                            <a href="#subplot-reserves">Subplot Reserves</a>
+                            <a href="#members">Members</a>
+                            <a href="#faces">Faces</a>
+                            <a href="./businesses.html">Jobs</a>
+                            <a href="#subplots">Subplots</a>
+                        </div>
+                        <tag-label data-category="moderation" class="tab-category accordion--trigger">
+                            <span>Moderation</span>
+                        </tag-label>
+                        <div data-category="moderation" class="tab-category accordion--content">
+                            <a href="#editclaims">Edit a Character</a>
+                            <a href="#edit-business">Edit a Business</a>
+                            <a href="#staff-help">Request Staff Help</a>
+                        </div>
+                        <tag-label data-category="staff" class="tab-category accordion--trigger">
+                            <span>Staff Tools</span>
+                        </tag-label>
+                        <div data-category="staff" class="tab-category accordion--content">
+                            <a href="#announce">Send Announcement</a>
+                            <a href="#add-species">Add Species</a>
+                            <a href="#add-subplot">Add Subplot</a>
+                        </div>
+                    </tag-labels>
+                </div>
+                <tag-tabset class="webpage--content">
+                    <tag-tab class="tab-category" data-category="info">
+                        <tag-tabset>
+                            <tag-tab data-key="#etiquette">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <h2>Extra large Header</h2>
+                                    <h3>Large Header</h3>
+                                    <h4>Medium Header</h4>
+                                    <h5>Small Header</h5>
+                                    <h6>Extra Small Header</h6>
+                                    <h7>Block Header Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h7>
+                                    <h8>Block Header 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h8>
+                                    <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+                                    <ul>
+                                        <li>List item</li>
+                                        <li>List item</li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor <b>sit amet</b>, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt</i> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <u>Duis aute irure</u> dolor in reprehenderit in voluptate velit esse <s>cillum dolore</s> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit <a>anim id est laborum</a>.</p>
+                                    <p>Lorem ipsum dolor <b>sit amet</b>, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt</i> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <u>Duis aute irure</u> dolor in reprehenderit in voluptate velit esse <s>cillum dolore</s> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit <a>anim id est laborum</a>.</p>
+                                    <p>Lorem ipsum dolor <b>sit amet</b>, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt</i> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <u>Duis aute irure</u> dolor in reprehenderit in voluptate velit esse <s>cillum dolore</s> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit <a>anim id est laborum</a>.</p>
+                                    <p>Lorem ipsum dolor <b>sit amet</b>, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt</i> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <u>Duis aute irure</u> dolor in reprehenderit in voluptate velit esse <s>cillum dolore</s> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit <a>anim id est laborum</a>.</p>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#plot">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    Plot
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#setting">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    Setting
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#groups">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <h2>Standard Groups</h2>
+<div data-type="grid" data-columns="2">
+    <div class="group g-15">
+        <h3>Amaranth</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/amaranth1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/amaranth1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/amaranth1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/amaranth1.jpg" /></span>
+        </div>
+        <blockquote>combat boots with a bit of a heel / knowing when to blend in and when to stand out / heavy on the eyeliner / getting back up when you’re knocked down / stuck between two worlds / dark humor to cover up the pain</blockquote>
+    </div>
+    <div class="group g-7">
+        <h3>Birch</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/birch1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/birch1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/birch1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/birch1.jpg" /></span>
+        </div>
+        <blockquote>fluid and resilient / backpacking across europe / the “mom friend” / getting up at a reasonable hour / finding the silver linings / a forest in wintertime / bringing coffee for everybody / the first to arrive and the last to leave</blockquote>
+    </div>
+    <div class="group g-11">
+        <h3>Blueberry</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/blueberry1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/blueberry1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/blueberry1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/blueberry1.jpg" /></span>
+        </div>
+        <blockquote>sweet as punch / seeing the best in everyone / knowing everybody’s love languages / making flower crowns out of whatever you can reach / laughing until you can’t breathe / eating dessert before dinner</blockquote>
+    </div>
+    <div class="group g-22">
+        <h3>Cedar</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/cedar1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/cedar1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/cedar1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/cedar1.jpg" /></span>
+        </div>
+        <blockquote>just a tiny bit unhinged / grins that don't reach your eyes / disarray and disorder / lost objects in the couch cushions / bursts of rain in between sunshine / shirking social constructs / chaos is as important as order</blockquote>
+    </div>
+    <div class="group g-10">
+        <h3>Dandelion</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/dandelion1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/dandelion1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/dandelion1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/dandelion1.jpg" /></span>
+        </div>
+        <blockquote>carefree and creative / the loudest laugh in the room / clothes that don’t quite match / showing up fifteen minutes late with starbucks / all-nighters fueled by redbull / knows how to roll with the punches</blockquote>
+    </div>
+    <div class="group g-25">
+        <h3>Goldenrod</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/goldenrod2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/goldenrod2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/goldenrod2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/goldenrod2.jpg" /></span>
+        </div>
+        <blockquote>an optimistic realist / looking at the bigger picture / the changing of the seasons / sunshine at a funeral / calling up an old friend for the first time in years / "love is worth the pain it brings" / hoping for the best but prepared for the worst</blockquote>
+    </div>
+    <div class="group g-13">
+        <h3>Hemlock</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/hemlock1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/hemlock1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/hemlock1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/hemlock1.jpg" /></span>
+        </div>
+        <blockquote>melancholy / the patter of rain against a window / soft piano music / bruises you don’t remember getting / being talked over in a room full of people / feeling the wind on your face / giving your last piece of food to someone that needs it more</blockquote>
+    </div>
+    <div class="group g-12">
+        <h3>Juniper</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/juniper1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/juniper1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/juniper1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/juniper1.jpg" /></span>
+        </div>
+        <blockquote>volatile and unpredictable / matching tattoos with people you don’t talk to anymore / hurting others before they can hurt you / feeling the bass reverberate through your chest / “what are you looking at?” / mosh pits / staying high so you don't crash</blockquote>
+    </div>
+    <div class="group g-8">
+        <h3>Lupin</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/lupin2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/lupin2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/lupin2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/lupin2.jpg" /></span>
+        </div>
+        <blockquote>stronger than you look / often underestimated / keeping the peace / crying out of frustration / prefers libraries to bookstores / asking the hard questions / embracing the past instead of moving on / fear of disappointing others</blockquote>
+    </div>
+    <div class="group g-14">
+        <h3>Nettle</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/nettle1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/nettle1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/nettle1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/nettle1.jpg" /></span>
+        </div>
+        <blockquote>picking fights just to feel alive / the smell of alcohol fresh on your breath / assuming the worst and pretending you accept it / wicked smiles that don’t reach your eyes / a glare that could cut through glass / lights reflected in a rain puddle</blockquote>
+    </div>
+    <div class="group g-30">
+        <h3>Periwinkle</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/periwinkle1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/periwinkle1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/periwinkle1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/periwinkle1.jpg" /></span>
+        </div>
+        <blockquote>sweet but stubborn / the first feeble cries of a newborn animal / having the odds stacked against you and overcoming / pressing kisses over bruised knuckles / ink smeared on the palm of your hand / always running a little bit late</blockquote>
+    </div>
+    <div class="group g-31">
+        <h3>Primrose</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/primrose1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/primrose1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/primrose1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/primrose1.jpg" /></span>
+        </div>
+        <blockquote>devout and well-mannered / sticking to the status quo / licking your fingers before turning a page / the fine china nobody ever uses / starting every letter with "dear" / the braided mane of a show horse / backhanded compliments</blockquote>
+    </div>
+    <div class="group g-34">
+        <h3>Seaweed</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/seaweed2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/seaweed2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/seaweed2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/seaweed2.jpg" /></span>
+        </div>
+        <blockquote>flows like water / seems to survive the wildest adventures / a long fuse that ends in the biggest explosion or a disappointing fizzle / found family / the first melt of spring / making new memories at any cost</blockquote>
+    </div>
+    <div class="group g-9">
+        <h3>Spruce</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/spruce1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/spruce1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/spruce1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/spruce1.jpg" /></span>
+        </div>
+        <blockquote>stoic and solid / more left-brained than right / resting bitch face / wise beyond your years / wearing flannel year-round / the “hard sciences” / change is the worst constant / dramatic eye-rolls and dry laughter</blockquote>
+    </div>
+    <div class="group g-16">
+        <h3>Sundew</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sundew1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sundew1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sundew1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sundew1.jpg" /></span>
+        </div>
+        <blockquote>as sweet as they are deadly / femme fatales / sneaking out before sunrise / the taste of bitterness on your lips / breaking hearts like they broke yours / keeping to the shadows / lipstick on the rim of a glass</blockquote>
+    </div>
+    <div class="group g-36">
+        <h3>Yarrow</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/yarrow1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/yarrow1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/yarrow1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/yarrow1.jpg" /></span>
+        </div>
+        <blockquote>older than you look / the taste of poison on your tongue / reluctant compassion / no sleep, black coffee / cobblestone streets and lonely castles / a storm rolling in off the ocean / alone in a room of people</blockquote>
+    </div>
+</div>
+<h2>Premium Groups</h2>
+<div data-type="grid" data-columns="2">
+    <div class="group g-19">
+        <h3>Balsam</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/balsam1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/balsam1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/balsam1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/balsam1.jpg" /></span>
+        </div>
+        <blockquote>adaptive and easygoing / a plan you never stick to / spontaneous road trips across the country / climbing the fence to have a better view / renaming constellations in the night sky / enough coffee to keep you up all night</blockquote>
+    </div>
+    <div class="group g-35">
+        <h3>Buttercup</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/buttercup1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/buttercup1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/buttercup1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/buttercup1.jpg" /></span>
+        </div>
+        <blockquote>sweaters too big for you / being exactly on time / quiet persistence / beachcombing as the sun rises / picnics with food you made yourself / the smell of fresh baked bread / getting your hands dirty</blockquote>
+    </div>
+    <div class="group g-20">
+        <h3>Clover</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/clover2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/clover2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/clover2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/clover2.jpg" /></span>
+        </div>
+        <blockquote>having conversations with your pets / pinky promises you'll keep all your life / treating yourself to your favourite candy / sticking up for your friends / bareback horseback riding / getting grumpy when you're tired / chewing the ends of your hair</blockquote>
+    </div>
+    <div class="group g-29">
+        <h3>Hawthorn</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/hawthorn1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/hawthorn1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/hawthorn1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/hawthorn1.jpg" /></span>
+        </div>
+        <blockquote>mutable and uncertain / knowing it's wrong, but doing it anyways / rays of sun while it's raining / a map held upside-down / seeing an opportunity and taking it / never being able to admit to your mistakes</blockquote>
+    </div>
+    <div class="group g-23">
+        <h3>Laurel</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/laurel1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/laurel1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/laurel1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/laurel1.jpg" /></span>
+        </div>
+        <blockquote>the scent of rain after a storm / crying until your head throbs / fogged-up glasses / finally giving up hope / punching a mirror and feeling bad about it afterwards / loving too hard too fast / midday naps in an unmade bed</blockquote>
+    </div>
+    <div class="group g-24">
+        <h3>Sage</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sage1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sage1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sage1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sage1.jpg" /></span>
+        </div>
+        <blockquote>thoughtful and precise / always taking care of others first / a follower, not a leader / never making the first move / going to a coffee shop for the ambience / only taking calculated risks / "what do you want?" "I don't know"</blockquote>
+    </div>
+    <div class="group g-33">
+        <h3>Starflower</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/starflower1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/starflower1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/starflower1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/starflower1.jpg" /></span>
+        </div>
+        <blockquote>superstitious and mystical / checking your horoscope every morning / a tent set up under the stars / moods that come and go with the wind / forgetting to check the weather before going out</blockquote>
+    </div>
+    <div class="group g-32">
+        <h3>Sweetgrass</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sweetgrass1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sweetgrass1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sweetgrass1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/sweetgrass1.jpg" /></span>
+        </div>
+        <blockquote>handwritten letters sealed with stickers / daydreaming on the bus / music that can be heard outside your headphones / kisses to cheeks / mismatched socks / an organized mess / trying anything twice</blockquote>
+    </div>
+    <div class="group g-18">
+        <h3>Thistle</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/thistle2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/thistle2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/thistle2.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/thistle2.jpg" /></span>
+        </div>
+        <blockquote>practically indestructible / you don't find trouble, trouble finds you / scraped palms and bruised knees / a weed growing through the cracks / a handful of change in an old jacket pocket / would rather fix it than get a new one</blockquote>
+    </div>
+    <div class="group g-17">
+        <h3>Tobacco</h3>
+        <div class="group-images">
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/tobacco1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/tobacco1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/tobacco1.jpg" /></span>
+            <span><img src="https://files.jcink.net/uploads2/godlybehaviour/GB24/tobacco1.jpg" /></span>
+        </div>
+        <blockquote>has seen things / imported liquor with a high price tag / honouring your cultural roots / cooking just like your grandmother taught you / a touch of mysticism / a pinch of salt over your left shoulder / won't try new things</blockquote>
+    </div>
+</div>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#credits">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    Credits
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="subplots">
+                        <tag-tabset></tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="guides">
+                        <tag-tabset>
+                            <tag-tab data-key="#start">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    Getting started
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#application">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    Application Guide
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="registration">
+                        <tag-tabset>
+                            <tag-tab data-key="#reserve-face">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <form id="form-reserve" data-type="grid" data-columns="2">
+    <blockquote class="fullWidth">Reserves last for 2 weeks and <i>cannot</i> be renewed.</blockquote>
+    <label>
+        <b>Alias</b>
+        <span><input type="text" id="member" placeholder="Alias" required /></span>
+    </label>
+    <label>
+        <b>Face</b>
+        <span><input type="text" id="face" placeholder="Face" required /></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#reserve-role">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <form id="form-reserve-plot" data-type="grid" data-columns="2">
+    <label class="fullWidth">
+        <b>Alias</b>
+        <span><input type="text" id="member" placeholder="Alias" required /></span>
+    </label>
+    <label>
+        <b>Plot</b>
+        <span><select required id="plot"><option value="">(select)</option></select></span>
+    </label>
+    <label>
+        <b>Section</b>
+        <span><select required id="section"><option value="">(select)</option></select></span>
+    </label>
+    <label class="fullWidth">
+        <b>Role</b>
+        <span><select required id="role"><option value="">(select)</option></select></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#species-request">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+    <ul><li>Privacy Badger</li>
+    <li>UBlock</li>
+    <li>Potentially AdBlock (Plus Only)</li></ul>
+</blockquote>
+<form id="form-species" data-type="grid" data-columns="2">
+    <blockquote class="fullWidth">Please be aware that this form submits all details to a staff-only area for our discussion, but also submits species name (and no other information) to the public server to help prevent duplications during the discussion process.</blockquote>
+    <label>
+        <b>Alias</b>
+        <span><input type="text" id="member" placeholder="Alias" /></span>
+    </label>
+    <label>
+        <b>Species</b>
+        <span><input type="text" id="species" placeholder="Species Name" /></span>
+    </label>
+    <label class="fullWidth">
+        <b>Proposed Physiology</b>
+        <span><textarea id="physiology" placeholder="Physiology traits you'd like to see" required></textarea></span>
+    </label>
+    <label>
+        <b>Proposed Abilities</b>
+        <span><textarea id="abilities" placeholder="Abilities you'd like to see" required></textarea></span>
+    </label>
+    <label>
+        <b>Proposed Weaknesses</b>
+        <span><textarea id="weaknesses" placeholder="Weaknesses you'd like to see" required></textarea></span>
+    </label>
+    <label class="fullWidth">
+        <b>Other Ideas</b>
+        <span><textarea id="ideas" placeholder="If you have any other ideas, please share them!"></textarea></span>
+    </label>
+    <label class="fullWidth">
+        <b>Resources</b>
+        <span><textarea id="resources" placeholder="If you have links to resources, please link us!"></textarea></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#add-business">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+    <ul><li>Privacy Badger</li>
+    <li>UBlock</li>
+    <li>Potentially AdBlock (Plus Only)</li></ul>
+</blockquote>
+<form id="form-job-add" data-type="grid" data-columns="2">
+    <input type="hidden" id="name" value="<!-- |name| -->" />
+    <input type="hidden" id="id" value="<!-- |id| -->" />
+    <label>
+        <b>Employer</b>
+        <span><input type="text" id="employer" placeholder="Employer Name" required /></span>
+    </label>
+    <label>
+        <b>Category</b>
+        <span><select id="category">
+            <option value="">(select)</option>
+            <option value="edu">Education</option>
+            <option value="entertain">Entertainment</option>
+            <option value="food">Food & Drink</option>
+            <option value="gov">Governmental</option>
+            <option value="shop">Retail</option>
+            <option value="serve">Services</option>
+            <option value="misc">Miscellaneous</option>
+        </select></span>
+    </label>
+    <label>
+        <b>Location</b>
+        <span><select id="location">
+            <option value="">(select)</option>
+            <option value="20">Temperance (Businesses)</option>
+            <option value="21">Temperance (Residential)</option>
+            <option value="22">Temperance (Waterfront)</option>
+            <option value="19">Temperance (Other)</option>
+            <option value="46">Sydney (Emergency Services)</option>
+            <option value="43">Sydney (Businesses)</option>
+            <option value="44">Sydney (Residential)</option>
+            <option value="42">Sydney (Other)</option>
+            <option value="23">Cape Breton Island</option>
+            <option value="149">Mainland Nova Scotia</option>
+            <option value="150">National</option>
+            <option value="151">International</option>
+        </select></span>
+    </label>
+    <label>
+        <b>Hiring?</b>
+        <span><select id="hiring">
+            <option value="">(select)</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="ask">Ask First</option>
+        </select></span>
+    </label>
+    <label class="fullWidth">
+        <b>Summary</b>
+        <span><textarea id="summary" placeholder="Overview of the business; maximum 350 characters" maxlength="350" required></textarea></span>
+    </label>
+    <div class="fullWidth" data-type="grid"><div class="h6">Weekday Hours</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="empty" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>No set hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="none" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Not Open</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="appointment" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>By Appointment</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="all" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>24 Hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="day" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Day (09:00 - 17:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="night" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Night (17:00 - 01:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="overnight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Overnight (01:00 - 09:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="witching" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Witching Hour (00:00 - 04:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="earlymorning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Early Morning (04:00 - 08:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="morning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Morning (08:00 - 12:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="afternoon" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Afternoon (12:00 - 16:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="evening" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Evening (16:00 - 20:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="latenight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Late Night (20:00 - 00:00)</strong>
+        </label>
+    </div></div>
+    <div class="fullWidth" data-type="grid"><div class="h6">Weekend Hours</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="empty" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>No set hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="none" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Not Open</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="appointment" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>By Appointment</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="all" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>24 Hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="day" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Day (09:00 - 17:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="night" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Night (17:00 - 01:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="overnight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Overnight (01:00 - 09:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="witching" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Witching Hour (00:00 - 04:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="earlymorning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Early Morning (04:00 - 08:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="morning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Morning (08:00 - 12:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="afternoon" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Afternoon (12:00 - 16:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="evening" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Evening (16:00 - 20:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="latenight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Late Night (20:00 - 00:00)</strong>
+        </label>
+    </div></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#sort">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+<ul><li>Privacy Badger</li>
+<li>UBlock</li>
+<li>Potentially AdBlock (Plus Only)</li></ul></blockquote><br>
+<form id="form-sort" data-type="grid" data-columns="2">
+    <div class="fullWidth h4">Basic Info</div>
+    <label>
+        <b>Member</b>
+        <span><input type="text" id="member" placeholder="Member" required /></span></span>
+    </label>
+    <label>
+        <b>Member Account ID</b>
+        <span><input type="text" id="memberid" placeholder="Member Account ID" required /></span>
+    </label>
+    <label>
+        <b>Character</b>
+        <span><input type="text" id="character" placeholder="Character" required /></span>
+    </label>
+    <label>
+        <b>Character Account ID</b>
+        <span><input type="text" id="characterid" placeholder="Character Account ID" required /></span>
+    </label>
+    <label>
+        <b>Group</b>
+        <span><select id="group">
+	<option value="">(select)</option>
+	<optgroup label="Standard">
+		<option value="15">Amaranth</option>
+		<option value="7">Birch</option>
+		<option value="11">Blueberry</option>
+		<option value="22">Cedar</option>
+		<option value="10">Dandelion</option>
+		<option value="25">Goldenrod</option>
+		<option value="13">Hemlock</option>
+		<option value="12">Juniper</option>
+		<option value="8">Lupin</option>
+		<option value="14">Nettle</option>
+		<option value="30">Periwinkle</option>
+		<option value="31">Primrose</option>
+		<option value="9">Spruce</option>
+		<option value="16">Sundew</option>
+	</optgroup>
+	<optgroup label="Premium">
+		<option value="19">Balsam</option>
+		<option value="20">Clover</option>
+		<option value="29">Hawthorn</option>
+		<option value="23">Laurel</option>
+		<option value="24">Sage</option>
+		<option value="33">Starflower</option>
+		<option value="18">Thistle</option>
+		<option value="17">Tobacco</option>
+	</optgroup>
+</select></span>
+    </label>
+    <label>
+        <b>Face Claim</b>
+        <span><input type="text" id="face" placeholder="Face Claim" required /></span>
+    </label>
+    <label>
+        <b>First Character?</b>
+        <span><select id="first" required>
+            <option value="">(select)</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select></span>
+    </label>
+    <label>
+        <b>For a Request?</b>
+        <span><select id="request" required>
+            <option value="">(select)</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select></span>
+    </label>
+    <label class="hidden ifFirst">
+        <b>Member Pronouns</b>
+        <span><input type="text" id="memberpronouns" placeholder="Member Pronouns" /></span>
+    </label>
+    <label class="hidden ifFirst">
+        <b>Member Type</b>
+        <span><select id="membergroup">
+            <option value="6" selected>Writer</option>
+            <option value="4">Admin</option>
+            <option value="28">Mod</option>
+            <option value="26">Ambassador</option>
+        </select></span>
+    </label>
+    <label class="hidden ifRequest fullWidth">
+        <b>Request URL / Creator</b>
+        <span><input type="text" id="request-data" placeholder="Request URL / Creator" /></span>
+    </label>
+    <div class="h4 fullWidth">Employment</div>
+    <label>
+        <b>Employed?</b>
+        <span><select id="employed" required>
+            <option value="">(select)</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select></span>
+    </label>
+    <label class="hidden ifEmployed">
+        <b>Number of Jobs</b>
+        <span><input type="number" id="job-count" value="1" min="1" /></span>
+    </label>
+    <div id="jobs-clip" class="hide ifEmployed fullWidth" data-type="grid" data-columns="2"></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#join-subplot">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <form id="form-join-plot" data-type="grid" data-columns="2">
+    <label class="fullWidth">
+        <b>Character ID</b>
+        <span><input type="text" placeholder="URL or ID" id="id" required /></span>
+    </label>
+    <label>
+        <b>Plot</b>
+        <span><select required id="plot"><option value="">(select)</option></select></span>
+    </label>
+    <label>
+        <b>Section</b>
+        <span><select required id="section"><option value="">(select)</option></select></span>
+    </label>
+    <label class="fullWidth">
+        <b>Role</b>
+        <span><select required id="role"><option value="">(select)</option></select></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="claims">
+                        <tag-tabset>
+                            <tag-tab data-key="#reserves">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="claim-wrap" data-type="grid" data-columns="2" style="margin-bottom: 20px;">
+                                        <div>
+                                            <strong class="h7">Filter by Face</strong>
+                                            <input type="text" data-filter="#reserves" data-objects="> strong" data-headers="h2" onkeyup="filterValue(this)" placeholder="Face" style="width: 100%;">
+                                        </div>
+                                    
+                                        <div>
+                                            <strong class="h7">Filter by Member</strong>
+                                            <input type="text" data-filter="#reserves" data-objects="> strong + span" data-headers="h2" onkeyup="filterValue(this)" placeholder="Member" style="width: 100%;">
+                                        </div>
+                                    </div>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#subplot-reserves">
+                                <div class="webpage--content-inner"><div class="scroll"></div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#members">
+                                <div class="webpage--content-inner"><div class="scroll"></div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#faces">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <div class="claim-wrap" data-type="grid" data-columns="3">
+                                        <div>
+                                            <strong class="h7">Filter by Face</strong>
+                                            <input type="text" data-filter="#faces" data-objects="> strong > a" data-headers="h2" onkeyup="filterValue(this)" placeholder="Face" style="width: 100%;">
+                                        </div>
+                                    
+                                        <div>
+                                            <strong class="h7">Filter by Character</strong>
+                                            <input type="text" data-filter="#faces" data-objects="> strong + span > a" data-headers="h2" onkeyup="filterValue(this)" placeholder="Character" style="width: 100%;">
+                                        </div>
+                                    
+                                        <div>
+                                            <strong class="h7">Filter by Member</strong>
+                                            <input type="text" data-filter="#faces" data-objects="> strong + span + span > a" data-headers="h2" onkeyup="filterValue(this)" placeholder="Member" style="width: 100%;">
+                                        </div>
+                                    </div>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#subplots">
+                                <div class="webpage--content-inner"><div class="scroll"></div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="moderation">
+                        <tag-tabset>
+                            <tag-tab data-key="#editclaims">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+    <ul><li>Privacy Badger</li>
+    <li>UBlock</li>
+    <li>Potentially AdBlock (Plus Only)</li></ul>
+</blockquote><br>
+<form id="form-edit" data-type="grid" data-columns="2">
+    <input type="hidden" id="editor" value="<!-- |name| --> (#<!-- |id| -->, <!-- |input_IP_ADDRESS| -->)" />
+    <label class="fullWidth">
+        <b>Character ID</b>
+        <span><input type="text" id="id" placeholder="URL or ID" required /></span>
+    </label>
+    <div class="h4 fullWidth">Please Update</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-alias" value="alias">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Alias</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-name" value="name">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Character Name</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-group" value="group">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Group</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-job-add" value="job-add">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Add Job(s)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-job-edit" value="job-edit">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Update Current Job(s)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-job-remove" value="job-remove">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Remove Current Job(s)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="update" id="choice-plot-remove" value="plot-remove">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Remove Subplot Role(s)</strong>
+        </label>
+    </div>
+    <div class="h4 hidden ifAlias fullWidth">Change Alias</div>
+    <label class="hidden ifAlias fullWidth">
+        <b>Alias</b>
+        <span><input type="text" id="member" placeholder="Alias" /></span></span>
+    </label>
+    <div class="h4 hidden ifName fullWidth">Change Name</div>
+    <label class="hidden ifName fullWidth">
+        <b>Name</b>
+        <span><input type="text" id="character" placeholder="Name" /></span></span>
+    </label>
+    <div class="h4 hidden ifGroup fullWidth">Change Group</div>
+    <label class="hidden ifGroup fullWidth">
+        <b>Group</b>
+        <span><select id="group">
+	<option value="">(select)</option>
+	<optgroup label="Standard">
+		<option value="15">Amaranth</option>
+		<option value="7">Birch</option>
+		<option value="11">Blueberry</option>
+		<option value="22">Cedar</option>
+		<option value="10">Dandelion</option>
+		<option value="25">Goldenrod</option>
+		<option value="13">Hemlock</option>
+		<option value="12">Juniper</option>
+		<option value="8">Lupin</option>
+		<option value="14">Nettle</option>
+		<option value="30">Periwinkle</option>
+		<option value="31">Primrose</option>
+		<option value="9">Spruce</option>
+		<option value="16">Sundew</option>
+	</optgroup>
+	<optgroup label="Premium">
+		<option value="19">Balsam</option>
+		<option value="20">Clover</option>
+		<option value="29">Hawthorn</option>
+		<option value="23">Laurel</option>
+		<option value="24">Sage</option>
+		<option value="33">Starflower</option>
+		<option value="18">Thistle</option>
+		<option value="17">Tobacco</option>
+	</optgroup>
+</select></span>
+    </label>
+    <div class="h4 hidden ifAdd fullWidth">Add Jobs</div>
+    <label class="hidden ifAdd">
+        <b>Number of Jobs</b>
+        <span><input type="number" id="job-count" value="1" min="1" /></span>
+    </label>
+    <div id="jobs-clip" class="hidden ifAdd fullWidth" data-type="grid" data-columns="2"></div>
+    <div class="h4 hidden ifEdit fullWidth">Edit Jobs</div>
+    <div id="edit-jobs-clip" class="hidden ifEdit fullWidth" data-type="grid" data-columns="2"></div>
+    <div class="h4 hidden ifRemove fullWidth">Remove Jobs</div>
+    <div id="remove-jobs-clip" class="hidden ifRemove fullWidth multiSelect" data-type="flex"></div>
+    <div class="h4 hidden ifPlot fullWidth">Remove Subplot Roles</div>
+    <div id="remove-roles-clip" class="hidden ifPlot fullWidth multiSelect" data-type="flex"></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#edit-business">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <blockquote>Please note that if you use any of the following extensions in Chrome (possibly in other browsers as well), you must disable them for the form to complete all of its functions correctly:
+    <ul><li>Privacy Badger</li>
+    <li>UBlock</li>
+    <li>Potentially AdBlock (Plus Only)</li></ul>
+</blockquote><br>
+<form id="form-job-edit" data-type="grid" data-columns="2">
+    <input type="hidden" id="name" value="<!-- |name| -->" />
+    <input type="hidden" id="id" value="<!-- |id| -->" />
+    <label>
+        <b>Employer</b>
+        <span><input type="text" id="employer" placeholder="Employer Name" required /></span>
+    </label>
+    <label>
+        <b>Hiring?</b>
+        <span><select id="hiring">
+            <option value="">(select)</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="ask">Ask First</option>
+        </select></span>
+    </label>
+    <div class="fullWidth" data-type="grid"><div class="h6">Weekday Hours</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="empty" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>No set hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="none" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Not Open</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="appointment" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>By Appointment</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="all" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>24 Hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="day" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Day (09:00 - 17:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="night" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Night (17:00 - 01:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="overnight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Overnight (01:00 - 09:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="witching" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Witching Hour (00:00 - 04:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="earlymorning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Early Morning (04:00 - 08:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="morning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Morning (08:00 - 12:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="afternoon" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Afternoon (12:00 - 16:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="evening" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Evening (16:00 - 20:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekday" id="weekday" value="latenight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Late Night (20:00 - 00:00)</strong>
+        </label>
+    </div></div>
+    <div class="fullWidth" data-type="grid"><div class="h6">Weekend Hours</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="empty" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>No set hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="none" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Not Open</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="appointment" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>By Appointment</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="all" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>24 Hours</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="day" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Day (09:00 - 17:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="night" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Night (17:00 - 01:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="overnight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Overnight (01:00 - 09:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="witching" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Witching Hour (00:00 - 04:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="earlymorning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Early Morning (04:00 - 08:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="morning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Morning (08:00 - 12:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="afternoon" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Afternoon (12:00 - 16:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="evening" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Evening (16:00 - 20:00)</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="weekend" id="weekend" value="latenight" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Late Night (20:00 - 00:00)</strong>
+        </label>
+    </div></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#staff-help">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <form id="form-mod" data-type="grid" data-columns="2">
+    <input type="hidden" id="requester" value="<!-- |name| --> (#<!-- |id| -->, <!-- |input_IP_ADDRESS| -->)" />
+    <label class="fullWidth">
+        <b>Request Type</b>
+        <span><select id="type">
+            <option value="">(select)</option>
+            <option value="board">Board Addition</option>
+            <option value="thread">Thread Moderation</option>
+            <option value="account">Account Moderation</option>
+            <option value="other">Other Request</option>
+        </select></span>
+    </label>
+    <label class="hidden ifBoard">
+        <b>Board Title</b>
+        <span><input type="text" id="board" placeholder="Board" /></span>
+    </label>
+    <label class="hidden ifBoard">
+        <b>Parent Category/Board</b>
+        <span><input type="text" id="parent" placeholder="Parent Category/Board" /></span>
+    </label>
+    <label class="hidden ifThread fullWidth">
+        <b>Threads</b>
+        <span><textarea id="threads" placeholder="Threads"></textarea></span>
+    </label>
+    <label class="hidden ifThread fullWidth">
+        <b>Move To</b>
+        <span><select id="thread-location">
+            <option value="">(select)</option>
+            <option value="dev">Development</option>
+            <option value="sm">Social Media</option>
+            <option value="comm">Communications</option>
+            <option value="ic-ic">IC - Incomplete</option>
+            <option value="ic-c">IC - Complete</option>
+            <option value="ooc">OOC</option>
+        </select></span>
+    </label>
+    <label class="hidden ifAccount fullWidth">
+        <b>Account</b>
+        <span><input type="text" id="account" placeholder="URL or Name" /></span>
+    </label>
+    <label class="hidden ifBoard ifAccount ifOther fullWidth">
+        <b>Request Details</b>
+        <span><textarea id="request" placeholder="Request"></textarea></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                    <tag-tab class="tab-category" data-category="staff">
+                        <tag-tabset>
+                            <tag-tab data-key="#announce">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <form id="form-announce" data-type="grid" data-columns="2">
+    <label>
+        <b>Member</b>
+        <span><input type="text" id="member" placeholder="Member" /></span>
+    </label>
+    <label>
+        <b>Character</b>
+        <span><input type="text" id="character" placeholder="Character" /></span>
+    </label>
+    <label>
+        <b>Account ID</b>
+        <span><input type="text" id="account" placeholder="Account ID" /></span>
+    </label>
+    <label>
+        <b>Group</b>
+        <span><select id="group">
+	<option value="">(select)</option>
+	<optgroup label="Standard">
+		<option value="15">Amaranth</option>
+		<option value="7">Birch</option>
+		<option value="11">Blueberry</option>
+		<option value="22">Cedar</option>
+		<option value="10">Dandelion</option>
+		<option value="25">Goldenrod</option>
+		<option value="13">Hemlock</option>
+		<option value="12">Juniper</option>
+		<option value="8">Lupin</option>
+		<option value="14">Nettle</option>
+		<option value="30">Periwinkle</option>
+		<option value="31">Primrose</option>
+		<option value="9">Spruce</option>
+		<option value="16">Sundew</option>
+	</optgroup>
+	<optgroup label="Premium">
+		<option value="19">Balsam</option>
+		<option value="20">Clover</option>
+		<option value="29">Hawthorn</option>
+		<option value="23">Laurel</option>
+		<option value="24">Sage</option>
+		<option value="33">Starflower</option>
+		<option value="18">Thistle</option>
+		<option value="17">Tobacco</option>
+	</optgroup>
+</select></span>
+    </label>
+    <label class="fullWidth">
+        <b>About</b>
+        <span><textarea id="about" placeholder="Short, sweet, and to-the-point" required></textarea></span>
+    </label>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#add-species">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <form id="form-species-add" data-type="grid" data-columns="2">
+    <blockquote class="fullWidth">Abilities and Weaknesses should be separated by an @ sign for correct parsing from the sheet. E.g., "strength one is this@strength two is this@strength three is this".</blockquote>
+    <label>
+        <b>Species</b>
+        <span><input type="text" id="species" placeholder="Species Name" required /></span>
+    </label>
+    <label>
+        <b>Aging</b>
+        <span><input type="text" id="aging" placeholder="Aging" required /></span>
+    </label>
+    <label>
+        <b>Lifespan</b>
+        <span><input type="text" id="lifespan" placeholder="Lifespan" required /></span>
+    </label>
+    <label>
+        <b>Custom Trait - Title</b>
+        <span><input type="text" id="custom-trait" placeholder="Custom Trait" required /></span>
+    </label>
+    <label>
+        <b>Physical Strength</b>
+        <span><input type="range" id="strength" value="0" min="0" max="100" required /></span>
+    </label>
+    <label>
+        <b>Longevity</b>
+        <span><input type="range" id="longevity" value="0" min="0" max="100" required /></span>
+    </label>
+    <label>
+        <b>Vulnerability</b>
+        <span><input type="range" id="vulnerability" value="0" min="0" max="100" required /></span>
+    </label>
+    <label>
+        <b>Custom Trait</b>
+        <span><input type="range" id="custom-percent" value="0" min="0" max="100" required /></span>
+    </label>
+    <label class="fullWidth">
+        <b>Physiology</b>
+        <span><textarea id="physiology" placeholder="Physiology - full sentences" required></textarea></span>
+    </label>
+    <label class="fullWidth">
+        <b>Community Structure</b>
+        <span><textarea id="community" placeholder="Community - full sentences" required></textarea></span>
+    </label>
+    <label>
+        <b>Abilities</b>
+        <span><textarea id="abilities" placeholder="Abilities - @ sign separated list" required></textarea></span>
+    </label>
+    <label>
+        <b>Weaknesses</b>
+        <span><textarea id="weaknesses" placeholder="Weaknesses - @ sign separated list" required></textarea></span>
+    </label>
+    <div class="h4 fullWidth">Filter Tags</div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Species Category</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="speciescat" id="speciescat" value="cat-premium" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Premium</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="speciescat" id="speciescat" value="cat-reg" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Regular</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="speciescat" id="speciescat" value="staffOnly" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Hide for future release</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Species Type</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-aquatic" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Aquatic</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-equine" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Equine</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-tele" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Empathic</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-faerie" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Faerie</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-spirit" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Spirit</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="speciestype" id="speciestype" value="type-misc" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Other</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Public Awareness</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="awareness" id="awareness" value="none">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="awareness" id="awareness" value="government">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Government</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="awareness" id="awareness" value="public">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Public</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6">Knowledge Level</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="none">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="low">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Low</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="medium">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Medium</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="knowledge" id="knowledge" value="high">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>High</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Lifespan</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-immortal" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Immortal</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-long" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Longer than a human</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-short" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Shorter than a human</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="life" id="life" value="life-average" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Same as a human</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Shifting</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-animal" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Animal</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-hybrid" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Human/Animal Hybrid</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-human" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Human Appearance</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-plant" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Plant</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-glamour" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Glamour Only</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="shift" id="shift" value="shift-none" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Healing</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-fast" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Heals faster</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-lives" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Difficult to kill</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-both" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Heals faster and difficult to kill</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-specific" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Heals under specific circumstances</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="heal" id="heal" value="heal-none" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>None</strong>
+        </label>
+    </div></div>
+    <div data-type="grid" data-gap="xs"><div class="h6 fullWidth">Community</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-communal" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Community-oriented</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-species" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Species-oriented</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-solitary" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Solitary</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="radio" name="comm" id="comm" value="comm-varied" class="form-tag">
+            <div class="fancy-input radio"><i class="fa-solid fa-check"></i></div>
+            <strong>Depends on the individual</strong>
+        </label>
+    </div></div>
+    <div class="fullWidth" data-type="grid"><div class="h6">Miscellaneous</div>
+    <div class="fullWidth multiSelect" data-type="flex">
+        <label class="input-wrap">
+            <input type="checkbox" name="misc" id="misc" value="misc-turning" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Can turn others</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="misc" id="misc" value="misc-partshift" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Can partial shift</strong>
+        </label>
+        <label class="input-wrap">
+            <input type="checkbox" name="misc" id="misc" value="misc-healothers" class="form-tag">
+            <div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div>
+            <strong>Can heal others</strong>
+        </label>
+    </div></div>
+    <div class="h4 fullWidth">Credit</div>
+    <label class="fullWidth">
+        <b>Number of Users</b>
+        <span><input type="number" id="credit-count" value="1" min="1" required /></span>
+    </label>
+    <div id="credit-clip" class="fullWidth" data-type="grid" data-columns="2"></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                            <tag-tab data-key="#add-subplot">
+                                <div class="webpage--content-inner"><div class="scroll">
+                                    <form id="form-plot-add" data-type="grid" data-columns="2">
+    <div class="fullWidth h4">Basic Info</div>
+    <label>
+        <b>Plot Name</b>
+        <span><input type="text" id="title" placeholder="Plot Name" required=""></span>
+    </label>
+    <label>
+        <b>Plot Hashtag</b>
+        <span><input type="text" id="id" placeholder="Plot ID" required=""></span>
+    </label>
+    <label class="fullWidth">
+        <b>Tagline</b>
+        <span><input type="text" id="tagline" placeholder="Tagline" required=""></span>
+    </label>
+    <label class="fullWidth">
+        <b>Overview</b>
+        <span><textarea id="overview" placeholder="Overview"></textarea></span>
+    </label>
+    <div class="fullWidth h4">Role Sections</div>
+    <label class="fullWidth">
+        <b>Number of Sections</b>
+        <span><input type="number" id="section-count" value="1" min="1" required=""></span>
+    </label>
+    <div id="roles-clip" class="fullWidth" data-type="grid" data-columns="2"></div>
+    <button type="submit" id="submit" class="fullWidth">Submit</button>
+</form>
+                                </div></div>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tab>
+                </tag-tabset>
+            </section>
+
+            <script>
+                const sheetID = '1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU';
+                const deployID = 'AKfycbx-PjF_7gGgm9QOilpWR6x_QGuKRys5Cjd3wbexK-P2hyxquvLreQW7meY567tPomB2';
+                
+                const businessBot = `1177012692863688714/hnbLmkEeWwLvy2Mogz0EEXtFZdMLk4Pc4_LXUqgYfCwKtzNhNbNMaNeqjv9Rr6MU7FUr`;
+                const editBot = `1124141336120000562/FhVK1QATZQU4JiVE-jFde6dqv2cqY2VnlZZtQfzcyyvjk75YcLXJMWNeSYfP0cB-MAiY`;
+                const modBot = `1124053071866122300/gtx0lNZjQ3N-SZPuTUmTKhT_1m1NubxE4SsZchoeS-m5fAFo04m3Cdfd4GXVVed9Eop4`;
+                const reserveBot = `1124335641191260251/x_KFeOHJ32QKIcmCuVa4qwzEJLrlc0BP61kTaT3YANJSnhZ77GqiDt0d17M7TinPT1h2`;
+                const sortBot = `1124104686857883748/Dh42I7Eh6Gbe22wSEnQ21nQJxkr9v1TNPr7tVRrqkcKXc_Gw4Axt7XCBuOHAdocl40RA`;
+                const speciesBot = `1124303973248151572/7CTHEhHhMwossK1bf8J7JDu3XW0gdPOp6gI5zM0s16FmahlM3sUJytNXE4rMksHbCr6h`;
+                const announceBot = `1124162110750994474/YF0rNXP5bc3GvYUjn-0_Hn0yHBU5YgUF6vFfi1qLZM7xmOm95y0Zg0UtMY8KNBVRs50N`;
+                const publicSortBot = `1124161944119685150/oH3fHzZWdI4Yzt7Td8AnvP0XcHLgXm_RJTq0pVI19s1lpCfiI2WkTqK7Y_BmpTLuFe1A`;
+                const publicSpeciesBot = `1124303807858344007/AW_ejzMEqfK0BbjLvNcA6n2RfCz8JLHo-f4sgeI0DayK4YYi_u1NLFXwCSIr8ETzryR_`;
+                const subplotBot = `1195395969433477251/lfJPrZBczyPeUNVfpO6qWYhvijdiry38IPfJ1t3urdR2ScmFCHsNvRpi_qJSoohLMNC3`;
+                const speciesAnnouncement = `1195496716670083082/yJIenU4kdwM-T-xhA2Y1q1OhSvuwm0pDh2vicSfPaoJRzRcNSI1DrLl2K4RJvjMG5u-3`;
+
+                const claims = `https://opensheet.elk.sh/${sheetID}/Claims`;
+                const reserves = `https://opensheet.elk.sh/${sheetID}/Reserves`;
+                const subplotReserves = `https://opensheet.elk.sh/${sheetID}/SubplotReserves`;
+                const subplots = `https://opensheet.elk.sh/${sheetID}/Subplots`;
+                const businesses = `https://opensheet.elk.sh/${sheetID}/Businesses`;
+
+                let businessList = ``;
+            </script>
+            <script src="../dist/js/webpageFunctions.js"></script>
+            <script src="../dist/js/formatFunctions.js"></script>
+            <script src="../dist/js/webpageScripts.js"></script>
+            <script>
+                fetch(claims)
+                .then((response) => response.json())
+                .then((claimsData) => {
+                    formatFaces(claimsData);
+                    formatMembers(claimsData);
+                    formatSubplotClaims(claimsData);
+                    
+                    fetch(reserves)
+                    .then((response) => response.json())
+                    .then((reservesData) => {
+                        formatFaceReserves(reservesData, claimsData);
+
+                        fetch(subplotReserves)
+                        .then((response) => response.json())
+                        .then((subplotReservesData) => {
+                            formatSubplotReserves(subplotReservesData);
+
+                            fetch(subplots)
+                            .then((response) => response.json())
+                            .then((subplotData) => {
+                                formatSubplot(subplotData);
+                                initJoinSelect(subplotData, `#form-join-plot`);
+                                initJoinSelect(subplotData, `#form-reserve-plot`);
+
+                                fetch(businesses)
+                                .then((response) => response.json())
+                                .then((businessData) => {
+                                    initBusinesses(businessData);
+                                    
+                                }).then(() => {
+                                    initWebpages();
+                                });
+                                
+                            });
+                            
+                        });
+
+                    });
+
+                });
+            </script>
+
+            <!-- Copyright Information -->
+                <div class="tableborder" align="center">
+                    <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+                        <div class="copyright" align="center">
+                            Powered by 
+                            <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a>
+                            (<a href="http://jcink.com" target="_blank">Jcink.com </a>
+                            <a href="https://jcink.com" target="_blank">Forum Hosting</a>
+                            ) © 2020 &nbsp;
+                            <a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a>
+                            <br>
+                            Page creation time: 0.0054 <!-- http://luxtradition.b1.jcink.com -->  · 
+                            <a href="index.php?act=Mobile">Mobile Version</a> · 
+                            <a href="index.php?act=privacy">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div> 
+        </main>
+
+        
+        <script src="../dist/js/scripts.js"></script>   
+    </body>
+</html>

@@ -131,8 +131,94 @@ main > br {
 .member--item .scroll .h5,
 .member--item .scroll .h6,
 .member--item .scroll .h7,
-.member--item .scroll .h8 {
+.member--item .scroll .h8,
+.species--section h2:not(.species--title),
+.species--section h3,
+.species--section h4,
+.species--section h5,
+.species--section h6,
+.species--section h7,
+.species--section h8,
+.species--section .h2,
+.species--section .h3,
+.species--section .h4,
+.species--section .h5,
+.species--section .h6,
+.species--section .h7,
+.species--section .h8 {
+  font-weight: 700;
   margin-bottom: 15px; }
+  .postcolor h2:not(.species--title).innerHeader,
+  .postcolor h3.innerHeader,
+  .postcolor h4.innerHeader,
+  .postcolor h5.innerHeader,
+  .postcolor h6.innerHeader,
+  .postcolor h7.innerHeader,
+  .postcolor h8.innerHeader,
+  .postcolor .h2.innerHeader,
+  .postcolor .h3.innerHeader,
+  .postcolor .h4.innerHeader,
+  .postcolor .h5.innerHeader,
+  .postcolor .h6.innerHeader,
+  .postcolor .h7.innerHeader,
+  .postcolor .h8.innerHeader,
+  .webpage--content h2:not(.species--title).innerHeader,
+  .webpage--content h3.innerHeader,
+  .webpage--content h4.innerHeader,
+  .webpage--content h5.innerHeader,
+  .webpage--content h6.innerHeader,
+  .webpage--content h7.innerHeader,
+  .webpage--content h8.innerHeader,
+  .webpage--content .h2.innerHeader,
+  .webpage--content .h3.innerHeader,
+  .webpage--content .h4.innerHeader,
+  .webpage--content .h5.innerHeader,
+  .webpage--content .h6.innerHeader,
+  .webpage--content .h7.innerHeader,
+  .webpage--content .h8.innerHeader,
+  .profile .scroll h2:not(.species--title).innerHeader,
+  .profile .scroll h3.innerHeader,
+  .profile .scroll h4.innerHeader,
+  .profile .scroll h5.innerHeader,
+  .profile .scroll h6.innerHeader,
+  .profile .scroll h7.innerHeader,
+  .profile .scroll h8.innerHeader,
+  .profile .scroll .h2.innerHeader,
+  .profile .scroll .h3.innerHeader,
+  .profile .scroll .h4.innerHeader,
+  .profile .scroll .h5.innerHeader,
+  .profile .scroll .h6.innerHeader,
+  .profile .scroll .h7.innerHeader,
+  .profile .scroll .h8.innerHeader,
+  .member--item .scroll h2:not(.species--title).innerHeader,
+  .member--item .scroll h3.innerHeader,
+  .member--item .scroll h4.innerHeader,
+  .member--item .scroll h5.innerHeader,
+  .member--item .scroll h6.innerHeader,
+  .member--item .scroll h7.innerHeader,
+  .member--item .scroll h8.innerHeader,
+  .member--item .scroll .h2.innerHeader,
+  .member--item .scroll .h3.innerHeader,
+  .member--item .scroll .h4.innerHeader,
+  .member--item .scroll .h5.innerHeader,
+  .member--item .scroll .h6.innerHeader,
+  .member--item .scroll .h7.innerHeader,
+  .member--item .scroll .h8.innerHeader,
+  .species--section h2:not(.species--title).innerHeader,
+  .species--section h3.innerHeader,
+  .species--section h4.innerHeader,
+  .species--section h5.innerHeader,
+  .species--section h6.innerHeader,
+  .species--section h7.innerHeader,
+  .species--section h8.innerHeader,
+  .species--section .h2.innerHeader,
+  .species--section .h3.innerHeader,
+  .species--section .h4.innerHeader,
+  .species--section .h5.innerHeader,
+  .species--section .h6.innerHeader,
+  .species--section .h7.innerHeader,
+  .species--section .h8.innerHeader {
+    margin-bottom: -15px !important; }
   .postcolor h2:not(.species--title):not(:first-child),
   .postcolor h3:not(:first-child),
   .postcolor h4:not(:first-child),
@@ -188,8 +274,96 @@ main > br {
   .member--item .scroll .h5:not(:first-child),
   .member--item .scroll .h6:not(:first-child),
   .member--item .scroll .h7:not(:first-child),
-  .member--item .scroll .h8:not(:first-child) {
+  .member--item .scroll .h8:not(:first-child),
+  .species--section h2:not(.species--title):not(:first-child),
+  .species--section h3:not(:first-child),
+  .species--section h4:not(:first-child),
+  .species--section h5:not(:first-child),
+  .species--section h6:not(:first-child),
+  .species--section h7:not(:first-child),
+  .species--section h8:not(:first-child),
+  .species--section .h2:not(:first-child),
+  .species--section .h3:not(:first-child),
+  .species--section .h4:not(:first-child),
+  .species--section .h5:not(:first-child),
+  .species--section .h6:not(:first-child),
+  .species--section .h7:not(:first-child),
+  .species--section .h8:not(:first-child) {
     margin-top: 30px; }
+  .postcolor h2:not(.species--title) button,
+  .postcolor h3 button,
+  .postcolor h4 button,
+  .postcolor h5 button,
+  .postcolor h6 button,
+  .postcolor h7 button,
+  .postcolor h8 button,
+  .postcolor .h2 button,
+  .postcolor .h3 button,
+  .postcolor .h4 button,
+  .postcolor .h5 button,
+  .postcolor .h6 button,
+  .postcolor .h7 button,
+  .postcolor .h8 button,
+  .webpage--content h2:not(.species--title) button,
+  .webpage--content h3 button,
+  .webpage--content h4 button,
+  .webpage--content h5 button,
+  .webpage--content h6 button,
+  .webpage--content h7 button,
+  .webpage--content h8 button,
+  .webpage--content .h2 button,
+  .webpage--content .h3 button,
+  .webpage--content .h4 button,
+  .webpage--content .h5 button,
+  .webpage--content .h6 button,
+  .webpage--content .h7 button,
+  .webpage--content .h8 button,
+  .profile .scroll h2:not(.species--title) button,
+  .profile .scroll h3 button,
+  .profile .scroll h4 button,
+  .profile .scroll h5 button,
+  .profile .scroll h6 button,
+  .profile .scroll h7 button,
+  .profile .scroll h8 button,
+  .profile .scroll .h2 button,
+  .profile .scroll .h3 button,
+  .profile .scroll .h4 button,
+  .profile .scroll .h5 button,
+  .profile .scroll .h6 button,
+  .profile .scroll .h7 button,
+  .profile .scroll .h8 button,
+  .member--item .scroll h2:not(.species--title) button,
+  .member--item .scroll h3 button,
+  .member--item .scroll h4 button,
+  .member--item .scroll h5 button,
+  .member--item .scroll h6 button,
+  .member--item .scroll h7 button,
+  .member--item .scroll h8 button,
+  .member--item .scroll .h2 button,
+  .member--item .scroll .h3 button,
+  .member--item .scroll .h4 button,
+  .member--item .scroll .h5 button,
+  .member--item .scroll .h6 button,
+  .member--item .scroll .h7 button,
+  .member--item .scroll .h8 button,
+  .species--section h2:not(.species--title) button,
+  .species--section h3 button,
+  .species--section h4 button,
+  .species--section h5 button,
+  .species--section h6 button,
+  .species--section h7 button,
+  .species--section h8 button,
+  .species--section .h2 button,
+  .species--section .h3 button,
+  .species--section .h4 button,
+  .species--section .h5 button,
+  .species--section .h6 button,
+  .species--section .h7 button,
+  .species--section .h8 button {
+    border: 0;
+    background: 0;
+    color: inherit;
+    text-transform: inherit; }
 
 .postcolor h2:not(.species--title),
 .postcolor h3,
@@ -222,7 +396,15 @@ main > br {
 .member--item .scroll .h2,
 .member--item .scroll .h3,
 .member--item .scroll .h4,
-.member--item .scroll .h5 {
+.member--item .scroll .h5,
+.species--section h2:not(.species--title),
+.species--section h3,
+.species--section h4,
+.species--section h5,
+.species--section .h2,
+.species--section .h3,
+.species--section .h4,
+.species--section .h5 {
   font-weight: 900;
   font-family: var(--font-header);
   line-height: 160%;
@@ -244,7 +426,11 @@ main > br {
 .member--item .scroll h2:not(.species--title),
 .member--item .scroll h3,
 .member--item .scroll .h2,
-.member--item .scroll .h3 {
+.member--item .scroll .h3,
+.species--section h2:not(.species--title),
+.species--section h3,
+.species--section .h2,
+.species--section .h3 {
   border: 1px solid var(--border-accent);
   background: var(--bg-accent-30);
   color: var(--text-secondary);
@@ -264,7 +450,11 @@ main > br {
   .member--item .scroll h2:not(.species--title)::after,
   .member--item .scroll h3::after,
   .member--item .scroll .h2::after,
-  .member--item .scroll .h3::after {
+  .member--item .scroll .h3::after,
+  .species--section h2:not(.species--title)::after,
+  .species--section h3::after,
+  .species--section .h2::after,
+  .species--section .h3::after {
     content: '';
     position: absolute;
     top: calc(50% - 0.5px);
@@ -279,10 +469,12 @@ main > br {
 .profile .scroll h2:not(.species--title),
 .profile .scroll .h2,
 .member--item .scroll h2:not(.species--title),
-.member--item .scroll .h2 {
+.member--item .scroll .h2,
+.species--section h2:not(.species--title),
+.species--section .h2 {
   padding: 15px 30px;
   font-size: 16px;
-  max-width: calc(100% - 50px); }
+  max-width: calc(100% - 60px); }
   @media only screen and (min-width: 480px) {
     .postcolor h2:not(.species--title),
     .postcolor .h2,
@@ -291,7 +483,9 @@ main > br {
     .profile .scroll h2:not(.species--title),
     .profile .scroll .h2,
     .member--item .scroll h2:not(.species--title),
-    .member--item .scroll .h2 {
+    .member--item .scroll .h2,
+    .species--section h2:not(.species--title),
+    .species--section .h2 {
       font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h2:not(.species--title),
@@ -301,7 +495,9 @@ main > br {
     .profile .scroll h2:not(.species--title),
     .profile .scroll .h2,
     .member--item .scroll h2:not(.species--title),
-    .member--item .scroll .h2 {
+    .member--item .scroll .h2,
+    .species--section h2:not(.species--title),
+    .species--section .h2 {
       font-size: 24px; } }
   .postcolor h2:not(.species--title)::after,
   .postcolor .h2::after,
@@ -310,7 +506,9 @@ main > br {
   .profile .scroll h2:not(.species--title)::after,
   .profile .scroll .h2::after,
   .member--item .scroll h2:not(.species--title)::after,
-  .member--item .scroll .h2::after {
+  .member--item .scroll .h2::after,
+  .species--section h2:not(.species--title)::after,
+  .species--section .h2::after {
     width: 50px; }
 
 .postcolor h3,
@@ -320,10 +518,12 @@ main > br {
 .profile .scroll h3,
 .profile .scroll .h3,
 .member--item .scroll h3,
-.member--item .scroll .h3 {
+.member--item .scroll .h3,
+.species--section h3,
+.species--section .h3 {
   padding: 10px 20px;
   font-size: 14px;
-  max-width: calc(100% - 30px); }
+  max-width: calc(100% - 40px); }
   @media only screen and (min-width: 480px) {
     .postcolor h3,
     .postcolor .h3,
@@ -332,7 +532,9 @@ main > br {
     .profile .scroll h3,
     .profile .scroll .h3,
     .member--item .scroll h3,
-    .member--item .scroll .h3 {
+    .member--item .scroll .h3,
+    .species--section h3,
+    .species--section .h3 {
       font-size: calc(14px + 4 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h3,
@@ -342,7 +544,9 @@ main > br {
     .profile .scroll h3,
     .profile .scroll .h3,
     .member--item .scroll h3,
-    .member--item .scroll .h3 {
+    .member--item .scroll .h3,
+    .species--section h3,
+    .species--section .h3 {
       font-size: 18px; } }
   .postcolor h3::after,
   .postcolor .h3::after,
@@ -351,7 +555,9 @@ main > br {
   .profile .scroll h3::after,
   .profile .scroll .h3::after,
   .member--item .scroll h3::after,
-  .member--item .scroll .h3::after {
+  .member--item .scroll .h3::after,
+  .species--section h3::after,
+  .species--section .h3::after {
     width: 30px; }
 
 .postcolor h4,
@@ -369,7 +575,11 @@ main > br {
 .member--item .scroll h4,
 .member--item .scroll h5,
 .member--item .scroll .h4,
-.member--item .scroll .h5 {
+.member--item .scroll .h5,
+.species--section h4,
+.species--section h5,
+.species--section .h4,
+.species--section .h5 {
   border-bottom: 1px solid var(--border-accent);
   color: var(--text-secondary); }
 
@@ -380,7 +590,9 @@ main > br {
 .profile .scroll h4,
 .profile .scroll .h4,
 .member--item .scroll h4,
-.member--item .scroll .h4 {
+.member--item .scroll .h4,
+.species--section h4,
+.species--section .h4 {
   font-size: 16px;
   padding: 0 40px 5px 0; }
   @media only screen and (min-width: 480px) {
@@ -391,7 +603,9 @@ main > br {
     .profile .scroll h4,
     .profile .scroll .h4,
     .member--item .scroll h4,
-    .member--item .scroll .h4 {
+    .member--item .scroll .h4,
+    .species--section h4,
+    .species--section .h4 {
       font-size: calc(16px + 8 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h4,
@@ -401,7 +615,9 @@ main > br {
     .profile .scroll h4,
     .profile .scroll .h4,
     .member--item .scroll h4,
-    .member--item .scroll .h4 {
+    .member--item .scroll .h4,
+    .species--section h4,
+    .species--section .h4 {
       font-size: 24px; } }
 
 .postcolor h5,
@@ -411,7 +627,9 @@ main > br {
 .profile .scroll h5,
 .profile .scroll .h5,
 .member--item .scroll h5,
-.member--item .scroll .h5 {
+.member--item .scroll .h5,
+.species--section h5,
+.species--section .h5 {
   font-size: 14px;
   padding: 0 25px 5px 0; }
   @media only screen and (min-width: 480px) {
@@ -422,7 +640,9 @@ main > br {
     .profile .scroll h5,
     .profile .scroll .h5,
     .member--item .scroll h5,
-    .member--item .scroll .h5 {
+    .member--item .scroll .h5,
+    .species--section h5,
+    .species--section .h5 {
       font-size: calc(14px + 4 * (100vw - 480px) / (1920 - 480)); } }
   @media only screen and (min-width: 1920px) {
     .postcolor h5,
@@ -432,7 +652,9 @@ main > br {
     .profile .scroll h5,
     .profile .scroll .h5,
     .member--item .scroll h5,
-    .member--item .scroll .h5 {
+    .member--item .scroll .h5,
+    .species--section h5,
+    .species--section .h5 {
       font-size: 18px; } }
 
 .postcolor h6,
@@ -442,13 +664,14 @@ main > br {
 .profile .scroll h6,
 .profile .scroll .h6,
 .member--item .scroll h6,
-.member--item .scroll .h6 {
+.member--item .scroll .h6,
+.species--section h6,
+.species--section .h6 {
   text-transform: uppercase;
   font-size: var(--size-sm);
   color: var(--text-secondary);
   max-width: calc(100% - 40px);
   width: max-content;
-  max-width: 100%;
   line-height: 160%; }
   .postcolor h6::after,
   .postcolor .h6::after,
@@ -457,7 +680,9 @@ main > br {
   .profile .scroll h6::after,
   .profile .scroll .h6::after,
   .member--item .scroll h6::after,
-  .member--item .scroll .h6::after {
+  .member--item .scroll .h6::after,
+  .species--section h6::after,
+  .species--section .h6::after {
     content: '';
     position: absolute;
     top: calc(50% - 0.5px);
@@ -481,7 +706,11 @@ main > br {
 .member--item .scroll h7,
 .member--item .scroll h8,
 .member--item .scroll .h7,
-.member--item .scroll .h8 {
+.member--item .scroll .h8,
+.species--section h7,
+.species--section h8,
+.species--section .h7,
+.species--section .h8 {
   display: block;
   text-transform: uppercase;
   text-align: justify;
@@ -500,7 +729,9 @@ main > br {
 .profile .scroll h8,
 .profile .scroll .h8,
 .member--item .scroll h8,
-.member--item .scroll .h8 {
+.member--item .scroll .h8,
+.species--section h8,
+.species--section .h8 {
   background: var(--bg-accent);
   color: var(--text-on-accent);
   padding: 10px 15px; }
@@ -512,7 +743,9 @@ main > br {
 .profile .scroll p,
 .profile .scroll ul,
 .member--item .scroll p,
-.member--item .scroll ul {
+.member--item .scroll ul,
+.species--section p,
+.species--section ul {
   margin: 20px 0; }
   .postcolor p:first-child,
   .postcolor ul:first-child,
@@ -521,7 +754,9 @@ main > br {
   .profile .scroll p:first-child,
   .profile .scroll ul:first-child,
   .member--item .scroll p:first-child,
-  .member--item .scroll ul:first-child {
+  .member--item .scroll ul:first-child,
+  .species--section p:first-child,
+  .species--section ul:first-child {
     margin-top: 0; }
   .postcolor p:last-child,
   .postcolor ul:last-child,
@@ -530,13 +765,16 @@ main > br {
   .profile .scroll p:last-child,
   .profile .scroll ul:last-child,
   .member--item .scroll p:last-child,
-  .member--item .scroll ul:last-child {
+  .member--item .scroll ul:last-child,
+  .species--section p:last-child,
+  .species--section ul:last-child {
     margin-bottom: 0; }
 
 .postcolor hr,
 .webpage--content hr,
 .profile .scroll hr,
-.member--item .scroll hr {
+.member--item .scroll hr,
+.species--section hr {
   display: block;
   height: 6px;
   background: var(--bg-accent-30);
@@ -548,7 +786,8 @@ main > br {
 .postcolor hl,
 .webpage--content hl,
 .profile .scroll hl,
-.member--item .scroll hl {
+.member--item .scroll hl,
+.species--section hl {
   display: block;
   height: 4px;
   background: var(--bg-accent);
@@ -565,7 +804,10 @@ main > br {
   .profile .scroll hl[data-style="thin"],
   .member--item .scroll hl[data-style="thin"],
   .member--item .scroll hl[data-style="thin"],
-  .member--item .scroll hl[data-style="thin"] {
+  .member--item .scroll hl[data-style="thin"],
+  .species--section hl[data-style="thin"],
+  .species--section hl[data-style="thin"],
+  .species--section hl[data-style="thin"] {
     height: 1px;
     border-radius: 0; }
   .postcolor hl[data-style="outline"], .postcolor hl[data-style="outline"], .postcolor hl[data-style="outline"],
@@ -577,7 +819,10 @@ main > br {
   .profile .scroll hl[data-style="outline"],
   .member--item .scroll hl[data-style="outline"],
   .member--item .scroll hl[data-style="outline"],
-  .member--item .scroll hl[data-style="outline"] {
+  .member--item .scroll hl[data-style="outline"],
+  .species--section hl[data-style="outline"],
+  .species--section hl[data-style="outline"],
+  .species--section hl[data-style="outline"] {
     background: var(--bg-accent-30);
     border: 1px solid var(--border-accent);
     border-radius: 1px;
@@ -591,7 +836,10 @@ main > br {
   .profile .scroll hl[data-style="dotted"],
   .member--item .scroll hl[data-style="dotted"],
   .member--item .scroll hl[data-style="dotted"],
-  .member--item .scroll hl[data-style="dotted"] {
+  .member--item .scroll hl[data-style="dotted"],
+  .species--section hl[data-style="dotted"],
+  .species--section hl[data-style="dotted"],
+  .species--section hl[data-style="dotted"] {
     background: none;
     height: 0;
     border-top: 1px dotted var(--border-accent); }
@@ -604,8 +852,11 @@ main > br {
   .profile .scroll hl[data-width="xs"],
   .member--item .scroll hl[data-width="xs"],
   .member--item .scroll hl[data-width="xs"],
-  .member--item .scroll hl[data-width="xs"] {
-    height: 250px; }
+  .member--item .scroll hl[data-width="xs"],
+  .species--section hl[data-width="xs"],
+  .species--section hl[data-width="xs"],
+  .species--section hl[data-width="xs"] {
+    width: 250px; }
   .postcolor hl[data-width="sm"], .postcolor hl[data-width="sm"], .postcolor hl[data-width="sm"],
   .webpage--content hl[data-width="sm"],
   .webpage--content hl[data-width="sm"],
@@ -615,8 +866,11 @@ main > br {
   .profile .scroll hl[data-width="sm"],
   .member--item .scroll hl[data-width="sm"],
   .member--item .scroll hl[data-width="sm"],
-  .member--item .scroll hl[data-width="sm"] {
-    height: 325px; }
+  .member--item .scroll hl[data-width="sm"],
+  .species--section hl[data-width="sm"],
+  .species--section hl[data-width="sm"],
+  .species--section hl[data-width="sm"] {
+    width: 325px; }
   .postcolor hl[data-width="lg"], .postcolor hl[data-width="lg"], .postcolor hl[data-width="lg"],
   .webpage--content hl[data-width="lg"],
   .webpage--content hl[data-width="lg"],
@@ -626,8 +880,11 @@ main > br {
   .profile .scroll hl[data-width="lg"],
   .member--item .scroll hl[data-width="lg"],
   .member--item .scroll hl[data-width="lg"],
-  .member--item .scroll hl[data-width="lg"] {
-    height: 475px; }
+  .member--item .scroll hl[data-width="lg"],
+  .species--section hl[data-width="lg"],
+  .species--section hl[data-width="lg"],
+  .species--section hl[data-width="lg"] {
+    width: 475px; }
   .postcolor hl[data-width="xl"], .postcolor hl[data-width="xl"], .postcolor hl[data-width="xl"],
   .webpage--content hl[data-width="xl"],
   .webpage--content hl[data-width="xl"],
@@ -637,13 +894,17 @@ main > br {
   .profile .scroll hl[data-width="xl"],
   .member--item .scroll hl[data-width="xl"],
   .member--item .scroll hl[data-width="xl"],
-  .member--item .scroll hl[data-width="xl"] {
-    height: 550px; }
+  .member--item .scroll hl[data-width="xl"],
+  .species--section hl[data-width="xl"],
+  .species--section hl[data-width="xl"],
+  .species--section hl[data-width="xl"] {
+    width: 550px; }
 
 .postcolor vl,
 .webpage--content vl,
 .profile .scroll vl,
-.member--item .scroll vl {
+.member--item .scroll vl,
+.species--section vl {
   display: block;
   height: 200px;
   background: var(--bg-accent);
@@ -659,7 +920,10 @@ main > br {
   .profile .scroll vl[data-style="thin"],
   .member--item .scroll vl[data-style="thin"],
   .member--item .scroll vl[data-style="thin"],
-  .member--item .scroll vl[data-style="thin"] {
+  .member--item .scroll vl[data-style="thin"],
+  .species--section vl[data-style="thin"],
+  .species--section vl[data-style="thin"],
+  .species--section vl[data-style="thin"] {
     width: 1px;
     border-radius: 0; }
   .postcolor vl[data-style="outline"], .postcolor vl[data-style="outline"], .postcolor vl[data-style="outline"],
@@ -671,7 +935,10 @@ main > br {
   .profile .scroll vl[data-style="outline"],
   .member--item .scroll vl[data-style="outline"],
   .member--item .scroll vl[data-style="outline"],
-  .member--item .scroll vl[data-style="outline"] {
+  .member--item .scroll vl[data-style="outline"],
+  .species--section vl[data-style="outline"],
+  .species--section vl[data-style="outline"],
+  .species--section vl[data-style="outline"] {
     background: var(--bg-accent-30);
     border: 1px solid var(--border-accent);
     border-radius: 1px;
@@ -685,7 +952,10 @@ main > br {
   .profile .scroll vl[data-style="dotted"],
   .member--item .scroll vl[data-style="dotted"],
   .member--item .scroll vl[data-style="dotted"],
-  .member--item .scroll vl[data-style="dotted"] {
+  .member--item .scroll vl[data-style="dotted"],
+  .species--section vl[data-style="dotted"],
+  .species--section vl[data-style="dotted"],
+  .species--section vl[data-style="dotted"] {
     background: none;
     width: 0;
     border-left: 1px dotted var(--border-accent); }
@@ -698,7 +968,10 @@ main > br {
   .profile .scroll vl[data-height="xxs"],
   .member--item .scroll vl[data-height="xxs"],
   .member--item .scroll vl[data-height="xxs"],
-  .member--item .scroll vl[data-height="xxs"] {
+  .member--item .scroll vl[data-height="xxs"],
+  .species--section vl[data-height="xxs"],
+  .species--section vl[data-height="xxs"],
+  .species--section vl[data-height="xxs"] {
     height: 30px; }
   .postcolor vl[data-height="xs"], .postcolor vl[data-height="xs"], .postcolor vl[data-height="xs"],
   .webpage--content vl[data-height="xs"],
@@ -709,7 +982,10 @@ main > br {
   .profile .scroll vl[data-height="xs"],
   .member--item .scroll vl[data-height="xs"],
   .member--item .scroll vl[data-height="xs"],
-  .member--item .scroll vl[data-height="xs"] {
+  .member--item .scroll vl[data-height="xs"],
+  .species--section vl[data-height="xs"],
+  .species--section vl[data-height="xs"],
+  .species--section vl[data-height="xs"] {
     height: 50px; }
   .postcolor vl[data-height="sm"], .postcolor vl[data-height="sm"], .postcolor vl[data-height="sm"],
   .webpage--content vl[data-height="sm"],
@@ -720,7 +996,10 @@ main > br {
   .profile .scroll vl[data-height="sm"],
   .member--item .scroll vl[data-height="sm"],
   .member--item .scroll vl[data-height="sm"],
-  .member--item .scroll vl[data-height="sm"] {
+  .member--item .scroll vl[data-height="sm"],
+  .species--section vl[data-height="sm"],
+  .species--section vl[data-height="sm"],
+  .species--section vl[data-height="sm"] {
     height: 125px; }
   .postcolor vl[data-height="lg"], .postcolor vl[data-height="lg"], .postcolor vl[data-height="lg"],
   .webpage--content vl[data-height="lg"],
@@ -731,7 +1010,10 @@ main > br {
   .profile .scroll vl[data-height="lg"],
   .member--item .scroll vl[data-height="lg"],
   .member--item .scroll vl[data-height="lg"],
-  .member--item .scroll vl[data-height="lg"] {
+  .member--item .scroll vl[data-height="lg"],
+  .species--section vl[data-height="lg"],
+  .species--section vl[data-height="lg"],
+  .species--section vl[data-height="lg"] {
     height: 275px; }
   .postcolor vl[data-height="xl"], .postcolor vl[data-height="xl"], .postcolor vl[data-height="xl"],
   .webpage--content vl[data-height="xl"],
@@ -742,7 +1024,10 @@ main > br {
   .profile .scroll vl[data-height="xl"],
   .member--item .scroll vl[data-height="xl"],
   .member--item .scroll vl[data-height="xl"],
-  .member--item .scroll vl[data-height="xl"] {
+  .member--item .scroll vl[data-height="xl"],
+  .species--section vl[data-height="xl"],
+  .species--section vl[data-height="xl"],
+  .species--section vl[data-height="xl"] {
     height: 350px; }
 
 .postcolor b,
@@ -752,7 +1037,9 @@ main > br {
 .profile .scroll b,
 .profile .scroll tag-spoken,
 .member--item .scroll b,
-.member--item .scroll tag-spoken {
+.member--item .scroll tag-spoken,
+.species--section b,
+.species--section tag-spoken {
   color: var(--text-accent);
   font-weight: 800;
   font-family: var(--font-header);
@@ -765,7 +1052,9 @@ main > br {
 .profile .scroll i,
 .profile .scroll tag-thought,
 .member--item .scroll i,
-.member--item .scroll tag-thought {
+.member--item .scroll tag-thought,
+.species--section i,
+.species--section tag-thought {
   font-style: italic;
   color: var(--text-secondary);
   font-weight: 500; }
@@ -773,7 +1062,8 @@ main > br {
 .postcolor u,
 .webpage--content u,
 .profile .scroll u,
-.member--item .scroll u {
+.member--item .scroll u,
+.species--section u {
   border-bottom: 1px dotted var(--border-accent);
   padding: 0 5px;
   color: var(--text-secondary);
@@ -782,7 +1072,8 @@ main > br {
 .postcolor s,
 .webpage--content s,
 .profile .scroll s,
-.member--item .scroll s {
+.member--item .scroll s,
+.species--section s {
   text-decoration-line: line-through;
   text-decoration-color: var(--border-accent);
   text-decoration-thickness: 1px;
@@ -792,7 +1083,8 @@ main > br {
 .postcolor a,
 .webpage--content a,
 .profile .scroll a,
-.member--item .scroll a {
+.member--item .scroll a,
+.species--section a {
   color: var(--text-accent);
   text-transform: uppercase;
   font-size: 0.9em;
@@ -1011,11 +1303,35 @@ ol {
     ol li:not(:last-child) {
       margin-bottom: 10px; }
 
+fieldset {
+  border: 0;
+  border-left: 1px dotted var(--bg-accent);
+  padding: 11px 0 10px 12px;
+  margin: 20px;
+  height: 100%;
+  text-align: left; }
+  fieldset legend {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    text-transform: uppercase;
+    line-height: 100%;
+    background: var(--bg-accent-30);
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: var(--size-xs);
+    letter-spacing: 0.15em;
+    padding: 8px 15px;
+    border: 1px solid var(--border-accent);
+    margin-left: -22px; }
+
 button {
   border: 0;
   padding: 0;
   background: none;
   cursor: pointer; }
+  button[type="button"], button[type="submit"] {
+    cursor: pointer; }
 
 tag-code {
   display: grid;
@@ -1356,6 +1672,11 @@ tag-code {
         border-bottom: 1px solid var(--border-accent);
         align-self: end; }
 
+tag-translation {
+  border-bottom: 1px dotted var(--text-secondary);
+  padding: 0 3px;
+  cursor: help; }
+
 .copyright,
 #mark-as-read-subto,
 #delcookiesrow {
@@ -1368,28 +1689,28 @@ tag-code {
   margin: 0 auto 20px; }
 
 .fa-brand {
-  font-family: 'Font Awesome 6 Brands';
-  font-style: normal;
-  font-weight: 700; }
+  font-family: 'Font Awesome 6 Brands' !important;
+  font-style: normal !important;
+  font-weight: 700 !important; }
 
 .fa-solid,
 .fa-regular,
 .fa-light,
 .fa-thin {
-  font-family: 'Font Awesome 6 Pro';
-  font-style: normal; }
+  font-family: 'Font Awesome 6 Pro' !important;
+  font-style: normal !important; }
 
 .fa-solid {
-  font-weight: 700; }
+  font-weight: 700 !important; }
 
 .fa-regular {
-  font-weight: 500; }
+  font-weight: 500 !important; }
 
 .fa-light {
-  font-weight: 300; }
+  font-weight: 300 !important; }
 
 .fa-thin {
-  font-weight: 100; }
+  font-weight: 100 !important; }
 
 .newstext,
 .wrapmini,

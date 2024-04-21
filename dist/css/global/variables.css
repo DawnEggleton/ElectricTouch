@@ -101,6 +101,13 @@ body.light {
   body.light [data-group="BUTTERCUP"] {
     --rgb: 187, 173, 132;
     --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/buttercup1.jpg); }
+  body.light.g-39,
+  body.light .g-39,
+  body.light [data-group="dogwood"],
+  body.light [data-group="Dogwood"],
+  body.light [data-group="DOGWOOD"] {
+    --rgb: 198, 179, 158;
+    --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/yarrow1.jpg); }
 
 body[class*="g-"],
 body [class*="g-"] {
@@ -360,3 +367,35 @@ body [data-group="Yarrow"],
 body [data-group="YARROW"] {
   --rgb: 113, 75, 64;
   --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/yarrow1.jpg); }
+
+body.g-37,
+body .g-37,
+body [data-group="bearberry"],
+body [data-group="Bearberry"],
+body [data-group="BEARBERRY"] {
+  --rgb: 204, 79, 131;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/bearberry1.jpg); }
+
+body.g-38,
+body .g-38,
+body [data-group="crowberry"],
+body [data-group="Crowberry"],
+body [data-group="CROWBERRY"] {
+  --rgb: 79, 70, 98;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/crowberry1.jpg); }
+
+body.g-39,
+body .g-39,
+body [data-group="dogwood"],
+body [data-group="Dogwood"],
+body [data-group="DOGWOOD"] {
+  --rgb: 217, 205, 192;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/dogwood1.jpg); }
+
+body.g-40,
+body .g-40,
+body [data-group="cattail"],
+body [data-group="Cattail"],
+body [data-group="CATTAIL"] {
+  --rgb: 134, 47, 28;
+  --bg-image: url(https://files.jcink.net/uploads2/godlybehaviour/GB24/cattail1.jpg); }

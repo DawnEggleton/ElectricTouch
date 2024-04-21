@@ -330,9 +330,12 @@
             margin-top: 5px;
             border: 1px solid var(--border-accent);
             font-family: var(--font-header);
+            text-align: left;
 
             a {
                 color: var(--text-secondary);
+                border: none;
+                padding: 0;
             }
         }
 
@@ -764,6 +767,11 @@
             strong {
                 color: var(--text-on-accent);
                 margin-bottom: 5px;
+                font-family: var(--font-header);
+                font-weight: 900;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                font-size: var(--size-sm);
             }
         }
     }
@@ -799,5 +807,75 @@
                 margin-bottom: 20px;
             }
         }
+    }
+
+    .toggle {
+        button {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        &:not(.is-active) {
+            .fa-minus {
+                display: none;
+            }
+            & + .claim-wrap {
+                display: none;
+            }
+        }
+        &.is-active {
+            .fa-plus {
+                display: none;
+            }
+        }
+    }
+    
+    &--flex-info {
+        display: flex;
+        flex-wrap: wrap;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: var(--size-xs);
+        letter-spacing: 0.15em;
+        gap: 20px;
+        align-self: start;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 3.5px;
+
+            b {
+                color: var(--text-accent);
+                font-size: 1.2em;
+            }
+
+            .fa-solid {
+                color: var(--text-accent);
+            }
+        }
+
+        &-range-item {
+            display: flex;
+            align-items: center;
+            gap: 3.5px;
+            line-height: 100%;
+            margin-top: 10px;
+
+            i {
+                font-size: 1.5em;
+
+                &.fa-thin {
+                    opacity: 0.75;
+                }
+            }
+        }
+    }
+    
+    #lookup-results:not(:empty) {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid var(--border-accent);
     }
 }

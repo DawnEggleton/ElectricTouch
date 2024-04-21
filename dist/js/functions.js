@@ -521,30 +521,36 @@ function initMarkdown() {
         str = str
                 .split(`**`)
                 .map((value, index) => {
-                    if(index % 2 == 0) {
-                    return value;
+                    if ((value.includes('href=') || value.includes('target=') || value.includes('src=')) && str.split(`**`).length > 1) {
+			return `${value}**`;
+		    } else if(index % 2 == 0) {
+                        return value;
                     } else {
-                    return `<tag-spoken>"${value}"</tag-spoken>`;
+                        return `<tag-spoken>"${value}"</tag-spoken>`;
                     }
-                    }).join("");
+                }).join("");
         str = str
                 .split(`_`)
                 .map((value, index) => {
-                    if(index % 2 == 0) {
-                    return value;
+                    if ((value.includes('href=') || value.includes('target=') || value.includes('src=')) && str.split(`_`).length > 1) {
+			return `${value}_`;
+		    } else if(index % 2 == 0) {
+                        return value;
                     } else {
-                    return `<tag-thought>${value}</tag-thought>`;
+                        return `<tag-thought>${value}</tag-thought>`;
                     }
-                    }).join("");
+                }).join("");
         str = str
                 .split(`||`)
                 .map((value, index) => {
-                    if(index % 2 == 0) {
-                    return value;
+                    if ((value.includes('href=') || value.includes('target=') || value.includes('src=')) && str.split(`||`).length > 1) {
+			return `${value}||`;
+		    } else if(index % 2 == 0) {
+                        return value;
                     } else {
-                    return `<tag-spoiler>${value}</tag-spoiler>`;
+                        return `<tag-spoiler>${value}</tag-spoiler>`;
                     }
-                    }).join("");
+                }).join("");
         post.innerHTML = str;
         });
     }
@@ -765,6 +771,15 @@ function initWebpages() {
             document.querySelectorAll('.staffOnly').forEach(item => item.remove());
         }
 
+    //remove loading screen
+    document.querySelector('body').classList.remove('loading');
+    document.querySelector('#loading').remove();
+    initTabs(true, '.webpage', '.webpage--menu', '.webpage--content', 'is-active', '.tab-category', ['.webpage--menu .accordion--trigger', '.webpage--menu .accordion--content', '.webpage--menu .accordion--content a', '.webpage--content .tab-category', '.webpage--content .tab-category tag-tab']);
+
+    //accordions
+    initAccordion();
+}
+function initConnections() {
     //remove loading screen
     document.querySelector('body').classList.remove('loading');
     document.querySelector('#loading').remove();
