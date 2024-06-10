@@ -15,8 +15,12 @@ if(switcher !== null) {
 }
 
 //Capitalize member name
-document.querySelector('.profile-link').setAttribute('title', `View ${capitalize(`<!-- |name| -->`)}`);
-document.querySelector('.mobile-profile-link').innerText = capitalize(`<!-- |name| -->`);
+if(document.querySelector('.profile-link')) {
+    document.querySelector('.profile-link').setAttribute('title', `View ${capitalize(`<!-- |name| -->`)}`);
+}
+if(document.querySelector('.mobile-profile-link')) {
+    document.querySelector('.mobile-profile-link').innerText = capitalize(`<!-- |name| -->`);
+}
 
 //remove empty tooltips
 $('*[title=""]').removeAttr('title');
@@ -110,6 +114,8 @@ if(pageType === 'SF') {
 if(pageType === 'ST') {
     initPostRowDescription();
     initPostContentAlter();
+
+    initDiscordTagging('#ST main > table > tbody > tr > td:last-child');
 
     let channels = ``, users = ``;
     taggingChannels.forEach(channel => channels += `<option value="${channel.hook}">${channel.name}</option>`);

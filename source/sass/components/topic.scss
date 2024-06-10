@@ -22,6 +22,11 @@
                     display: flex;
                     flex-wrap: wrap;
                     gap: 10px;
+
+                    @include mq-down(xs) {
+                        justify-content: end;
+                        width: 100%;
+                    }
                 }
             }
             a {
@@ -64,22 +69,72 @@
         }
     }
 }
-.alert-options {
+.alert-select {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 5;
     background: var(--bg-tertiary);
-    display: flex;
-    padding: 10px;
-    justify-content: end;
-    flex-wrap: wrap;
-    gap: 5px;
-    position: sticky;
-    top: 120px;
-    z-index: 2;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 15px;
+    width: calc(100vw - 35px);
+    max-width: 500px;
+    color: var(--text-primary);
+    text-align: left;
+    border: 1px solid var(--border-accent);
+    border-top: 0;
 
-    select {
-        width: 100%;
-        max-width: 150px;
+    @include mq-down(xxs) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    &.is-open {
+        display: grid;
+    }
+
+    input[type="button"] {
+        cursor: pointer;
+        grid-column: 1 / -1;
     }
 }
+.alert-section {
+    &:not(:last-of-type) {
+        border-right: 1px solid var(--border-primary);
+        padding-right: 10px;
+
+        @include mq-down(xxs) {
+            border-right: 0;
+            padding-right: 0;
+            border-bottom: 1px solid var(--border-primary);
+            padding-bottom: 10px;
+        }
+    }
+    b {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: var(--size-xs);
+        color: var(--text-accent);
+        letter-spacing: 0.1em;
+    }
+    .scroll {
+        max-height: 150px;
+
+        @include mq-down(xxs) {
+            max-height: 60px;
+        }
+    }
+    .fancy-input {
+        flex: 0 0 16px;
+    }
+    hr {
+        border: 0;
+        border-top: 1px solid var(--border-primary);
+        margin: 15px 0;
+    }
+}
+
 .topiclist {
     &--info {
         margin: 60px auto;

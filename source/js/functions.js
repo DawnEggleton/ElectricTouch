@@ -10,6 +10,7 @@ function fixMac(str) {
     });
 }
 function capitalize(str, separators = [` `, `'`, `-`]) {
+    str = str.replaceAll(`\&\#39\;`, `'`);
     separators = separators || [ ' ' ];
     var regex = new RegExp('(^|[' + separators.join('') + '])(\\w)', 'g');
     let first = str.split(' ')[0].replace(regex, function(x) { return x.toUpperCase(); });
@@ -730,6 +731,124 @@ function initTopicsWrap() {
     $(`.macro--header`).each(function (index) {
         $(this).nextUntil(`.macro--header`).wrapAll(`<div class="topiclist--section"></div>`);
     }); 
+}
+
+function tagLabel(type, data, label) {
+    if(type === 'channel') {
+        return `<label class="input-wrap">
+            <input type="radio" name="tag-channel" data-channel="${data}">
+            <div class="fancy-input radio"></div>
+            <span>${label}</span>
+        </label>`;
+    } else if(type === 'identifier') {
+        return `<label class="input-wrap">
+            <input type="checkbox" name="tag-identifier" data-tag="${data}">
+            <div class="fancy-input"></div>
+            <span>${label}</span>
+        </label>`;
+    } else if(type === 'mentions') {
+        return `<label class="input-wrap">
+            <input type="checkbox" name="tag-mention" data-tag="${data}">
+            <div class="fancy-input"></div>
+            <span>${label}</span>
+        </label>`;
+    }
+}
+function initDiscordTagging(location) {
+    let channels = ``, users = ``, mentions = ``;
+    discordChannels.forEach(channel => {
+        channels += tagLabel('channel', channel.hook, channel.title);
+    })
+    discordTags.forEach(user => {
+        users += tagLabel('identifier', user.id, user.alias);
+        mentions += tagLabel('mentions', user.id, user.alias);
+    });
+    if(discordRoles.length > 0) {
+        users += `<hr>`;
+    }
+    discordRoles.forEach(role => {
+        users += tagLabel('identifier', role.id, role.title);
+    });
+
+    document.querySelector(location).insertAdjacentHTML('beforeend', `<div class="alert-options">
+        <button onClick="toggleAlerts(this)" class="macro--button">Alerts</button>
+        <div class="alert-select">
+            <div class="alert-section channel">
+                <b>Channel <tag-required>*</tag-required></b>
+                <div class="scroll">
+                    ${channels}
+                </div>
+            </div>
+            <div class="alert-section users">
+                <b>Tagged For</b>
+                <div class="scroll">
+                    ${users}
+                </div>
+            </div>
+            <div class="alert-section mentions">
+                <b>Mentions</b>
+                <div class="scroll">
+                    ${mentions}
+                </div>
+            </div>
+            <input type="button" name="sendAlert" id="sendAlert" value="Send Alert" />
+        </div>
+    </div>`);
+
+    document.querySelector('#sendAlert').addEventListener('click', e => {
+        let channel = Array.from(document.querySelectorAll('.alert-section.channel input')).filter(item => item.checked)[0].dataset.channel;
+        let tags = Array.from(document.querySelectorAll('.alert-section.users input')).filter(item => item.checked);
+        let mentioned = Array.from(document.querySelectorAll('.alert-section.mentions input')).filter(item => item.checked);
+        let tagString = ``, mentionString = ``;
+
+        tags.forEach(tag => {
+            if(tag.dataset.tag !== '') {
+                tagString += `<@${tag.dataset.tag}> `;
+            }
+        });
+        mentioned.forEach(mention => {
+            if(mention.dataset.tag !== '') {
+                mentionString += `<@${mention.dataset.tag}> `;
+            }
+        });
+        let tagList = `**Tagged:** ${tagString}
+        **Mentions:** ${mentionString}`;
+        let topic = document.querySelector('.topic-title').innerText;
+        let url = `${window.location.origin}${window.location.search}view=getnewpost`;
+        var includes = [...new Set(Array.from(document.querySelectorAll('.post--name > a')).map(item => item.dataset.fullName))];
+        var characterList = ``;
+        includes.forEach((character, i) => {
+            if(includes.length > 2 && i < includes.length && i !== 0) {
+                characterList += `, `;
+            }
+            if(includes.length === 2 && i !== 0) {
+                characterList += ` `;
+            }
+            if ((includes.length === 2 && i !== 0) || (includes.length > 2 && i === includes.length - 1)) {
+                characterList += `and `;
+            }
+            characterList += capitalize(character.toLowerCase()).trim();
+        });
+        let triggerBlock = document.querySelectorAll('.post--main');
+        let triggers = triggerBlock.length > 0 && triggerBlock[triggerBlock.length - 1].querySelector('.profile--warning span') ? triggerBlock[triggerBlock.length - 1].querySelector('.profile--warning span').innerText : false;
+        let message = `Featuring ${characterList}`;
+        if(triggers) {
+            message += `\n**TW:** ${triggers}`;
+        }
+        
+        if(channel !== '' && tagString !== '') {
+            sendDiscordTag(`https://discord.com/api/webhooks/${channel}`, `You've been tagged!`, `[${capitalize(topic.toLowerCase(), [` `, `-`])}](<${url}>)
+            ${message}`, tagList);
+        }
+        document.querySelectorAll('.alert-select .scroll input').forEach(option => option.checked = false);
+        document.querySelector('#sendAlert').value = 'Sent!';
+        setTimeout(function () {
+            document.querySelector('#sendAlert').value = 'Send Alert';
+        }, 1000);
+    });
+}
+function toggleAlerts(e) {
+    e.closest('.alert-options').querySelector('.alert-select').classList.toggle('is-open');
 }
 
 /****** Post Initialization ******/

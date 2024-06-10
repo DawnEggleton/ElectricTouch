@@ -1,3 +1,45 @@
+const discordChannels = [
+	{title: `#comm-tags`, hook: `1222619480731947028/udI01gRguGBnLb4uSGv7UCNkDPo6TdTYhABks68wXgS1K_U_z3LHMMnfheDoPUX-Kfyw`},
+	{title: `#thread-tags`, hook: `1222619465963929801/w3iZ_xgX6WEe-WXuqO25_wlvyZy3AIK_ggCfyeEfsB3rBQs4Hlws_Ux7abMKUf9CAQTW`},
+	{title: `#open-comms`, hook: `1222619662903279617/_rlDqv8FfEJSEPXDG2nxWzfh-u4izhO1b4D-Y02M07GO1BpUrKftXcmliBk2cwlpnxSg`},
+	{title: `#open-threads`, hook: `1222619636722569298/LNwDFoiEcRgBm4uV4WVBDQshgCbFHlemS56dyV49Oyzx0KnTlL8cW_vmliIVaH7kI7mo`},
+];
+
+const discordTags = [
+    {alias: `Anna`, id: `379614457304842250`},
+    {alias: `Atlas`, id: `388906867096813582`},
+    {alias: `Ben`, id: `443645745682317312`},
+    {alias: `Cricket`, id: `287717448235483141`},
+    {alias: `Dashin`, id: `177638202755121152`},
+    {alias: `Feelix`, id: `316600785536286724`},
+    {alias: `Hermes`, id: `830491813407883306`},
+    {alias: `Iris`, id: `691131810213527592`},
+    {alias: `Ixchel`, id: `761250715720089650`},
+    {alias: `Kade`, id: `288169191914078211`},
+    {alias: `Lux`, id: `253627726886469642`},
+    {alias: `Mata`, id: `1218893371897024514`},
+    {alias: `Max`, id: `359467024449142796`},
+    {alias: `Para`, id: `336126083906797578`},
+    {alias: `Pinky`, id: `562006518099345439`},
+    {alias: `Remi`, id: `1009896626007068732`},
+    {alias: `Ronnie`, id: `597385892243701760`},
+    {alias: `Shay`, id: `301925093112807425`},
+    {alias: `Silence`, id: `224926781243785218`},
+    {alias: `Sly`, id: `351560535122116608`},
+    {alias: `Spyder`, id: `189583247141765120`},
+    {alias: `Sunny Flower`, id: `85490376281968640`},
+    {alias: `Tao`, id: `1221143886353928202`},
+    {alias: `Temple`, id: `177174017017511938`},
+    {alias: `Theo`, id: `243141923634675712`},
+    {alias: `Wander`, id: `316576558116765707`},
+    {alias: `Whisper`, id: `808086875021377627`},
+];
+
+const discordRoles = [
+    {title: `Open`, id: `&1124169819869155451`},
+    {title: `Vox Machina`, id: `&1236751323374817382`},
+];
+
 const colors = {
     'amaranth': [157, 99, 99],
     'birch': [187, 166, 151],
@@ -26,7 +68,6 @@ const colors = {
     'buttercup': [204, 190, 148],
     'yarrow': [113, 75, 64],
 }
-
 const unusable = ['premium species', 'premium group', 'custom complex event', 'custom discord role & icon', 'custom event', 'custom subplot'];
 
 const immortals = ['phoenix', 'vampire', 'jinn', 'kitsune', 'selkie', 'púca', 'barghest', 'faerie', 'spriggan', 'unicorn', 'faun', 'qilin', 'ghost', 'reaper', 'hellhound', 'aster', 'coaltus', 'marid', 'pegasus', 'supplicant'];
